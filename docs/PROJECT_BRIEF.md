@@ -1,6 +1,6 @@
-# Revenue-linked working capital
+# Tillward — revenue-linked working capital
 
-Idea locked 2026-10-22 by the user's "lets get to it" after selecting Paydown. Paydown remains a working name; final identity is undecided.
+Idea locked 2026-10-22 by the user's "lets get to it" after selecting Paydown. Tillward was selected as the final identity on 2026-10-22; Paydown is the historical working name.
 
 ## Product
 A BTC-holding independent business borrows MUSD for operating expenses, receives final customer payments in MUSD, and allocates its chosen percentage to native Mezo debt repayment. The owner retains control of operating cash, a minimum cash floor, and future repayment routing. The proof is lower protocol debt, not an animated balance.
@@ -22,3 +22,5 @@ Mezo Buildathon: https://app.akindo.io/wave-hacks/OVOO0gdrVU8379D10 . Target pro
 - 2026-10-22: prioritize real repayment feasibility and complete testnet vertical slice. No other active project modified or displaced automatically.
 - First experiment: pin official source/deployments; prove a borrower-owned contract can repay its own native loan. If not feasible, report rather than replace the mechanism.
 - Scope budget: 4-6 focused developer-days including finishing. This is a planning estimate, not a time promise. First dependency investigation capped at one focused day.
+
+- 2026-10-22: owner requested recovery/history fixes, guided onboarding, browser signing and loan-exit QA, keeper hosting and final identity. Tillward receipt-counter / ink-cream-vermilion direction explicitly selected.

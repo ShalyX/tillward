@@ -39,7 +39,7 @@ const native=await readWithRetry(()=>p.readContract({address:proof.account,abi:a
 requireThat(eq(native,c.borrowerOperations),'Wrong native loan contract');
 proof.independentVerification={verifiedAt:new Date().toISOString(),paymentStatus:r.status,settlementStatus:s.status,tokenTransferExact:true,tokenBurnExact:true,nativeDebtBefore:settled.args.debtBefore.toString(),nativeDebtAfter:settled.args.debtAfter.toString(),nativeDebtReduction:amount.toString(),nonownerExecutor:true,settlementBlock:Number(s.blockNumber)};
 proof.failedAttempts=[{hash:'0x96e5229c537c5e6f05f4ce3d89fa787a9f6798a916e8e1c303805a661ceb7348',status:'reverted',reason:'Sorted-list reinsertion exhausted gas with zero hints. Replaced with native computed hints; no financial effect from the failed attempt.'}];
-c.lastVerifiedBlock=Number(s.blockNumber);
+c.lastVerifiedBlock=Math.max(c.lastVerifiedBlock||0,Number(s.blockNumber));
 await writeFile('public/proof.json',JSON.stringify(proof,null,2)+'\n');
 await writeFile('deployments/public-testnet-proof.json',JSON.stringify(proof,null,2)+'\n');
 await writeFile('public/deployment.json',JSON.stringify(c,null,2)+'\n');

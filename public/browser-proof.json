@@ -1,0 +1,71 @@
+{
+  "chainId": 31611,
+  "wallet": "Rabby in Chrome",
+  "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "account": "0x791fFc8A7420dBB0ed5D9F28E811ec7576936433",
+  "creation": "0x3c6e252f2869a9197e839fa74a541529ed27269b2f80259e054dffd51ddd6df9",
+  "block": 16298853,
+  "observedAt": "2026-10-22T17:12:47.886Z",
+  "browserObserved": "Owner drove Rabby confirmations. App showed onboarding, actual invoice, payment and repayment, native loan close and BTC recovery. Refreshed states matched chain. Payer is the same owner for this browser QA scenario; separate-customer integration evidence exists in the original proof.",
+  "remaining": "Public submission materials and judge access; adversarial wallet-change/rejection coverage is not exhaustive.",
+  "transactions": {
+    "creation": {
+      "hash": "0x3c6e252f2869a9197e839fa74a541529ed27269b2f80259e054dffd51ddd6df9",
+      "block": 16298853
+    },
+    "openLoan": {
+      "hash": "0xf5fa2a6c57bb2143e71efb72d19de1cd56a747c7dcd26726f4464bdb106b156b",
+      "block": 16301777
+    },
+    "setPolicy": {
+      "hash": "0x4ec76bb9f9d47e3d423c67d983f6e7c8da80240e50f8a51b4c7ae1a79d5040e2",
+      "block": 16301795
+    },
+    "createInvoice": {
+      "hash": "0xdaa9d3b49194e749df17f4381b58c64f093554ac901d0e591e59767ad1b52abc",
+      "block": 16301819
+    },
+    "payInvoice": {
+      "hash": "0x2aa8628b557e096f402a6924e8e55d4e2f8dcb8a84e1a8d964a911a3f4274f36",
+      "block": 16301874
+    },
+    "settle": {
+      "hash": "0xa46f23847005361b0efa5ee59dce4eb10bf1c8fe42c1dc7c7948d2d36505764a",
+      "block": 16301896
+    },
+    "closeLoan": {
+      "hash": "0x55893804579a1a3e08d4fa91cbc88560af24ae72945363152da81cd4460b1e1f",
+      "block": 16301923
+    },
+    "approve": {
+      "hash": "0x9e806c6289a3dca6231d58d1602700c561b709abfdd4ac9aad622fc6220cbe4b",
+      "block": 16301865
+    },
+    "topUp": {
+      "hash": "0x9feab04aeffab0b43d943eed02bbfd9d1c35e4952b730e52177f8b56186d9e5e",
+      "block": 16301911
+    },
+    "withdrawBTC": {
+      "hash": "0x27578fd073cd1395ed40baf853e9d7f04885d1c75b53fd57c9aadfab241428bd",
+      "block": 16301938
+    }
+  },
+  "invoice": "0xf77a71986cc3ec0f641c074a7090fa5f9a545692362ccde0f37797ccea2fc1fc",
+  "amounts": {
+    "borrowed": "2000 MUSD",
+    "collateral": "0.045 BTC",
+    "paid": "1 MUSD",
+    "allocatedAndSettled": "0.2 MUSD",
+    "closed": "2001800421455671146819",
+    "recovered": "0.045 BTC"
+  },
+  "verified": {
+    "ownerTransactions": true,
+    "invoicePaid": true,
+    "exactNativeRepayment": true,
+    "nativeLoanClosed": true,
+    "accountBtcZero": true,
+    "ownerBtcIncreaseNetOfGas": true,
+    "pendingZero": true
+  }
+}

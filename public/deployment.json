@@ -3,7 +3,7 @@
   "network": "Mezo testnet",
   "rpc": "https://rpc.test.mezo.org",
   "ws": "wss://rpc-ws.test.mezo.org",
-  "lastVerifiedBlock": 16298123,
+  "lastVerifiedBlock": 16301938,
   "explorer": "https://explorer.test.mezo.org",
   "borrowerOperations": "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5",
   "musd": "0x118917a40FAF1CD7a13dB0Ef56C86De7973Ac503",

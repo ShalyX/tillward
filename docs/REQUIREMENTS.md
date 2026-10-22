@@ -20,4 +20,4 @@ C03 cite reused open-source code and licenses; preserve ownership/IP. Wave 2 mus
 C04 integration 30%, viability 30%, technical 20%, UX 10%, materials 10%. Proof maps to native transaction + usable complete flow + clear user example.
 C05 age/jurisdiction/KYB and full terms require user-specific completion; do not attest on user's behalf.
 
-Unresolved: exact deadline timezone, funded testnet account, native deployment addresses/ABI, current-field originality and customer demand. Local fork tests alone do not satisfy C02.
+Unresolved: exact deadline timezone, current-field originality and customer demand. Funded testnet account and native addresses/ABI are verified in the deployment records. Local fork tests alone do not satisfy C02.

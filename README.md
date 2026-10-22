@@ -1,8 +1,10 @@
-# Paydown (working name)
+# Tillward
 
 BTC-backed working capital that gets repaid from a business's MUSD receipts.
 
 The owner creates an isolated business account, opens a native Mezo loan, and sets a repayment share and operating cash floor. Customers pay final-payment invoices in MUSD. The account allocates the agreed share; an owner or permissionless executor applies eligible allocations to the account's own native Mezo debt. Small allocations accumulate where protocol minimum debt prevents repayment.
+
+![Tillward](public/brand/share.png)
 
 ## Verified first slice
 
@@ -77,6 +79,19 @@ Fork tests use the deployed native protocol at block 12,684,025, replaying the e
 
 ## Project state
 
-Working testnet vertical slice; provisional identity. No production/mainnet release, public GitHub launch, audit, customer-demand validation or hackathon submission claimed. Browser read-only views and calculator were checked; a complete browser-extension signing session remains a separate acceptance check. See [status](docs/STATUS.md) and [QA](docs/QA_REPORT.md).
+Working testnet product with the owner-selected Tillward identity. No production/mainnet release, public GitHub launch, audit, customer-demand validation or hackathon submission claimed. The complete Rabby-in-Chrome journey passed through borrowing, invoice creation, exact approval/payment, native repayment, top-up, full closure and recovery of all posted BTC. See [browser proof](deployments/browser-wallet-proof.json). The browser QA payer was the owner; separate-customer proof is recorded independently. See [status](docs/STATUS.md) and [QA](docs/QA_REPORT.md).
 
 Native source/resources: [Mezo MUSD](https://github.com/mezo-org/musd), pinned commit `490ed984ba24ba6297986e8de1271abad4e8abe5`; [developer docs](https://mezo.org/docs/developers/getting-started/). Minimal native interfaces match that source. Original application code is MIT licensed; see NOTICE.md for attribution.
+
+
+## Reliability and hosted repayment
+
+Recovered transaction receipts advance the snapshot block before the pending state is cleared. The confirmed lower bound persists across refresh. A pending transaction is reconciled automatically while idle. An approved wallet connection survives refresh within the same tab session.
+
+Activity is paginated in 10,000-block pages, fetched in 2,000-block chunks. Older pages can be loaded; a failed page is retried without skipping a range. Invoice browsing supports pages of 50 and exact older checkout links. Loan closure is included in repayment history.
+
+The hosted keeper has independently repaid a subsequent 0.2 MUSD allocation. Current recorded account totals at block 16298796 are 501 MUSD collected and 100.2 MUSD repaid, with zero pending. The original 500/100 proof is a historical snapshot. See [keeper proof](deployments/hosted-keeper-proof.json), [operations](docs/KEEPER_OPERATIONS.md) and [identity](docs/BRAND.md).
+
+The native fork test now also exercises adding collateral, full closure and recovery of BTC to the owner against unchanged protocol contracts, with the disclosed local oracle replay. It is not a public-chain loan-exit claim.
+
+The public browser test independently verified zero remaining loan debt, zero allocation, zero business-account BTC, exact native MUSD burns and the owner BTC increase net of gas. Only testnet assets were used. The original demo loan remains open; the browser QA loan is closed.

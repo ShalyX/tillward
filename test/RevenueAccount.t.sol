@@ -31,16 +31,22 @@ contract TokenMock {
 contract ProtocolMock {
     TokenMock public token;
     mapping(address=>uint256) public debt;
+    mapping(address=>uint256) public collateral;
+    mapping(address=>uint256) public surplus;
     bool public failRepayment;
     constructor(TokenMock t) {token=t;}
     function musd() external view returns(address){return address(token);}
     function troveManager() external view returns(address){return address(this);}
     function minNetDebt() external pure returns(uint256){return 1800e18;}
     function MUSD_GAS_COMPENSATION() external pure returns(uint256){return 200e18;}
-    function openTrove(uint256 n,address,address) external payable {require(debt[msg.sender]==0);require(n>=1800e18);debt[msg.sender]=n+200e18;token.mint(msg.sender,n);}
+    function openTrove(uint256 n,address,address) external payable {require(debt[msg.sender]==0);require(n>=1800e18);debt[msg.sender]=n+200e18;collateral[msg.sender]+=msg.value;token.mint(msg.sender,n);}
     function repayMUSD(uint256 n,address,address) external {require(!failRepayment);require(debt[msg.sender]-n>=2000e18);debt[msg.sender]-=n;token.burn(msg.sender,n);}
     function getTroveStatus(address a) external view returns(uint256){return debt[a]>0?1:0;}
-    function getEntireDebtAndColl(address a) external view returns(uint256,uint256,uint256,uint256,uint256,uint256){return(1 ether,debt[a],0,0,0,0);}
+    function getEntireDebtAndColl(address a) external view returns(uint256,uint256,uint256,uint256,uint256,uint256){return(collateral[a],debt[a],0,0,0,0);}
+    function closeTrove() external {require(!failRepayment);uint256 n=debt[msg.sender]-200e18;token.burn(msg.sender,n);debt[msg.sender]=0;uint256 btc=collateral[msg.sender];collateral[msg.sender]=0;(bool ok,)=payable(msg.sender).call{value:btc}("");require(ok);}
+    function addColl(address,address) external payable {require(debt[msg.sender]>0);collateral[msg.sender]+=msg.value;}
+    function setSurplus(address a) external payable {surplus[a]+=msg.value;}
+    function claimCollateral() external {uint256 n=surplus[msg.sender];require(n>0);surplus[msg.sender]=0;(bool ok,)=payable(msg.sender).call{value:n}("");require(ok);}
     function setFail(bool b) external {failRepayment=b;}
 }
 
@@ -174,6 +180,35 @@ contract RevenueAccountTest {
     function testCannotWithdrawCollateralHeldByProtocol() public {
         prepare(500e18);vm.expectRevert();account.withdrawBTC(1);
     }
+    function testCloseReturnsCollateralAndWithdrawsOnlyToOwner() public {
+        prepare(500e18);account.setPolicy(2000,0,false);
+        vm.expectRevert();vm.prank(customer);account.closeLoan();
+        account.closeLoan();
+        require(protocol.debt(address(account))==0,"loan closed");
+        require(address(account).balance==1 ether,"collateral returned to account");
+        require(account.pendingRepayment()==0&&account.totalRepaid()==5000e18,"close accounting");
+        vm.expectRevert();vm.prank(customer);account.withdrawBTC(1 ether);
+        uint256 before=address(this).balance;account.withdrawBTC(1 ether);
+        require(address(this).balance==before+1 ether&&address(account).balance==0,"owner receives BTC");
+    }
+    function testClosePreservesFloorAndRollsBackFailure() public {
+        prepare(500e18);vm.expectRevert();account.closeLoan();
+        require(protocol.debt(address(account))==5200e18,"floor prevents close");
+        account.setPolicy(2000,0,false);protocol.setFail(true);
+        vm.expectRevert();account.closeLoan();
+        require(account.pendingRepayment()==100e18&&token.balanceOf(address(account))==5500e18,"failed close preserves allocation and cash");
+        require(address(account).balance==0&&protocol.debt(address(account))==5200e18,"failed close keeps native collateral and debt");
+    }
+    function testAddCollateralAndClaimSurplusAreOwnerOnly() public {
+        prepare(500e18);
+        vm.expectRevert();vm.prank(customer);account.addCollateral{value:1 ether}(address(0),address(0));
+        account.addCollateral{value:1 ether}(address(0),address(0));
+        require(protocol.collateral(address(account))==2 ether,"collateral increased");
+        protocol.setSurplus{value:0.25 ether}(address(account));
+        vm.expectRevert();vm.prank(customer);account.claimSurplus();
+        account.claimSurplus();require(address(account).balance==0.25 ether,"surplus returned");
+        account.withdrawBTC(0.25 ether);vm.expectRevert();account.claimSurplus();
+    }
     function testFuzzSplitNeverOverallocates(uint96 amount,uint16 rate) public {
         uint256 n=uint256(amount)+1;uint16 bps=uint16(uint256(rate)%10001);
         account.setPolicy(bps,0,false);account.createInvoice(invoice,"Fuzz",n,uint64(block.timestamp+1 days));
@@ -211,6 +246,21 @@ contract NativeForkTest {
         (uint256 afterDebt,,,,)=a.debtState();
         require(beforeDebt-afterDebt==100e18,"real native debt decreases by receipt split");
         require(a.pendingRepayment()==0,"split fully applied");
+        a.addCollateral{value:1 ether}(address(0),address(0));
+        (uint256 debt,uint256 coll,,,)=a.debtState();require(coll==11 ether,"native collateral top-up");
+        RevenueAccount funding=new RevenueAccount(address(this),0x44b1bac67dDA612a41a58AAf779143B181dEe031);
+        funding.openLoan{value:10 ether}(10000e18,address(0),address(0));
+        funding.withdraw(1000e18);
+        (ok,)=address(t).call(abi.encodeWithSignature("transfer(address,uint256)",address(a),1000e18));require(ok);
+        a.setPolicy(2000,0,false);
+        a.closeLoan();
+        (uint256 closedDebt,,,,bool active)=a.debtState();
+        require(!active&&closedDebt==0,"native loan fully closed");
+        require(address(a).balance==11 ether,"native collateral returned");
+        require(a.totalRepaid()==debt-200e18+100e18,"native close repayment accounting");
+        uint256 ownerBefore=address(this).balance;a.withdrawBTC(11 ether);
+        require(address(a).balance==0&&address(this).balance==ownerBefore+11 ether,"native exit BTC recovered by owner");
+
     }
     receive() external payable {}
 }

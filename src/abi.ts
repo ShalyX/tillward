@@ -28,6 +28,7 @@ export const accountAbi=parseAbi([
  'function withdraw(uint256)',
  'function releaseAllocation(uint256)',
  'event ReceiptCollected(bytes32 indexed id,address indexed payer,uint256 amount,uint256 allocated)',
+ 'event LoanClosed(uint256 repaid)',
  'event RepaymentSettled(address indexed caller,uint256 amount,uint256 debtBefore,uint256 debtAfter)',
  'error Unauthorized()', 'error InvalidInput()', 'error InvoiceUnavailable()',
  'error NothingToRepay()', 'error InsufficientAvailableFunds()', 'error ProtocolMismatch()',
@@ -42,5 +43,6 @@ export const factoryAbi=parseAbi([
 export const tokenAbi=parseAbi([
  'function balanceOf(address) view returns(uint256)',
  'function allowance(address,address) view returns(uint256)',
- 'function approve(address,uint256) returns(bool)'
+ 'function approve(address,uint256) returns(bool)',
+ 'function transfer(address,uint256) returns(bool)'
 ]);

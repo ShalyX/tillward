@@ -1,0 +1,15 @@
+{
+  "network": "Mezo testnet",
+  "chainId": 31611,
+  "account": "0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5",
+  "keeper": "0x625E52F5AB7b6563f83a3b7FB7EB7cC3a148A956",
+  "receipt": "0x7502d6586a19b0431411bec399c92fa0f6f6e6a1f8fc6495a08d8c8f6a77d172",
+  "settlement": "0x640ff5468f0707a37366a9c4feb75d57d7cec0d68336e89d67325fdd2d87518d",
+  "block": 16298796,
+  "allocated": "0.2 MUSD",
+  "totalCollected": "501 MUSD",
+  "totalRepaid": "100.2 MUSD",
+  "pending": "0 MUSD",
+  "observedAt": "2026-10-22T13:25:25.866Z",
+  "evidence": "Standalone RPC receipt, decoded repayment event, exact native debt delta, and fixed-block account counters. Service was already watching when receipt arrived. Sample customer funds originate from test loan."
+}

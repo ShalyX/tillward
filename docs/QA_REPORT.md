@@ -1,27 +1,36 @@
 # QA report
-Checked 2026-10-22. Readiness: working testnet vertical slice; not a completed hackathon submission or audited mainnet product.
+
+Checked 2026-10-22. Working testnet product; hackathon submission remains pending.
 
 | Check | Requirement | Result and evidence |
 |---|---|---|
-| Q01 | R01-R07 contract authority and funds | Pass: 17 Foundry tests including 128 fuzz cases for split conservation. Owner isolation, duplicate/canceled/expired invoice, insufficient payment/retry, exact transfer accounting, allocation/floor isolation, pause, deferred minimum debt, repayment failure rollback, permissionless caller limits and allocated-budget replay. |
-| Q02 | R02/R05/R06 native integration | Pass: fork test calls unchanged native loan/token contracts. Explicit captured native-oracle precompile response required locally. |
-| Q03 | R02/R04/R06 public testnet | Pass observed: factory/account deployed, native loan opened, 500 MUSD receipt collected, 100 MUSD native repayment confirmed, zero remaining allocation. Public proof JSON and live UI match the chain state. |
-| Q04 | R03/R05 numeric correctness | Pass: six JS tests for exact 18-decimal units, invalid amounts, rounding/cash conservation, executor cap and interest-first native insertion-ratio calculation. |
-| Q05 | R09 build | Pass: TypeScript and optimized Vite production build. |
-| Q06 | R08/R09 browser | Desktop 1440px and narrow layout inspected. Policy calculator: 1,250 MUSD at 20% shows 250 repayment / 1,000 operations. Live read-only view shows 500 collected, 100 repaid, pending zero and actual onchain invoice/events. |
-| Q07 | Browser wallet transaction flow | Unverified end-to-end with a browser wallet extension. Public financial writes were executed by the dedicated wallet scripts; UI transaction preparation is implemented but must not be described as a completed extension-signing QA run. |
-| Q08 | Failure recovery | Foundry rollback and idempotency tested. Script journals raw signed transactions outside repo before sending. UI retains pending hash through refresh, refuses blind replacement, validates factory hash/registration/native addresses and explicit chain. RPC failures remain visible; no fake live fallback. |
-| Q09 | Continuous automation | One-shot/watch executor implemented. Managed always-on keeper hosting is not deployed. User can manually trigger settlement; do not promise background production automation. |
-| Q10 | Rules/materials | MUSD integration and supported testnet complete. Public GitHub, final identity, deck, two-minute video, legal/user declarations and platform submission remain pending. |
+| Q01 | R01-R07 contract authority/funds | Pass: 20 Foundry tests, including 128 split fuzz runs. Owner isolation, one-time invoices, expiry/cancellation, exact token delivery, fee-token rollback, pause, allocation/cash-floor protection, failed repayment rollback, bounded permissionless settlement, native floor, collateral top-up, close rollback and owner BTC recovery. |
+| Q02 | R02/R05/R06 native integration | Pass: expanded native fork test opens and repays a loan, adds collateral, uses a second native borrower for a top-up, closes and recovers BTC. Native lending/token code unchanged. Exact captured oracle-precompile response is replayed locally because Foundry lacks that Mezo precompile. |
+| Q03 | R02/R04/R06 public chain | Original 500 MUSD customer payment / 100 MUSD native repayment observed and recorded. Later hosted keeper independently repaid 0.2 MUSD; its standalone verifier passed exact event/debt checks. Browser flow adds an independently verified public native loan exit. Separate proof files retain each historical snapshot. |
+| Q04 | R03/R05/R08 correctness | Pass: 12 JS tests cover decimal precision, invalid inputs, integer split/floor conservation, native interest-first hint ratio, executor cap/gas budget, stale-head receipt recovery, missing/reverted receipts and gap-free history pagination beyond 10,000 blocks. |
+| Q05 | R09 build | TypeScript and optimized Vite production build passed. Publication helper runs the final build against the exact source version. |
+| Q06 | R09 browser layout | Desktop/narrow baseline inspected; final Tillward interface checked in Chrome. Fresh screenshots and release-specific checks are recorded in ../tillward-release.md. |
+| Q07 | Browser signing/full journey | Pass: owner drove Rabby confirmations in Chrome for account creation, 2,000 MUSD borrowing with 0.045 test BTC, rule save, 1 MUSD invoice, exact approval and payment, 0.2 MUSD repayment, 3 MUSD top-up, close and 0.045 BTC recovery. App showed paid invoice, actual debt reduction, loan closed and account BTC zero. Independent script checks receipt success, sender, calldata/events, native token burns, zero debt/allocation and exact owner BTC increase net of gas. See ../deployments/browser-wallet-proof.json. |
+| Q08 | Recovery | Confirmed receipt anchors account reads before pending is cleared; persisted anchor never regresses; missing receipt preserves pending hash; idle reconciliation; approved wallet reconnects on session refresh. Browser refresh recovered the connected account and actual state. Read failures show explicit errors with a 45-second total snapshot timeout. Journals precede CLI broadcast; same raw bytes are reused on uncertain outcomes. |
+| Q09 | Hosted automation | Pass for original demo account: isolated boot-enabled systemd service performed unattended repayment from a separate gas-only wallet. Restart retained last confirmation. Private journal/wallet 0600, exclusive process lock, atomic writes, chain/registry/freshness checks, gas caps and health record. No external alerting or automatic enrollment of arbitrary new accounts. |
+| Q10 | Identity/materials | Tillward identity selected and implemented in UI, checkout, title, favicon and share assets. Public GitHub, public judge access, deck, two-minute video, declarations and submission remain pending. |
 
-## Public testnet findings and fixes
-1. RPC gas estimation once returned an intrinsic-only value below EIP-7623 calldata floor. The rejected signed transaction was not mined. Contract transaction preparation now uses a minimum gas allowance and simulation; unused gas is not charged.
-2. First settlement `0x96e5229c537c5e6f05f4ce3d89fa787a9f6798a916e8e1c303805a661ceb7348` reverted. Debug trace showed gas exhaustion in SortedTroves traversal with empty hints, not a failed debt-accounting invariant. Native HintHelpers/SortedTroves integration now supplies near insertion positions; successful settlement is `0x3d464267e44b119fe4c8f172996775157261dd85ee9cdd598e5b27bb04b0fb0d`.
-3. HTTP RPC sometimes reported block 16,082,514 after successful transactions at 16,298,xxx and returned empty calls/not-found receipts. Official WebSocket reads returned confirmed receipts and the live account. UI now prefers WebSocket and uses an explicit snapshot block with a known confirmed lower bound. Native hints have the same lower bound.
+## Evidence
 
-## Limits and next gates
-- Broader browser-extension wallet signing/recovery QA remains required before submission.
-- Private preview publication confirmed by Sites at https://revenue-working-capital.famous-buddy-6924.chatgpt.site . Public judge access remains a later audience decision.
-- Exact-debt invariant and fixed token/protocol references retained throughout; no weakened accounting gate.
-- Repo secrets check and deployment-source review are performed before private source sync. No independent audit claimed.
-- Full-history indexing beyond the bounded RPC event range is not implemented; latest 50 invoices are read from storage. Customer checkout can fetch an older exact invoice ID.
+- Original demo account: 0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5. ../deployments/public-testnet-proof.json records the 500/100 snapshot.
+- ../deployments/hosted-keeper-proof.json independently verifies 501 MUSD collected, 100.2 repaid and zero pending at block 16298796.
+- Rabby account: 0x791fFc8A7420dBB0ed5D9F28E811ec7576936433. Browser payment 0x2aa8628b557e096f402a6924e8e55d4e2f8dcb8a84e1a8d964a911a3f4274f36; repayment 0xa46f23847005361b0efa5ee59dce4eb10bf1c8fe42c1dc7c7948d2d36505764a; close 0x55893804579a1a3e08d4fa91cbc88560af24ae72945363152da81cd4460b1e1f; BTC recovery 0x27578fd073cd1395ed40baf853e9d7f04885d1c75b53fd57c9aadfab241428bd, block 16301938.
+- Browser QA payer was the owner, using test MUSD sourced from the original demo loan. Separate-customer/nonowner settlement is established by the original integration proof. No actual revenue or adoption claimed.
+
+## Findings addressed
+
+1. An initial gas estimate fell below EIP-7623 intrinsic calldata requirements; the rejected transaction was not mined. Simulations and appropriate transaction gas floors are used.
+2. An initial public settlement reverted from native SortedTroves traversal gas exhaustion with empty hints. Native HintHelpers/SortedTroves now provide insertion positions. Exact debt/token accounting was retained.
+3. HTTP and some WebSocket sessions returned stale heads, empty reads and missing confirmed receipts. Fixed-block snapshots, WebSocket preference, bounded retries, explicit stale/error states and receipt-derived monotonic anchors were added. The old strict standalone verifier failed on some unsynchronized sessions; it is not retroactively marked passed. Later keeper/browser verifiers independently succeeded.
+4. Recovered transaction receipts previously cleared pending before advancing the view block. Regression tests now cover this ordering and missing/reverted receipts.
+5. History previously stopped entirely after 10,000 blocks from deployment. It now loads bounded, contiguous pages; failed chunks do not silently disappear. Invoice pages and exact historical checkout lookup coexist.
+6. Loan setup was buried in Activity. Owner onboarding now links the next required step; fully completed businesses are not sent back to initial setup after closing.
+
+## Remaining boundaries
+
+Adversarial wallet-change/rejection and RPC failover coverage is not exhaustive. Existing contract tests cover failed effects and replay. No independent audit or mainnet use. The keeper watches one demo account; new account enrollment and external alerts are not implemented. VPS disk headroom is limited, documented in KEEPER_OPERATIONS.md. All proofs are public-testnet integration evidence.

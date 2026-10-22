@@ -16,3 +16,5 @@ Create canonical docs before implementation. Then M1 source/RPC/ABI and native f
 Stop/reassess if native repayment cannot work within first-day cap, budget expands beyond 6 developer-days, no credible customer can be reached, or finishing time is insufficient. Do not change core mechanism without agreement. Cut optional analytics and integrations first. Record incomplete external access without declaring the entire build blocked when independent work remains.
 
 Submission, social posts, organizer contact and legal acceptance are not implicit in implementation authorization. Prepare concrete package first. Required presentation/follow-up additional; no invented adoption or payout.
+
+M4 update: recovery/history and native loan-exit tests pass; keeper hosted and unattended repayment verified. M5 identity selected and implemented as Tillward; the complete browser signing/payment/loan-exit flow passed. Remaining work is submission packaging and public judge access.

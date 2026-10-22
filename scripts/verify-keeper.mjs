@@ -1,0 +1,18 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {createPublicClient,defineChain,webSocket,decodeEventLog} from 'viem';
+const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const chain=defineChain({id:31611,name:'Mezo Testnet',nativeCurrency:{name:'Bitcoin',symbol:'BTC',decimals:18},rpcUrls:{default:{http:[c.rpc]}}});
+const p=createPublicClient({chain,transport:webSocket(c.ws,{timeout:15000,retryCount:1})});
+const artifact=JSON.parse(await readFile('out/RevenueAccount.sol/RevenueAccount.json','utf8'));
+const account='0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5',hash='0x640ff5468f0707a37366a9c4feb75d57d7cec0d68336e89d67325fdd2d87518d';
+if(await p.getChainId()!==31611)throw Error('Chain mismatch.');
+const receipt=await p.getTransactionReceipt({hash});if(receipt.status!=='success')throw Error('Keeper receipt unsuccessful.');
+const logs=receipt.logs.filter(l=>l.address.toLowerCase()===account.toLowerCase()).flatMap(l=>{try{return [decodeEventLog({abi:artifact.abi,data:l.data,topics:l.topics})];}catch{return [];}});
+const settled=logs.find(l=>l.eventName==='RepaymentSettled');
+if(!settled||settled.args.amount!==200000000000000000n||settled.args.debtBefore-settled.args.debtAfter!==settled.args.amount||settled.args.caller.toLowerCase()!=='0x625e52f5ab7b6563f83a3b7fb7eb7cc3a148a956')throw Error('Unexpected native repayment event.');
+const read=name=>p.readContract({address:account,abi:artifact.abi,functionName:name,blockNumber:receipt.blockNumber});
+const [collected,repaid,pending]=await Promise.all(['totalCollected','totalRepaid','pendingRepayment'].map(read));
+if(collected!==501n*10n**18n||repaid!==100200000000000000000n||pending!==0n)throw Error('Keeper accounting mismatch.');
+const proof={network:'Mezo testnet',chainId:31611,account,keeper:settled.args.caller,receipt:'0x7502d6586a19b0431411bec399c92fa0f6f6e6a1f8fc6495a08d8c8f6a77d172',settlement:hash,block:Number(receipt.blockNumber),allocated:'0.2 MUSD',totalCollected:'501 MUSD',totalRepaid:'100.2 MUSD',pending:'0 MUSD',observedAt:new Date().toISOString(),evidence:'Standalone RPC receipt, decoded repayment event, exact native debt delta, and fixed-block account counters. Service was already watching when receipt arrived. Sample customer funds originate from test loan.'};
+await writeFile('deployments/hosted-keeper-proof.json',JSON.stringify(proof,null,2));await writeFile('public/keeper-proof.json',JSON.stringify(proof,null,2));
+c.lastVerifiedBlock=Math.max(c.lastVerifiedBlock||0,Number(receipt.blockNumber));await writeFile('public/deployment.json',JSON.stringify(c,null,2));console.log(JSON.stringify(proof));process.exit(0);

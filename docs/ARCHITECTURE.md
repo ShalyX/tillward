@@ -27,3 +27,16 @@ Functional workspace, provisional name. Explore cash-ledger, repayment-path and 
 
 ## Runtime
 Static browser app and onchain financial state. Local dev and built app must be inspected. New private Sites preview may be published for review; judge-accessible release remains a later explicit audience decision. Native testnet deployment needs a dedicated funded test wallet; no mainnet writes.
+
+
+## 2026-10-22 reliability / operations update
+
+R08: src/chain-state.mjs resolves a confirmed receipt before choosing the snapshot boundary. Receipt block and the previous persisted confirmation are lower bounds; a stale RPC head cannot move the view backwards. Pending hashes survive missing receipts; idle polling reconciles them. Approved browser account recovery uses eth_accounts and session-scoped opt-in, without a new connection prompt.
+
+R08/R09: activity uses 10,000-block pages with 2,000-block chunks and an explicit older-page cursor, so the deployment's age no longer disables history. Failed chunks reject a page atomically. Invoice pages preserve exact historical checkout lookup. The owner sees guided account/borrow/policy/invoice steps and explicit MUSD top-up/loan-close/BTC-withdraw controls.
+
+R05/R06: an isolated systemd keeper watches the proof account. It uses a non-owner test-gas wallet, immutable account authority, atomic raw-transaction journaling, an exclusive service lock, gas budgets and a health record. See KEEPER_OPERATIONS.md. No browser or business-owner key is hosted. It has a confirmed unattended settlement with decoded native debt-reduction evidence.
+
+M5: Tillward is the selected public-facing identity; contract names/addresses and compatibility storage keys retain their historical names. Branding details and assets are in BRAND.md.
+
+Public browser-exit verification is in deployments/browser-wallet-proof.json. The browser owner signed every transaction through Rabby; CLI checks only independently read those transactions. Invoice approval was exact and fully consumed. Native closing and repayment MUSD burns were checked. Owner BTC recovery was verified using actual balance delta net of the receipt/legacy transaction gas price, because Mezo omitted effectiveGasPrice on that receipt.
