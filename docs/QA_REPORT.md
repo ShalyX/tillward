@@ -21,7 +21,7 @@ Checked 2026-10-22. Readiness: working testnet vertical slice; not a completed h
 
 ## Limits and next gates
 - Broader browser-extension wallet signing/recovery QA remains required before submission.
-- Fresh private preview deployment must be confirmed by Sites; public judge access remains a later audience decision.
+- Private preview publication confirmed by Sites at https://revenue-working-capital.famous-buddy-6924.chatgpt.site . Public judge access remains a later audience decision.
 - Exact-debt invariant and fixed token/protocol references retained throughout; no weakened accounting gate.
 - Repo secrets check and deployment-source review are performed before private source sync. No independent audit claimed.
 - Full-history indexing beyond the bounded RPC event range is not implemented; latest 50 invoices are read from storage. Customer checkout can fetch an older exact invoice ID.
