@@ -35,7 +35,7 @@ R08: src/chain-state.mjs resolves a confirmed receipt before choosing the snapsh
 
 R08/R09: activity uses 10,000-block pages with 2,000-block chunks and an explicit older-page cursor, so the deployment's age no longer disables history. Failed chunks reject a page atomically. Invoice pages preserve exact historical checkout lookup. The owner sees guided account/borrow/policy/invoice steps and explicit MUSD top-up/loan-close/BTC-withdraw controls.
 
-R05/R06: an isolated systemd keeper watches the proof account. It uses a non-owner test-gas wallet, immutable account authority, atomic raw-transaction journaling, an exclusive service lock, gas budgets and a health record. See KEEPER_OPERATIONS.md. No browser or business-owner key is hosted. It has a confirmed unattended settlement with decoded native debt-reduction evidence.
+R05/R06: an isolated systemd keeper discovers businesses from pinned-factory AccountCreated events and persists validated, confirmed discovery pages. A rotating account queue shares one non-owner gas wallet, pending transaction journal, nonce sequence and global gas budget. Per-account failures back off; pending nonce recovery blocks further signing. Independent health/backup timers and Telegram incident/recovery alerts cover local service operation. Three enrolled accounts, native unattended repayment and same-hash restart recovery are verified. See KEEPER_ENROLLMENT.md for operating limits and remaining infrastructure work. No browser or business-owner key is hosted.
 
 M5: Tillward is the selected public-facing identity; contract names/addresses and compatibility storage keys retain their historical names. Branding details and assets are in BRAND.md.
 
