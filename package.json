@@ -1,0 +1,17 @@
+{
+  "name": "revenue-working-capital",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.mjs",
+    "contracts": "forge test --no-match-contract NativeForkTest",
+    "fork:test": "node scripts/fork-test.mjs",
+    "probe": "node scripts/probe.mjs"
+  },
+  "dependencies": { "viem": "2.57.10" },
+  "devDependencies": { "typescript": "~5.9.3", "vite": "8.3.5" }
+}

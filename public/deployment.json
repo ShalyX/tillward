@@ -1,0 +1,17 @@
+{
+  "chainId": 31611,
+  "network": "Mezo testnet",
+  "rpc": "https://rpc.test.mezo.org",
+  "ws": "wss://rpc-ws.test.mezo.org",
+  "lastVerifiedBlock": 16298123,
+  "explorer": "https://explorer.test.mezo.org",
+  "borrowerOperations": "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5",
+  "musd": "0x118917a40FAF1CD7a13dB0Ef56C86De7973Ac503",
+  "hintHelpers": "0x4e4cBA3779d56386ED43631b4dCD6d8EacEcBCF6",
+  "factory": "0xaf90fe019f7303bb4720437dcfbafe1549474f36",
+  "factoryCodeHash": "0x22cd3c895c9c24e91f046a6f9557e4dd381724d172b69d64ec15cfffffc32db5",
+  "deploymentBlock": 16297946,
+  "sourceCommit": "490ed984ba24ba6297986e8de1271abad4e8abe5",
+  "deployer": "0x25Db120d4c36977E57cb360f30E6C6028b8d3935",
+  "deploymentTransaction": "0xcdf1abd95d9c582dba21cdae46c7aadffdb6b702f5a003d840df4f1fa266ebb2"
+}

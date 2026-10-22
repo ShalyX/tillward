@@ -1,0 +1,72 @@
+{
+  "environment": "Mezo public testnet",
+  "chainId": 31611,
+  "verifiedAt": "2026-10-22T12:18:24.855Z",
+  "factory": "0xaf90fe019f7303bb4720437dcfbafe1549474f36",
+  "account": "0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5",
+  "owner": "0x25Db120d4c36977E57cb360f30E6C6028b8d3935",
+  "sampleCustomer": "0x85cDB9F2263971c976e453B107E0d1d5D119b58b",
+  "invoice": "0x1c32e76242f4fc8f7cd022f3d8c9e0f524e0afd72c60198b528b3f1a9a4f6b34",
+  "customerReceiptMusd": "500",
+  "receiptAllocationMusd": "100",
+  "totalCollected": "500000000000000000000",
+  "totalRepaid": "100000000000000000000",
+  "pendingRepayment": "0",
+  "debtBeforeSettlement": "2202000369826591617593",
+  "debtAfterRead": "2102000514966084176950",
+  "collateral": "44999999401081033",
+  "minimum": "1800000000000000000000",
+  "reserve": "200000000000000000000",
+  "active": true,
+  "transactions": {
+    "createAccount": {
+      "hash": "0x7b617bba539938c51e841880dcd7dc2e217205e22833dbcc64ea4e5054057b39",
+      "block": 16297967
+    },
+    "openLoan": {
+      "hash": "0xa35727c5d4892916f62ab07d18f6ce0b80b8dc837fc6d4840814e78e66af1429",
+      "block": 16297969
+    },
+    "setPolicy": {
+      "hash": "0xe51854e4e1c035ec63bfeb9fd055e5d4c01f4ba80c96e47155091ab3747f6124",
+      "block": 16297974
+    },
+    "createInvoice": {
+      "hash": "0xfd193613d5600de6a52aba99fbc5b10bfbcdfa2732ddfb80fd1e7af8fe52e5ad",
+      "block": 16298029
+    },
+    "withdrawSample": {
+      "hash": "0x2504dbfc56c1cbf083d74334b324bbf470c704f8fcedfe73c194d90f9d2d1a3d",
+      "block": 16298033
+    },
+    "fundCustomerMusd": {
+      "hash": "0xb5d3edb1f70c16db91231a0e260360836a2e2f1dde3f4989bcc1835268c04d78",
+      "block": 16298040
+    },
+    "fundCustomerGas": {
+      "hash": "0x6c5be45c3a2c9d0ea50f76d10ea1493c96bdcb780c9cac65bc27758b7d50ff3f",
+      "block": 16298042
+    },
+    "approveInvoice": {
+      "hash": "0xa8bdde04eff03b53ccb2b0a951e66f10baeea2159992d01476a80ea703accafe",
+      "block": 16298046
+    },
+    "payInvoice": {
+      "hash": "0xea91ee5a9de5935c613ba623a9c9a80dac3e43deebda73932813de751cbd1a02",
+      "block": 16298079
+    },
+    "settle": {
+      "hash": "0x3d464267e44b119fe4c8f172996775157261dd85ee9cdd598e5b27bb04b0fb0d",
+      "block": 16298123
+    }
+  },
+  "disclosure": "Sample customer funded from the test loan for integration proof. This is not customer revenue or adoption. Debt read at a later block includes newly accrued interest; the settlement event records exact same-transaction debt reduction.",
+  "failedAttempts": [
+    {
+      "hash": "0x96e5229c537c5e6f05f4ce3d89fa787a9f6798a916e8e1c303805a661ceb7348",
+      "status": "reverted",
+      "reason": "Sorted-list traversal ran out of gas with zero hints; funds and allocation preserved. Successful retry used native computed hints."
+    }
+  ],
+  "verificationNote": "Successful public write receipts and final state were observed; a separate live browser read matched receipt and repayment events. The standalone strict verifier rejects unsynchronized RPC connections rather than asserting a new verification."
+}

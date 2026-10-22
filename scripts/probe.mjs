@@ -1,0 +1,10 @@
+import {readFile} from 'node:fs/promises';
+import {createPublicClient,http,parseAbi,keccak256} from 'viem';
+const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const p=createPublicClient({transport:http(c.rpc,{timeout:20000,retryCount:1})});
+const chainId=await p.getChainId();if(chainId!==31611)throw new Error('Mezo testnet chain mismatch.');
+const token=await p.readContract({address:c.borrowerOperations,abi:parseAbi(['function musd() view returns(address)']),functionName:'musd'});
+if(token.toLowerCase()!==c.musd.toLowerCase())throw new Error('Native token mismatch.');
+const code=c.factory?await p.getCode({address:c.factory}):undefined;
+if(c.factory&&(!code||keccak256(code)!==c.factoryCodeHash))throw new Error('Factory bytecode mismatch.');
+console.log(JSON.stringify({chainId,block:Number(await p.getBlockNumber()),nativeMusd:token,factory:c.factory,factoryVerified:!!code}));
