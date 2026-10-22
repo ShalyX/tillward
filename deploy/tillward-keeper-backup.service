@@ -1,0 +1,14 @@
+[Unit]
+Description=Back up Tillward keeper private state (three local snapshots)
+After=tillward-keeper.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh /opt/tillward-keeper/deploy/backup-keeper.sh
+NoNewPrivileges=yes
+ProtectSystem=strict
+ReadWritePaths=/var/backups/tillward-keeper /var/lib/tillward-keeper
+ProtectHome=yes
+PrivateTmp=yes
+UMask=0077
+MemoryMax=64M

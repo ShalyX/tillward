@@ -54,6 +54,7 @@ An invoice link adds `&invoice=<onchain-invoice-id>`. Customers approve only the
 ```text
 node scripts/keeper.mjs <dedicated-test-wallet.json> <registered-account>
 node scripts/keeper.mjs <dedicated-test-wallet.json> <registered-account> --watch
+node scripts/keeper.mjs <dedicated-test-wallet.json> --all --watch
 ```
 
 Wallet JSON contains a `privateKey`; keep it outside the repository. The executor only signs testnet `settle` calls for a verified registered account, with a 1,000 MUSD per-call ceiling and native insertion hints. Signed pending transactions are journaled beside the local wallet file before broadcast, so retries reuse the same transaction. It cannot borrow, withdraw, redirect funds or alter rules. The signer needs only test BTC for gas.
@@ -85,6 +86,8 @@ Native source/resources: [Mezo MUSD](https://github.com/mezo-org/musd), pinned c
 
 
 ## Reliability and hosted repayment
+
+The hosted service now auto-enrolls factory-created businesses. Three accounts were verified live, including a new account created after startup. A further 0.2 MUSD settlement and same-hash restart recovery passed independent native debt/burn verification. At block 16302866 demo counters reached 502 MUSD collected and 100.4 repaid. See [enrollment proof](deployments/keeper-enrollment-proof.json) and [current operations](docs/KEEPER_ENROLLMENT.md). Health, Telegram alert handling and private local backups are implemented; production infrastructure limits remain documented. Earlier proof snapshots below are historical.
 
 Recovered transaction receipts advance the snapshot block before the pending state is cleared. The confirmed lower bound persists across refresh. A pending transaction is reconciled automatically while idle. An approved wallet connection survives refresh within the same tab session.
 

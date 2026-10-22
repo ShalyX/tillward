@@ -1,0 +1,10 @@
+[Unit]
+Description=Check Tillward keeper health every two minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=2min
+Unit=tillward-keeper-health.service
+
+[Install]
+WantedBy=timers.target

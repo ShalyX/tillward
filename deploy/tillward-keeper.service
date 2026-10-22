@@ -11,7 +11,7 @@ WorkingDirectory=/opt/tillward-keeper
 StateDirectory=tillward-keeper
 StateDirectoryMode=0700
 Environment=KEEPER_STATE_DIR=/var/lib/tillward-keeper
-ExecStart=/usr/bin/flock -n /var/lib/tillward-keeper/runner.lock /opt/tillward-keeper/bin/node scripts/keeper.mjs /var/lib/tillward-keeper/wallet.json 0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5 --watch
+ExecStart=/usr/bin/flock -n /var/lib/tillward-keeper/runner.lock /opt/tillward-keeper/bin/node scripts/keeper.mjs /var/lib/tillward-keeper/wallet.json --all --watch
 Restart=on-failure
 RestartSec=20
 NoNewPrivileges=yes
@@ -25,6 +25,8 @@ RestrictSUIDSGID=yes
 UMask=0077
 MemoryMax=256M
 CPUQuota=20%
+LogRateLimitIntervalSec=60s
+LogRateLimitBurst=30
 
 [Install]
 WantedBy=multi-user.target

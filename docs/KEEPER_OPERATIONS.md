@@ -1,6 +1,6 @@
 # Hosted testnet keeper
 
-Service: tillward-keeper.service on the existing owner VPS (SSH alias caraxes-vps). Runtime /opt/tillward-keeper; private state /var/lib/tillward-keeper. No public port or API. It watches only registered account 0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5 on Mezo testnet 31611.
+Service: tillward-keeper.service on the existing owner VPS (SSH alias caraxes-vps). Runtime /opt/tillward-keeper; private state /var/lib/tillward-keeper. No public port or API. It now auto-enrolls all businesses created by the pinned Tillward factory on Mezo testnet 31611. See KEEPER_ENROLLMENT.md for discovery, current proof, health checks, Telegram and backup/restore procedures. The original single-account proof below is historical.
 
 The separate wallet 0x625E52F5AB7b6563f83a3b7FB7EB7cC3a148A956 received 0.0001 TEST BTC for gas. It is not the account owner and cannot change policy, withdraw, close the loan or redirect funds. No business-owner/customer private key was uploaded. Wallet JSON stays outside the source tree, mode 0600, owned by the service user.
 
@@ -21,7 +21,7 @@ Standalone RPC verification decoded the repayment event, checked the exact 0.2 M
 - Exact raw signed transaction journaled atomically before broadcast. Missing receipt retains the same hash/bytes. Unreadable journal fails closed.
 - systemd restart and boot enablement; flock excludes overlapping service processes.
 - Dedicated unprivileged user; read-only system/home protection; state directory 0700; 256 MB memory / 20% CPU caps.
-- keeper-health.json records checkedAt, deferred/pending/confirmed/degraded, hash and last result. systemd journal contains the same public operational data. No external alerting service is configured.
+- keeper-health.json now includes discovery progress, enrolled count, per-account states, disk/gas balance, pending hash and last result. Health and backup timers run independently of the keeper process. Telegram is configured separately outside the source tree; current activation evidence is in KEEPER_ENROLLMENT.md.
 
 Commands on the VPS:
 

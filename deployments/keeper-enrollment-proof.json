@@ -1,0 +1,21 @@
+{
+  "chainId": 31611,
+  "observedAt": "2026-10-22T18:17:11.924Z",
+  "enrolledAccounts": [
+    "0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5",
+    "0x791fFc8A7420dBB0ed5D9F28E811ec7576936433",
+    "0xb33c3EEe67D011275F36715F649c180929d7BA67"
+  ],
+  "newAccount": "0xb33c3EEe67D011275F36715F649c180929d7BA67",
+  "creation": "0xa4d71eeee84a09670027c8fe3497aaed6063652a8bf9beb4c311d4e80d2d2e06",
+  "payment": "0x0e6f4987564d2b2b886324987d0694e32efa90c25030bc917daa3471b60415f7",
+  "settlement": "0x640f3a929c91113cf0d546af39532cbf002bc7c6fcdbf7ec0c52205c20f7ec9b",
+  "settlementBlock": 16302866,
+  "keeper": "0x625e52f5ab7b6563f83a3b7fb7eb7cc3a148a956",
+  "allocated": "0.2 MUSD",
+  "totalCollected": "502 MUSD",
+  "totalRepaid": "100.4 MUSD",
+  "pending": "0 MUSD",
+  "restartRecovery": true,
+  "evidence": "Hosted factory discovery picked up a newly created third account without restart. Subsequent hosted repayment journal survived a deliberate restart and recovered the same transaction hash. Independent RPC receipts, signer, registry, debt delta, native MUSD burn and fixed-block counters verified. New account has no loan; settlement exercised original demo account. Sample test funds are recycled loan proceeds."
+}
