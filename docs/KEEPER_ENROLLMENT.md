@@ -1,6 +1,6 @@
 # Factory enrollment and operations
 
-Updated 2026-10-22. Hosted Mezo testnet service; not a mainnet readiness claim.
+Updated 2026-10-23. Hosted Mezo testnet service; not a mainnet readiness claim.
 
 ## Enrollment and execution
 
@@ -12,7 +12,7 @@ Live proof: two existing accounts were discovered, then 0xb33c3EEe67D011275F3671
 
 ## Health and Telegram
 
-Independent systemd health timer runs every two minutes. It detects heartbeat older than five minutes, degraded service/accounts, pending transactions, gas below 0.00002 test BTC, disk below 256 MiB and backup older than 48 hours. Signing stops below 128 MiB available disk. Both timer and a manual healthy check passed.
+Independent systemd health timer runs every two minutes. It detects heartbeat older than five minutes, degraded service/accounts, pending transactions, gas below 0.00002 test BTC, disk below 256 MiB and backup older than 48 hours. Signing stops below 128 MiB available disk. The check also verifies that the keeper service and both timers are enabled, and that the `viem` runtime dependency loads. On 2026-10-23, the health script was decoupled from `viem` for its registry checks after a missing `node_modules` directory stopped the timer; dependencies were restored with the lockfile and the keeper completed a clean restart. The manual post-restart health check was healthy with three enrolled accounts and no pending transaction.
 
 Telegram credentials live only in /var/lib/tillward-keeper/telegram.json, owned by the service user, mode 0600. Local provisioning source is external work/tillward-telegram.json, never source-controlled. Notifications report incidents, unchanged-incident reminders at 30 minutes and one recovery. Delivery failures back off and do not mark an alert delivered. The token, request URL and upstream errors are excluded from logs. No inbound bot listener/webhook is exposed. Official sendMessage API: https://core.telegram.org/bots/api#sendmessage . The owner started @tillward_bot; getMe/getChat and real test delivery succeeded at 18:22:12 UTC on 2026-10-22 (message 4). The following scheduled health run was healthy and sent no duplicate. See ../deployments/keeper-operations-proof.json.
 
@@ -27,12 +27,12 @@ runuser -u tillward-keeper -- bin/node scripts/keeper-health.mjs /var/lib/tillwa
 
 ## Backups and recovery
 
-Daily root backup timer retains three snapshots under /var/backups/tillward-keeper. Directory mode 0700; archives mode 0600/root. Includes immutable dedicated wallet, global signer journal and discovery registry. Each source file is atomic; snapshots may span adjacent state updates and always require chain reconciliation when restored. First backup and access modes passed. Backup status contains no credentials. Pre-enrollment code/state snapshots also exist for diagnosis.
+Daily root backup timer retains three snapshots under /var/backups/tillward-keeper. Directory mode 0700; archives mode 0600/root. Includes immutable dedicated wallet, global signer journal and discovery registry. Each source file is atomic; snapshots may span adjacent state updates and always require chain reconciliation when restored. Backup status contains no credentials. A daily Windows Task Scheduler job, `Tillward VPS State Backup`, copies the archive to the development workstation at 09:00 West Central Africa time when the signed-in user and network are available; it starts missed work when available and runs under the same user profile needed by DPAPI. Its first scheduled run completed with result 0 on 2026-10-23. The latest encrypted file is `../../../work/tillward-vps-state-20261023-201729Z.dpapi`; metadata is in the adjacent `.json`. The capture validates gzip/tar structure and required state members, protects the archive with Windows DPAPI CurrentUser, and verifies its SHA-256 after an in-memory decrypt. This does not yet simulate restoring the live service. Pre-enrollment code/state snapshots also exist for diagnosis.
 
 Stop the keeper before restoring. Preserve the current journal. Inspect the chosen archive without printing the wallet; reconcile pending hashes and the signer nonce against chain state before replacing any journal. An old snapshot may predate a signed transaction. Never delete a journal to force a replacement. Discovery alone can be rebuilt from deployment while preserving the signer journal and gas reservations. Restart, verify freshness/account states and run the health check. Do not roll back to the old single-account executor with an unresolved transaction for another business.
 
-The local snapshots protect against file corruption. They do not survive total VPS loss. The original dedicated gas wallet also exists outside the repo on the local development machine; an encrypted off-host state backup with restore drill is still needed.
+The VPS snapshots protect against local file corruption but not total VPS loss. Daily encrypted refresh to the development workstation is scheduled and has completed once; keep the machine signed in with network access for timely copies. A full restore drill remains. The original dedicated gas wallet also exists outside the repo on that workstation.
 
 ## Production limits
 
-The VPS has approximately 0.5 GB service-available disk. Thresholds prevent silent exhaustion but do not provide capacity. Resize/migrate before broad production. A health timer on this host cannot report total VPS or network loss; independent outage monitoring is still required. No uptime SLA, high-volume load test, external audit or mainnet use is claimed. Gas sponsorship is bounded by a global budget; exhausted budget/balance delays accounts until reset/funding. Automatic testnet enrollment is not unlimited gas sponsorship.
+The existing VPS root filesystem is 40 GB. After additional cleanup on 2026-10-23, `df -B1 /` reported 8,725,348,352 bytes available (about 8.1 GiB); a disk resize is not currently needed. Runtime files are root-owned and read-only to group/other, service secrets/state remain mode 0600, and the operational verifier found no group/other-writable runtime or state files/directories. This is a point-in-time capacity reading, not an uptime or growth guarantee. A health timer on the host cannot report total VPS or network loss; independent outage monitoring is still required. No uptime SLA, high-volume load test, external audit or mainnet use is claimed. Gas sponsorship is bounded by a global budget; exhausted budget/balance delays accounts until reset/funding. Automatic testnet enrollment is not unlimited gas sponsorship.

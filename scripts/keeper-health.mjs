@@ -1,5 +1,6 @@
 import {readFile,statfs} from 'node:fs/promises';
 import {resolve} from 'node:path';
+import {execFileSync} from 'node:child_process';
 import {operationalIssues} from './keeper-registry.mjs';
 import {notifyHealth} from './keeper-alerts.mjs';
 
@@ -18,6 +19,11 @@ try{
  const backup=JSON.parse(await readFile(resolve(directory,'backup-status.json'),'utf8'));
  if(!Number.isFinite(Date.parse(backup.completedAt))||Date.now()-Date.parse(backup.completedAt)>172800000)issues.push('backup_stale');
 }catch{issues.push('backup_unavailable');}
+try{execFileSync('systemctl',['is-active','--quiet','tillward-keeper']);}catch{issues.push('keeper_service_inactive');}
+for(const unit of ['tillward-keeper-health.timer','tillward-keeper-backup.timer']){
+ try{execFileSync('systemctl',['is-enabled','--quiet',unit]);}catch{issues.push(`${unit.replaceAll('.','_')}_disabled`);}
+}
+try{await import('viem');}catch{issues.push('runtime_dependency_missing');}
 try{
  const notification=await notifyHealth(directory,health,issues,{test:process.argv.includes('--test-telegram')});
  console.log(JSON.stringify({checkedAt:new Date().toISOString(),service:health.state,enrolled:health.enrolled,issues,notification}));

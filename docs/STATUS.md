@@ -1,6 +1,6 @@
 # Tillward status
 
-Updated 2026-10-22. Working Mezo testnet product. Final name and receipt-counter identity selected by the owner. Not submitted to the hackathon. Existing Site remains owner-private.
+Updated 2026-10-23. Working Mezo testnet product. Final name and receipt-counter identity selected by the owner. Not submitted to the hackathon. Existing Site remains owner-private.
 
 ## Verified
 
@@ -22,7 +22,7 @@ Updated 2026-10-22. Working Mezo testnet product. Final name and receipt-counter
 
 Public judge access, public GitHub, deck, two-minute video, platform form, eligibility/legal declarations and exact deadline timezone remain submission work. No mainnet operations or audit claimed.
 
-Official RPC responses remain intermittently inconsistent. Verified fixed-block reads and explicit errors preserve safety; one historical strict verifier failure is not erased by later successful checks. Wallet-change/rejection stress coverage is not exhaustive. Keeper now auto-enrolls factory accounts: three verified live, including one created after startup. Another hosted 0.2 MUSD repayment survived a deliberate restart, with native debt reduction and MUSD burn independently verified. Demo counters reached 502 collected / 100.4 repaid at block 16302866. See ../deployments/keeper-enrollment-proof.json and KEEPER_ENROLLMENT.md. 21 JS tests pass. Health checks and private local backup timers are enabled. Telegram delivery status is recorded in the enrollment document. VPS has about 0.5 GB available disk, with warning/signing-stop thresholds. Increased disk capacity, independent outage monitoring and encrypted off-host state backup remain production work; no mainnet readiness is claimed.
+Official RPC responses remain intermittently inconsistent. Verified fixed-block reads and explicit errors preserve safety; one historical strict verifier failure is not erased by later successful checks. Wallet-change/rejection stress coverage is not exhaustive. Keeper now auto-enrolls factory accounts: three verified live, including one created after startup. Another hosted 0.2 MUSD repayment survived a deliberate restart, with native debt reduction and MUSD burn independently verified. Demo counters reached 502 collected / 100.4 repaid at block 16302866. See ../deployments/keeper-enrollment-proof.json and KEEPER_ENROLLMENT.md. 21 JS tests passed in the earlier release. Health checks and private local backup timers are enabled, with Telegram delivery previously verified. After freeing VPS space, about 8.1 GiB was available on the 40 GB root filesystem; the keeper was restarted cleanly, all three accounts remained enrolled, and the health check passed with no pending transaction. The daily encrypted off-host backup task completed its first Task Scheduler run successfully. Independent outage monitoring and a full restore drill remain. No mainnet readiness is claimed.
 
 Backlog: Shopify connector, fiat rails, multichain, refunds/disputes and yield. None is committed.
 

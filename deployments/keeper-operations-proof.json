@@ -1,1 +1,140 @@
-{"observedAt":"2026-10-22T18:22:57.968Z","chainId":31611,"state":"healthy","enrolled":3,"accounts":["0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5","0x791fFc8A7420dBB0ed5D9F28E811ec7576936433","0xb33c3EEe67D011275F36715F649c180929d7BA67"],"enabled":[{"unit":"tillward-keeper.service","enabled":"enabled"},{"unit":"tillward-keeper-health.timer","enabled":"enabled"},{"unit":"tillward-keeper-backup.timer","enabled":"enabled"}],"telegram":{"bot":"tillward_bot","testMessageId":4,"testedAt":"2026-10-22T18:22:12.082Z"},"backup":{"completedAt":"2026-10-22T18:15:29Z","retention":3,"verifiedMembers":["wallet.json","paydown-keeper-journal.json","keeper-registry.json"],"localOnly":true},"permissions":[{"path":"/var/lib/tillward-keeper/telegram.json","mode":"0600","uid":990},{"path":"/var/lib/tillward-keeper/wallet.json","mode":"0600","uid":990},{"path":"/var/lib/tillward-keeper/paydown-keeper-journal.json","mode":"0600","uid":990},{"path":"/var/backups/tillward-keeper/snapshot-1.tar.gz","mode":"0600","uid":0}],"freeBytes":"519741440","runtimeSha256":{"keeper.mjs":"45c3b9e139b7a16c315726ef1280883ac827700132717f73e68fd3d7faf3100e","keeper-registry.mjs":"07b694cf3f7fb3a52600568436eca412c4f3ed13b66d5dafccc211b14192a5a3","keeper-health.mjs":"4698c2c3f827574cf91d834d0bc4f99fb3fd74a60798cf357b234243b7f4bfa7","keeper-alerts.mjs":"6613d7e53a7ed83731b06fb15b4ed313a06252a946290f36bfaf970be517a0b4"},"remaining":["Increase disk capacity","Independent host-outage monitoring","Encrypted off-host state backup and restore drill","Audit and mainnet readiness review"]}
+{
+  "observedAt": "2026-10-23T20:19:20.708Z",
+  "chainId": 31611,
+  "state": "healthy",
+  "enrolled": 3,
+  "accounts": [
+    "0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5",
+    "0x791fFc8A7420dBB0ed5D9F28E811ec7576936433",
+    "0xb33c3EEe67D011275F36715F649c180929d7BA67"
+  ],
+  "pending": null,
+  "last": {
+    "account": "0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5",
+    "hash": "0x640f3a929c91113cf0d546af39532cbf002bc7c6fcdbf7ec0c52205c20f7ec9b",
+    "status": "success",
+    "block": 16302866
+  },
+  "discovery": {
+    "nextBlock": "16325430",
+    "safeHead": 16325429,
+    "synced": true
+  },
+  "enabled": [
+    {
+      "unit": "tillward-keeper.service",
+      "enabled": "enabled",
+      "active": "active"
+    },
+    {
+      "unit": "tillward-keeper-health.timer",
+      "enabled": "enabled",
+      "active": "active"
+    },
+    {
+      "unit": "tillward-keeper-backup.timer",
+      "enabled": "enabled",
+      "active": "active"
+    }
+  ],
+  "telegram": {
+    "bot": "tillward_bot",
+    "testMessageId": 4,
+    "testedAt": "2026-10-22T18:22:12.082Z",
+    "lastDeliveryMessageId": 11,
+    "lastDeliveryAt": "2026-10-23T12:27:27.885Z"
+  },
+  "backup": {
+    "completedAt": "2026-10-23T20:07:11Z",
+    "retention": 3,
+    "verifiedMembers": [
+      "wallet.json",
+      "paydown-keeper-journal.json",
+      "keeper-registry.json"
+    ],
+    "localOnly": true
+  },
+  "permissions": [
+    {
+      "path": "/var/lib/tillward-keeper/telegram.json",
+      "mode": "0600",
+      "uid": 990
+    },
+    {
+      "path": "/var/lib/tillward-keeper/wallet.json",
+      "mode": "0600",
+      "uid": 990
+    },
+    {
+      "path": "/var/lib/tillward-keeper/paydown-keeper-journal.json",
+      "mode": "0600",
+      "uid": 990
+    },
+    {
+      "path": "/var/backups/tillward-keeper/snapshot-1.tar.gz",
+      "mode": "0600",
+      "uid": 0
+    }
+  ],
+  "runtimePermissions": [
+    {
+      "path": "/opt/tillward-keeper/scripts/keeper.mjs",
+      "mode": "0644",
+      "uid": 0
+    },
+    {
+      "path": "/opt/tillward-keeper/scripts/keeper-registry.mjs",
+      "mode": "0644",
+      "uid": 0
+    },
+    {
+      "path": "/opt/tillward-keeper/scripts/keeper-health.mjs",
+      "mode": "0644",
+      "uid": 0
+    },
+    {
+      "path": "/opt/tillward-keeper/scripts/keeper-alerts.mjs",
+      "mode": "0644",
+      "uid": 0
+    }
+  ],
+  "unsafeWritableEntries": [],
+  "freeBytes": "8722616320",
+  "runtimeSha256": {
+    "keeper.mjs": "45c3b9e139b7a16c315726ef1280883ac827700132717f73e68fd3d7faf3100e",
+    "keeper-registry.mjs": "a1026d79c7cca102cfae00e35a0a89991e378263fcd10d352738fb5deee4a3b7",
+    "keeper-health.mjs": "7ae9cac2230cb00e0a109a1e282c4416ed7203c69346b47e58559d7cb1ee86e0",
+    "keeper-alerts.mjs": "6613d7e53a7ed83731b06fb15b4ed313a06252a946290f36bfaf970be517a0b4"
+  },
+  "remaining": [
+    "Independent host-outage monitoring",
+    "Perform full restore drill",
+    "Audit and mainnet readiness review"
+  ],
+  "offHostSnapshot": {
+    "capturedAt": "2026-10-23T20:17:43.6568377Z",
+    "protectedFile": "tillward-vps-state-20261023-201729Z.dpapi",
+    "protection": "Windows DPAPI CurrentUser",
+    "encryptedBytes": 1014,
+    "archiveSha256": "A35743AE5A2D21E92C507653E0FA8ADF187610D1272B2266DB01FB00FE4AFF47",
+    "roundTripVerified": true,
+    "contains": [
+      "wallet.json",
+      "paydown-keeper-journal.json",
+      "keeper-registry.json"
+    ],
+    "recoveryBoundary": "Decrypt with this Windows user profile before chain nonce reconciliation; never restore a journal blindly."
+  },
+  "offHostRefresh": {
+    "taskName": "Tillward VPS State Backup",
+    "state": "Ready",
+    "schedule": "Daily at 09:00",
+    "timezone": "W. Central Africa Standard Time (UTC+01:00)",
+    "logonType": "Interactive",
+    "requiresNetwork": true,
+    "startWhenAvailable": true,
+    "lastRunAtUtc": "2026-10-23T20:17:17.0000000Z",
+    "lastTaskResult": 0,
+    "nextRunAtUtc": "2026-10-24T08:00:00.0000000Z"
+  }
+}

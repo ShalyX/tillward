@@ -1,6 +1,6 @@
 # QA report
 
-Checked 2026-10-22. Working testnet product; hackathon submission remains pending.
+Product checks completed 2026-10-22; hosted operations refreshed 2026-10-23. Working testnet product; hackathon submission remains pending.
 
 | Check | Requirement | Result and evidence |
 |---|---|---|
@@ -12,7 +12,7 @@ Checked 2026-10-22. Working testnet product; hackathon submission remains pendin
 | Q06 | R09 browser layout | Desktop/narrow baseline inspected; final Tillward interface checked in Chrome. Fresh screenshots and release-specific checks are recorded in ../tillward-release.md. |
 | Q07 | Browser signing/full journey | Pass: owner drove Rabby confirmations in Chrome for account creation, 2,000 MUSD borrowing with 0.045 test BTC, rule save, 1 MUSD invoice, exact approval and payment, 0.2 MUSD repayment, 3 MUSD top-up, close and 0.045 BTC recovery. App showed paid invoice, actual debt reduction, loan closed and account BTC zero. Independent script checks receipt success, sender, calldata/events, native token burns, zero debt/allocation and exact owner BTC increase net of gas. See ../deployments/browser-wallet-proof.json. |
 | Q08 | Recovery | Confirmed receipt anchors account reads before pending is cleared; persisted anchor never regresses; missing receipt preserves pending hash; idle reconciliation; approved wallet reconnects on session refresh. Browser refresh recovered the connected account and actual state. Read failures show explicit errors with a 45-second total snapshot timeout. Journals precede CLI broadcast; same raw bytes are reused on uncertain outcomes. |
-| Q09 | Hosted automation | Pass: auto-discovered three factory accounts, including one created after startup. A subsequent unattended 0.2 MUSD repayment and same-hash restart recovery passed independent native debt/burn verification. Private state modes, signer journal, global gas caps and chain checks verified. Health/backup timers enabled; Telegram test delivered successfully. Disk capacity and independent host-outage monitoring remain infrastructure limits. |
+| Q09 | Hosted automation | Pass: auto-discovered three factory accounts, including one created after startup. A subsequent unattended 0.2 MUSD repayment and same-hash restart recovery passed independent native debt/burn verification. Private state modes, signer journal, global gas caps and chain checks verified. Health/backup timers and Telegram test were previously verified. On 2026-10-23 the keeper restarted cleanly after disk cleanup and dependency restoration; all three accounts remained enrolled, discovery was synced, health was healthy with no pending transaction, and about 8.1 GiB was available on the 40 GB root filesystem. Daily encrypted off-host capture is scheduled at 09:00 West Central Africa time; its first Task Scheduler run succeeded and the DPAPI round-trip hash matched. A full restore drill and independent host-outage monitoring remain incomplete. |
 | Q10 | Identity/materials | Tillward identity selected and implemented in UI, checkout, title, favicon and share assets. Public GitHub, public judge access, deck, two-minute video, declarations and submission remain pending. |
 
 ## Evidence

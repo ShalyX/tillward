@@ -1,4 +1,4 @@
-import {isAddress} from 'viem';
+const isAddress=value=>typeof value==='string'&&/^0x[0-9a-fA-F]{40}$/.test(value);
 
 // Advance only after an entire bounded log page has been fetched and validated.
 // Injected I/O makes restart, duplicate and partial-RPC behavior testable.

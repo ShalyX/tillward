@@ -37,7 +37,11 @@ Never delete or replace a pending journal to force a new transaction. Reconcile 
 
 ## Host capacity change
 
-The existing 40 GB ext4 root filesystem had no space available to an unprivileged service. npm's download cache was cleared. The pre-existing root reserved-block count was 445577; it was reduced to 209704 (2%), retaining about 819 MB for root and making about 542 MB available at deployment. No other project's source, logs or service configuration was removed. The host still needs disk capacity management before broader operation. To restore the prior reservation, an administrator can use `tune2fs -r 445577 /dev/vda2` after freeing sufficient space.
+The existing 40 GB ext4 root filesystem had no space available to an unprivileged service. npm's download cache was cleared. The pre-existing root reserved-block count was 445577; it was reduced to 209704 (2%), retaining about 819 MB for root and making about 542 MB available at deployment. No other project's source, logs or service configuration was removed. To restore the prior reservation, an administrator can use `tune2fs -r 445577 /dev/vda2` after freeing sufficient space.
+
+Additional space was freed on 2026-10-23. The root filesystem then showed about 8.1 GiB available. This clears the immediate resize requirement; it is a point-in-time reading and should be watched as the host grows. The keeper's missing Node dependencies were restored from the lockfile, health checks were made independent of `viem` for registry validation, and a deliberate keeper restart plus a fresh health run succeeded. Current details are in KEEPER_ENROLLMENT.md and `../deployments/keeper-operations-proof.json`.
+
+The Windows workstation runs `Tillward VPS State Backup` daily at 09:00 West Central Africa time under the signed-in user (needed for DPAPI CurrentUser); it requires network access and starts missed work when available. The first Task Scheduler run succeeded with result 0 and created an encrypted archive/metadata pair. This gives a scheduled encrypted copy off the VPS, but does not replace a full restore drill or independent outage monitoring.
 
 The system Node executable resolved beneath root's home and was inaccessible under ProtectHome. Its verified existing binary was copied into /opt/tillward-keeper/bin/node (v22.23.1); other applications' runtimes were not changed.
 
