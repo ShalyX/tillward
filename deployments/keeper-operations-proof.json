@@ -107,9 +107,9 @@
     "keeper-alerts.mjs": "6613d7e53a7ed83731b06fb15b4ed313a06252a946290f36bfaf970be517a0b4"
   },
   "remaining": [
-    "Independent host-outage monitoring",
-    "Perform full restore drill",
-    "Audit and mainnet readiness review"
+    "Verify independent workstation alert delivery or provision an external monitor",
+    "Perform an isolated systemd/runtime restore drill",
+    "Obtain an independent contract/security audit before any mainnet deployment"
   ],
   "offHostSnapshot": {
     "capturedAt": "2026-10-23T20:17:43.6568377Z",
@@ -136,5 +136,73 @@
     "lastRunAtUtc": "2026-10-23T20:17:17.0000000Z",
     "lastTaskResult": 0,
     "nextRunAtUtc": "2026-10-24T08:00:00.0000000Z"
+  },
+  "independentMonitor": {
+    "taskName": "Tillward VPS Independent Monitor",
+    "state": "Ready",
+    "schedule": "Every 5 minutes",
+    "host": "Windows workstation separate from the VPS",
+    "logonType": "Interactive",
+    "networkRequired": true,
+    "lastRunAtUtc": "2026-10-23T21:30:30.0000000Z",
+    "lastTaskResult": 0,
+    "nextRunAtUtc": "2026-10-23T21:35:35.0000000Z",
+    "lastObservedHealth": {
+      "state": "healthy",
+      "observedAtUtc": "2026-10-23T21:34:02.7590081Z",
+      "enrolled": 3,
+      "pending": null,
+      "discoverySynced": true,
+      "serviceAndTimers": "active and enabled"
+    },
+    "recentProbeEvent": {
+      "failedAtUtc": "2026-10-23T21:31:22.5951478Z",
+      "result": "remote_verifier_failed",
+      "directVerifierHealthyAtUtc": "2026-10-23T21:33:39.972Z",
+      "monitorHealthyAtUtc": "2026-10-23T21:34:02.7590081Z"
+    },
+    "telegramDelivery": "Not verified from this workstation: Bot API method requests timed out; curl also reported local TLS revocation lookup unavailable.",
+    "alertPolicy": "Alert on unhealthy transition, retry with backoff, remind hourly, send one recovery notice.",
+    "limitation": "Requires the workstation signed in and online; it cannot report loss of the workstation itself."
+  },
+  "restoreRehearsal": {
+    "verifiedAt": "2026-10-23T21:22:26.2728988Z",
+    "status": "restored_data_validated_in_memory",
+    "sourceFile": "tillward-vps-state-20261023-201729Z.dpapi",
+    "archiveSha256": "A35743AE5A2D21E92C507653E0FA8ADF187610D1272B2266DB01FB00FE4AFF47",
+    "chainId": 31611,
+    "requiredMembersRestored": [
+      "wallet.json",
+      "paydown-keeper-journal.json",
+      "keeper-registry.json"
+    ],
+    "walletIdentityMatchesExpectedKeeper": true,
+    "keeperAddress": "0x625E52F5AB7b6563f83a3b7FB7EB7cC3a148A956",
+    "registryAccountCount": 3,
+    "journalParsed": true,
+    "journalHadPendingTransaction": false,
+    "plaintextFilesWritten": false,
+    "signingOrBroadcastAttempted": false,
+    "liveStateChanged": false,
+    "runtimeServiceRestored": false,
+    "limitation": "Data recovery and signer identity validated only; full systemd/runtime restore on an isolated host remains open."
+  },
+  "mainnetReadiness": {
+    "reviewedAt": "2026-10-23",
+    "decision": "NO-GO",
+    "scope": "Internal source, configuration, tests and operational review; not an independent security audit.",
+    "automatedChecks": {
+      "foundryTestsPassed": 20,
+      "fuzzRuns": 128,
+      "javascriptTestsPassed": 21,
+      "productionBuild": "passed",
+      "npmAuditFindings": 0
+    },
+    "gates": [
+      "Independent contract/security audit",
+      "Mainnet protocol addresses, bytecode and deployment configuration",
+      "Independent alert delivery and isolated full restore drill",
+      "Mainnet fork/integration validation and reviewed incident controls"
+    ]
   }
 }
