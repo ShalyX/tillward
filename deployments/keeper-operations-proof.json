@@ -1,5 +1,5 @@
 {
-  "observedAt": "2026-10-23T20:19:20.708Z",
+  "observedAt": "2026-10-23T23:34:11.455Z",
   "chainId": 31611,
   "state": "healthy",
   "enrolled": 3,
@@ -107,7 +107,7 @@
     "keeper-alerts.mjs": "6613d7e53a7ed83731b06fb15b4ed313a06252a946290f36bfaf970be517a0b4"
   },
   "remaining": [
-    "Verify independent workstation alert delivery or provision an external monitor",
+    "Provision an external monitor that can report workstation loss",
     "Perform an isolated systemd/runtime restore drill",
     "Obtain an independent contract/security audit before any mainnet deployment"
   ],
@@ -144,12 +144,12 @@
     "host": "Windows workstation separate from the VPS",
     "logonType": "Interactive",
     "networkRequired": true,
-    "lastRunAtUtc": "2026-10-23T21:30:30.0000000Z",
+    "lastRunAtUtc": "2026-10-23T23:34:34.0000000Z",
     "lastTaskResult": 0,
-    "nextRunAtUtc": "2026-10-23T21:35:35.0000000Z",
+    "nextRunAtUtc": "2026-10-23T23:35:35.0000000Z",
     "lastObservedHealth": {
       "state": "healthy",
-      "observedAtUtc": "2026-10-23T21:34:02.7590081Z",
+      "observedAtUtc": "2026-10-23T23:34:11.4553555Z",
       "enrolled": 3,
       "pending": null,
       "discoverySynced": true,
@@ -161,7 +161,15 @@
       "directVerifierHealthyAtUtc": "2026-10-23T21:33:39.972Z",
       "monitorHealthyAtUtc": "2026-10-23T21:34:02.7590081Z"
     },
-    "telegramDelivery": "Not verified from this workstation: Bot API method requests timed out; curl also reported local TLS revocation lookup unavailable.",
+    "telegramDelivery": "Verified from workstation over Node HTTPS: getMe/getChat succeeded, test message 13 was accepted, and the PowerShell monitor sender returned success. Windows SChannel revocation lookup remains unreachable because outbound TCP 80 is blocked.",
+    "workstationEgress": {
+      "proxyConfigured": false,
+      "telegramApiDnsResolved": true,
+      "tcp443Reachable": true,
+      "tcp80Reachable": false,
+      "tls": "Node default CA-chain and hostname validation enabled; no global SChannel settings changed.",
+      "limitation": "Node default TLS does not perform the Windows SChannel OCSP/CRL lookup; direct HTTP/80 and revocation-status egress remain unresolved."
+    },
     "alertPolicy": "Alert on unhealthy transition, retry with backoff, remind hourly, send one recovery notice.",
     "limitation": "Requires the workstation signed in and online; it cannot report loss of the workstation itself."
   },
@@ -201,7 +209,7 @@
     "gates": [
       "Independent contract/security audit",
       "Mainnet protocol addresses, bytecode and deployment configuration",
-      "Independent alert delivery and isolated full restore drill",
+      "External monitoring for workstation loss and isolated full restore drill",
       "Mainnet fork/integration validation and reviewed incident controls"
     ]
   }
