@@ -1,5 +1,5 @@
 {
-  "observedAt": "2026-10-23T23:34:11.455Z",
+  "observedAt": "2026-10-23T23:40:24.984Z",
   "chainId": 31611,
   "state": "healthy",
   "enrolled": 3,
@@ -144,12 +144,12 @@
     "host": "Windows workstation separate from the VPS",
     "logonType": "Interactive",
     "networkRequired": true,
-    "lastRunAtUtc": "2026-10-23T23:34:34.0000000Z",
+    "lastRunAtUtc": "2026-10-23T23:40:40.0000000Z",
     "lastTaskResult": 0,
-    "nextRunAtUtc": "2026-10-23T23:35:35.0000000Z",
+    "nextRunAtUtc": "2026-10-23T23:45:45.0000000Z",
     "lastObservedHealth": {
       "state": "healthy",
-      "observedAtUtc": "2026-10-23T23:34:11.4553555Z",
+      "observedAtUtc": "2026-10-23T23:40:24.9842631Z",
       "enrolled": 3,
       "pending": null,
       "discoverySynced": true,

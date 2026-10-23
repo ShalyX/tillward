@@ -1,6 +1,6 @@
 # Mainnet readiness review
 
-Reviewed 2026-10-23. **Decision: NO-GO for mainnet.** Tillward remains a Mezo testnet product. This is an internal engineering review, not an independent security audit or approval to deploy.
+Reviewed 2026-10-23. Operations alert path refreshed 2026-10-24. **Decision: NO-GO for mainnet.** Tillward remains a Mezo testnet product. This is an internal engineering review, not an independent security audit or approval to deploy.
 
 ## Scope and evidence
 
@@ -11,7 +11,7 @@ Reviewed `RevenueAccount.sol`, `RevenueFactory.sol`, `NativeInterfaces.sol`, the
 - Deployment and keeper scripts currently hard-fail unless chain ID is Mezo testnet 31611. The app README says no mainnet financial writes. No mainnet configuration or deployment was present in the reviewed path.
 - Current checks passed: 20 Foundry tests including 128 fuzz runs, 21 JavaScript tests, optimized production build, and full `npm audit` with zero findings.
 - Slither was not installed, no formal verification was run, and no independent auditor reviewed the contracts.
-- The hosted signer is testnet-only. The workstation monitor's Bot API delivery was not confirmed, and the backup rehearsal validated state data in memory but did not restore the full service on an isolated host.
+- The hosted signer is testnet-only. Workstation Telegram delivery is confirmed over Node HTTPS; direct Windows SChannel OCSP egress remains blocked. The backup rehearsal validated state data in memory but did not restore the full service on an isolated host, and no external monitor reports workstation loss.
 
 ## Required before reconsidering
 
