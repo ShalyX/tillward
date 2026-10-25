@@ -16,3 +16,4 @@ work/
 !deployments/browser-wallet-proof.json
 
 submission/*.mp4
+public/media/*.mp4

@@ -1,6 +1,7 @@
 .git
 .openai
 .github
+.hackathon
 node_modules
 dist
 out

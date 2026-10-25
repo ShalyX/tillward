@@ -12,4 +12,4 @@ Prepared for Mezo Buildathon Wave 1. No entry receipt has been recorded.
 
 The deck and video use actual captured UI and recorded testnet evidence. Illustrative workspace numbers are labeled. No customer revenue or adoption is claimed.
 
-The owner still supplies team/contact details and handles eligibility, registration, participation terms and final submission. The official overview's countdown implies October 26, 2026 at 16:00 WAT / 15:00 UTC; this timezone conversion is countdown-derived, not an explicit organizer timezone label.
+Public team/member name: Shaly. Builder profile: https://x.com/shalyx_04 . The owner still supplies private contact details and handles eligibility, registration, participation terms and final submission. The official overview's countdown implies October 26, 2026 at 16:00 WAT / 15:00 UTC; this timezone conversion is countdown-derived, not an explicit organizer timezone label.

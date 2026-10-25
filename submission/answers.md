@@ -64,5 +64,11 @@ Source: https://github.com/ShalyX/tillward
 
 Deck and two-minute video: see submission/README.md and the published release assets.
 
-## Owner-supplied fields
-Public team/member names, roles, X or LinkedIn, contact details, registration, age/location/employment eligibility and participation terms require the owner's confirmed answers. Builder credit: ElseMade. No legal or identity declaration is filled automatically.
+## Team and public profile
+Team name: Shaly.
+
+Member: Shaly. Role: Builder, covering product and engineering for this entry.
+
+X: https://x.com/shalyx_04
+
+The owner confirmed both public names and the X profile. ElseMade remains the product's builder credit. Private contact details, registration, age/location/employment eligibility and participation terms still require owner completion. No legal or identity declaration is filled automatically.

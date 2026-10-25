@@ -1,0 +1,16 @@
+{
+  "phase": "submission_materials",
+  "product_locked": true,
+  "design_locked": true,
+  "demo_defined": true,
+  "vertical_slice_complete": true,
+  "happy_path_complete": true,
+  "feature_freeze": true,
+  "evidence_status": "testnet_chain_and_public_browser_verified",
+  "public_demo": "https://tillward.vercel.app",
+  "public_repository": "https://github.com/ShalyX/tillward",
+  "submission_ready": false,
+  "submitted": false,
+  "human_input_required": true,
+  "human_gate": "Owner completes registration, private contact fields, eligibility and participation agreement before final submission."
+}
