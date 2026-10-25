@@ -4,6 +4,6 @@ Native protocol: https://github.com/mezo-org/musd at commit 490ed984ba24ba629798
 
 The native repository root has a GPL-3.0 license; inspected Solidity source files carry MIT SPDX notices. This project does not copy or redistribute the native implementation: it calls deployed native contracts and provides minimal ABI interfaces and tests. Source is retained outside this deliverable for inspection. Native oracle output in the local test harness is a captured public RPC result.
 
-Original account/factory, interface implementation, frontend and executor code in this project are MIT. Third-party runtime packages retain their own licenses; exact dependency versions are recorded in package-lock.json. Typography uses Google Fonts DM Sans and Manrope with system sans-serif fallback.
+Original account/factory, interface implementation, frontend and executor code in this project are MIT. Third-party runtime packages retain their own licenses; exact dependency versions are recorded in package-lock.json. App typography uses Google Fonts Newsreader, DM Sans and Manrope with system fallbacks. The submission deck and pitch use Georgia and Arial system fonts.
 
 Tillward and the receipt-counter identity were selected by the project owner on 2026-10-22. No trademark or domain clearance is asserted.

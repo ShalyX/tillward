@@ -62,7 +62,13 @@ Real business: https://tillward.vercel.app/?account=0x5B4b9C9AD2E5c6Ef55A4186ad8
 
 Source: https://github.com/ShalyX/tillward
 
-Deck and two-minute video: see submission/README.md and the published release assets.
+Deck PDF: https://github.com/ShalyX/tillward/releases/download/v0.1.0/deck.pdf
+
+Two-minute pitch: https://tillward.vercel.app/pitch.html
+
+Direct video: https://github.com/ShalyX/tillward/releases/download/v0.1.0/demo.mp4
+
+Editable deck and video source: https://github.com/ShalyX/tillward/releases/tag/v0.1.0
 
 ## Team and public profile
 Team name: Shaly.

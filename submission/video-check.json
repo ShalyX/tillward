@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "lintOk": true,
+  "runtimeOk": true,
+  "layoutOk": true,
+  "layoutErrors": 0,
+  "durationSeconds": 120,
+  "resolution": "1920x1080",
+  "fps": 24,
+  "frames": 2880,
+  "videoCodec": "H.264",
+  "audioCodec": "AAC",
+  "audioDurationSeconds": 120,
+  "audioMeanDb": -20.9,
+  "audioPeakDb": -2.6,
+  "narration": "Windows Microsoft Zira Desktop, synthesized locally",
+  "captureMode": "screenshot",
+  "browserGpu": "hardware",
+  "renderer": "HyperFrames 0.8.199",
+  "limitation": "Installed skill refresh could not reach GitHub; renderer remained pinned. All final runtime/layout gates passed."
+}

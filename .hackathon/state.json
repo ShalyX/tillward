@@ -1,5 +1,5 @@
 {
-  "phase": "submission_materials",
+  "phase": "ready_for_owner_entry",
   "product_locked": true,
   "design_locked": true,
   "demo_defined": true,
@@ -10,6 +10,9 @@
   "public_demo": "https://tillward.vercel.app",
   "public_repository": "https://github.com/ShalyX/tillward",
   "submission_ready": false,
+  "materials_ready": true,
+  "pitch_seconds": 120,
+  "deck_slides": 8,
   "submitted": false,
   "human_input_required": true,
   "human_gate": "Owner completes registration, private contact fields, eligibility and participation agreement before final submission."

@@ -1,6 +1,6 @@
 # Tillward status
 
-Updated 2026-10-25. Working Mezo testnet product. Public demo: https://tillward.vercel.app . Public source: https://github.com/ShalyX/tillward (main). Final name and receipt-counter identity selected by the owner. Not submitted to the hackathon. The old private Sites preview is historical.
+Updated 2026-10-26. Working Mezo testnet product. Public demo: https://tillward.vercel.app . Public source: https://github.com/ShalyX/tillward (main). Final name and receipt-counter identity selected by the owner. Not submitted to the hackathon. The old private Sites preview is historical.
 
 ## Verified
 
@@ -20,7 +20,7 @@ Updated 2026-10-25. Working Mezo testnet product. Public demo: https://tillward.
 
 ## Remaining scope and limits
 
-Public judge access and GitHub are live. Deck and two-minute pitch are being finalized in submission/. Platform entry and eligibility/legal declarations remain owner steps. HACKATHON.md records the countdown-derived deadline/timezone. No mainnet operations or audit claimed.
+Public judge access and GitHub are live. The eight-slide deck and exactly two-minute narrated pitch are complete in submission/, with public release downloads and a pitch page at https://tillward.vercel.app/pitch.html . Platform entry and eligibility/legal declarations remain owner steps. HACKATHON.md records the countdown-derived deadline/timezone. No mainnet operations or audit claimed.
 
 Official RPC responses remain intermittently inconsistent. Verified fixed-block reads and explicit errors preserve safety; one historical strict verifier failure is not erased by later successful checks. Wallet-change/rejection stress coverage is not exhaustive. Keeper now auto-enrolls factory accounts: three verified live, including one created after startup. Another hosted 0.2 MUSD repayment survived a deliberate restart, with native debt reduction and MUSD burn independently verified. Demo counters reached 502 collected / 100.4 repaid at block 16302866. See ../deployments/keeper-enrollment-proof.json and KEEPER_ENROLLMENT.md. The current check run passed 20 Foundry tests (128 fuzz runs), 21 JS tests, the production build and full npm audit with zero findings. The Windows workstation runs a separate five-minute VPS monitor; its latest scheduled run at 00:40 WAT returned 0. Telegram delivery from the workstation is verified through Node HTTPS; direct Windows SChannel OCSP egress remains blocked, and the monitor requires the workstation signed in and online. An in-memory encrypted-backup rehearsal validated the restored signer, registry and journal without writing plaintext or changing the VPS. Full systemd/runtime restore remains open. Mainnet is NO-GO pending an independent audit, mainnet-specific deployment/integration validation and the remaining operational gates in MAINNET_READINESS.md.
 

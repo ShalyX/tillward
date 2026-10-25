@@ -8,7 +8,7 @@ Tillward helps a BTC-holding business borrow MUSD for operating expenses and pay
 
 ## Try the product
 
-**[Open Tillward](https://tillward.vercel.app)** · [Read the real testnet business](https://tillward.vercel.app/?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5) · [Submission materials](submission/README.md)
+**[Open Tillward](https://tillward.vercel.app)** · [Read the real testnet business](https://tillward.vercel.app/?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5) · [Watch the two-minute pitch](https://tillward.vercel.app/pitch.html) · [Submission materials](submission/README.md)
 
 - Explore the clearly labeled example workspace without connecting a wallet.
 - Open the original testnet business using `?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5` to read its real loan, invoices, repayment rule and activity.

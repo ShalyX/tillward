@@ -32,3 +32,11 @@ Keeper uptime, safety tests and alerts support this workflow. They are not the p
 ## Final audit
 
 Feature freeze for packaging. First remove public-access failures, secret exposure, misleading claims and broken evidence links. Then improve the clarity of the core receipt-to-debt sequence. Additional features are lower priority than an observable working deployment, public source, complete materials and an on-time submission. The full authenticated AKINDO form, owner details, legal declarations and submission receipt still require verification.
+
+## Public release checkpoint - October 26
+
+The public app and repository are live at https://tillward.vercel.app and https://github.com/ShalyX/tillward . The no-login browser inspection loaded the actual business at block 16,367,839, with 502 MUSD collected, 100.40 repaid and three paid invoices. Desktop and narrow layouts passed overflow checks. Public source includes reproducible setup, native-fork disclosure, proof files and CI. GitHub runs 40235217041 and 40246211827 passed, including dependency audit.
+
+The required eight-slide deck and exactly 120-second narrated 1080p pitch are complete. The encoded video was reviewed at nine scene times; both streams run 120 seconds and audio peaks below clipping. Public materials: https://tillward.vercel.app/pitch.html and the v0.1.0 release downloads. Team and member are Shaly, https://x.com/shalyx_04 .
+
+The remaining submission gap is the authenticated AKINDO entry: private contact fields, owner eligibility/participation declarations and the final submission receipt. Product demand remains unvalidated, and production readiness gates remain disclosed. No organizer score or entry acceptance is inferred.

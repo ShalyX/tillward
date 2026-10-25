@@ -1,0 +1,50 @@
+{
+  "release": "v0.1.0",
+  "artifacts": [
+    {
+      "file": "deck.pdf",
+      "bytes": 428702,
+      "sha256": "039ef1bfe703bee090130c25d810c2104c03acdcf9f150f9dbd35b9864d62491"
+    },
+    {
+      "file": "deck.pptx",
+      "bytes": 239281,
+      "sha256": "83756f00694917c64e1d843462a77b18d3ee8a1ce108994758a8b428e4a4c9ed"
+    },
+    {
+      "file": "deck-review.png",
+      "bytes": 453536,
+      "sha256": "5f95cccef1dd489e6773c4040bf60b001f5dd7de2bfdc2c859dc812fafdae1ce"
+    },
+    {
+      "file": "demo.mp4",
+      "bytes": 17815640,
+      "sha256": "1fe035a5d42f0f9b0d6e942b879a7c486c3892f300f7b1bf6a447b16cf69b2e8"
+    },
+    {
+      "file": "demo-poster.png",
+      "bytes": 114693,
+      "sha256": "7aa1a2d08c4031b51a8199f9412f79380ceb666048b82556b1657204dc108283"
+    },
+    {
+      "file": "pitch.vtt",
+      "bytes": 2490,
+      "sha256": "cc86ec55757b1b62281cf231d4d7e7676165148190d85272c1b921aea72759a8"
+    },
+    {
+      "file": "pitch-script.md",
+      "bytes": 2043,
+      "sha256": "1d76923cc1a66bb8fa354e08bd627d4ce2d1f7d3cce5be7e51211cea2c82fa33"
+    },
+    {
+      "file": "video-check.json",
+      "bytes": 628,
+      "sha256": "e03605c323573e3ffd6d16c467b4b29a6c62f83c27472f948c68618746dde27b"
+    },
+    {
+      "file": "video-review.jpg",
+      "bytes": 102022,
+      "sha256": "2e15d42d900c7664d91946d97b0e94076066077924d0854bfa95c5a21914a0df"
+    }
+  ]
+}
