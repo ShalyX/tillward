@@ -1,100 +1,86 @@
 # Tillward
 
-BTC-backed working capital that gets repaid from a business's MUSD receipts.
+**BTC-backed working capital. Repay as receipts arrive.**
 
-The owner creates an isolated business account, opens a native Mezo loan, and sets a repayment share and operating cash floor. Customers pay final-payment invoices in MUSD. The account allocates the agreed share; an owner or permissionless executor applies eligible allocations to the account's own native Mezo debt. Small allocations accumulate where protocol minimum debt prevents repayment.
+Tillward helps a BTC-holding business borrow MUSD for operating expenses and pay down its Mezo loan from customer receipts. The owner chooses a repayment percentage and a cash floor. Customers pay final-payment invoices in MUSD. Eligible allocations reduce the business account's native Mezo debt while operating cash remains available under the chosen rule.
 
-![Tillward](public/brand/share.png)
+![Tillward receipt-counter identity](public/brand/share.png)
 
-## Verified first slice
+## Try the product
 
-- Mezo **public testnet**, chain 31611. No mainnet financial writes.
-- A dedicated business account borrowed 2,000 test MUSD against test BTC.
-- A separate sample customer paid a 500 MUSD invoice; 100 MUSD was allocated and repaid.
-- The separate customer wallet triggered settlement without owner authority. Pending allocation returned to zero.
-- Live UI reads the actual account, policy, invoices and activity from chain. The example workspace is explicitly illustrative.
-- [Machine-readable proof](deployments/public-testnet-proof.json), including transaction hashes. Sample customer funds came from the test loan; this is integration evidence, not revenue or adoption.
+**[Open Tillward](https://tillward.vercel.app)** · [Read the real testnet business](https://tillward.vercel.app/?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5) · [Submission materials](submission/README.md)
 
-Factory: `0xaf90fe019f7303bb4720437dcfbafe1549474f36`.
-Proof account: `0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5`.
-[Successful settlement](https://explorer.test.mezo.org/tx/0x3d464267e44b119fe4c8f172996775157261dd85ee9cdd598e5b27bb04b0fb0d).
+- Explore the clearly labeled example workspace without connecting a wallet.
+- Open the original testnet business using `?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5` to read its real loan, invoices, repayment rule and activity.
+- Select **Use testnet**, connect an EVM wallet, and follow onboarding to create your own account. Use Mezo testnet assets only.
 
-## Run
+The proof account belongs to a dedicated test wallet. Connecting another wallet gives read access, not authority to borrow or withdraw from it. Checkout links include the account and onchain invoice ID. The payer approves the exact MUSD amount and then confirms a separate payment.
 
-Requires Node 22.12+ (verified with Node 24.14), npm and Foundry for contracts.
+## The receipt-to-repayment flow
 
-```text
+1. Create a business account and supply test BTC to open a native MUSD loan.
+2. Set the percentage of receipts to allocate toward repayment and the operating cash floor.
+3. Create a final-payment invoice and share its checkout link.
+4. The customer pays in MUSD. Tillward records the receipt and its repayment allocation.
+5. The hosted keeper applies eligible allocations to that account's debt. Anyone can also trigger the same bounded settlement.
+6. Inspect debt reduction and transaction evidence. The owner can top up MUSD, close the loan, and recover released BTC.
+
+Protocol minimum debt can defer small repayments. Allocations remain visible until eligible. BTC collateral remains subject to the native protocol's liquidation and redemption rules. Only final, nonrefundable payments belong in this slice.
+
+## What is implemented and verified
+
+| Area | Evidence |
+| --- | --- |
+| Native integration | A business borrowed 2,000 test MUSD. A separate sample customer paid 500 MUSD and triggered 100 MUSD of native repayment. [Original proof](deployments/public-testnet-proof.json). |
+| Browser journey | Rabby in Chrome completed account creation, borrowing, rule save, invoice approval/payment, repayment, MUSD top-up, full closure and recovery of 0.045 test BTC. [Browser proof](deployments/browser-wallet-proof.json). |
+| Hosted repayment | Three factory accounts auto-enrolled, including one created after startup. A later 0.2 MUSD repayment retained the same transaction through restart. The recorded demo totals at block 16,302,866 are 502 MUSD collected and 100.4 MUSD repaid. [Enrollment proof](deployments/keeper-enrollment-proof.json). |
+| Recovery and history | Pending hashes survive refresh. Receipt blocks advance the snapshot before pending state clears. Activity and invoice history are paginated without silently skipping failed ranges. |
+| Operations | Hosted service, health checks, Telegram alerts, gas budgets, atomic signer journal, local backups and encrypted off-host capture. Workstation alert delivery verified. [Runbook and limits](docs/KEEPER_ENROLLMENT.md). |
+
+These figures are testnet integration evidence. Sample funds came from faucet BTC and native test loans. They do not represent customer adoption or business revenue. The original demo loan remains open; the browser QA loan is closed.
+
+## Run locally
+
+Requires Node.js 22.12+ and npm. Node 24.14 was used for verification. Foundry is needed for Solidity tests.
+
+```sh
 npm ci
 npm run dev
-npm run build
 npm test
+npm run build
 npm run contracts
-npm run fork:test
 ```
 
-Open the printed development URL. The home page offers an example workspace. **Use testnet** and connect an EVM wallet to create your own business account. To inspect the deployed proof account without signing, append:
+Open the development URL. Reading the public proof account requires RPC access but no wallet key. The default page uses labeled illustrative data. Failed live reads show an error rather than substituting that example.
 
-```text
-?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5
-```
+`npm run fork:test` additionally requires the documented Mezo RPC path. It runs unchanged native lending code at block 12,684,025 and replays the captured oracle-precompile response because Foundry does not implement that precompile. It is separate from public-chain evidence.
 
-An invoice link adds `&invoice=<onchain-invoice-id>`. Customers approve only the exact MUSD amount, then confirm a separate payment transaction. The proof account is controlled by a dedicated test wallet; connecting another wallet does not grant owner authority over it.
+Recorded release checks: 20 Foundry tests with 128 fuzz runs, 21 JavaScript tests, TypeScript and Vite production build, and dependency audit with zero findings. See [QA report](docs/QA_REPORT.md).
 
-## Contracts and control
+## Contracts and architecture
 
-- `RevenueFactory`: one account per owner; immutable native BorrowerOperations; registry for checkout verification.
-- `RevenueAccount`: immutable owner and native protocol; exact one-time MUSD invoices; configured share, cash floor and pause; no arbitrary call or upgrade function.
-- Repayment is limited by allocated funds, cash above the floor and native minimum debt plus gas reserve. The contract checks exact MUSD consumption and same-transaction native debt reduction.
-- Withdrawals preserve both the operating floor and repayment allocation. Owner can explicitly release allocations or edit the floor. Closing a loan is an explicit owner action; released BTC stays in the business account until the owner withdraws it.
-- Native sorting hints are computed offchain and validated by the native protocol. Unhinted sorting exhausted gas in the first public settlement attempt; the failed attempt had no financial effect and is disclosed in the QA report.
-- UI validates chain, factory runtime hash, factory account registration and native token/protocol addresses before preparing a transaction. Pending transaction hashes survive refresh and block replacement until reconciled.
+- `RevenueFactory` creates one account per owner and provides the checkout registry.
+- `RevenueAccount` owns its native loan, invoices, receipt allocations and repayment rule. Owner and protocol addresses are immutable. It has no arbitrary-call or upgrade function.
+- Withdrawals preserve the cash floor and pending repayment allocation. Policy changes, allocation release, borrowing and loan closure require the owner.
+- Settlement can only repay that account's fixed native debt. The gas-only keeper cannot borrow, withdraw, change the rule or redirect funds.
+- A shared transaction journal, nonce sequence and gas budget cover enrolled accounts. Pending signed transactions are reconciled before further signing.
 
-## Optional settlement executor
+Mezo testnet chain ID: `31611`.
 
-```text
-node scripts/keeper.mjs <dedicated-test-wallet.json> <registered-account>
-node scripts/keeper.mjs <dedicated-test-wallet.json> <registered-account> --watch
-node scripts/keeper.mjs <dedicated-test-wallet.json> --all --watch
-```
+Factory: [`0xaf90fe019f7303bb4720437dcfbafe1549474f36`](https://explorer.test.mezo.org/address/0xaf90fe019f7303bb4720437dcfbafe1549474f36).
 
-Wallet JSON contains a `privateKey`; keep it outside the repository. The executor only signs testnet `settle` calls for a verified registered account, with a 1,000 MUSD per-call ceiling and native insertion hints. Signed pending transactions are journaled beside the local wallet file before broadcast, so retries reuse the same transaction. It cannot borrow, withdraw, redirect funds or alter rules. The signer needs only test BTC for gas.
+Original proof account: [`0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5`](https://explorer.test.mezo.org/address/0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5).
 
-The one-shot executor is available; a managed always-on executor has **not** been deployed. Repayment is therefore triggered manually or by running this executor. Do not claim an unattended production service.
+See [architecture](docs/ARCHITECTURE.md), [approved product brief](docs/PROJECT_BRIEF.md), [keeper operations](docs/KEEPER_OPERATIONS.md), and [current status](docs/STATUS.md).
 
-## Proof and deployment tools
+## Scope and limits
 
-```text
-node scripts/probe.mjs
-node scripts/deploy.mjs <dedicated-test-wallet.json>
-node scripts/prove-testnet.mjs <dedicated-test-wallet.json>
-node scripts/verify-proof.mjs
-```
+Tillward is a working Mezo testnet product. It has no mainnet deployment or independent security audit. Mainnet readiness remains [NO-GO](docs/MAINNET_READINESS.md).
 
-The proof script sends real testnet transactions and creates a local sample-customer wallet beside the supplied test-wallet JSON. Run it only for the documented sample proof, not on a real business account. Public manifests and proof files contain addresses and transaction evidence, never keys. Unknown/reverted transactions require inspection; the explicit retry flag is only for the documented reverted sorting attempt.
+Fiat collection, Shopify, other chains, refunds/disputes and yield are outside this build. Mezo RPC responses have shown inconsistent heads and delayed receipts. Fixed-block snapshots, bounded retries and explicit errors mitigate this dependency. Wallet-change/rejection and provider-failover testing is not exhaustive.
 
-## Network and evidence limits
+The workstation monitor needs that workstation online. A monitor outside both hosts and a full isolated service-restore drill remain open. The data-only encrypted restore rehearsal passed.
 
-Mezo's documented HTTP endpoint showed inconsistent heads, empty contract reads and delayed transaction lookup during this session. UI reads prefer the official WebSocket endpoint, retain HTTP fallback, use a fixed block for each snapshot, retry bounded read failures and never substitute example data for failed live reads. Snapshot block is visible. RPC dependencies still require operational monitoring.
+## License and attribution
 
-Fork tests use the deployed native protocol at block 12,684,025, replaying the exact oracle-precompile response captured at that block because Foundry does not implement Mezo's native oracle. Local fork writes are not public-chain proof. The separate public testnet proof uses the real native oracle and protocol.
-
-## Project state
-
-Working testnet product with the owner-selected Tillward identity. No production/mainnet release, public GitHub launch, audit, customer-demand validation or hackathon submission claimed. The complete Rabby-in-Chrome journey passed through borrowing, invoice creation, exact approval/payment, native repayment, top-up, full closure and recovery of all posted BTC. See [browser proof](deployments/browser-wallet-proof.json). The browser QA payer was the owner; separate-customer proof is recorded independently. See [status](docs/STATUS.md) and [QA](docs/QA_REPORT.md).
-
-Native source/resources: [Mezo MUSD](https://github.com/mezo-org/musd), pinned commit `490ed984ba24ba6297986e8de1271abad4e8abe5`; [developer docs](https://mezo.org/docs/developers/getting-started/). Minimal native interfaces match that source. Original application code is MIT licensed; see NOTICE.md for attribution.
-
-
-## Reliability and hosted repayment
-
-The hosted service now auto-enrolls factory-created businesses. Three accounts were verified live, including a new account created after startup. A further 0.2 MUSD settlement and same-hash restart recovery passed independent native debt/burn verification. At block 16302866 demo counters reached 502 MUSD collected and 100.4 repaid. See [enrollment proof](deployments/keeper-enrollment-proof.json) and [current operations](docs/KEEPER_ENROLLMENT.md). Health, Telegram alert handling and private local backups are implemented; production infrastructure limits remain documented. Earlier proof snapshots below are historical.
-
-Recovered transaction receipts advance the snapshot block before the pending state is cleared. The confirmed lower bound persists across refresh. A pending transaction is reconciled automatically while idle. An approved wallet connection survives refresh within the same tab session.
-
-Activity is paginated in 10,000-block pages, fetched in 2,000-block chunks. Older pages can be loaded; a failed page is retried without skipping a range. Invoice browsing supports pages of 50 and exact older checkout links. Loan closure is included in repayment history.
-
-The hosted keeper has independently repaid a subsequent 0.2 MUSD allocation. Current recorded account totals at block 16298796 are 501 MUSD collected and 100.2 MUSD repaid, with zero pending. The original 500/100 proof is a historical snapshot. See [keeper proof](deployments/hosted-keeper-proof.json), [operations](docs/KEEPER_OPERATIONS.md) and [identity](docs/BRAND.md).
-
-The native fork test now also exercises adding collateral, full closure and recovery of BTC to the owner against unchanged protocol contracts, with the disclosed local oracle replay. It is not a public-chain loan-exit claim.
-
-The public browser test independently verified zero remaining loan debt, zero allocation, zero business-account BTC, exact native MUSD burns and the owner BTC increase net of gas. Only testnet assets were used. The original demo loan remains open; the browser QA loan is closed.
+Built by ElseMade. Original project code is [MIT licensed](LICENSE). Native protocol integration references [Mezo MUSD](https://github.com/mezo-org/musd) at commit `490ed984ba24ba6297986e8de1271abad4e8abe5`. See [NOTICE](NOTICE.md) for attribution and third-party licensing.

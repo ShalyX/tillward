@@ -8,3 +8,11 @@ broadcast/
 *.key
 *.log
 .openai/state/
+.vercel/
+work/
+*.dpapi
+*wallet*.json
+*telegram*.json
+!deployments/browser-wallet-proof.json
+
+submission/*.mp4

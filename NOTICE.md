@@ -6,4 +6,4 @@ The native repository root has a GPL-3.0 license; inspected Solidity source file
 
 Original account/factory, interface implementation, frontend and executor code in this project are MIT. Third-party runtime packages retain their own licenses; exact dependency versions are recorded in package-lock.json. Typography uses Google Fonts DM Sans and Manrope with system sans-serif fallback.
 
-Product name and UI identity are provisional and are not an assertion of trademark clearance or final user approval.
+Tillward and the receipt-counter identity were selected by the project owner on 2026-10-22. No trademark or domain clearance is asserted.
