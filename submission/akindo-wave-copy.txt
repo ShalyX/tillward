@@ -1,0 +1,20 @@
+Tillward — BTC working capital. Track 1: DeFi. New project built for this buildathon, originally named Paydown. Working Mezo testnet deployment (chain 31611).
+
+Tillward gives BTC-holding businesses MUSD working capital and repays the native Mezo loan from the owner's chosen share of customer receipts, while preserving an operating cash floor.
+
+Workflow: create business account → supply BTC and borrow MUSD → set repayment share/cash floor → create invoice → customer approves the exact MUSD amount and pays → eligible receipt allocations reduce that account's native debt. Owner controls include history, pause/edit future routing, MUSD top-up, loan closure and released BTC recovery. MUSD is the loan, checkout and repayment asset; no MEZO-token integration claimed.
+
+Proof: a separate wallet paid 500 MUSD and 100 reduced native debt. Later recorded totals reached 502 collected / 100.4 repaid. Rabby-in-Chrome QA completed a 2,000 MUSD loan / 0.045 test BTC, payment, repayment, top-up, closure and return of collateral. The hosted keeper enrolled three accounts and preserved a repayment across restart. All evidence uses test assets, not customer revenue/adoption. No mainnet deployment or independent audit.
+
+Target: independent agencies/studios/sellers holding BTC, familiar with collateralized borrowing and willing to collect MUSD. Desktop EVM-wallet flow, responsive read/checkout; no regional adoption or mobile-wallet claim.
+
+Stack: Solidity 0.8.24, Foundry, TypeScript, Vite, viem, native Mezo MUSD/BorrowerOperations/HintHelpers, Node.js keeper/systemd, Vercel, GitHub Actions.
+
+Next: within 2 weeks, interview 5–10 businesses and validate MUSD acceptance and invoice/repayment needs; within 4 weeks, a small testnet pilot, broader wallet/RPC failure coverage and operational restore/monitoring work; within 8 weeks, independent review if demand supports continuing and a separate mainnet-readiness decision.
+
+Shaly — solo builder, product and engineering. https://x.com/shalyx_04 . Built by ElseMade.
+Live: https://tillward.vercel.app
+Code: https://github.com/ShalyX/tillward
+Pitch: https://youtu.be/9Qu7pAAb2js
+Pitch page: https://tillward.vercel.app/pitch.html
+Deck: https://github.com/ShalyX/tillward/releases/download/v0.1.1/deck.pdf

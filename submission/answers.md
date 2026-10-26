@@ -1,6 +1,6 @@
 # AKINDO project answers
 
-Prepared copy for review and entry. Public overview requirements were checked October 25. Authenticated form character limits may require shortening. No entry has been submitted.
+Wave 1 entry submitted and visibly confirmed October 26, 2026. Product: https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO . The original prepared answers below informed the product page and a 2,255-character Wave update. Actual submitted copy and receipt are saved alongside this file.
 
 ## Project name
 Tillward
@@ -64,7 +64,9 @@ Source: https://github.com/ShalyX/tillward
 
 Deck PDF: https://github.com/ShalyX/tillward/releases/download/v0.1.1/deck.pdf
 
-Two-minute pitch: https://tillward.vercel.app/pitch.html
+Two-minute pitch: https://youtu.be/9Qu7pAAb2js
+
+Pitch page: https://tillward.vercel.app/pitch.html
 
 Direct video: https://github.com/ShalyX/tillward/releases/download/v0.1.1/demo.mp4
 
@@ -77,4 +79,4 @@ Member: Shaly. Role: Builder, covering product and engineering for this entry.
 
 X: https://x.com/shalyx_04
 
-The owner confirmed both public names and the X profile. ElseMade remains the product's builder credit. Private contact details, registration, age/location/employment eligibility and participation terms still require owner completion. No legal or identity declaration is filled automatically.
+The owner confirmed both public names and the X profile. ElseMade remains the product's builder credit. The owner completed joining AKINDO before submission. No private contact details or eligibility declarations are reproduced here. See receipt.json for the observed submission evidence.

@@ -1,5 +1,5 @@
 {
-  "phase": "ready_for_owner_entry",
+  "phase": "submitted",
   "product_locked": true,
   "design_locked": true,
   "demo_defined": true,
@@ -9,11 +9,16 @@
   "evidence_status": "testnet_chain_and_public_browser_verified",
   "public_demo": "https://tillward.vercel.app",
   "public_repository": "https://github.com/ShalyX/tillward",
-  "submission_ready": false,
+  "submission_ready": true,
   "materials_ready": true,
   "pitch_seconds": 120,
   "deck_slides": 8,
-  "submitted": false,
-  "human_input_required": true,
-  "human_gate": "Owner completes registration, private contact fields, eligibility and participation agreement before final submission."
+  "submitted": true,
+  "human_input_required": false,
+  "human_gate": null,
+  "submitted_event": "https://app.akindo.io/wave-hacks/OVOO0gdrVU8379D10",
+  "submitted_product": "https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO",
+  "submitted_wave": 1,
+  "submission_confirmed_at_utc": "2026-10-26T10:27:15Z",
+  "pitch_youtube": "https://youtu.be/9Qu7pAAb2js"
 }

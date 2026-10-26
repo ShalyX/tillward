@@ -29,3 +29,8 @@ Backlog: Shopify connector, fiat rails, multichain, refunds/disputes and yield. 
 ## Canonical documents
 
 PROJECT_BRIEF.md, REQUIREMENTS.md, RESEARCH_AND_RESOURCES.md, ARCHITECTURE.md, PRODUCTION_PLAN.md; QA_REPORT.md records checks, BRAND.md identity, KEEPER_OPERATIONS.md service ownership, SUBMISSION.md remaining packaging.
+
+
+## Wave 1 submission confirmed — October 26, 2026
+
+AKINDO receipt: "Great! Your submission completed!" Product: https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO . Submitted to Mezo Buildathon [1st Wave]. Public YouTube pitch: https://youtu.be/9Qu7pAAb2js . The product page includes the live app, public repository, eight-slide deck and three actual screenshots. See ../submission/receipt.json and akindo-receipt.png. Earlier owner-entry gates above are historical and have been completed for this submission. No screening, judging or award outcome is claimed.

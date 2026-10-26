@@ -12,6 +12,6 @@ Materials: submission/answers.md, judge-guide.md, deck.pdf and deck.pptx, plus t
 
 Owner-supplied public identity: team Shaly, member Shaly, https://x.com/shalyx_04 . ElseMade is the product builder credit.
 
-Remaining human gate: AKINDO registration/private contact fields, eligibility and participation agreement, final entry and observed submission receipt. No entry is submitted by publishing the app or repo.
+Wave 1 submitted and confirmed on October 26, 2026. AKINDO displayed "Great! Your submission completed!" and the product page independently lists Mezo [1st Wave]. Entry: https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO . YouTube pitch: https://youtu.be/9Qu7pAAb2js . Receipt: ../submission/receipt.json and akindo-receipt.png. Owner completed joining and approved the YouTube upload. Screening and judging outcomes are pending.
 
 Production boundaries remain in MAINNET_READINESS.md: independent audit, mainnet-specific configuration/integration, isolated runtime restore and external monitoring. Current product remains testnet-only.
