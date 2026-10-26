@@ -1,5 +1,5 @@
 {
-  "release": "v0.1.0",
+  "release": "v0.1.1",
   "artifacts": [
     {
       "file": "deck.pdf",
@@ -18,8 +18,8 @@
     },
     {
       "file": "demo.mp4",
-      "bytes": 17815640,
-      "sha256": "1fe035a5d42f0f9b0d6e942b879a7c486c3892f300f7b1bf6a447b16cf69b2e8"
+      "bytes": 18061267,
+      "sha256": "e43d38d1475ddec630ac36e7b58cb3ae3c414b6a5e1b936845f968f06bb9bad9"
     },
     {
       "file": "demo-poster.png",
@@ -28,23 +28,33 @@
     },
     {
       "file": "pitch.vtt",
-      "bytes": 2490,
-      "sha256": "cc86ec55757b1b62281cf231d4d7e7676165148190d85272c1b921aea72759a8"
+      "bytes": 2238,
+      "sha256": "ca4a3ebfc5c863806858c889a33701d0e10eb79d72c920fcc50bee9e6f4e5eb6"
     },
     {
       "file": "pitch-script.md",
-      "bytes": 2043,
-      "sha256": "1d76923cc1a66bb8fa354e08bd627d4ce2d1f7d3cce5be7e51211cea2c82fa33"
+      "bytes": 1801,
+      "sha256": "5e9eb4803087e70865de8931c95210f10e05126f0e04eb6f72ce563273ab36e3"
     },
     {
       "file": "video-check.json",
-      "bytes": 628,
-      "sha256": "e03605c323573e3ffd6d16c467b4b29a6c62f83c27472f948c68618746dde27b"
+      "bytes": 745,
+      "sha256": "5b6009340876df2a603c2a90eb4d2c2b60e2e749609a4d630a87bb79541ab215"
     },
     {
       "file": "video-review.jpg",
-      "bytes": 102022,
-      "sha256": "2e15d42d900c7664d91946d97b0e94076066077924d0854bfa95c5a21914a0df"
+      "bytes": 165503,
+      "sha256": "06cac579c70fdbc2f846e1d7305c38a439f146c0fb9d12b14f37c52047edbc03"
+    },
+    {
+      "file": "video-source.md",
+      "bytes": 1644,
+      "sha256": "637f4b55095d83f058062113422542f654625f5c4b4610beb3ce29f6c47ffe68"
+    },
+    {
+      "file": "tillward-video-source.zip",
+      "bytes": 7460809,
+      "sha256": "19baa157b7efb80e7efb58e0bf5bb29f1679f8bd3312986112a7220573e58d1a"
     }
   ]
 }

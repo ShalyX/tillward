@@ -4,9 +4,9 @@
 
 The source uses the approved receipt-counter identity, fresh public product screenshots and labeled historical Mezo testnet proof. It does not simulate new chain writes. The receipt allocation scene is a mechanism illustration.
 
-Narration is synthesized locally with Windows Microsoft Zira Desktop. Nine separate WAV clips sit on the timeline, with burned-in captions and a matching WebVTT file in the published release. No external voice service was used. Replace the WAV clips to re-record narration, retaining the scene timings or updating the composition attributes.
+Narration uses the user-approved Microsoft Emma Multilingual Neural voice, generated through Edge TTS without paid credits. Nine frozen WAV clips sit on the timeline, with captions aligned to native speech boundaries and a matching WebVTT file. The revised script uses shorter spoken sentences. `narration-emma.json` records text, timing and word boundaries; no provider credential is included. The picture timeline remains 120 seconds.
 
-Node.js 22+ and FFmpeg are required. The CLI is pinned to HyperFrames 0.8.199 in package.json commands.
+Node.js 22+ and FFmpeg are required. The CLI is pinned to HyperFrames 0.8.201 in package.json commands.
 
 ```sh
 npm run check

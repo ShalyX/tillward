@@ -1,67 +1,73 @@
 WEBVTT
 
-00:00:00.450 --> 00:00:04.376
-A small business can hold Bitcoin and still need working capital.
+00:00:00.455 --> 00:00:05.930
+Your business holds Bitcoin but needs working capital With Tillward you borrow
 
-00:00:04.376 --> 00:00:09.450
-Tillward connects a Bitcoin backed loan to the customer payments that help repay it.
+00:00:05.955 --> 00:00:09.394
+against that Bitcoin and repay from customer receipts
 
-00:00:10.450 --> 00:00:17.313
-The owner creates a business account, supplies Bitcoin collateral, and borrows MUSD through Mezo.
+00:00:10.442 --> 00:00:15.535
+Create a business account and borrow MUSD through Mezo Here two thousand
 
-00:00:17.313 --> 00:00:24.450
-The browser journey shown here used two thousand test MUSD against point zero four five test Bitcoin.
+00:00:15.561 --> 00:00:20.093
+test MUSD is backed by zero point zero four five test Bitcoin
 
-00:00:25.450 --> 00:00:31.372
-Next, choose the share of each final customer payment to allocate toward the loan.
+00:00:25.455 --> 00:00:29.026
+You choose how much of each customer payment goes toward the loan
 
-00:00:31.372 --> 00:00:33.683
-Set an operating cash floor too.
+00:00:29.297 --> 00:00:33.088
+Set a cash floor too so the business keeps money available for
 
-00:00:33.683 --> 00:00:38.450
-The business can keep money available for its day to day expenses.
+00:00:33.113 --> 00:00:34.552
+everyday expenses
 
-00:00:39.450 --> 00:00:42.848
-Create a final payment invoice and share its link.
+00:00:39.442 --> 00:00:43.614
+Create an invoice and share the payment link Your customer approves the
 
-00:00:42.848 --> 00:00:47.605
-The customer approves the exact MUSD amount, then confirms payment.
+00:00:43.639 --> 00:00:49.285
+exact MUSD amount then pays The receipt and its repayment allocation are
 
-00:00:47.605 --> 00:00:53.450
-Tillward records the receipt and its repayment allocation inside the business account.
+00:00:49.311 --> 00:00:51.290
+recorded in your business account
 
-00:00:54.450 --> 00:01:00.952
-With a twenty percent rule, a five hundred MUSD receipt allocates one hundred toward repayment.
+00:00:54.442 --> 00:00:59.105
+Take a five hundred MUSD payment with a twenty percent repayment rule
 
-00:01:00.952 --> 00:01:04.203
-Four hundred stays in the account for operations.
+00:00:59.389 --> 00:01:04.877
+One hundred goes toward the loan Four hundred stays for operations Repayment
 
-00:01:04.204 --> 00:01:08.450
-Settlement also respects the cash floor and native minimum debt.
+00:01:04.903 --> 00:01:07.763
+checks your cash floor and Mezo's minimum debt
 
-00:01:09.450 --> 00:01:12.294
-That repayment path is proven on public testnet.
+00:01:09.455 --> 00:01:14.141
+Here's that flow on public testnet A separate customer wallet paid five
 
-00:01:12.294 --> 00:01:18.753
-A separate sample customer paid five hundred MUSD, and one hundred reduced the account's native Mezo debt.
+00:01:14.166 --> 00:01:19.536
+hundred MUSD One hundred reduced the Mezo loan Later payments brought the
 
-00:01:18.754 --> 00:01:25.450
-Later hosted settlements brought recorded totals to five hundred two collected and one hundred point four repaid.
+00:01:19.561 --> 00:01:23.496
+totals to five hundred and two collected and one hundred point four
 
-00:01:26.450 --> 00:01:30.322
-The owner can inspect activity, top up funds, and close the loan.
+00:01:23.521 --> 00:01:24.329
+repaid
 
-00:01:30.322 --> 00:01:40.450
-In the Rabby browser journey, the loan reached zero debt and all point zero four five test Bitcoin returned to the owner, with transaction evidence checked independently.
+00:01:26.442 --> 00:01:29.654
+Top up the account when you're ready to close the loan We
 
-00:01:41.450 --> 00:01:47.392
-Tillward now has a public demo, guided onboarding, and hosted repayment across three enrolled accounts.
+00:01:29.679 --> 00:01:34.101
+tested that through Rabby The debt reached zero and all zero point
 
-00:01:47.392 --> 00:01:51.719
-The next step is testing demand with businesses willing to collect MUSD.
+00:01:34.126 --> 00:01:37.237
+zero four five test Bitcoin returned to the owner
 
-00:01:51.719 --> 00:01:53.450
-This release uses test assets.
+00:01:41.455 --> 00:01:46.881
+The public demo includes onboarding invoices and repayment across three test accounts
 
-00:01:54.450 --> 00:01:59.450
-Explore Tillward, inspect the proof, and follow the code on GitHub.
+00:01:47.153 --> 00:01:52.720
+Next we'll test demand with businesses willing to collect MUSD Test assets
+
+00:01:52.745 --> 00:01:53.382
+only
+
+00:01:54.442 --> 00:01:59.145
+Try Tillward Follow the receipts and explore the code on GitHub

@@ -1,37 +1,39 @@
 # Tillward two-minute pitch
 
+Narrator: Emma neural voice. Approved 26 October 2026.
+
 ## 000–010s · purpose
 
-A small business can hold Bitcoin and still need working capital. Tillward connects a Bitcoin backed loan to the customer payments that help repay it.
+Your business holds Bitcoin, but needs working capital. With Tillward, you borrow against that Bitcoin and repay from customer receipts.
 
 ## 010–025s · borrow
 
-The owner creates a business account, supplies Bitcoin collateral, and borrows M U S D through Mezo. The browser journey shown here used two thousand test M U S D against point zero four five test Bitcoin.
+Create a business account and borrow MUSD through Mezo. Here, two thousand test MUSD is backed by zero point zero four five test Bitcoin.
 
 ## 025–039s · rule
 
-Next, choose the share of each final customer payment to allocate toward the loan. Set an operating cash floor too. The business can keep money available for its day to day expenses.
+You choose how much of each customer payment goes toward the loan. Set a cash floor too, so the business keeps money available for everyday expenses.
 
 ## 039–054s · invoice
 
-Create a final payment invoice and share its link. The customer approves the exact M U S D amount, then confirms payment. Tillward records the receipt and its repayment allocation inside the business account.
+Create an invoice and share the payment link. Your customer approves the exact MUSD amount, then pays. The receipt and its repayment allocation are recorded in your business account.
 
 ## 054–069s · split
 
-With a twenty percent rule, a five hundred M U S D receipt allocates one hundred toward repayment. Four hundred stays in the account for operations. Settlement also respects the cash floor and native minimum debt.
+Take a five hundred MUSD payment with a twenty percent repayment rule. One hundred goes toward the loan. Four hundred stays for operations. Repayment checks your cash floor and Mezo's minimum debt.
 
 ## 069–086s · proof
 
-That repayment path is proven on public testnet. A separate sample customer paid five hundred M U S D, and one hundred reduced the account's native Mezo debt. Later hosted settlements brought recorded totals to five hundred two collected and one hundred point four repaid.
+Here's that flow on public testnet. A separate customer wallet paid five hundred MUSD. One hundred reduced the Mezo loan. Later payments brought the totals to five hundred and two collected, and one hundred point four repaid.
 
 ## 086–101s · exit
 
-The owner can inspect activity, top up funds, and close the loan. In the Rabby browser journey, the loan reached zero debt and all point zero four five test Bitcoin returned to the owner, with transaction evidence checked independently.
+Top up the account when you're ready to close the loan. We tested that through Rabby. The debt reached zero, and all zero point zero four five test Bitcoin returned to the owner.
 
 ## 101–114s · scope
 
-Tillward now has a public demo, guided onboarding, and hosted repayment across three enrolled accounts. The next step is testing demand with businesses willing to collect M U S D. This release uses test assets.
+The public demo includes onboarding, invoices, and repayment across three test accounts. Next, we'll test demand with businesses willing to collect MUSD. Test assets only.
 
 ## 114–120s · close
 
-Explore Tillward, inspect the proof, and follow the code on GitHub.
+Try Tillward. Follow the receipts, and explore the code on GitHub.

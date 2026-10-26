@@ -10,12 +10,15 @@
   "frames": 2880,
   "videoCodec": "H.264",
   "audioCodec": "AAC",
-  "audioDurationSeconds": 120,
-  "audioMeanDb": -20.9,
-  "audioPeakDb": -2.6,
-  "narration": "Windows Microsoft Zira Desktop, synthesized locally",
+  "audioDurationSeconds": 120.0,
+  "audioMeanDb": -18.8,
+  "audioPeakDb": -2.0,
+  "narration": "Microsoft Emma Multilingual Neural, user-approved free Edge TTS voice",
+  "narrationClips": 9,
+  "captions": 24,
+  "captionsFrom": "native speech word boundaries, non-overlapping",
   "captureMode": "screenshot",
   "browserGpu": "hardware",
-  "renderer": "HyperFrames 0.8.199",
-  "limitation": "Installed skill refresh could not reach GitHub; renderer remained pinned. All final runtime/layout gates passed."
+  "renderer": "HyperFrames 0.8.201",
+  "limitation": "Existing composition structure warnings remain; no lint errors, runtime errors, or layout errors."
 }
