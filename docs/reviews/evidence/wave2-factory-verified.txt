@@ -1,0 +1,199 @@
+- generic: BTC
+- generic: $77,603.00
+- generic: 0.50%
+- generic: "|"
+- text: Gas
+- generic: < 0.1 GaBTC
+- button "User settings":
+- banner:
+  - link "Link to main page":
+    - /url: /
+    - img "Mezo Testnet network icon"
+- navigation:
+  - list:
+    - generic "Blockchain link group":
+      - paragraph: Blockchain
+    - generic "Tokens link group":
+      - paragraph: Tokens
+    - generic "Charts & stats link group":
+      - paragraph: Charts & stats
+    - link "API link":
+      - /url: /api-docs
+    - generic "Other link group":
+      - paragraph: Other
+- banner:
+  - textbox "Search by address / txn hash / block / token/...":
+    - /placeholder: "Search by address / txn hash / block / token/... "
+  - generic: /
+  - button "Connect"
+- main:
+  - heading "Contract details" [level=1]
+  - generic: "0xaF90fe019F7303bb4720437dCFbaFe1549474f36"
+  - button "copy":
+  - button "Show QR code":
+  - tablist:
+    - tab "Details"
+    - tab "Contract" [selected]:
+      - generic: Contract
+    - tab "Transactions 4":
+      - text: Transactions
+      - generic: "4"
+    - tab "Token transfers 0":
+      - text: Token transfers
+      - generic: "0"
+    - tab "Tokens 0":
+      - text: Tokens
+      - generic: "0"
+    - tab "Internal txns 0":
+      - text: Internal txns
+      - generic: "0"
+    - tab "Coin balance history"
+    - tab "Logs 3":
+      - text: Logs
+      - generic: "3"
+  - tabpanel "Contract":
+    - tablist:
+      - tab "Code" [selected]
+      - tab "Read/Write contract"
+    - tabpanel "Code":
+      - generic: Contract source code verified (exact match)
+      - generic: Contract name
+      - generic: RevenueFactory
+      - generic: Compiler version
+      - generic: v0.8.24+commit.e11b9ed9
+      - generic: EVM version
+      - generic: london
+      - text: License
+      - button "hint":
+      - link "MIT":
+        - /url: https://choosealicense.com/licenses/mit/
+        - text: MIT
+      - generic: Optimization enabled
+      - generic: "true"
+      - generic: Optimization runs
+      - generic: "200"
+      - generic: Verified at
+      - generic: Oct 31, 2026 19:53:15
+      - generic: Contract file path
+      - generic: contracts/RevenueFactory.sol
+      - tablist:
+        - tab "Code" [selected]
+        - tab "Compiler"
+        - tab "ABI"
+        - tab "Bytecode"
+      - tabpanel "Code":
+        - generic "Constructor Arguments":
+          - generic: Constructor Arguments
+          - text: "0x000000000000000000000000cdf7028ceab81fa0c6971208e83fa7872994bee5"
+          - generic: "Arg [0] operations (address):"
+          - link "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5":
+            - /url: /address/0xCdF7028ceAB81fA0C6971208e83fa7872994beE5
+            - generic: "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5"
+          - button "copy":
+        - text: Contract source code
+        - generic: (Solidity)
+        - generic: RevenueFactory.sol
+        - generic "Close": 
+        - generic: contracts
+        - generic: 
+        - generic: RevenueFactory.sol
+        - code:
+          - generic: "1"
+          - generic: "2"
+          - generic: "3"
+          - generic: "4"
+          - generic: 
+          - generic: "5"
+          - generic: "6"
+          - generic: "7"
+          - generic: "8"
+          - generic: "9"
+          - generic: 
+          - generic: "10"
+          - generic: "11"
+          - generic: "12"
+          - generic: "13"
+          - generic: 
+          - generic: "14"
+          - generic: "15"
+          - generic: "16"
+          - generic: "17"
+          - generic: "18"
+          - generic: "19"
+          - generic: "20"
+          - generic: "21"
+          - generic: "22"
+          - generic: "// SPDX-License-Identifier: MIT"
+          - generic: pragma solidity 0.8.24;
+          - generic: import "./RevenueAccount.sol";
+          - generic: "contract RevenueFactory {"
+          - generic: address public immutable borrowerOperations;
+          - generic: mapping(address=>address) public accountOf;
+          - generic: mapping(address=>bool) public isAccount;
+          - generic: event AccountCreated(address indexed owner,address indexed account);
+          - generic: "constructor(address operations) {"
+          - generic: require(operations.code.length>0,"Protocol unavailable");
+          - generic: borrowerOperations=operations;
+          - generic: "}"
+          - generic: "function createAccount() external returns(address account) {"
+          - generic: require(accountOf[msg.sender]==address(0),"Account already exists");
+          - generic: account=address(new RevenueAccount(msg.sender,borrowerOperations));
+          - generic: accountOf[msg.sender]=account;
+          - generic: isAccount[account]=true;
+          - generic: emit AccountCreated(msg.sender,account);
+          - generic: "}"
+          - generic: "}"
+          - textbox "Editor content"
+        - tablist:
+          - tab "Explorer" [selected]
+          - tab "Search"
+          - generic "Collapse folders": 
+        - tabpanel "Explorer":
+          - button " contracts" [expanded]:
+            - generic: 
+            - generic: contracts
+          - region " contracts":
+            - generic: NativeInterfaces.sol
+            - generic: RevenueAccount.sol
+            - generic: RevenueFactory.sol
+        - text: 
+- contentinfo:
+  - paragraph: 91%
+  - generic: Made with
+  - link:
+    - /url: https://www.blockscout.com
+  - paragraph: Scan, inspect, and analyze EVM based blockchains with Blockscout, a blockchain explorer for Ethereum networks.
+  - paragraph:
+    - text: "Backend:"
+    - link "v12.0.3":
+      - /url: https://github.com/blockscout/blockscout/tree/v12.0.3
+  - paragraph:
+    - text: "Frontend:"
+    - link "v2.12.1":
+      - /url: https://github.com/blockscout/frontend/tree/v2.12.1
+  - paragraph: Copyright © Blockscout Limited 2023-2026
+  - link "Contribute":
+    - /url: https://github.com/blockscout/blockscout
+    - text: Contribute
+  - link "PRO API":
+    - /url: https://dev.blockscout.com
+    - text: PRO API
+  - link "Autoscout":
+    - /url: https://autoscout.blockscout.com
+    - text: Autoscout
+  - link "Docs":
+    - /url: https://docs.blockscout.com
+    - text: Docs
+  - link "X":
+    - /url: https://x.com/blockscout
+    - text: X
+  - link "Discord":
+    - /url: https://discord.gg/blockscout
+    - text: Discord
+  - link "All chains":
+    - /url: https://chains.blockscout.com
+    - text: All chains
+- alert
+- region "Notifications, top-end (alt+T)"
+- alert
+- alert

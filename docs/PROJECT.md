@@ -12,6 +12,14 @@ Materials: submission/answers.md, judge-guide.md, deck.pdf and deck.pptx, plus t
 
 Owner-supplied public identity: team Shaly, member Shaly, https://x.com/shalyx_04 . ElseMade is the product builder credit.
 
-Wave 1 submitted and confirmed on October 26, 2026. AKINDO displayed "Great! Your submission completed!" and the product page independently lists Mezo [1st Wave]. Entry: https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO . YouTube pitch: https://youtu.be/9Qu7pAAb2js . Receipt: ../submission/receipt.json and akindo-receipt.png. Owner completed joining and approved the YouTube upload. Screening and judging outcomes are pending.
+Wave 1 submitted and confirmed on October 26, 2026. AKINDO displayed "Great! Your submission completed!" and the product page independently lists Mezo [1st Wave]. Entry: https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO . YouTube pitch: https://youtu.be/9Qu7pAAb2js . Receipt: ../submission/receipt.json and akindo-receipt.png. Owner completed joining and approved the YouTube upload. Official Wave 1 results were checked October 31; see reviews/WAVE1_RESULTS.md. The displayed grant allocation is not confirmed payment.
 
 Production boundaries remain in MAINNET_READINESS.md: independent audit, mainnet-specific configuration/integration, isolated runtime restore and external monitoring. Current product remains testnet-only.
+
+## October 31 official results checkpoint
+
+Judging is complete. Official displayed criterion scores: integration 8, business viability 6, implementation 8, UX 7, materials 8. Judge classifies integration as Level 4; the card displays 18 USDT allocation. Reward payment remains unverified. Wave 2 build period is November 2-15. Product/design locks and submitted phase remain unchanged; no Wave 2 implementation or submission has begun. Evidence and proposed priorities: [official results](reviews/WAVE1_RESULTS.md).
+
+## Wave 2 preparation authorized October 31
+
+Current iteration: work through judge feedback within the locked product. See WAVE2_PLAN.md for roadmap overlap. Factory, original demo and QA accounts now show exact-match verified source on the explorer. Native loan-conditions panel is implemented locally and tested against live read-only state; 36 JavaScript checks and production build passed. Public app and keeper remain the prior release; new signing and collateral-path proof are pending. The owner clarified that 5-10 interviews is our target, not a Mezo rule, and asked to hold that work. No outreach, interviews or fees enabled. Evidence/limits: reviews/WAVE2_PREPARATION.md. Next: engineering diff review, app deployment/QA and explicit owner testnet collateral-path proof; keep interview work held. Prior Wave 1 submission/freeze remains historical and unchanged.

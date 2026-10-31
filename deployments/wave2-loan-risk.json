@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-31T18:56:43.732Z",
+  "chainId": 31611,
+  "account": "0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5",
+  "active": true,
+  "manager": "0xE47c80e8c23f6B4A1aE41c34837a0599D5D16bb0",
+  "feed": "0x86bCF0841622a5dAC14A313a15f96A95421b9366",
+  "pool": "0xB4C35747c26E4aB5F1a7CdC7E875B5946eFa6fa9",
+  "price": "77495006670000000000000",
+  "icr": "1658921250172720727",
+  "tcr": "2783163675686156671",
+  "mcr": "1100000000000000000",
+  "ccr": "1500000000000000000",
+  "recoveryMode": false,
+  "surplus": "0",
+  "block": "16490532",
+  "timestamp": "1793472996",
+  "status": {
+    "kind": "monitor",
+    "label": "Monitor your loan",
+    "message": "BTC prices and interest can change your ratio. Receipt-linked repayment does not prevent liquidation or redemption."
+  }
+}

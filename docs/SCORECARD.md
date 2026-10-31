@@ -1,6 +1,6 @@
 # Tillward judging evidence and review
 
-Updated October 26, 2026 after the confirmed Wave 1 submission. Official weights are recorded in HACKATHON.md. These are internal simulated scores, not organizer results or award predictions.
+Updated October 26, 2026 after the confirmed Wave 1 submission. Official weights are recorded in HACKATHON.md. The October 26 scores below are internal simulations, not organizer results or award predictions. Official October 31 results are recorded separately in [Wave 1 results](reviews/WAVE1_RESULTS.md): integration 8, business viability 6, implementation 8, UX 7, materials 8.
 
 **73/100; range 68–80, medium confidence.** A Judge-role agent returned interim observations but reached the account usage limit before scoring. The operator assigned these scores and finalized the report. The Product Critic verdict is MODIFY. The independent Red Team saved its report before interruption. See [full review and ranked actions](reviews/REVIEW_SUMMARY.md).
 
@@ -46,3 +46,7 @@ The public app and repository are live at https://tillward.vercel.app and https:
 The required eight-slide deck and exactly 120-second narrated 1080p pitch are complete. The encoded video was reviewed at nine scene times; both streams run 120 seconds and audio peaks below clipping. Public materials: https://tillward.vercel.app/pitch.html and the v0.1.0 release downloads. Team and member are Shaly, https://x.com/shalyx_04 .
 
 The remaining submission gap is the authenticated AKINDO entry: private contact fields, owner eligibility/participation declarations and the final submission receipt. Product demand remains unvalidated, and production readiness gates remain disclosed. No organizer score or entry acceptance is inferred.
+
+## Wave 2 preparation checkpoint
+
+No new organizer scores predicted. Source verification is complete for factory/demo/QA accounts (SOURCE_VERIFICATION.md). Loan-risk visibility is locally implemented, unit/browser checked and exercised against live read-only data; public deployment and new signed collateral-path evidence remain open. Business viability remains unvalidated; interview work is held by owner, and the prior 5-10 count is an internal target, not an event rule. See reviews/WAVE2_PREPARATION.md.

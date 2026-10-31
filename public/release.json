@@ -1,14 +1,16 @@
 {
-  "release": "2026-10-31-recovery-3",
+  "release": "2026-11-01-wave2-loan-conditions-1",
   "network": "Mezo public testnet",
   "chainId": 31611,
-  "sourceBaseline": "bfbb21f",
+  "sourceBaseline": "739a62747b3c8afe9074cb14ad3a9cfce7d5cf97",
   "sha256": {
-    "src/main.ts": "0a1a78d7831df179f9b02dfdf859527314264ab8aea5a1dd2c513f2112d17b7d",
+    "src/main.ts": "efec00e62e68d8a5c897c498f1634b51bdb8fc2afca650a19f70b765c7a268c7",
     "src/transaction-recovery.mjs": "8ee6c619cbf49a88e17ed2b9bacce86859d45f9cddfa4d910a5d811f74137d27",
     "src/money.mjs": "8751f74e5f97bc53c0e0175ef14a5f76178c1dbb7fbd67f4ad0b17253839b4f7",
     "scripts/keeper.mjs": "750e2f81bc621b86e9b58bc0deb3aa690544e3412ab3c28a661b76a0e0ac43a8",
     "src/chain-state.mjs": "09bc9b0da10fafb5fc8f19f1c800e476888f0b2bcd114b460bfbb4c09001940a",
-    "index.html": "4cfc9c2d786cbb0e978b498fab26f3737438fe0bb4e38406d711c4d31647ffe0"
+    "index.html": "4cfc9c2d786cbb0e978b498fab26f3737438fe0bb4e38406d711c4d31647ffe0",
+    "src/loan-risk.mjs": "3670b09cdc049c5e29d8732235449e29e896d9049778b2c8528bc361a5520a9c",
+    "src/style.css": "ecab0803c1983e3a929babd10e1f9b8800dba99a4c4784fbc6e2bb991648fbd9"
   }
 }

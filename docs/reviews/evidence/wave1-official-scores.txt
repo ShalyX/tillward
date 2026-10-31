@@ -1,0 +1,183 @@
+- banner:
+  - link:
+    - /url: https://app.akindo.io/
+  - link "Buildathons":
+    - /url: https://app.akindo.io/wave-hacks
+  - link "Hackathons":
+    - /url: https://app.akindo.io/hackathons
+  - link "Products":
+    - /url: https://app.akindo.io/products
+  - button "Showcase Product"
+  - button "shaly":
+    - img "shaly"
+- main:
+  - link "Buildathons":
+    - /url: https://app.akindo.io/wave-hacks
+    - generic: Buildathons
+  - img "WaveHack"
+  - link "What is WaveHack?":
+    - /url: https://buildathon-akindo.notion.site/Buildathon-Powered-by-WaveHack-Protocol-2f30a394059980828c09fce119956e2d
+  - link "Post":
+    - /url: https://twitter.com/intent/tweet?text=Check%20this%20out!%20Build%20with%20MUSD%20and%20MEZO%3A%20%247%2C000%20USD%20in%20MEZO%20Grants%20https%3A%2F%2Fapp.akindo.io%2Fwave-hacks%2FOVOO0gdrVU8379D10%20on%20%40akindo_io
+    - generic: Post
+  - 'heading "Build with MUSD and MEZO: $7,000 USD in MEZO Grants" [level=1]'
+  - generic: Extend MUSD and MEZO on Mezo, Ethereum, Base, and BNB Chain. $7,000 USD pool, paid in MEZO.
+  - link "Mezo Network Mezo Network":
+    - /url: https://app.akindo.io/communities/xKmmnkwV7ImEV1rjZ
+    - img "Mezo Network"
+    - generic: Mezo Network
+  - button "Overview":
+    - generic: Overview
+  - button "Judges":
+    - generic: Judges
+  - button "Submissions 135":
+    - generic: Submissions
+    - generic: "135"
+  - button "Comments 19":
+    - generic: Comments
+    - generic: "19"
+  - button "Join a team 2":
+    - generic: Join a team
+    - generic: "2"
+  - list:
+    - button "All Waves 135":
+      - generic: All Waves
+      - generic: "135"
+    - button "1st Wave 135":
+      - generic: 1st Wave
+      - generic: "135"
+  - textbox "Search submissions": Tillward
+  - button "Search":
+    - generic: Search
+  - generic: 1 products found.
+  - img "Tillward"
+  - link "Tillward":
+    - /url: https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO
+    - generic: Tillward
+  - generic: BTC-backed working capital, repaid from customer receipts.
+  - list:
+    - listitem: BTC working capital
+  - link "GitHub":
+    - /url: https://github.com/ShalyX/tillward
+    - generic: GitHub
+  - generic: Updates in this Wave
+  - paragraph:
+    - text: "Tillward — BTC working capital. Track 1: DeFi. New project built for this buildathon, originally named Paydown. Working Mezo testnet deployment (chain 31611). Tillward gives BTC-holding businesses MUSD working capital and repays the native Mezo loan from the owner's chosen share of customer receipts, while preserving an operating cash floor. Workflow: create business account → supply BTC and borrow MUSD → set repayment share/cash floor → create invoice → customer approves the exact MUSD amount and pays → eligible receipt allocations reduce that account's native debt. Owner controls include history, pause/edit future routing, MUSD top-up, loan closure and released BTC recovery. MUSD is the loan, checkout and repayment asset; no MEZO-token integration claimed. Proof: a separate wallet paid 500 MUSD and 100 reduced native debt. Later recorded totals reached 502 collected / 100.4 repaid. Rabby-in-Chrome QA completed a 2,000 MUSD loan / 0.045 test BTC, payment, repayment, top-up, closure and return of collateral. The hosted keeper enrolled three accounts and preserved a repayment across restart. All evidence uses test assets, not customer revenue/adoption. No mainnet deployment or independent audit. Target: independent agencies/studios/sellers holding BTC, familiar with collateralized borrowing and willing to collect MUSD. Desktop EVM-wallet flow, responsive read/checkout; no regional adoption or mobile-wallet claim. Stack: Solidity 0.8.24, Foundry, TypeScript, Vite, viem, native Mezo MUSD/BorrowerOperations/HintHelpers, Node.js keeper/systemd, Vercel, GitHub Actions. Next: within 2 weeks, interview 5–10 businesses and validate MUSD acceptance and invoice/repayment needs; within 4 weeks, a small testnet pilot, broader wallet/RPC failure coverage and operational restore/monitoring work; within 8 weeks, independent review if demand supports continuing and a separate mainnet-readiness decision. Shaly — solo builder, product and engineering."
+    - link "https://x.com/shalyx_04":
+      - /url: https://x.com/shalyx_04
+    - text: ". Built by ElseMade. Live:"
+    - link "https://tillward.vercel.app":
+      - /url: https://tillward.vercel.app
+    - text: "Code:"
+    - link "https://github.com/ShalyX/tillward":
+      - /url: https://github.com/ShalyX/tillward
+    - text: "Pitch:"
+    - link "https://youtu.be/9Qu7pAAb2js":
+      - /url: https://youtu.be/9Qu7pAAb2js
+    - text: "Pitch page:"
+    - link "https://tillward.vercel.app/pitch.html":
+      - /url: https://tillward.vercel.app/pitch.html
+    - text: "Deck:"
+    - link "https://github.com/ShalyX/tillward/releases/download/v0.1.1/deck.pdf":
+      - /url: https://github.com/ShalyX/tillward/releases/download/v0.1.1/deck.pdf
+  - button "Milestone":
+    - generic: Milestone
+  - generic: 18USDT
+  - button:
+  - list:
+    - generic: Mezo Integration
+    - text: "8"
+    - generic: Product & Business Viability
+    - text: "6"
+    - generic: Technical Implementation
+    - text: "8"
+    - generic: User Experience
+    - text: "7"
+    - generic: Submission Materials Quality
+    - text: "8"
+  - link "civ_defi_mezo 0":
+    - /url: https://app.akindo.io/users/civ_defi_mezo
+    - img "civ_defi_mezo"
+    - generic: "0"
+  - button "Voting Details":
+    - text: Voting Details
+  - generic: Grant
+  - generic: 18 USDT
+  - img "shaly"
+  - generic: shaly
+  - textbox "If you have any questions for the judges, please comment here."
+  - button "Submit"
+  - button "1":
+    - generic: "1"
+  - generic: Protocol fee is 10.0% of distribution.
+  - button "Submit" [disabled]
+  - heading "Grant" [level=3]
+  - list:
+    - heading "Total" [level=4]
+    - generic: $7,000 MEZO
+    - heading "Pool" [level=4]
+    - generic: $7,000 MEZO
+    - heading "Distribution Network" [level=4]
+    - generic: Ethereum
+  - heading "Build with" [level=3]
+  - generic: Mezo
+  - heading "Judging Criteria" [level=3]
+  - list:
+    - listitem: Mezo Integration
+    - listitem: Product & Business Viability
+    - listitem: Technical Implementation
+    - listitem: User Experience
+    - listitem: Submission Materials Quality
+  - heading "Category" [level=3]
+  - generic: Unlimited
+  - heading "Tags" [level=3]
+  - list:
+    - listitem: "#Mezo"
+  - heading "Github repo" [level=3]
+  - link "https://github.com/mezo-org":
+    - /url: https://github.com/mezo-org
+  - heading "Community" [level=3]
+  - link "https://discord.mezo.org":
+    - /url: https://discord.mezo.org
+- contentinfo:
+  - link "BOOK A STRATEGY CALL":
+    - /url: https://calendly.com/shinkinjo/30min
+  - list:
+    - link "Contact us":
+      - /url: https://app.deform.cc/form/d4def915-fae8-46a9-b66f-3bf623ff2a98/?page_number=0
+    - link "Buildathons":
+      - /url: https://app.akindo.io/wave-hacks
+    - link "Products":
+      - /url: https://app.akindo.io/products
+    - link "The Builder Activation":
+      - /url: https://www.youtube.com/@akindo_io
+  - list:
+    - link "About us":
+      - /url: https://akindo.io
+    - link "Brand Assets":
+      - /url: https://drive.google.com/drive/folders/14xy6WPsUUSkoqn6nULor0WFrLjizscrs?usp=sharing
+    - link "Terms":
+      - /url: https://akindo.notion.site/Terms-4d86eec7d87c424e987ddb0dbc53af29
+    - link "Privacy Policy":
+      - /url: https://akindo.notion.site/PrivacyPolicy-db4b7aad0fe74d95a580665bb6d374a0
+  - list:
+    - link:
+      - /url: https://twitter.com/akindo_io
+    - link:
+      - /url: https://discord.gg/xAHPkSM9t7
+    - link:
+      - /url: https://www.youtube.com/@akindo_io
+    - link:
+      - /url: https://t.me/akindo_io
+    - link "Luma":
+      - /url: https://lu.ma/user/akindo
+      - img "Luma"
+    - link "Substack":
+      - /url: https://akindo.substack.com/
+      - img "Substack"
+  - generic: ©AKINDO
+  - img "Build a Killer App"
+- region "Notifications Alt+T"
+- alert: "Build with MUSD and MEZO: $7,000 USD in MEZO Grants | AKINDO"
+- alertdialog
+- alertdialog
