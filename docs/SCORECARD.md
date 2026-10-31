@@ -1,21 +1,27 @@
-# Tillward judging evidence
+# Tillward judging evidence and review
 
-Prepared 2026-10-25. Weights are verified from the [live AKINDO overview](https://app.akindo.io/wave-hacks/OVOO0gdrVU8379D10). Readiness assessments below are internal, not organizer scores or predictions. The organizer has not published Tillward's score.
+Updated October 26, 2026 after the confirmed Wave 1 submission. Official weights are recorded in HACKATHON.md. These are internal simulated scores, not organizer results or award predictions.
 
-| Criterion | Maximum | Current score | Observable evidence | Gap and highest-value improvement |
-| --- | ---: | --- | --- | --- |
-| Mezo Integration | 30 | Not assigned | Native BTC collateral, MUSD loan, customer MUSD invoice, receipt allocation and actual native repayment. Original 500 MUSD customer payment / 100 MUSD repayment; later recorded totals 502 collected / 100.4 repaid at block 16302866. Browser proof includes loan closure and BTC recovery. | Make a single receipt-to-debt sequence immediately visible in public demo and video. Link transaction evidence beside the explanation. |
-| Product & Business Viability | 30 | Not assigned | Approved target is a BTC-holding agency or seller already willing to accept MUSD. Owner chooses the receipt percentage and cash floor, linking operating funds to repayment. | Demand for this specific audience remains a hypothesis. Avoid adoption, actual revenue, guaranteed BTC protection, or market-size claims. Explain who needs the workflow, how they currently repay, and the narrow initial pilot. |
-| Technical Implementation | 20 | Not assigned | Isolated borrower accounts, factory registration, exact receipt/debt checks, native hints, transaction recovery, paginated history. Hosted keeper discovers three accounts and preserved settlement state across restart. Recorded checks: 20 Foundry tests with 128 fuzz runs, 21 JS tests, build and dependency audit. | Publish clean source with reproducible commands and proof files. Disclose testnet and native-fork oracle replay. Independent audit, external monitoring and full isolated runtime restore remain production gates. |
-| User Experience | 10 | Not assigned | Guided account/borrow/rule/invoice workflow, exact token approval, checkout, activity and owner loan-exit controls. Approved Tillward receipt-counter identity. Full Rabby-in-Chrome lifecycle was independently verified. | Inspect public URL signed out and at narrow width. Provide read-only proof-account entry so judges understand the product before connecting. Clearly distinguish illustrative workspace from chain data. |
-| Submission Materials Quality | 10 | Not assigned | Brand assets, testnet transaction records, QA and operations documentation exist. | Complete and host deck plus exact two-minute pitch video. Keep title, TL;DR, links and scope consistent across GitHub, demo and AKINDO. Check all fields and record final acceptance. |
+**73/100; range 68–80, medium confidence.** A Judge-role agent returned interim observations but reached the account usage limit before scoring. The operator assigned these scores and finalized the report. The Product Critic verdict is MODIFY. The independent Red Team saved its report before interruption. See [full review and ranked actions](reviews/REVIEW_SUMMARY.md).
+
+| Criterion | Score / maximum | Reviewed evidence | Main deductions |
+|---|---:|---|---|
+| Mezo Integration | 27 / 30 | Native BTC-backed borrowing, MUSD receipt collection and debt reduction; public proof; recorded full closure | Historical proof takes several steps to verify; automatic-repayment endpoint needs clearer demonstration |
+| Product & Business Viability | 15 / 30 | Specific business audience, receipt-linked rule, concrete workflow and proposed pilot | No real borrower/payer demand, MUSD spending/acceptance or business-model evidence; near-minimum loan utility needs qualification |
+| Technical Implementation | 16 / 20 | Public source/CI, integration proof, current passing existing suites and bounded account authority | Original-hash recovery lock, checkout precision, stale-state handling and sponsored-gas abuse coverage |
+| User Experience | 7 / 10 | Labeled examples, guided onboarding, distinctive identity and no-wallet live-account read | Proof discovery/history friction, protocol endpoint/reserve explanation and transaction recovery |
+| Submission Materials Quality | 8 / 10 | Submitted AKINDO entry, published YouTube pitch, eight-slide deck, public app/source | Stale contradictory README/QA status and older release links; YouTube display-duration uncertainty |
+
+The root's current live read at block 16,379,476 showed 502 MUSD collected and 100.40 repaid. The source MP4 remains exactly 120 seconds; YouTube displays 2:01. No tolerance/disqualification conclusion is inferred. Full deductions and uncertainty: [Judge report](reviews/JUDGE_REVIEW.md). No product fix was made in this review.
+
+The following original evidence map and earlier release checkpoints are retained as historical context; where their pending-submission statements conflict, submission/receipt.json and the review above are current.
 
 ## The demo must prove the product
 
 1. A business needs operating funds while holding BTC. Show the native borrowing account and available MUSD.
 2. Owner chooses a repayment share and operating cash floor. Show the actual rule.
 3. Customer pays a final-payment MUSD invoice. Show receipt identity, amount and its allocated share.
-4. Eligible allocated MUSD reduces the same business account's native debt. Show confirmed transaction evidence and retained operating balance. Explain accumulation when protocol minimum debt defers small repayments.
+4. Eligible allocated MUSD reduces the same business account's native debt. Show confirmed transaction evidence and retained operating balance. Explain partial-repayment headroom and owner closure of the remaining minimum debt.
 5. Owner can inspect history and explicitly close/recover collateral. Label the recorded Rabby loan-exit evidence separately from the still-open original demo loan.
 
 Keeper uptime, safety tests and alerts support this workflow. They are not the product pitch or the main user experience.

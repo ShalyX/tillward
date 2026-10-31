@@ -17,6 +17,11 @@ export function gasBudget(used,gas,price,transactionCap=20000000000000n,dailyCap
  const reserve=gas*price;if(reserve>transactionCap||used+reserve>dailyCap)throw new Error('Gas budget exceeded; no transaction signed.');
  return used+reserve;
 }
+// Sponsorship is a service policy; permissionless on-chain settlement stays open.
+export function sponsorshipPlan(quote,used=0n,{minimum=10n**18n,accountCap=25000000000000n,reserve=0n}={}){
+ if([quote,used,minimum,accountCap,reserve].some(v=>typeof v!=='bigint'||v<0n)||minimum===0n||accountCap===0n)throw Error('Invalid sponsorship budget.');
+ return {eligible:quote>=minimum&&used+reserve<=accountCap,reason:quote<minimum?'batching-below-1-MUSD':'account-daily-gas-cap'};
+}
 export async function validatePending(pending,signer,abi){
  if(!pending)return;
  if(pending.chainId!==31611||!isAddress(pending.account||'')||!/^0x[0-9a-fA-F]+$/.test(pending.raw||'')||keccak256(pending.raw)!==pending.hash)throw Error('Invalid pending journal.');
@@ -44,6 +49,7 @@ async function main(){
   (journal.cursor!==undefined&&(!Number.isSafeInteger(journal.cursor)||journal.cursor<0)))throw Error('Invalid keeper journal.');
  if(!all&&journal.target&&journal.target.toLowerCase()!==target.toLowerCase())throw new Error('Keeper state belongs to another account.');
  if(!all)journal.target=target;
+ if(journal.accountGas!==undefined&&(!journal.accountGas||Array.isArray(journal.accountGas)||typeof journal.accountGas!=='object'||Object.entries(journal.accountGas).some(([a,v])=>!isAddress(a)||typeof v!=='string'||!/^\d+$/.test(v))))throw Error('Invalid per-account sponsorship journal.');
  if(journal.gasReserved!==undefined&&!/^\d+$/.test(journal.gasReserved))throw Error('Invalid journal gas reservation.');
  await validatePending(journal.pending,signer.address,artifact.abi);
  const registryPath=resolve(stateDir,'keeper-registry.json');let registry={chainId:31611,factory:c.factory,nextBlock:String(c.deploymentBlock),accounts:[]};
@@ -61,15 +67,21 @@ async function main(){
   await verifyAccount(target,head);
   if(!journal.pending){
    const [quote,reason]=await readWithRetry(()=>p.readContract({address:target,abi:artifact.abi,functionName:'repaymentQuote',blockNumber:head}));
-   const plan=settlementPlan(quote);if(!plan.eligible)return {state:'deferred',reason,block:Number(head),checkedAt:new Date().toISOString()};
+   const plan=settlementPlan(quote);
+   if(!plan.eligible)return {state:'deferred',reason,block:Number(head),checkedAt:new Date().toISOString()};
+   const today=new Date().toISOString().slice(0,10);
+   const accountUsed=journal.day===today?BigInt(journal.accountGas?.[target.toLowerCase()]||'0'):0n;
+   const sponsorship=sponsorshipPlan(plan.amount,accountUsed);
+   if(!sponsorship.eligible)return {state:'deferred',reason:sponsorship.reason,block:Number(head),checkedAt:new Date().toISOString()};
    const args=[plan.amount,...await insertionHints(p,{...c,lastVerifiedBlock:Number(head)},target,'repay',plan.amount)];
    await p.simulateContract({account:signer,address:target,abi:artifact.abi,functionName:'settle',args});
    const price=await p.getGasPrice(),gas=800000n;
    const day=new Date().toISOString().slice(0,10),used=journal.day===day?BigInt(journal.gasReserved||'0'):0n;
    const reserved=gasBudget(used,gas,price);
+   if(!sponsorshipPlan(plan.amount,accountUsed,{reserve:gas*price}).eligible)return {state:'deferred',reason:'account-daily-gas-cap',checkedAt:new Date().toISOString()};
    const balance=await p.getBalance({address:signer.address});if(balance<gas*price)throw new Error('Keeper wallet needs test BTC gas.');
    const request=await w.prepareTransactionRequest({account:signer,to:target,data:encodeFunctionData({abi:artifact.abi,functionName:'settle',args}),gas,gasPrice:price,type:'legacy'});
-   const raw=await w.signTransaction(request);journal.pending={chainId:31611,account:target,hash:keccak256(raw),raw};journal.day=day;journal.gasReserved=reserved.toString();
+   const raw=await w.signTransaction(request);journal.pending={chainId:31611,account:target,hash:keccak256(raw),raw};if(journal.day!==day)journal.accountGas={};journal.accountGas??={};journal.accountGas[target.toLowerCase()]=(accountUsed+gas*price).toString();journal.day=day;journal.gasReserved=reserved.toString();
    // One global signer journal and gas budget across every account. Persist before broadcast.
    await atomicJson(journalPath,journal);
   }

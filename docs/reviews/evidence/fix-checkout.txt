@@ -1,0 +1,39 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - navigation "Main navigation":
+    - button "Overview" [disabled]:
+      - text: Overview
+    - button "Invoices" [disabled]:
+      - text: Invoices
+    - button "Repayment rules" [disabled]:
+      - text: Repayment rules
+    - button "Activity" [disabled]:
+      - text: Activity
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Customer checkout
+  - button "Refresh chain state":
+  - button "0x1111…1111":
+    - text: 0x1111…1111
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - paragraph: FINAL CUSTOMER PAYMENT
+  - heading "Exact fixture payment" [level=1]
+  - paragraph: A one-time MUSD payment to the business account shown below.
+  - paragraph: AMOUNT DUE
+  - heading "0.009999999999999999 MUSD" [level=2]
+  - generic: Business account
+  - code: "0x2222222222222222222222222222222222222222"
+  - generic: Network
+  - strong: LOCAL QA FIXTURE — no funds
+  - paragraph: This checkout accepts a final, nonrefundable payment. The business may allocate a share to repaying its own loan. Your exact payment amount is unchanged.
+  - button "Approve and pay 0.009999999999999999 MUSD"
+  - paragraph: Approval is limited to this invoice amount. Payment requires a separate wallet confirmation.
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 100 · Built by ElseMade
+- status

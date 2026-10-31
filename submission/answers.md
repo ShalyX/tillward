@@ -14,14 +14,14 @@ Tillward gives BTC-holding businesses MUSD working capital and uses their chosen
 ## Problem and product
 A small business can hold BTC while still needing stable money for contractors, supplies or its next project. Borrowing MUSD addresses the immediate funding need. Repayment remains a separate job as customer payments arrive.
 
-Tillward connects those two parts of the business. The owner opens a BTC-backed MUSD loan, sets the share of final customer payments to allocate toward repayment, and keeps a minimum amount available for operations. Each invoice payment records its allocation. Eligible funds then reduce that same business account's native Mezo debt.
+Tillward connects those two parts of the business. The owner opens a BTC-backed MUSD loan, sets the share of final customer payments to allocate toward repayment, and keeps a minimum balance reserved in the account. Each invoice payment records its allocation. Eligible funds then reduce that same business account's native Mezo debt.
 
 The product is for an independent agency or seller that already holds BTC and is willing to collect MUSD. Demand from this audience remains a hypothesis. The current build demonstrates the complete workflow on Mezo testnet.
 
 ## How it works and MUSD/MEZO integration
 The business creates its own account through RevenueFactory. That account supplies BTC to native Mezo BorrowerOperations and borrows MUSD. The owner chooses the receipt allocation percentage and cash floor, then creates final-payment invoices with shareable checkout links.
 
-A customer approves the exact invoice amount and pays MUSD. RevenueAccount records the receipt and reserves the configured share. The hosted keeper discovers factory accounts and applies eligible allocations to their native debt. Anyone can trigger the same settlement, but it cannot redirect funds or repay a different account. Protocol minimum debt can defer small allocations until they are eligible.
+A customer approves the exact invoice amount and pays MUSD. RevenueAccount records the receipt and reserves the configured share. The hosted keeper discovers factory accounts and applies eligible allocations to their native debt. Anyone can trigger the same settlement, but it cannot redirect funds or repay a different account. Settlement stops at minimum debt plus reserve. More receipts do not remove that endpoint; the owner tops up if needed and closes the remaining loan.
 
 The owner can inspect activity and transaction evidence, change future routing, pause it, top up MUSD, close the loan and withdraw released BTC. MUSD is the actual borrowing, customer-payment and repayment asset. Tillward does not integrate MEZO token in this release.
 

@@ -16,4 +16,4 @@ The contracts, keeper, recovery logic and monitoring support that workflow. They
 
 Non-goals: fiat collection, Shopify, credit scoring, yield, multichain, refunds/disputes, mainnet financial operations in this slice. Do not reframe Tillward as an autonomous agent or a safety dashboard.
 
-Assumptions: BTC-holding businesses may want MUSD operating funds and receipt-linked repayment. Target-user demand is unvalidated. Native protocol minimum debt may defer small allocations. Collateral remains subject to liquidation/redemption.
+Assumptions: BTC-holding businesses may want MUSD operating funds and receipt-linked repayment. Target-user demand is unvalidated. Native minimum debt limits partial repayment; final minimum principal requires owner closure. Collateral remains subject to liquidation/redemption.

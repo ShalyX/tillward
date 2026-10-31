@@ -25,7 +25,7 @@ The proof account belongs to a dedicated test wallet. Connecting another wallet 
 5. The hosted keeper applies eligible allocations to that account's debt. Anyone can also trigger the same bounded settlement.
 6. Inspect debt reduction and transaction evidence. The owner can top up MUSD, close the loan, and recover released BTC.
 
-Protocol minimum debt can defer small repayments. Allocations remain visible until eligible. BTC collateral remains subject to the native protocol's liquidation and redemption rules. Only final, nonrefundable payments belong in this slice.
+Repayment stops at native minimum debt plus reserve. Allocations remain visible; more receipts do not remove that endpoint. The owner tops up if needed and closes the remaining loan. BTC collateral remains subject to the native protocol's liquidation and redemption rules. Only final, nonrefundable payments belong in this slice.
 
 ## What is implemented and verified
 
@@ -84,3 +84,11 @@ The workstation monitor needs that workstation online. A monitor outside both ho
 ## License and attribution
 
 Built by ElseMade. Original project code is [MIT licensed](LICENSE). Native protocol integration references [Mezo MUSD](https://github.com/mezo-org/musd) at commit `490ed984ba24ba6297986e8de1271abad4e8abe5`. See [NOTICE](NOTICE.md) for attribution and third-party licensing.
+
+### Repayment limits and hosted sponsorship
+
+Receipts repay only debt above Mezo's minimum principal plus reserve. More receipts do not remove that minimum: the owner tops up the account if necessary and closes the loan to repay the remainder. The cash floor is reserved against both repayment and withdrawal; lower the rule to release reserved cash.
+
+The hosted keeper batches quotes below 1 MUSD and reserves at most 0.000025 BTC gas per account per UTC day, within its existing global budget. Pending transaction reservations survive restarts. Anyone may still trigger an eligible on-chain settlement with their own gas. Account creation enrolls discovery, not a guarantee of sponsored gas; multiple funded accounts can still consume the bounded global subsidy.
+
+For older proof, open Activity and enter a transaction's block number (the original demo's payment/repayment is near block 16298123). This loads historical events without changing the current balance snapshot.

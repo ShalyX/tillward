@@ -1,0 +1,48 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - strong: Your workspace
+  - generic: Working capital on Mezo
+  - navigation "Main navigation":
+    - button "Overview":
+      - text: Overview
+    - button "Invoices":
+      - text: Invoices
+    - button "Repayment rules":
+      - text: Repayment rules
+    - button "Activity":
+      - text: Activity
+  - strong: Mezo testnet
+  - generic: BTC gas · MUSD payments
+  - link "Read Mezo borrowing documentation":
+    - /url: https://mezo.org/docs/users/borrow/
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Overview
+  - button "Refresh chain state":
+  - button "Connect wallet":
+    - text: Connect wallet
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - paragraph: START YOUR WORKSPACE
+  - heading "Working capital with a way back." [level=1]
+  - paragraph: A dedicated business account keeps your BTC-backed loan, MUSD receipts, and repayment rules together.
+  - generic: "01"
+  - heading "Connect your wallet to begin" [level=2]
+  - paragraph: Use an EVM wallet on Mezo testnet. Your wallet controls the business account; each customer approves their own payment.
+  - list:
+    - listitem: Create an isolated business account.
+    - listitem: Supply test BTC and borrow MUSD.
+    - listitem: Choose your receipt split and cash floor.
+    - listitem: Share your first final-payment checkout link.
+  - button "Connect wallet":
+    - text: Connect wallet
+  - button "Add Mezo testnet to wallet"
+  - button "Explore example workspace"
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: Waiting for a wallet · Built by ElseMade
+- status

@@ -1,0 +1,100 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - strong: Business workspace
+  - generic: 0x2222…2222
+  - navigation "Main navigation":
+    - button "Overview":
+      - text: Overview
+    - button "Invoices 1":
+      - text: Invoices
+      - generic: "1"
+    - button "Repayment rules":
+      - text: Repayment rules
+    - button "Activity":
+      - text: Activity
+  - strong: Mezo testnet
+  - generic: BTC gas · MUSD payments
+  - link "Read Mezo borrowing documentation":
+    - /url: https://mezo.org/docs/users/borrow/
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Overview
+  - button "Refresh chain state":
+  - button "0x1111…1111":
+    - text: 0x1111…1111
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - status: Previous transaction confirmed.
+  - paragraph: GET YOUR BUSINESS READY · 3 OF 4
+  - heading "Choose how receipts repay the loan" [level=2]
+  - paragraph: Choose a receipt percentage and operating cash floor. Review the defaults before saving.
+  - list:
+    - listitem: Business account created
+    - listitem: Supply BTC & borrow
+    - listitem: Save repayment rule
+    - listitem: Create & share invoice
+  - button "Review repayment rule":
+    - text: Review repayment rule
+  - paragraph: YOUR WORKING CAPITAL
+  - heading "Keep business moving. Let receipts move debt down." [level=1]:
+    - text: Keep business moving.
+    - text: Let receipts move debt down.
+  - paragraph: Collect in MUSD. Keep your operating cash. Apply your chosen share to the loan.
+  - button "New invoice":
+    - text: New invoice
+  - paragraph:
+    - text: Available to withdraw
+    - generic: MUSD
+  - heading "400.00" [level=2]
+  - text: After your cash floor and repayment allocation
+  - paragraph:
+    - text: Outstanding loan
+    - generic: MUSD
+  - heading "2,000.00" [level=2]
+  - text: 1.0000 BTC posted as collateral
+  - paragraph:
+    - text: Customer receipts
+    - generic: MUSD
+  - heading "500.00" [level=2]
+  - text: 100.00 MUSD repaid through this account
+  - paragraph: YOUR RECEIPT RULE
+  - heading "One payment. Two purposes." [level=2]
+  - generic: Active
+  - paragraph: For every 100 MUSD in final customer payments
+  - generic: Keep for operations
+  - strong: 80%
+  - generic: Allocate to repayment
+  - strong: 20%
+  - generic: Your cash floor stays protected
+  - strong: 500.00 MUSD
+  - button "Adjust repayment rules":
+    - text: Adjust repayment rules
+  - paragraph: NEXT REPAYMENT
+  - generic: 100.00 MUSD
+  - paragraph: Allocated from customer receipts
+  - generic: Eligible to repay now
+  - strong: 0.00 MUSD
+  - paragraph: Minimum debt reached. More receipts do not unlock principal repayment. Top up if needed, then close the loan in Activity.
+  - paragraph: "Partial repayment headroom: 0 MUSD. Final minimum principal requires owner closure."
+  - button "Apply repayment" [disabled]:
+    - text: Apply repayment
+  - generic: Anyone can trigger repayment. Funds can only reduce this account’s debt.
+  - paragraph: MONEY IN, PROGRESS OUT
+  - heading "Recent activity" [level=2]
+  - button "View all":
+    - text: View all
+  - generic: No receipt or repayment in the loaded range. Open Activity to choose a historical block.
+  - text: "01"
+  - strong: Collect a final payment
+  - text: "02"
+  - strong: Allocate your chosen share
+  - text: "03"
+  - strong: Reduce native Mezo debt
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 100 · Built by ElseMade
+- status

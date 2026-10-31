@@ -19,3 +19,6 @@ export function money(amount,decimals=2){
 }
 export function inputAmount(n){return `${n/UNIT}.${(n%UNIT).toString().padStart(18,'0')}`.replace(/\.?0+$/,'');}
 export function available(balance,pending,floor){return balance>pending+floor?balance-pending-floor:0n;}
+
+// Exact payable currency value; summaries may use money(), checkout must not.
+export function exactMoney(n){return inputAmount(n);}

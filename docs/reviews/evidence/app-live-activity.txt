@@ -1,0 +1,53 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - strong: Business workspace
+  - generic: 0x5B4b…c6C5
+  - navigation "Main navigation":
+    - button "Overview":
+      - text: Overview
+    - button "Invoices 3":
+      - text: Invoices
+      - generic: "3"
+    - button "Repayment rules":
+      - text: Repayment rules
+    - button "Activity":
+      - text: Activity
+  - strong: Mezo testnet
+  - generic: BTC gas · MUSD payments
+  - link "Read Mezo borrowing documentation":
+    - /url: https://mezo.org/docs/users/borrow/
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Activity
+  - button "Refresh chain state":
+  - button "Connect wallet":
+    - text: Connect wallet
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - paragraph: FOLLOW THE MONEY
+  - heading "Every receipt. Every repayment." [level=1]
+  - paragraph: Confirmed account events and the transactions behind them.
+  - generic: No receipt or repayment in this history page. Load older activity below.
+  - button "Load older activity"
+  - paragraph: LOAN & OPERATING FUNDS
+  - heading "Manage your loan" [level=2]
+  - paragraph: "Closing requires 1,901.82 MUSD for the loan, plus your 500.00 MUSD cash floor. Current account balance: 1,889.60 MUSD."
+  - paragraph:
+    - text: "Available BTC in this account:"
+    - strong: 0.00000000 BTC
+  - button "Top up MUSD"
+  - button "Withdraw operating MUSD" [disabled]
+  - button "Open loan" [disabled]
+  - button "Add collateral" [disabled]
+  - button "Close loan" [disabled]
+  - button "Release allocation" [disabled]
+  - button "Claim surplus BTC" [disabled]
+  - button "Withdraw available BTC" [disabled]
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 16,379,476 · Built by ElseMade
+- status

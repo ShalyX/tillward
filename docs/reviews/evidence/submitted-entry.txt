@@ -1,0 +1,178 @@
+- banner:
+  - link:
+    - /url: https://app.akindo.io/
+  - link "Buildathons":
+    - /url: https://app.akindo.io/wave-hacks
+  - link "Hackathons":
+    - /url: https://app.akindo.io/hackathons
+  - link "Products":
+    - /url: https://app.akindo.io/products
+  - button "Showcase Product"
+  - button "shaly":
+    - img "shaly"
+  - 'link "Build with MUSD and MEZO: $7,000 USD in MEZO Grants 04:14:30 Left to Submit"':
+    - /url: https://app.akindo.io/wave-hacks/OVOO0gdrVU8379D10
+    - generic: "Build with MUSD and MEZO: $7,000 USD in MEZO Grants"
+    - text: 04:14:30
+    - generic: Left to Submit
+- main:
+  - link "Shaly":
+    - /url: https://app.akindo.io/communities/o6Xgma29Vun4VWEE
+    - generic: Shaly
+  - button "Update"
+  - img "Tillward"
+  - heading "Tillward" [level=1]
+  - generic: BTC-backed working capital, repaid from customer receipts.
+  - link "Shaly Shaly":
+    - /url: https://app.akindo.io/communities/o6Xgma29Vun4VWEE
+    - img "Shaly"
+    - generic: Shaly
+  - link "Member Recruitment Settings":
+    - /url: https://app.akindo.io/communities/o6Xgma29Vun4VWEE/edit#recruit
+    - text: Member Recruitment Settings
+  - button "Overview":
+    - generic: Overview
+  - button "Submission Comments":
+    - generic: Submission Comments
+  - button "Voter Reviews":
+    - generic: Voter Reviews
+  - button "Vote Comments":
+    - generic: Vote Comments
+  - iframe:
+    - generic "YouTube Video Player"
+    - button "Play video":
+    - button "Hide player controls"
+    - link "Tillward | BTC-backed working capital, repaid from receipts":
+      - /url: https://www.youtube.com/watch?v=9Qu7pAAb2js
+    - link "Shaly":
+      - /url: /channel/UCr1uOOdDcdiP1ERwUEJWfGg
+      - generic: Shaly
+    - button "thumbnail-image":
+      - img "thumbnail-image"
+    - generic: Shaly
+    - generic: No subscribers
+    - button "Share":
+    - button "Watch later":
+    - link "Watch on YouTube":
+      - /url: https://www.youtube.com/watch?v=9Qu7pAAb2js
+      - text: Watch on
+  - generic: prev
+  - generic: next
+  - heading "Tillward" [level=1]
+  - paragraph: BTC-backed working capital, repaid from customer receipts.
+  - paragraph:
+    - strong: "Live product:"
+    - link "https://tillward.vercel.app":
+      - /url: https://tillward.vercel.app
+    - strong: "Two-minute pitch:"
+    - link "https://tillward.vercel.app/pitch.html":
+      - /url: https://tillward.vercel.app/pitch.html
+    - strong: "Deck:"
+    - link "https://github.com/ShalyX/tillward/releases/download/v0.1.1/deck.pdf":
+      - /url: https://github.com/ShalyX/tillward/releases/download/v0.1.1/deck.pdf
+    - strong: "Public code:"
+    - link "https://github.com/ShalyX/tillward":
+      - /url: https://github.com/ShalyX/tillward
+  - heading "What it does" [level=2]
+  - paragraph: Tillward gives BTC-holding businesses MUSD working capital and uses the owner's chosen share of customer receipts to repay the native Mezo loan while preserving an operating cash floor.
+  - heading "Problem and workflow" [level=2]
+  - paragraph: An independent agency or seller can hold BTC while needing stable money for contractors, supplies or its next project. Repayment remains a separate task when customer payments arrive.
+  - paragraph: Create a business account, supply BTC collateral, and borrow MUSD through native Mezo BorrowerOperations. Choose a repayment percentage and cash floor. Create a final-payment invoice and share its checkout link. The customer approves the exact MUSD amount, then pays. The account records the receipt and reserves the configured allocation. Eligible allocations reduce that account's native Mezo debt. Minimum debt can defer small repayments.
+  - paragraph: With a 20% rule, an illustrative 500 MUSD receipt allocates 100 toward repayment and leaves 400 for operations, subject to account and protocol limits. The owner can inspect history, edit or pause future routing, top up MUSD, close the loan and recover released BTC. The hosted keeper discovers factory accounts and settles eligible allocations; it cannot change policy, withdraw or redirect funds.
+  - paragraph: MUSD is the actual borrowing, customer-payment and repayment asset. MEZO token is not integrated in this release.
+  - heading "Target users and track" [level=2]
+  - paragraph: "Independent agencies, studios and sellers that hold BTC, understand collateralized borrowing and are willing to accept MUSD. Desktop-first EVM-wallet workflow with responsive read and checkout layouts. No regional adoption or mobile-wallet compatibility claim. Demand is a hypothesis to validate. Primary fit: Track 1, DeFi; invoice checkout also supports access and distribution."
+  - heading "Stack and project status" [level=2]
+  - paragraph: "New project built for this buildathon, originally called Paydown. Working Mezo public testnet deployment, chain 31611. Solidity 0.8.24, Foundry, TypeScript, Vite, viem, native Mezo MUSD/BorrowerOperations/HintHelpers, Node.js keeper with systemd, Vercel and GitHub Actions. Native source credits: NOTICE.md."
+  - heading "Evidence" [level=2]
+  - paragraph: "A separate customer wallet paid 500 MUSD and 100 reduced native debt. Later recorded totals: 502 collected and 100.4 repaid. Rabby-in-Chrome QA completed a 2,000 MUSD loan against 0.045 test BTC, invoice payment, repayment, top-up, closure and return of all collateral. The keeper enrolled three accounts and retained a repayment result across restart. Public CI covers application and Solidity checks. Machine-readable proofs: deployments/."
+  - paragraph: All figures are testnet integration evidence using test assets, not customer revenue or adoption. No mainnet deployment or independent audit. Loans carry interest, liquidation and redemption risk.
+  - heading "Next three milestones" [level=2]
+  - paragraph: "Proposed roadmap, dependent on validation:"
+  - list:
+    - listitem: "Within two weeks after Wave 1: interview 5–10 BTC-holding agencies or sellers and validate MUSD acceptance, invoice language, repayment share and cash-floor needs."
+    - listitem: "Within four weeks: a small testnet pilot informed by those findings, broader wallet/RPC failure coverage, an isolated runtime restore drill and monitoring outside both current hosts."
+    - listitem: "Within eight weeks: independent contract/integration review if demand supports continuing; pin the target protocol version and make a separate mainnet-readiness decision."
+  - heading "Team" [level=2]
+  - paragraph:
+    - text: Shaly — solo builder, product and engineering.
+    - link "https://x.com/shalyx_04":
+      - /url: https://x.com/shalyx_04
+    - text: Built by ElseMade.
+  - paragraph:
+    - text: "Deck, video, captions and editable source downloads:"
+    - link "https://github.com/ShalyX/tillward/releases/tag/v0.1.1":
+      - /url: https://github.com/ShalyX/tillward/releases/tag/v0.1.1
+  - complementary:
+    - heading "GitHub repo" [level=2]
+    - link "ShalyX/tillward":
+      - /url: https://github.com/ShalyX/tillward
+      - generic: ShalyX/tillward
+    - heading "Live demo" [level=2]
+    - link "https://tillward.vercel.app":
+      - /url: https://tillward.vercel.app
+      - generic: https://tillward.vercel.app
+    - heading "Build with" [level=3]
+    - generic: Mezo
+    - heading "Product Category" [level=3]
+    - list:
+      - listitem: BTC working capital
+    - heading "Tags" [level=3]
+    - list:
+      - listitem: "#Solidity"
+      - listitem: "#TypeScript"
+      - listitem: "#foundry"
+      - listitem: "#Viem"
+      - listitem: "#Vite"
+      - listitem: "#Node.js"
+    - heading "Submitted to" [level=2]
+    - 'link "Build with MUSD and MEZO: $7,000 USD in MEZO Grants Build with MUSD and MEZO: $7,000 USD in MEZO Grants [1st Wave]"':
+      - /url: https://app.akindo.io/wave-hacks/OVOO0gdrVU8379D10
+      - 'img "Build with MUSD and MEZO: $7,000 USD in MEZO Grants"'
+      - generic: "Build with MUSD and MEZO: $7,000 USD in MEZO Grants [1st Wave]"
+    - button "Submit"
+    - heading "Connect" [level=2]
+    - link:
+      - /url: https://x.com/shalyx_04
+- contentinfo:
+  - link "BOOK A STRATEGY CALL":
+    - /url: https://calendly.com/shinkinjo/30min
+  - list:
+    - link "Contact us":
+      - /url: https://app.deform.cc/form/d4def915-fae8-46a9-b66f-3bf623ff2a98/?page_number=0
+    - link "Buildathons":
+      - /url: https://app.akindo.io/wave-hacks
+    - link "Products":
+      - /url: https://app.akindo.io/products
+    - link "The Builder Activation":
+      - /url: https://www.youtube.com/@akindo_io
+  - list:
+    - link "About us":
+      - /url: https://akindo.io
+    - link "Brand Assets":
+      - /url: https://drive.google.com/drive/folders/14xy6WPsUUSkoqn6nULor0WFrLjizscrs?usp=sharing
+    - link "Terms":
+      - /url: https://akindo.notion.site/Terms-4d86eec7d87c424e987ddb0dbc53af29
+    - link "Privacy Policy":
+      - /url: https://akindo.notion.site/PrivacyPolicy-db4b7aad0fe74d95a580665bb6d374a0
+  - list:
+    - link:
+      - /url: https://twitter.com/akindo_io
+    - link:
+      - /url: https://discord.gg/xAHPkSM9t7
+    - link:
+      - /url: https://www.youtube.com/@akindo_io
+    - link:
+      - /url: https://t.me/akindo_io
+    - link "Luma":
+      - /url: https://lu.ma/user/akindo
+      - img "Luma"
+    - link "Substack":
+      - /url: https://akindo.substack.com/
+      - img "Substack"
+  - generic: ©AKINDO
+  - img "Build a Killer App"
+- region "Notifications Alt+T"
+- alert: AKINDO
+- alertdialog
+- alertdialog

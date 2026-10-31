@@ -18,4 +18,4 @@ Explorer: https://explorer.test.mezo.org . All assets are testnet. Example numbe
 ## Create your own business
 Use testnet, connect an EVM wallet and approve Mezo testnet chain 31611. Obtain only test BTC from https://faucet.test.mezo.org/ . Follow onboarding to create an account, supply BTC/borrow, set the receipt rule and issue an invoice. The owner handles all wallet prompts. A payment requires exact MUSD approval followed by a separate payment transaction. Never send real assets.
 
-Hosted enrollment is automatic but gas sponsorship is bounded. Small allocations can defer where native minimum debt prevents repayment. BTC collateral remains exposed to native protocol liquidation/redemption. This release has no mainnet deployment or independent audit.
+Hosted enrollment is automatic but gas sponsorship is bounded. The hosted service batches small allocations; at native minimum debt plus reserve, further receipts cannot reduce the remaining principal. The owner must close the loan. BTC collateral remains exposed to native protocol liquidation/redemption. This release has no mainnet deployment or independent audit.

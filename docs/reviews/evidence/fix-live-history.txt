@@ -1,0 +1,79 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - navigation "Main navigation":
+    - button "Overview":
+      - text: Overview
+    - button "Invoices":
+      - text: Invoices
+    - button "Repayment rules":
+      - text: Repayment rules
+    - button "Activity":
+      - text: Activity
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Activity
+  - button "Refresh chain state":
+  - button "Connect wallet":
+    - text: Connect wallet
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - paragraph: FOLLOW THE MONEY
+  - heading "Every receipt. Every repayment." [level=1]
+  - paragraph: Confirmed account events and the transactions behind them.
+  - generic: Find activity near block
+  - textbox "Find activity near block":
+    - /placeholder: Block number from a transaction
+  - button "Load historical activity"
+  - paragraph: Read-only history. Current balances and loan state stay at the latest snapshot.
+  - table:
+    - rowgroup:
+      - row "Activity Amount State Evidence":
+        - columnheader "Activity"
+        - columnheader "Amount"
+        - columnheader "State"
+        - columnheader "Evidence"
+    - rowgroup:
+      - row "Receipt allocation applied Native loan repayment −100.00 MUSD Confirmed View transaction":
+        - cell "Receipt allocation applied Native loan repayment":
+          - strong: Receipt allocation applied
+          - generic: Native loan repayment
+        - cell "−100.00 MUSD"
+        - cell "Confirmed":
+          - generic: Confirmed
+        - cell "View transaction":
+          - link "View transaction":
+            - /url: https://explorer.test.mezo.org/tx/0x3d464267e44b119fe4c8f172996775157261dd85ee9cdd598e5b27bb04b0fb0d
+            - text: View transaction
+      - row "Sample final payment 001 Customer payment +500.00 MUSD Confirmed View transaction":
+        - cell "Sample final payment 001 Customer payment":
+          - strong: Sample final payment 001
+          - generic: Customer payment
+        - cell "+500.00 MUSD"
+        - cell "Confirmed":
+          - generic: Confirmed
+        - cell "View transaction":
+          - link "View transaction":
+            - /url: https://explorer.test.mezo.org/tx/0xea91ee5a9de5935c613ba623a9c9a80dac3e43deebda73932813de751cbd1a02
+            - text: View transaction
+  - paragraph: LOAN & OPERATING FUNDS
+  - heading "Manage your loan" [level=2]
+  - paragraph: "Closing requires 1,902.11 MUSD for the loan, plus your 500.00 MUSD cash floor. Current account balance: 1889.6 MUSD. Additional top-up needed: 512.512979094844792852 MUSD (interest may increase this)."
+  - paragraph:
+    - text: "Available BTC in this account:"
+    - strong: 0.00000000 BTC
+  - button "Top up MUSD"
+  - button "Withdraw operating MUSD" [disabled]
+  - button "Open loan" [disabled]
+  - button "Add collateral" [disabled]
+  - button "Close loan" [disabled]
+  - button "Release allocation" [disabled]
+  - button "Claim surplus BTC" [disabled]
+  - button "Withdraw available BTC" [disabled]
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 16,482,846 · Built by ElseMade
+- status

@@ -115,6 +115,22 @@ contract RevenueAccountTest {
         require(account.pendingRepayment()==800e18,"excess deferred");
         vm.expectRevert();account.settle(1,address(0),address(0));
     }
+    function testNewReceiptsAtMinimumRequireOwnerClosure() public {
+        prepare(20000e18);account.setPolicy(10000,0,false);
+        account.settle(type(uint256).max,address(0),address(0));
+        bytes32 next=keccak256("Receipt at minimum");
+        account.createInvoice(next,"More receipts",100e18,uint64(block.timestamp+1 days));
+        token.mint(customer,100e18);
+        vm.prank(customer);token.approve(address(account),100e18);
+        vm.prank(customer);account.payInvoice(next);
+        (uint256 quote,uint8 reason)=account.repaymentQuote();
+        require(quote==0 && reason==4,"receipts do not remove minimum debt");
+        require(account.pendingRepayment()==900e18,"new allocation remains visible");
+        vm.expectRevert();vm.prank(customer);account.closeLoan();
+        account.closeLoan();
+        require(protocol.debt(address(account))==0,"owner closes remaining minimum");
+        require(account.pendingRepayment()==0,"closure releases allocation");
+    }
     function testRepaymentFailureKeepsAllocationAndFunds() public {
         prepare(500e18);protocol.setFail(true);
         vm.expectRevert();account.settle(100e18,address(0),address(0));

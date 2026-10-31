@@ -1,0 +1,69 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - strong: Business workspace
+  - generic: 0x2222…2222
+  - navigation "Main navigation":
+    - button "Overview":
+      - text: Overview
+    - button "Invoices 1":
+      - text: Invoices
+      - generic: "1"
+    - button "Repayment rules":
+      - text: Repayment rules
+    - button "Activity":
+      - text: Activity
+  - strong: Mezo testnet
+  - generic: BTC gas · MUSD payments
+  - link "Read Mezo borrowing documentation":
+    - /url: https://mezo.org/docs/users/borrow/
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Repayment rules
+  - button "Refresh chain state":
+  - button "0x1111…1111":
+    - text: 0x1111…1111
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - alert:
+    - generic: An unknown RPC error occurred.
+    - button "Retry"
+  - status:
+    - generic: Transaction unresolved. Checking the original and any confirmed replacement. If dropped, cancel or speed up this nonce in your wallet; then refresh.
+    - generic: Wallet outcome unknown. No transaction hash returned.
+  - paragraph: YOU SET THE PACE
+  - heading "Repayment that leaves room to operate." [level=1]
+  - paragraph: These rules govern new receipt allocations and eligible repayments.
+  - heading "Receipt allocation" [level=2]
+  - generic: Share allocated to repayment
+  - status: 20%
+  - generic: of each final customer receipt
+  - slider "Share allocated to repayment": "20"
+  - generic: Keep all receipts
+  - generic: Allocate all receipts
+  - generic: Operating cash floor · MUSD
+  - textbox "Operating cash floor · MUSD": "500"
+  - paragraph: Withdrawals preserve both this floor and funds already allocated to repayment. Repayment also respects the cash floor. This is a reserved balance, not immediately withdrawable cash; lower the floor to release it.
+  - strong: Pause repayment routing
+  - generic: New receipts stay available for operations. Existing allocations remain reserved.
+  - checkbox "Pause repayment routing New receipts stay available for operations. Existing allocations remain reserved."
+  - button "Save onchain rules" [disabled]:
+    - text: Save onchain rules
+  - paragraph: TRY A CUSTOMER PAYMENT
+  - heading "See where the money goes." [level=2]
+  - generic: Payment amount · MUSD
+  - textbox "Payment amount · MUSD": "500"
+  - generic: For operations
+  - strong: 400.00 MUSD
+  - generic: Allocated to repayment
+  - strong: 100.00 MUSD
+  - strong: Clear control. No hidden discretion.
+  - paragraph: You choose the share. The contract checks the cash floor and native minimum debt. Settlement cannot send repayment funds to another recipient.
+  - paragraph: This calculator is illustrative. Existing allocated funds are not recalculated when you change the rule.
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 100 · Built by ElseMade
+- status

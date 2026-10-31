@@ -1,0 +1,12 @@
+{
+  "release": "2026-10-31-recovery-1",
+  "network": "Mezo public testnet",
+  "chainId": 31611,
+  "sourceBaseline": "bfbb21f",
+  "sha256": {
+    "src/main.ts": "f62afb3c6fda6fee5a70fe698180378e68f90ecad5770b9856f3ccd84b9b7fa4",
+    "src/transaction-recovery.mjs": "8ee6c619cbf49a88e17ed2b9bacce86859d45f9cddfa4d910a5d811f74137d27",
+    "src/money.mjs": "8751f74e5f97bc53c0e0175ef14a5f76178c1dbb7fbd67f4ad0b17253839b4f7",
+    "scripts/keeper.mjs": "750e2f81bc621b86e9b58bc0deb3aa690544e3412ab3c28a661b76a0e0ac43a8"
+  }
+}
