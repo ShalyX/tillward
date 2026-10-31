@@ -13,11 +13,14 @@ export async function snapshotBoundary(client,anchor,pendingHash){
 export async function historyPage(client,{address,events,deploymentBlock,toBlock}){
  if(toBlock<deploymentBlock)return {logs:[],before:undefined};
  const start=toBlock-deploymentBlock>=10000n?toBlock-9999n:deploymentBlock;
- const logs=[];
+ const chunks=[];
  for(let from=start;from<=toBlock;from+=2000n){
   const end=from+1999n<toBlock?from+1999n:toBlock;
-  logs.push(...await client.getLogs({address,events,fromBlock:from,toBlock:end}));
+  chunks.push(client.getLogs({address,events,fromBlock:from,toBlock:end}));
  }
+ // A page has at most five provider-sized chunks. Fetch them concurrently,
+ // but publish no partial page if any chunk fails.
+ const logs=(await Promise.all(chunks)).flat();
  logs.sort((a,b)=>a.blockNumber===b.blockNumber?(b.logIndex??0)-(a.logIndex??0):a.blockNumber>b.blockNumber?-1:1);
  return {logs,before:start>deploymentBlock?start:undefined};
 }

@@ -181,7 +181,7 @@ async function createAccount(){if(!config.factory||!wallet)return;await send('cr
 async function pay(){if(!data||!account||!checkoutId||!wallet)return;const i=data.invoices.find(x=>x.id===checkoutId);if(!i)return;try{const allowance=await client.readContract({address:config.musd,abi:tokenAbi,functionName:'allowance',args:[wallet,account]});if(allowance<i.amount){if(allowance>0n){await send('approve',[account,0n],undefined,config.musd,tokenAbi);if(error)return;}await send('approve',[account,i.amount],undefined,config.musd,tokenAbi);if(error)return;}await send('payInvoice',[checkoutId]);}catch(e){error=message(e);render();}}
 async function init(){
  try{
-  const response=await fetch(local?'/local-deployment.json':'/deployment.json',{cache:'no-store'});
+  const response=await fetch(local?'/local-deployment.json':'/deployment.json',{cache:'no-store',signal:AbortSignal.timeout(15000)});
   if(!response.ok)throw new Error('Deployment configuration unavailable.');
   config=await response.json();
   if(config.chainId!==(local?31337:31611))throw new Error('Unsupported deployment network.');
