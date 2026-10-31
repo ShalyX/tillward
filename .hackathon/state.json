@@ -24,7 +24,7 @@
   "post_submission_review": {
     "date": "2026-10-26",
     "baseline": "bfbb21f",
-    "status": "completed_with_changes_recommended",
+    "status": "technical_remediation_verified_customer_validation_open",
     "product_critic": {
       "verdict": "MODIFY",
       "authorship": "operator_completed_from_independent_agent_interim_findings"
@@ -48,12 +48,12 @@
       "organizer_score": false
     },
     "agent_limitation": "All three specialist turns reached the account usage limit; critic and judge final reports completed by root.",
-    "fixes_applied": false,
+    "fixes_applied": true,
     "customer_validation_complete": false,
     "summary": "docs/reviews/REVIEW_SUMMARY.md",
     "remediation": {
       "date": "2026-10-31",
-      "status": "source_fixed_locally_verified_not_deployed",
+      "status": "deployed_live_lifecycle_verified",
       "report": "docs/reviews/FIX_VERIFICATION.md",
       "p1_recovery": "fixed_with_canonical_sender_nonce_receipt_reconciliation",
       "p2s": [
@@ -64,13 +64,27 @@
         "keeper_batching_and_per_account_budget",
         "direct_historical_evidence_lookup"
       ],
-      "javascript_tests": 31,
+      "javascript_tests": 32,
       "solidity_tests": 21,
       "solidity_fuzz_runs": 128,
       "build": "passed",
-      "public_deployment_updated": false,
-      "hosted_keeper_updated": false,
-      "real_wallet_signing_rerun": false
-    }
+      "public_deployment_updated": true,
+      "hosted_keeper_updated": true,
+      "real_wallet_signing_rerun": true,
+      "application_release": "2026-10-31-recovery-3",
+      "application_commit": "23ee3647b7cb6ae36580af9b3aadd7c9eb7a6759",
+      "vercel_deployment": "dpl_6crhcC2AdKNp1nCviwLTWrZPANLd",
+      "keeper_sha256": "750e2f81bc621b86e9b58bc0deb3aa690544e3412ab3c28a661b76a0e0ac43a8",
+      "live_wallet_status": "complete_normal_signing_payment_keeper_loan_exit",
+      "live_rejection_verified": false,
+      "live_replacement_verified": false,
+      "live_payment_and_keeper_verified": true,
+      "live_loan_exit_verified": true,
+      "live_report": "docs/reviews/LIVE_RELEASE_VERIFICATION.md",
+      "live_wrong_wallet_blocking_verified": true,
+      "proof": "deployments/recovery-browser-lifecycle.json",
+      "verified_at_utc": "2026-10-31T18:21:51.944Z"
+    },
+    "fixes_verified_at_utc": "2026-10-31T18:21:51.944Z"
   }
 }

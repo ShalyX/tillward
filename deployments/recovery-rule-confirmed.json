@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-10-31T11:41:04.022Z",
+  "chainId": 31611,
+  "hash": "0x1f35d9fcdc2b705a34ab908430f1d0b1085d0dea932a5975a147ff77c42f63c9",
+  "sender": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "account": "0x791ffc8a7420dbb0ed5d9f28e811ec7576936433",
+  "nonce": 10,
+  "function": "setPolicy",
+  "args": [
+    2000,
+    "0",
+    false
+  ],
+  "status": "success",
+  "block": "16484245",
+  "gasUsed": "200000",
+  "readOnlyVerification": true
+}

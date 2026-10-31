@@ -1,0 +1,35 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - strong: Business workspace
+  - generic: 0x2222…2222
+  - navigation "Main navigation":
+    - button "Overview" [disabled]:
+      - text: Overview
+    - button "Invoices 1" [disabled]:
+      - text: Invoices
+      - generic: "1"
+    - button "Repayment rules" [disabled]:
+      - text: Repayment rules
+    - button "Activity" [disabled]:
+      - text: Activity
+  - strong: Mezo testnet
+  - generic: BTC gas · MUSD payments
+  - link "Read Mezo borrowing documentation":
+    - /url: https://mezo.org/docs/users/borrow/
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Customer checkout
+  - button "Refresh chain state":
+  - button "0x1111…1111":
+    - text: 0x1111…1111
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - status: Loading the exact invoice from the verified account…
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 100 · Built by ElseMade
+- status

@@ -1,0 +1,24 @@
+{
+  "observedAt": "2026-10-31T11:44:15.531Z",
+  "chainId": 31611,
+  "account": "0x791fFc8A7420dBB0ed5D9F28E811ec7576936433",
+  "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "repaymentBps": 2000,
+  "cashFloor": "0",
+  "paused": false,
+  "transactions": [
+    {
+      "hash": "0x1f35d9fcdc2b705a34ab908430f1d0b1085d0dea932a5975a147ff77c42f63c9",
+      "nonce": 10,
+      "block": "16484245",
+      "status": "success"
+    },
+    {
+      "hash": "0xfd99c8d0dd6daea318784e4f7b507fb0fc7e3c461fdf8cf378ece06c0375cd17",
+      "nonce": 11,
+      "block": "16484277",
+      "status": "success"
+    }
+  ],
+  "liveRejectionVerified": false
+}

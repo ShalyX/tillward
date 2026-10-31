@@ -1,0 +1,58 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - strong: Business workspace
+  - generic: 0x791f…6433
+  - navigation "Main navigation":
+    - button "Overview":
+      - text: Overview
+    - button "Invoices 1":
+      - text: Invoices
+      - generic: "1"
+    - button "Repayment rules":
+      - text: Repayment rules
+    - button "Activity":
+      - text: Activity
+  - strong: Mezo testnet
+  - generic: BTC gas · MUSD payments
+  - link "Read Mezo borrowing documentation":
+    - /url: https://mezo.org/docs/users/borrow/
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Activity
+  - button "Refresh chain state":
+  - button "0x1dcb…32d2":
+    - text: 0x1dcb…32d2
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - paragraph: FOLLOW THE MONEY
+  - heading "Every receipt. Every repayment." [level=1]
+  - paragraph: Confirmed account events and the transactions behind them.
+  - generic: Find activity near block
+  - textbox "Find activity near block":
+    - /placeholder: Block number from a transaction
+  - button "Load historical activity"
+  - paragraph: Read-only history. Current balances and loan state stay at the latest snapshot.
+  - generic: No receipt or repayment in this history page. Open Activity and load older activity, or jump to a historical block.
+  - button "Load older activity"
+  - paragraph: LOAN & OPERATING FUNDS
+  - heading "Manage your loan" [level=2]
+  - paragraph: "Closing requires 2,002.00 MUSD for the loan, plus your 0.00 MUSD cash floor. Current account balance: 2001.999578544328853181 MUSD. Additional top-up needed: 0.000421455671146819 MUSD (interest may increase this)."
+  - paragraph:
+    - text: "Available BTC in this account:"
+    - strong: 0.00000000 BTC
+  - button "Top up MUSD"
+  - button "Withdraw operating MUSD"
+  - button "Open loan" [disabled]
+  - button "Add collateral"
+  - button "Close loan"
+  - button "Release allocation"
+  - button "Claim surplus BTC"
+  - button "Withdraw available BTC" [disabled]
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 16,484,297 · Built by ElseMade
+- status

@@ -37,3 +37,7 @@ Saved under [evidence](evidence/): `fix-cancel.txt/png`, `fix-speedup.txt`, `fix
 - Simultaneous sends from multiple browser tabs and other wallet applications are not coordinated by a cross-tab lease. The explicit nonce and reconciliation detect a consumed competing nonce, but do not prevent competing wallet activity.
 - Per-account limits mitigate dust and unfair reuse; multiple funded accounts can still consume the bounded global subsidy. This is not Sybil resistance or guaranteed sponsored availability.
 - No live Rabby signing, new loan exit, native fork, independent audit, customer interviews or organizer rescore was performed. Historical acceptance evidence and the 73/100 review score were not replaced with new claims.
+
+## Live deployment follow-up
+
+The app and keeper were subsequently deployed on October 31. Live Rabby signing, exact invoice payment, hosted repayment, native loan closure and owner BTC recovery are verified. See [current deployment and wallet acceptance](LIVE_RELEASE_VERIFICATION.md); earlier local-only statements above describe the original verification checkpoint.

@@ -1,0 +1,71 @@
+{
+  "observedAt": "2026-10-31T18:21:51.944Z",
+  "release": "2026-10-31-recovery-3",
+  "chainId": 31611,
+  "account": "0x791fFc8A7420dBB0ed5D9F28E811ec7576936433",
+  "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "keeper": "0x625E52F5AB7b6563f83a3b7FB7EB7cC3a148A956",
+  "invoice": "0x70e6ac5c7a0e61d1f00a847dd42bad5b8a77af5d977422dbd835add33d4119ff",
+  "fromBlock": "16484245",
+  "snapshotBlock": "16489990",
+  "complete": true,
+  "transactions": {
+    "openLoan": {
+      "hash": "0x764ebf3346ef842655ebfb6d7bb0432070236bc8a1ac380c76f38cdd16b229c3",
+      "block": "16484297",
+      "nonce": 12,
+      "sender": "0x1dcb045123730e606a88380bce534332f50332d2"
+    },
+    "approve": {
+      "hash": "0x514cf63a2c084e854cae4fc70b49aa422adf682430adea61b7a087c72278b18b",
+      "block": "16484341",
+      "nonce": 14,
+      "sender": "0x1dcb045123730e606a88380bce534332f50332d2"
+    },
+    "payInvoice": {
+      "hash": "0x8cea117c571cdcf125274340489e91c4aa7c4f84dd62afbda61350bb62e23706",
+      "block": "16484509",
+      "nonce": 15,
+      "sender": "0x1dcb045123730e606a88380bce534332f50332d2"
+    },
+    "settle": {
+      "hash": "0x0cf34c72686cade601a5ee0be2359d110a3ff1a78f9d11326aec641dabac0efd",
+      "block": "16484521",
+      "nonce": 2,
+      "sender": "0x625e52f5ab7b6563f83a3b7fb7eb7cc3a148a956"
+    },
+    "closeLoan": {
+      "hash": "0xf810a7b3349ed7cc6093168a3fe9582d1953d2641e950ca3cc005098be14588c",
+      "block": "16489969",
+      "nonce": 16,
+      "sender": "0x1dcb045123730e606a88380bce534332f50332d2"
+    },
+    "withdrawBTC": {
+      "hash": "0x303c612264e68eef5291a5a1dca7a232d23271d1089ad60ee7e3ee7587e83e48",
+      "block": "16489990",
+      "nonce": 17,
+      "sender": "0x1dcb045123730e606a88380bce534332f50332d2"
+    }
+  },
+  "amounts": {
+    "borrowed": "2000000000000000000000",
+    "collateral": "45000000000000000",
+    "paid": "5000000000000000001",
+    "allocated": "1000000000000000000",
+    "settled": "1000000000000000000",
+    "closed": "2001016472428242659654"
+  },
+  "verified": {
+    "exactApproval": true,
+    "exactPayment": true,
+    "allowanceZero": true,
+    "keeperSender": true,
+    "exactNativeRepayment": true,
+    "invoicePaid": true,
+    "pendingZero": true,
+    "nativeLoanClosed": true,
+    "ownerBtcIncreaseNetOfGas": true,
+    "accountBtcZero": true
+  },
+  "disclosure": "Owner paid the test invoice with test MUSD. This is integration QA, not customer revenue. Live rejection/replacement were not exercised; fixture coverage is separate."
+}

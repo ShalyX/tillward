@@ -1,0 +1,71 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - strong: Business workspace
+  - generic: 0x791f…6433
+  - navigation "Main navigation":
+    - button "Overview":
+      - text: Overview
+    - button "Invoices 2":
+      - text: Invoices
+      - generic: "2"
+    - button "Repayment rules":
+      - text: Repayment rules
+    - button "Activity":
+      - text: Activity
+  - strong: Mezo testnet
+  - generic: BTC gas · MUSD payments
+  - link "Read Mezo borrowing documentation":
+    - /url: https://mezo.org/docs/users/borrow/
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Invoices
+  - button "Refresh chain state":
+  - button "0x1dcb…32d2":
+    - text: 0x1dcb…32d2
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - paragraph: CUSTOMER PAYMENTS
+  - heading "A clear path from invoice to repayment." [level=1]
+  - paragraph: Create checkout links for final, nonrefundable MUSD payments.
+  - button "New invoice":
+    - text: New invoice
+  - heading "Invoices 2" [level=2]
+  - generic: MUSD on Mezo testnet
+  - table:
+    - rowgroup:
+      - row "Reference Amount Pay before Status Actions":
+        - columnheader "Reference"
+        - columnheader "Amount"
+        - columnheader "Pay before"
+        - columnheader "Status"
+        - columnheader "Actions"
+    - rowgroup:
+      - row "Release QA · exact 18-decimal payment 0x70e6…19ff 5.000000000000000001 MUSD 1 Nov 2026 Awaiting payment Copy link Cancel":
+        - cell "Release QA · exact 18-decimal payment 0x70e6…19ff":
+          - strong: Release QA · exact 18-decimal payment
+          - generic: 0x70e6…19ff
+        - cell "5.000000000000000001 MUSD"
+        - cell "1 Nov 2026"
+        - cell "Awaiting payment":
+          - generic: Awaiting payment
+        - cell "Copy link Cancel":
+          - button "Copy link" [active]
+          - button "Cancel"
+      - row "Browser QA final payment 0xf77a…c1fc 1 MUSD 5 Nov 2026 Paid —":
+        - cell "Browser QA final payment 0xf77a…c1fc":
+          - strong: Browser QA final payment
+          - generic: 0xf77a…c1fc
+        - cell "1 MUSD"
+        - cell "5 Nov 2026"
+        - cell "Paid":
+          - generic: Paid
+        - cell "—"
+  - paragraph: Repayment rules apply when a payment is collected. Allocations accumulate while repayment is eligible above the native minimum. At the minimum, the owner must close the loan to repay the remaining principal.
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 16,484,315 · Built by ElseMade
+- status: Checkout link copied.

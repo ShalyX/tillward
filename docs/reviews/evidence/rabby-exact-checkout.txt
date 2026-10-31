@@ -1,0 +1,46 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - strong: Business workspace
+  - generic: 0x791f…6433
+  - navigation "Main navigation":
+    - button "Overview" [disabled]:
+      - text: Overview
+    - button "Invoices 2" [disabled]:
+      - text: Invoices
+      - generic: "2"
+    - button "Repayment rules" [disabled]:
+      - text: Repayment rules
+    - button "Activity" [disabled]:
+      - text: Activity
+  - strong: Mezo testnet
+  - generic: BTC gas · MUSD payments
+  - link "Read Mezo borrowing documentation":
+    - /url: https://mezo.org/docs/users/borrow/
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Customer checkout
+  - button "Refresh chain state":
+  - button "0x1dcb…32d2":
+    - text: 0x1dcb…32d2
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - paragraph: FINAL CUSTOMER PAYMENT
+  - heading "Release QA · exact 18-decimal payment" [level=1]
+  - paragraph: A one-time MUSD payment to the business account shown below.
+  - paragraph: AMOUNT DUE
+  - heading "5.000000000000000001 MUSD" [level=2]
+  - generic: Business account
+  - code: "0x791fFc8A7420dBB0ed5D9F28E811ec7576936433"
+  - generic: Network
+  - strong: Mezo testnet
+  - paragraph: This checkout accepts a final, nonrefundable payment. The business may allocate a share to repaying its own loan. Your exact payment amount is unchanged.
+  - button "Approve and pay 5.000000000000000001 MUSD"
+  - paragraph: Approval is limited to this invoice amount. Payment requires a separate wallet confirmation.
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 16,484,320 · Built by ElseMade
+- status

@@ -40,3 +40,7 @@ This closes the missing review pass with transparent authorship. It does not cre
 ## Subsequent remediation — October 31, 2026
 
 The source fixes and local verification are recorded separately in [FIX_VERIFICATION.md](FIX_VERIFICATION.md). The original findings and score above remain the October 26 baseline. Public app and hosted keeper have not been upgraded by this remediation pass.
+
+## Live deployment follow-up
+
+The app and keeper were subsequently deployed on October 31. Live Rabby signing, exact invoice payment, hosted repayment, native loan closure and owner BTC recovery are verified. See [current deployment and wallet acceptance](LIVE_RELEASE_VERIFICATION.md); earlier local-only statements above describe the original verification checkpoint.

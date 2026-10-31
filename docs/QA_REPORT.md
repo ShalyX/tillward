@@ -38,3 +38,7 @@ Adversarial wallet-change/rejection and RPC failover coverage is not exhaustive.
 ## October 31 local remediation verification
 
 31 JavaScript tests, 21 Solidity tests (128 fuzz runs), TypeScript/Vite build and source/build credential scan passed. Browser fixtures exercised speed-up, cancellation, explicit wallet rejection, unresolved send, stale-state blocking and exact checkout display. A real read-only testnet history lookup recovered the original 500/100 events at a current snapshot of block 16,482,846. No new Rabby transaction or native fork test was run. Source fixes are not yet deployed to the public app or hosted keeper. See [full verification and limitations](reviews/FIX_VERIFICATION.md).
+
+## October 31 deployed release and live acceptance
+
+Release `2026-10-31-recovery-3` is live; the keeper runtime fingerprint was verified after upgrade. The owner completed fresh Rabby signing, a 2,000 MUSD loan, exact 5.000000000000000001 MUSD approval/payment, unattended 1 MUSD native repayment, full native loan closure and exact 0.045 test BTC recovery. Independent read-only checks passed at block 16,489,990, including MUSD burns, zero remaining allowance/allocation/debt and owner BTC increase net of gas. A different-wallet UI check kept owner actions disabled until the correct owner reconnected. Rejection/replacement remain fixture-only coverage. See [live acceptance](reviews/LIVE_RELEASE_VERIFICATION.md) and [canonical proof](../deployments/recovery-browser-lifecycle.json). No customer adoption or mainnet/audit claim is inferred.

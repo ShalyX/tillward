@@ -1,0 +1,20 @@
+{
+  "release": "2026-10-31-recovery-3",
+  "chainId": 31611,
+  "commit": "23ee3647b7cb6ae36580af9b3aadd7c9eb7a6759",
+  "publicDemo": "https://tillward.vercel.app",
+  "deployment": "dpl_6crhcC2AdKNp1nCviwLTWrZPANLd",
+  "immutableUrl": "https://tillward-e4y8l7etp-shalyxs-projects.vercel.app",
+  "vercelState": "READY",
+  "previousDeployment": "dpl_A114pWWwXXgRRTVKvBaPxwbyftSY",
+  "firstRemediationDeployment": "dpl_RUtvFweAJrLDh2YRGhvWrt6G3cdm",
+  "keeperSha256": "750e2f81bc621b86e9b58bc0deb3aa690544e3412ab3c28a661b76a0e0ac43a8",
+  "keeperRollbackRuntime": "/var/backups/tillward-keeper/recovery-20261031-105832Z/keeper.mjs",
+  "keeperJournalRestored": false,
+  "walletAcceptance": "complete_normal_signing_payment_keeper_loan_exit",
+  "ci": "https://github.com/ShalyX/tillward/actions/runs/41197367179",
+  "lifecycleProof": "deployments/recovery-browser-lifecycle.json",
+  "walletVerifiedAt": "2026-10-31T18:21:51.944Z",
+  "liveRejectionVerified": false,
+  "liveReplacementVerified": false
+}
