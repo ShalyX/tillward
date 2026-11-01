@@ -1,0 +1,111 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - strong: Business workspace
+  - generic: 0x791f…6433
+  - navigation "Main navigation":
+    - button "Overview":
+      - text: Overview
+    - button "Invoices 2":
+      - text: Invoices
+      - generic: "2"
+    - button "Repayment rules":
+      - text: Repayment rules
+    - button "Activity":
+      - text: Activity
+  - strong: Mezo testnet
+  - generic: BTC gas · MUSD payments
+  - link "Read Mezo borrowing documentation":
+    - /url: https://mezo.org/docs/users/borrow/
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Activity
+  - button "Refresh chain state":
+  - button "0x1dcb…32d2":
+    - text: 0x1dcb…32d2
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - paragraph: FOLLOW THE MONEY
+  - heading "Every receipt. Every repayment." [level=1]
+  - paragraph: Confirmed account events and the transactions behind them.
+  - region "Loan risk snapshot expired":
+    - paragraph: YOUR BTC-BACKED LOAN
+    - heading "Loan risk snapshot expired" [level=2]
+    - generic: Refresh needed
+    - paragraph: Refresh before relying on these figures. They describe an older block.
+    - term: BTC / USD · native oracle
+    - definition: $77,435.42
+    - term: Individual collateral ratio
+    - definition: No active loan
+    - term: System collateral ratio
+    - definition: 278.10%
+    - term: Recovery Mode
+    - definition: Inactive · historical
+    - term: Normal minimum ratio
+    - definition: 110.00%
+    - term: Claimable surplus BTC
+    - definition: "0"
+    - paragraph: Recovery Mode begins below a 150.00% system ratio. Figures describe block 16,494,885, 11/1/2026, 12:58:52 AM. Refresh for current conditions.
+    - paragraph: Redemptions can reduce your BTC collateral in exchange for reducing debt, even above the liquidation minimum. A higher ratio does not guarantee protection. Your receipt share and cash floor change only when you approve a rule update.
+    - button "Add BTC collateral" [disabled]
+    - button "Review repayment rules"
+    - link "Mezo borrowing documentation":
+      - /url: https://mezo.org/docs/users/borrow/
+      - text: Mezo borrowing documentation
+  - generic: Find activity near block
+  - textbox "Find activity near block":
+    - /placeholder: Block number from a transaction
+  - button "Load historical activity"
+  - paragraph: Read-only history. Current balances and loan state stay at the latest snapshot.
+  - table:
+    - rowgroup:
+      - row "Activity Amount State Evidence":
+        - columnheader "Activity"
+        - columnheader "Amount"
+        - columnheader "State"
+        - columnheader "Evidence"
+    - rowgroup:
+      - row "Loan closed Native loan repayment −2,002.00 MUSD Confirmed View transaction":
+        - cell "Loan closed Native loan repayment":
+          - strong: Loan closed
+          - generic: Native loan repayment
+        - cell "−2,002.00 MUSD"
+        - cell "Confirmed":
+          - generic: Confirmed
+        - cell "View transaction":
+          - link "View transaction":
+            - /url: https://explorer.test.mezo.org/tx/0x1ab792f220821a0b472aef5c2404c9bf02b8fcde47ecdf9143c9a71c065c2771
+            - text: View transaction
+      - row "Loan closed Native loan repayment −2,001.01 MUSD Confirmed View transaction":
+        - cell "Loan closed Native loan repayment":
+          - strong: Loan closed
+          - generic: Native loan repayment
+        - cell "−2,001.01 MUSD"
+        - cell "Confirmed":
+          - generic: Confirmed
+        - cell "View transaction":
+          - link "View transaction":
+            - /url: https://explorer.test.mezo.org/tx/0xf810a7b3349ed7cc6093168a3fe9582d1953d2641e950ca3cc005098be14588c
+            - text: View transaction
+  - button "Load older activity"
+  - paragraph: LOAN & OPERATING FUNDS
+  - heading "Your available funds" [level=2]
+  - paragraph: Returned collateral stays in your business account until you withdraw it.
+  - paragraph:
+    - text: "Available BTC in this account:"
+    - strong: 0.00000000 BTC
+  - button "Top up MUSD"
+  - button "Withdraw operating MUSD"
+  - button "Open loan"
+  - button "Add collateral" [disabled]
+  - button "Close loan" [disabled]
+  - button "Release allocation"
+  - button "Claim surplus BTC" [disabled]
+  - button "Withdraw available BTC" [disabled]
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 16,494,885 · Built by ElseMade
+- status

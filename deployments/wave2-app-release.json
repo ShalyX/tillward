@@ -1,0 +1,36 @@
+{
+  "release": "2026-11-01-wave2-loan-conditions-1",
+  "applicationCommit": "3e646d8fe8b29ddea4c0cca052e1091773ab75f2",
+  "deploymentId": "dpl_46QAtcRJjgEyziH4PTLh4UjJSsbj",
+  "url": "https://tillward.vercel.app",
+  "immutableUrl": "https://tillward-2jmml9829-shalyxs-projects.vercel.app",
+  "readyState": "READY",
+  "target": "production",
+  "chainId": 31611,
+  "javascriptTests": 36,
+  "build": "passed",
+  "credentialScanFindings": 0,
+  "ciRun": 41253783116,
+  "ciConclusion": "success",
+  "publicBrowserRead": {
+    "browser": "Chrome",
+    "account": "0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5",
+    "block": 16494631,
+    "icrDisplayed": "165.68%",
+    "tcrDisplayed": "277.96%",
+    "recoveryMode": "inactive",
+    "surplus": "0"
+  },
+  "sha256": {
+    "src/main.ts": "efec00e62e68d8a5c897c498f1634b51bdb8fc2afca650a19f70b765c7a268c7",
+    "src/transaction-recovery.mjs": "8ee6c619cbf49a88e17ed2b9bacce86859d45f9cddfa4d910a5d811f74137d27",
+    "src/money.mjs": "8751f74e5f97bc53c0e0175ef14a5f76178c1dbb7fbd67f4ad0b17253839b4f7",
+    "scripts/keeper.mjs": "750e2f81bc621b86e9b58bc0deb3aa690544e3412ab3c28a661b76a0e0ac43a8",
+    "src/chain-state.mjs": "09bc9b0da10fafb5fc8f19f1c800e476888f0b2bcd114b460bfbb4c09001940a",
+    "index.html": "4cfc9c2d786cbb0e978b498fab26f3737438fe0bb4e38406d711c4d31647ffe0",
+    "src/loan-risk.mjs": "3670b09cdc049c5e29d8732235449e29e896d9049778b2c8528bc361a5520a9c",
+    "src/style.css": "ecab0803c1983e3a929babd10e1f9b8800dba99a4c4784fbc6e2bb991648fbd9"
+  },
+  "interviews": "held_by_owner",
+  "keeperChanged": false
+}

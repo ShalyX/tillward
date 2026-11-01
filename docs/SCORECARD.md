@@ -50,3 +50,7 @@ The remaining submission gap is the authenticated AKINDO entry: private contact 
 ## Wave 2 preparation checkpoint
 
 No new organizer scores predicted. Source verification is complete for factory/demo/QA accounts (SOURCE_VERIFICATION.md). Loan-risk visibility is locally implemented, unit/browser checked and exercised against live read-only data; public deployment and new signed collateral-path evidence remain open. Business viability remains unvalidated; interview work is held by owner, and the prior 5-10 count is an internal target, not an event rule. See reviews/WAVE2_PREPARATION.md.
+
+## November 1 verified improvements
+
+Public loan-risk UI and Rabby collateral top-up are now verified, followed by complete owner exit. Native surplus claiming passes an isolated fork; public-testnet claim evidence remains open. No organizer rescore inferred. See reviews/WAVE2_LIVE_VERIFICATION.md. Business-model direction is awaiting owner selection; no validated demand, pricing or customer adoption is claimed. Interviews remain held.

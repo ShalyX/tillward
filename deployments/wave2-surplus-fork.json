@@ -1,0 +1,28 @@
+{
+  "verified": true,
+  "environment": "isolated_local_mainnet_fork",
+  "publicChainWrite": false,
+  "forkChainId": 31612,
+  "forkBlock": 12684025,
+  "rpc": "https://mezo-mainnet.boar.network",
+  "oracle": "recorded_native_precompile_response_replayed; native lending/token/surplus code unmodified",
+  "command": "npm run fork:surplus",
+  "contract": "NativeSurplusForkTest",
+  "test": "testNativeRedemptionCreatesSurplusAndOwnerRecoversIt",
+  "passed": 1,
+  "failed": 0,
+  "skipped": 0,
+  "gas": 5173724,
+  "testSourceSha256": "ed0ac49a24c335a70f3fe9ba06d3db67e6931d0a1cd5196b1afa1f95d8c4dd14",
+  "assertions": [
+    "redeemed only own lowest-ratio test account with one native iteration",
+    "native redemption status 4",
+    "positive actual native surplus entitlement",
+    "exact entitlement credited to business BTC balance",
+    "entitlement consumed",
+    "separate exact owner BTC withdrawal",
+    "second claim reverts"
+  ],
+  "publicTestnetClaimProven": false,
+  "initialAttempt": "Validation Cloud hostname DNS failed on workstation; official Boar RPC completed pinned fork test successfully"
+}

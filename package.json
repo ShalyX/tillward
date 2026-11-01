@@ -8,10 +8,16 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test tests/*.test.mjs",
-    "contracts": "forge test --no-match-contract NativeForkTest",
+    "contracts": "forge test --no-match-contract \"Native.*ForkTest\"",
     "fork:test": "node scripts/fork-test.mjs",
-    "probe": "node scripts/probe.mjs"
+    "probe": "node scripts/probe.mjs",
+    "fork:surplus": "node scripts/fork-test.mjs --surplus"
   },
-  "dependencies": { "viem": "2.57.10" },
-  "devDependencies": { "typescript": "~5.9.3", "vite": "8.3.5" }
+  "dependencies": {
+    "viem": "2.57.10"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vite": "8.3.5"
+  }
 }

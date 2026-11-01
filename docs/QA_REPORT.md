@@ -42,3 +42,7 @@ Adversarial wallet-change/rejection and RPC failover coverage is not exhaustive.
 ## October 31 deployed release and live acceptance
 
 Release `2026-10-31-recovery-3` is live; the keeper runtime fingerprint was verified after upgrade. The owner completed fresh Rabby signing, a 2,000 MUSD loan, exact 5.000000000000000001 MUSD approval/payment, unattended 1 MUSD native repayment, full native loan closure and exact 0.045 test BTC recovery. Independent read-only checks passed at block 16,489,990, including MUSD burns, zero remaining allowance/allocation/debt and owner BTC increase net of gas. A different-wallet UI check kept owner actions disabled until the correct owner reconnected. Rejection/replacement remain fixture-only coverage. See [live acceptance](reviews/LIVE_RELEASE_VERIFICATION.md) and [canonical proof](../deployments/recovery-browser-lifecycle.json). No customer adoption or mainnet/audit claim is inferred.
+
+## November 1 Wave 2 engineering acceptance
+
+Loan conditions are public; 36 JavaScript checks and production build passed, CI run 41253783116 succeeded. Real Rabby loan/top-up/close/withdraw completed and canonical read-only verifiers passed; all 0.046 test BTC returned, with no remaining debt/collateral/allocation/account BTC. Native surplus redemption/claim/withdraw passed on an isolated fork only. Public claim is not marked passed. The regular non-fork Solidity suite and credential scanner also passed. See reviews/WAVE2_LIVE_VERIFICATION.md. Interviews remain held.

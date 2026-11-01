@@ -17,10 +17,10 @@ New explicit requests: native ICR/BTC price/Recovery Mode/redemption visibility,
 | Priority | Work | Exit evidence | Current status |
 |---|---|---|---|
 | 1 | Customer and payer validation | Credible direct seller/payer evidence, consented anonymized notes (5-10 was our proposed target, not a Mezo rule), disconfirming findings, explicit distinction between interest and pilot participation | Kit prepared; interview work held at owner request; no interviews or adoption claimed |
-| 1 | Loan conditions in actual workspace | Native fixed-block ratios/price/mode/surplus; actionable owner prompts; stale/failed state; desktop/mobile visual inspection | Implementing locally; public deployment remains Wave 1 release |
-| 2 | Public source verification | Factory and representative account explorer URLs show verified sources matching deployment compiler/settings/immutables | Verification package and endpoint check pending |
-| 2 | Add collateral | Owner-approved testnet transaction; native collateral increase; account/owner BTC and gas accounted for; fixed-block proof | Existing contract/UI action, new public proof pending |
-| 2 | Recover actual native surplus | Account has positive CollSurplusPool entitlement; owner calls claimSurplus -> native claimCollateral; pool entitlement falls and account BTC rises by the same amount; withdrawal is a separate action | No current surplus on demo account; controlled scenario required |
+| 1 | Loan conditions in actual workspace | Native fixed-block ratios/price/mode/surplus; actionable owner prompts; stale/failed state; desktop/mobile visual inspection | Deployed November 1; real public owner loan/top-up/exit verified |
+| 2 | Public source verification | Factory and representative account explorer URLs show verified sources matching deployment compiler/settings/immutables | Exact-match factory, original demo and QA account verification completed October 31 |
+| 2 | Add collateral | Owner-approved testnet transaction; native collateral increase; account/owner BTC and gas accounted for; fixed-block proof | Public top-up verified November 1: 0.045 -> 0.046 test BTC, followed by complete owner exit |
+| 2 | Recover actual native surplus | Account has positive CollSurplusPool entitlement; owner calls claimSurplus -> native claimCollateral; pool entitlement falls and account BTC rises by the same amount; withdrawal is a separate action | Native isolated-fork path passed; public claim still requires an owner-only controlled redemption scenario |
 | 2 | Business model | Document payer, value, pricing hypothesis and cost break-even; interview willingness to pay | Hypothesis document prepared; no charges enabled |
 | 3 | Pilot and operational resilience | Willing business/payer, complete testnet journey; isolated restore and externally hosted outage signal | Not completed |
 | 3 | Evidence-led submission update | Explicit since-Wave-1 changes; fresh public captures and proof links; full audit and visible Wave 2 receipt | Not submitted |
@@ -43,3 +43,5 @@ Normal closure returns collateral directly; it does not exercise claimCollateral
 ## Owner clarification
 
 October 31: the 5-10 interview count comes from our submitted roadmap, not an organizer entry requirement. The judge requested evidence of real seller MUSD acceptance, referring to those planned interviews. The owner asked to hold interview work; it is not a mandatory numerical submission gate. Keep engineering progressing.
+
+November 1 checkpoint: see reviews/WAVE2_LIVE_VERIFICATION.md. Revenue-model direction has been presented for owner selection. Interviews remain held. No Wave 2 submission or new fees have been activated.

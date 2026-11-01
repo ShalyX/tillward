@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-10-31T23:55:14.797Z",
+  "chainId": 31611,
+  "readOnly": true,
+  "account": "0x791ffc8a7420dbb0ed5d9f28e811ec7576936433",
+  "owner": "0x1DcB045123730e606A88380BCe534332F50332d2",
+  "transaction": "0xb3e2c5c772efcf8d02f7767bedb2e19f581e600fa70f0d9f27dd7324df599f08",
+  "block": "16494807",
+  "blockHash": "0x207ead2c3addb947592c9c10a5e527077be3d737783d80833cb06d56922f9c2d",
+  "addedBtcWei": "1000000000000000",
+  "collateralBefore": "45000000000000000",
+  "collateralAfter": "46000000000000000",
+  "debtBefore": "2202000188402225918396",
+  "debtAfter": "2202000193984514093756",
+  "risk": {
+    "manager": "0xE47c80e8c23f6B4A1aE41c34837a0599D5D16bb0",
+    "feed": "0x86bCF0841622a5dAC14A313a15f96A95421b9366",
+    "pool": "0xB4C35747c26E4aB5F1a7CdC7E875B5946eFa6fa9",
+    "price": "77415266390000000000000",
+    "icr": "1617212506914540263",
+    "tcr": "2780278242273811478",
+    "mcr": "1100000000000000000",
+    "ccr": "1500000000000000000",
+    "recoveryMode": false,
+    "surplus": "0",
+    "block": "16494807",
+    "timestamp": "1793490808"
+  },
+  "limitation": "Canonical parent/post-block collateral evidence; not proof of surplus claiming, customer usage, or mainnet readiness."
+}

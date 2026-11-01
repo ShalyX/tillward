@@ -1,0 +1,27 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-11-01T00:00:13.932Z",
+  "chainId": 31611,
+  "owner": "0x1DcB045123730e606A88380BCe534332F50332d2",
+  "account": "0x791ffc8a7420dbb0ed5d9f28e811ec7576936433",
+  "closeLoan": {
+    "hash": "0x1ab792f220821a0b472aef5c2404c9bf02b8fcde47ecdf9143c9a71c065c2771",
+    "block": "16494872"
+  },
+  "withdrawBTC": {
+    "hash": "0x5955a723edd855e480c51d4b6ad1ce43d790e7a71311216200b20bc6b71662e3",
+    "block": "16494884",
+    "amount": "46000000000000000",
+    "gasWei": "35000000",
+    "ownerBefore": "4099998470822525",
+    "ownerAfter": "50099998435822525"
+  },
+  "final": {
+    "accountBtc": "0",
+    "debt": "0",
+    "collateral": "0",
+    "active": false,
+    "pending": "0"
+  },
+  "surplusClaimProven": false
+}

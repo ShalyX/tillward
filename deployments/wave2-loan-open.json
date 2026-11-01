@@ -1,0 +1,12 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-10-31T23:51:35.048Z",
+  "chainId": 31611,
+  "transaction": "0xb289e2c8a8a6856ef99e2dfebfd3f5a60c9c0f66ac8db95015e01c16023c79d1",
+  "block": "16494741",
+  "blockHash": "0x36e45d8597985b4875ac05d0f20309c4310bec7b3acb2fc1c03a65916381d2dd",
+  "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "account": "0x791ffc8a7420dbb0ed5d9f28e811ec7576936433",
+  "borrowed": "2000000000000000000000",
+  "collateral": "45000000000000000"
+}
