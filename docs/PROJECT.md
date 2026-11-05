@@ -33,3 +33,7 @@ Current gate: owner prefers a fee on actual receipt-funded repayment, with final
 ## November 5 atomic fee model implemented locally
 
 Owner selected a 99% maximum allocation and 1% fee on actual hosted repayment, paid from retained receipt funds atomically. The repayment cash floor does not constrain the authorized fee; other repayment allocations remain protected. New RevenueAccountV2/RevenueFactoryV2 preserve V1 sources and deployed configuration. Local app/keeper adapters require pinned V2 terms, owner enrollment and funding. 44 non-fork Solidity tests (including 23 fee cases and 128 fee fuzz runs), 39 JS checks, production build and credential scan pass. Native pinned fork proves 495 repayment plus 4.95 fee leaving 0.05 against a 5 floor. No app, contract or keeper deployment and no live fee activation. See reviews/WAVE2_FEE_VERIFICATION.md.
+
+## November 5 V2 public release in progress
+
+App release 2026-11-05-wave2-atomic-fees-1 is READY on tillward.vercel.app (dpl_Gv4wpc9Q4CgZmQtXFDLrHrA65rdC), commit d42985c; CI 42093945518 succeeded. V2 factory 0xaa5121f96502b9618156e8288e60ce1c699b9a43 deployed at block 16594808 and exact-match source verified. QA owner selected as testnet treasury. Separate V2 keeper/signer/state, health and backups deployed; owner V2 account 0xd6e4829B51dB8ED490bFaE01384757B0fD65D622 auto-discovered. Chrome/native control time out; owner created account via public app and remaining wallet flow is awaiting loan confirmation. No live fee flow yet claimed. See deployments/wave2-fee-release.json.

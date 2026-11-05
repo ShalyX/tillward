@@ -1,0 +1,51 @@
+{
+  "observedAt": "2026-11-05T19:41:07.403488+00:00",
+  "chainId": 31611,
+  "application": {
+    "url": "https://tillward.vercel.app",
+    "release": "2026-11-05-wave2-atomic-fees-1",
+    "deploymentId": "dpl_Gv4wpc9Q4CgZmQtXFDLrHrA65rdC",
+    "immutableURL": "https://tillward-cb7718bgz-shalyxs-projects.vercel.app",
+    "commit": "d42985c831a212196d96abffb4dda84929f38ca9",
+    "ciRun": 42093945518,
+    "ciConclusion": "success",
+    "publicReleaseAndManifestHTTPVerified": true,
+    "publicWalletBrowserAutomationVerified": false
+  },
+  "factory": "0xaa5121f96502b9618156e8288e60ce1c699b9a43",
+  "deploymentTransaction": "0xb04ca280c750739d3a6ee4b81ad2529305a46b1036c1e65cd1e145a8e7b5d4f7",
+  "deploymentBlock": 16594808,
+  "treasury": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "factoryExplorerVerification": {
+    "name": "RevenueFactoryV2",
+    "isPartiallyVerified": false,
+    "verifiedAt": "2026-11-05T19:30:15.062831Z",
+    "compiler": "v0.8.24+commit.e11b9ed9"
+  },
+  "keeper": {
+    "unit": "tillward-keeper-v2.service",
+    "runtime": "/opt/tillward-keeper-v2",
+    "state": "/var/lib/tillward-keeper-v2",
+    "signer": "0x7C93C575bE5ceD60F388D2866991d68aE23e3D42",
+    "status": "healthy",
+    "enrolled": 1,
+    "pending": null,
+    "backupAndHealthTimers": "active",
+    "firstBackupCompletedUTC": "2026-11-05T19:32:41Z",
+    "v1ServicePreserved": true
+  },
+  "ownerAccount": {
+    "address": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622",
+    "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
+    "creationConfirmedOnChain": true,
+    "loanConfirmed": false,
+    "serviceEnabled": false,
+    "receiptAndFeeFlowVerified": false
+  },
+  "limitations": [
+    "Chrome and native UI automation time out; user performed public account creation and handles remaining owner actions.",
+    "Loan confirmation is pending; no receipt-funded repayment or fee transfer yet claimed.",
+    "Account source-verification request returned address not smart-contract from explorer; RPC account code/owner/terms are verified.",
+    "Mainnet fees and customer revenue are not claimed."
+  ]
+}

@@ -14,8 +14,13 @@
   "pitch_seconds": 120,
   "deck_slides": 8,
   "submitted": true,
-  "human_input_required": false,
-  "human_gate": null,
+  "human_input_required": true,
+  "human_gate": {
+    "id": "wave2_v2_live_owner_loan",
+    "type": "wallet_confirmation",
+    "reason": "Browser/native automation time out; user initiates and confirms the exact authorized testnet loan in public app.",
+    "scope": "2500 test MUSD against 0.045 test BTC, Mezo testnet only, business 0xd6e4829B51dB8ED490bFaE01384757B0fD65D622"
+  },
   "submitted_event": "https://app.akindo.io/wave-hacks/OVOO0gdrVU8379D10",
   "submitted_product": "https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO",
   "submitted_wave": 1,
@@ -111,7 +116,7 @@
     ],
     "wave2_work_started": true
   },
-  "revision": 9,
+  "revision": 10,
   "wave2": {
     "authorized_date": "2026-10-31",
     "phase": "prove",
@@ -131,12 +136,12 @@
     "public_claim_surplus_proof": false,
     "pricing_selected": true,
     "submitted": false,
-    "next_action": "Review simplified UI and stage V2 deployment only after treasury/factory configuration is pinned; public signing and keeper proof remain separate. No deployment performed; interviews held.",
-    "javascript_tests": 41,
+    "next_action": "Await owner 2500 test MUSD / 0.045 test BTC loan confirmation; then verify withdrawal, 99% policy, opt-in, 500 receipt and hosted 495 repayment plus 4.95 fee. Chrome automation unavailable; user handles wallet actions.",
+    "javascript_tests": 43,
     "build": "passed",
-    "application_release": "2026-11-01-wave2-loan-conditions-1",
-    "application_commit": "3e646d8fe8b29ddea4c0cca052e1091773ab75f2",
-    "vercel_deployment": "dpl_46QAtcRJjgEyziH4PTLh4UjJSsbj",
+    "application_release": "2026-11-05-wave2-atomic-fees-1",
+    "application_commit": "d42985c831a212196d96abffb4dda84929f38ca9",
+    "vercel_deployment": "dpl_Gv4wpc9Q4CgZmQtXFDLrHrA65rdC",
     "native_surplus_fork_proof": true,
     "live_qa_exit_verified": true,
     "live_report": "docs/reviews/WAVE2_LIVE_VERIFICATION.md",
@@ -177,6 +182,11 @@
     "v2_new_contracts_added_locally": true,
     "ui_simplification": "owner_corrected_no_settings_tab_no_reserve_ui_pause_in_repayment_rules",
     "ui_simplification_proof": "deployments/wave2-ui-simplification.json",
-    "ui_cleanup_proof": "deployments/wave2-ui-cleanup.json"
+    "ui_cleanup_proof": "deployments/wave2-ui-cleanup.json",
+    "v2_factory": "0xaa5121f96502b9618156e8288e60ce1c699b9a43",
+    "fee_treasury": "0x1dcb045123730e606a88380bce534332f50332d2",
+    "fee_release_proof": "deployments/wave2-fee-release.json",
+    "v2_keeper_deployed": true,
+    "v2_owner_account": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622"
   }
 }
