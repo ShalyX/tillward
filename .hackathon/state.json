@@ -16,10 +16,10 @@
   "submitted": true,
   "human_input_required": true,
   "human_gate": {
-    "id": "wave2_v2_live_owner_loan",
+    "id": "wave2_v2_live_rules",
     "type": "wallet_confirmation",
-    "reason": "Browser/native automation time out; user initiates and confirms the exact authorized testnet loan in public app.",
-    "scope": "2500 test MUSD against 0.045 test BTC, Mezo testnet only, business 0xd6e4829B51dB8ED490bFaE01384757B0fD65D622"
+    "reason": "Chrome automation unavailable; owner must save 99% allocation and explicitly enable the 1% service.",
+    "scope": "V2 QA account on Mezo testnet, policy/service only, no MUSD transfer."
   },
   "submitted_event": "https://app.akindo.io/wave-hacks/OVOO0gdrVU8379D10",
   "submitted_product": "https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO",
@@ -116,7 +116,7 @@
     ],
     "wave2_work_started": true
   },
-  "revision": 10,
+  "revision": 11,
   "wave2": {
     "authorized_date": "2026-10-31",
     "phase": "prove",
@@ -136,7 +136,7 @@
     "public_claim_surplus_proof": false,
     "pricing_selected": true,
     "submitted": false,
-    "next_action": "Await owner 2500 test MUSD / 0.045 test BTC loan confirmation; then verify withdrawal, 99% policy, opt-in, 500 receipt and hosted 495 repayment plus 4.95 fee. Chrome automation unavailable; user handles wallet actions.",
+    "next_action": "Await owner save of 99% repayment policy and 1% service enablement on V2 account; then create/pay 500 test MUSD invoice and verify unattended 495 repayment plus 4.95 fee. Loan and 2500 MUSD withdrawal are verified.",
     "javascript_tests": 43,
     "build": "passed",
     "application_release": "2026-11-05-wave2-atomic-fees-1",
@@ -187,6 +187,9 @@
     "fee_treasury": "0x1dcb045123730e606a88380bce534332f50332d2",
     "fee_release_proof": "deployments/wave2-fee-release.json",
     "v2_keeper_deployed": true,
-    "v2_owner_account": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622"
+    "v2_owner_account": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622",
+    "v2_loan_proof": "deployments/wave2-v2-loan-proof.json",
+    "v2_withdrawal_proof": "deployments/wave2-v2-withdrawal-proof.json",
+    "v2_account_source_verified": true
   }
 }

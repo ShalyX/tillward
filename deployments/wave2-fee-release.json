@@ -38,14 +38,23 @@
     "address": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622",
     "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
     "creationConfirmedOnChain": true,
-    "loanConfirmed": false,
+    "loanConfirmed": true,
     "serviceEnabled": false,
-    "receiptAndFeeFlowVerified": false
+    "receiptAndFeeFlowVerified": false,
+    "loanProof": "deployments/wave2-v2-loan-proof.json",
+    "borrowedFundsWithdrawn": true,
+    "withdrawalProof": "deployments/wave2-v2-withdrawal-proof.json",
+    "explorerVerification": {
+      "name": "RevenueAccountV2",
+      "isPartiallyVerified": false,
+      "verifiedAt": "2026-11-05T22:14:55.153055Z",
+      "compiler": "v0.8.24+commit.e11b9ed9"
+    }
   },
   "limitations": [
     "Chrome and native UI automation time out; user performed public account creation and handles remaining owner actions.",
-    "Loan confirmation is pending; no receipt-funded repayment or fee transfer yet claimed.",
-    "Account source-verification request returned address not smart-contract from explorer; RPC account code/owner/terms are verified.",
-    "Mainnet fees and customer revenue are not claimed."
-  ]
+    "Mainnet fees and customer revenue are not claimed.",
+    "99% policy/service authorization and the receipt/fee settlement are still awaiting verification."
+  ],
+  "lastUpdatedUTC": "2026-11-05T22:21:01.294863+00:00"
 }

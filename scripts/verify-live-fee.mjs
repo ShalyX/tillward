@@ -2,6 +2,7 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {createPublicClient,http,webSocket,fallback,parseAbi,decodeEventLog,decodeFunctionData,keccak256} from 'viem';
 import {readWithRetry} from '../src/read-retry.mjs';
+import {readServiceState} from '../src/service-fees.mjs';
 const c=JSON.parse(await readFile('public/deployment.json','utf8'));
 const baseline=JSON.parse(await readFile('../../work/wave2-v2-owner-preflight.json','utf8'));
 const address=baseline.account;
@@ -10,7 +11,15 @@ const tokenAbi=parseAbi(['function balanceOf(address) view returns(uint256)','ev
 const p=createPublicClient({transport:fallback([webSocket(c.ws,{timeout:15000,retryCount:1}),http(c.rpc,{timeout:15000,retryCount:1})])});
 if(c.chainId!==31611||await p.getChainId()!==31611)throw Error('Testnet only.');
 const head=await p.getBlockNumber({cacheTime:0});
-const events=await p.getContractEvents({address,abi,eventName:'ServiceFeePaid',fromBlock:BigInt(c.deploymentBlock),toBlock:head,strict:true});
+async function eventsThrough(eventName,toBlock){
+ const events=[];
+ for(let from=BigInt(c.deploymentBlock);from<=toBlock;from+=1000n){
+  const end=from+999n<toBlock?from+999n:toBlock;
+  events.push(...await readWithRetry(()=>p.getContractEvents({address,abi,eventName,fromBlock:from,toBlock:end,strict:true})));
+ }
+ return events;
+}
+const events=await eventsThrough('ServiceFeePaid',head);
 const match=events.find(e=>e.args.repayment===495n*10n**18n&&e.args.fee===495n*10n**16n);
 if(!match)throw Error('No exact 495 repayment / 4.95 fee settlement recorded yet.');
 const receipt=await readWithRetry(()=>p.getTransactionReceipt({hash:match.transactionHash}));
@@ -20,6 +29,10 @@ const same=(a,b)=>a?.toLowerCase()===b?.toLowerCase();
 if(receipt.status!=='success'||block.hash!==receipt.blockHash||!same(tx.to,address)||decodeFunctionData({abi,data:tx.input}).functionName!=='settle')throw Error('Canonical V2 settlement not proven.');
 const keeper='0x7C93C575bE5ceD60F388D2866991d68aE23e3D42';
 if(!same(tx.from,keeper)||!same(match.args.caller,keeper)||!same(match.args.treasury,c.feeTreasury))throw Error('Unexpected keeper or fee recipient.');
+const registered=await p.readContract({address:c.factory,abi:parseAbi(['function isAccount(address) view returns(bool)']),functionName:'isAccount',args:[address],blockNumber:receipt.blockNumber});
+const owner=await p.readContract({address,abi,functionName:'owner',blockNumber:receipt.blockNumber});
+if(!registered||!same(owner,baseline.owner))throw Error('Owner or V2 registry mismatch.');
+await readServiceState(p,c,address,receipt.blockNumber,0n);
 const logs=receipt.logs.filter(x=>same(x.address,address)).flatMap(log=>{try{return [decodeEventLog({abi,data:log.data,topics:log.topics})];}catch{return [];}});
 const repayment=logs.find(x=>x.eventName==='RepaymentSettled');
 if(!repayment||repayment.args.amount!==495n*10n**18n||repayment.args.debtBefore-repayment.args.debtAfter!==495n*10n**18n)throw Error('Full native repayment not proven.');
@@ -30,7 +43,7 @@ const balance=(a,n)=>p.readContract({address:c.musd,abi:tokenAbi,functionName:'b
 const [beforeBalance,afterBalance,treasuryBefore,treasuryAfter,pending,paid,repaid,retained,floor,debt]=await Promise.all([
  balance(address,receipt.blockNumber-1n),balance(address,receipt.blockNumber),balance(c.feeTreasury,receipt.blockNumber-1n),balance(c.feeTreasury,receipt.blockNumber),read('pendingRepayment'),read('totalFeesPaid'),read('totalServiceRepaid'),read('retainedReceiptFunds'),read('cashFloor'),read('debtState')]);
 if(beforeBalance-afterBalance!==49995n*10n**16n||afterBalance!==5n*10n**16n||treasuryAfter-treasuryBefore!==495n*10n**16n||pending!==0n||paid!==495n*10n**16n||repaid!==495n*10n**18n||retained!==5n*10n**16n||floor!==0n||debt[0]!==repayment.args.debtAfter)throw Error('Exact fee/balance/debt accounting mismatch.');
-const receipts=await p.getContractEvents({address,abi,eventName:'ReceiptCollected',fromBlock:BigInt(c.deploymentBlock),toBlock:receipt.blockNumber,strict:true});
+const receipts=await eventsThrough('ReceiptCollected',receipt.blockNumber);
 const payment=receipts.find(e=>e.args.amount===500n*10n**18n&&e.args.allocated===495n*10n**18n);
 if(!payment)throw Error('Exact 500 receipt allocation not proven.');
 const paymentReceipt=await readWithRetry(()=>p.getTransactionReceipt({hash:payment.transactionHash}));

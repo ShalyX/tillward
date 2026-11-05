@@ -1,0 +1,24 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {createPublicClient,http,webSocket,fallback,parseAbi,decodeFunctionData} from 'viem';
+import {readWithRetry} from '../src/read-retry.mjs';
+const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const snapshot=JSON.parse(await readFile('../../work/wave2-v2-after-withdrawal.json','utf8'));
+const loan=JSON.parse(await readFile('deployments/wave2-v2-loan-proof.json','utf8'));
+const abi=JSON.parse(await readFile('out/RevenueAccountV2.sol/RevenueAccountV2.json','utf8')).abi;
+const tokenAbi=parseAbi(['function balanceOf(address) view returns(uint256)']);
+const p=createPublicClient({transport:fallback([webSocket(c.ws,{timeout:15000,retryCount:1}),http(c.rpc,{timeout:15000,retryCount:1})])});
+if(await p.getChainId()!==31611)throw Error('Testnet only');
+const events=[];const head=BigInt(snapshot.block);
+for(let from=BigInt(loan.block);from<=head;from+=1000n){const end=from+999n<head?from+999n:head;
+ events.push(...await readWithRetry(()=>p.getContractEvents({address:snapshot.account,abi,eventName:'OperatingWithdrawal',fromBlock:from,toBlock:end,strict:true})));}
+const event=events.find(e=>e.args.amount===2500n*10n**18n);if(!event)throw Error('Exact withdrawal absent.');
+const tx=await readWithRetry(()=>p.getTransaction({hash:event.transactionHash}));
+const receipt=await readWithRetry(()=>p.getTransactionReceipt({hash:event.transactionHash}));
+const block=await p.getBlock({blockNumber:receipt.blockNumber});
+const decoded=decodeFunctionData({abi,data:tx.input});
+if(receipt.status!=='success'||block.hash!==receipt.blockHash||tx.from.toLowerCase()!==snapshot.owner.toLowerCase()||tx.to?.toLowerCase()!==snapshot.account.toLowerCase()||decoded.functionName!=='withdraw'||decoded.args[0]!==2500n*10n**18n)throw Error('Canonical owner withdrawal mismatch.');
+const balance=(address,blockNumber)=>p.readContract({address:c.musd,abi:tokenAbi,functionName:'balanceOf',args:[address],blockNumber});
+const [accountBefore,accountAfter,ownerBefore,ownerAfter]=await Promise.all([balance(snapshot.account,receipt.blockNumber-1n),balance(snapshot.account,receipt.blockNumber),balance(snapshot.owner,receipt.blockNumber-1n),balance(snapshot.owner,receipt.blockNumber)]);
+if(accountBefore-accountAfter!==2500n*10n**18n||accountAfter!==0n||ownerAfter-ownerBefore!==2500n*10n**18n)throw Error('Exact token balances mismatch.');
+const proof={verifiedAt:new Date().toISOString(),chainId:31611,account:snapshot.account,owner:snapshot.owner,hash:event.transactionHash,block:receipt.blockNumber,amount:event.args.amount,accountBefore,accountAfter,ownerBefore,ownerAfter};
+await writeFile('deployments/wave2-v2-withdrawal-proof.json',JSON.stringify(proof,(_,v)=>typeof v==='bigint'?v.toString():v,2)+'\n');console.log(JSON.stringify({verified:true,hash:event.transactionHash,withdrawnTestMUSD:'2500'}));process.exit(0);
