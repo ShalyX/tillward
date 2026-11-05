@@ -1,16 +1,22 @@
 {
-  "release": "2026-11-01-wave2-loan-conditions-1",
+  "release": "2026-11-05-wave2-atomic-fees-1",
   "network": "Mezo public testnet",
   "chainId": 31611,
-  "sourceBaseline": "739a62747b3c8afe9074cb14ad3a9cfce7d5cf97",
+  "sourceBaseline": "7956379b5fecaed92a3514f13042766cf1795726",
   "sha256": {
-    "src/main.ts": "efec00e62e68d8a5c897c498f1634b51bdb8fc2afca650a19f70b765c7a268c7",
+    "src/main.ts": "4938a21950d16c7d8220edb21916df094c3d7ab74f0465e48d630f3011bcd945",
     "src/transaction-recovery.mjs": "8ee6c619cbf49a88e17ed2b9bacce86859d45f9cddfa4d910a5d811f74137d27",
     "src/money.mjs": "8751f74e5f97bc53c0e0175ef14a5f76178c1dbb7fbd67f4ad0b17253839b4f7",
-    "scripts/keeper.mjs": "750e2f81bc621b86e9b58bc0deb3aa690544e3412ab3c28a661b76a0e0ac43a8",
+    "scripts/keeper.mjs": "3c7d2df9d41e252614d4a666bb412f9096d81f07df3c6c154151b0d0b5151fc2",
     "src/chain-state.mjs": "09bc9b0da10fafb5fc8f19f1c800e476888f0b2bcd114b460bfbb4c09001940a",
     "index.html": "4cfc9c2d786cbb0e978b498fab26f3737438fe0bb4e38406d711c4d31647ffe0",
     "src/loan-risk.mjs": "3670b09cdc049c5e29d8732235449e29e896d9049778b2c8528bc361a5520a9c",
-    "src/style.css": "ecab0803c1983e3a929babd10e1f9b8800dba99a4c4784fbc6e2bb991648fbd9"
+    "src/style.css": "0f560c7695ef9c06335954b2aaaaeb72bbfd0536f75531acac53e9f58c25c516",
+    "src/deployment-routing.mjs": "2dbe01e34a1a7e57892f5baa6b74ae18cbd5f45298fc002b0ae2c001164c47c4",
+    "src/repayment-settings.mjs": "e52575da0ca2bc2c59f5494a6f8ab51a2615ef8e3e79291ec5f61321c8f30df6",
+    "src/service-fees.mjs": "a6264319e5e404817286c1c033d0313dd8bc5d56e903ffb4e4162c3a5b05183e",
+    "public/deployment.json": "59c4fe719e2fc00dfae552392c06a4dcb3b6cc2598acdac0bd4d187f1bf55992",
+    "contracts/RevenueAccountV2.sol": "0ce1fa6b441b64d114669012621cdb2d89237ac9aad0cc426dda041e70b49c12",
+    "contracts/RevenueFactoryV2.sol": "769c46bd21c50c487749805d98385b12907117c63039da31f4d80716fb692ed5"
   }
 }

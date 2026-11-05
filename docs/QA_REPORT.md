@@ -46,3 +46,11 @@ Release `2026-10-31-recovery-3` is live; the keeper runtime fingerprint was veri
 ## November 1 Wave 2 engineering acceptance
 
 Loan conditions are public; 36 JavaScript checks and production build passed, CI run 41253783116 succeeded. Real Rabby loan/top-up/close/withdraw completed and canonical read-only verifiers passed; all 0.046 test BTC returned, with no remaining debt/collateral/allocation/account BTC. Native surplus redemption/claim/withdraw passed on an isolated fork only. Public claim is not marked passed. The regular non-fork Solidity suite and credential scanner also passed. See reviews/WAVE2_LIVE_VERIFICATION.md. Interviews remain held.
+
+## November 5 V2 atomic fee acceptance
+
+44 non-fork Solidity tests (23 new fee cases including 128 fuzz runs), 39 JavaScript tests, TypeScript/Vite production build, native pinned fee fork and credential scan pass. Exact 495 MUSD repayment plus 4.95 fee leaves 0.05 against a 5 repayment floor, with atomic rollback on fee/protocol failure. Local V2 UI inspected; screenshot capture unavailable, DOM evidence saved. No public deployment or live fee activation. Details: reviews/WAVE2_FEE_VERIFICATION.md and deployments/wave2-fee-local-verification.json.
+
+## November 5 UI simplification acceptance
+
+Repayment form reduced to percentage and fee preview. Automation controls moved to Settings; owner manual repayment moved to Manage loan. Non-zero existing reserves remain collapsed in Settings; share-only saves preserve reserve/pause values. 41 JS tests and production build pass. Browser checks covered enabled, zero-reserve, non-owner and V1 states plus 390px layout. No public signing/deployment. Source hashes confirm fee contracts/tests and keeper adapter unchanged since prior 44-contract-test/native-fork acceptance. See deployments/wave2-ui-simplification.json.

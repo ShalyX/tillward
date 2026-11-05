@@ -1,0 +1,80 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - strong: Business workspace
+  - generic: 0x2222…2222
+  - navigation "Main navigation":
+    - button "Overview":
+      - text: Overview
+    - button "Invoices 1":
+      - text: Invoices
+      - generic: "1"
+    - button "Repayment rules":
+      - text: Repayment rules
+    - button "Activity":
+      - text: Activity
+    - button "Manage loan":
+      - text: Manage loan
+    - button "Settings":
+      - text: Settings
+  - strong: Mezo testnet
+  - generic: BTC gas · MUSD payments
+  - link "Read Mezo borrowing documentation":
+    - /url: https://mezo.org/docs/users/borrow/
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Manage loan
+  - button "Refresh chain state":
+  - button "0x1111…1111":
+    - text: 0x1111…1111
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - paragraph: YOUR WORKING CAPITAL
+  - heading "Manage loan" [level=1]
+  - paragraph: Make a manual repayment, manage collateral or close your loan.
+  - region "Monitor your loan":
+    - paragraph: YOUR BTC-BACKED LOAN
+    - heading "Monitor your loan" [level=2]
+    - generic: Block 100
+    - paragraph: BTC prices and interest can change your ratio. Receipt-linked repayment does not prevent liquidation or redemption.
+    - term: BTC / USD · native oracle
+    - definition: $77,500.00
+    - term: Individual collateral ratio
+    - definition: 200.00%
+    - term: System collateral ratio
+    - definition: 300.00%
+    - term: Recovery Mode
+    - definition: Inactive
+    - term: Normal minimum ratio
+    - definition: 110.00%
+    - term: Claimable surplus BTC
+    - definition: "0"
+    - paragraph: Recovery Mode begins below a 150.00% system ratio. Figures describe block 100, 11/5/2026, 7:54:50 PM. Refresh for current conditions.
+    - paragraph: Redemptions can reduce your BTC collateral in exchange for reducing debt, even above the liquidation minimum. A higher ratio does not guarantee protection. Your repayment settings change only when you approve an update.
+    - button "Add BTC collateral"
+    - button "Review repayment rules"
+    - link "Mezo borrowing documentation":
+      - /url: https://mezo.org/docs/users/borrow/
+      - text: Mezo borrowing documentation
+  - paragraph: LOAN & OPERATING FUNDS
+  - heading "Your loan" [level=2]
+  - paragraph: "Closing requires 5,000.00 MUSD for the loan plus the existing 5.00 MUSD reserve. Current account balance: 500 MUSD. Additional top-up needed: 4505 MUSD (interest may increase this)."
+  - paragraph:
+    - text: "Available BTC in this account:"
+    - strong: 1.00000000 BTC
+  - button "Top up MUSD"
+  - button "Make a manual repayment"
+  - button "Withdraw operating MUSD"
+  - button "Open loan" [disabled]
+  - button "Add collateral"
+  - button "Close loan"
+  - button "Release allocation"
+  - button "Claim surplus BTC" [disabled]
+  - button "Withdraw available BTC"
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 100 · Built by ElseMade
+- status

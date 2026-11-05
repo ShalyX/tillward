@@ -1,0 +1,38 @@
+{
+  "verifiedAt": "2026-11-05T19:08:38.178933+00:00",
+  "scope": "UI simplification only; no deployment, signing, contract or keeper-service changes",
+  "javascriptTestsPassed": 41,
+  "productionBuild": "passed",
+  "previousFeeContractProof": "deployments/wave2-fee-local-verification.json",
+  "unchangedFeeContractAndKeeperSourceHashesChecked": true,
+  "browserChecks": [
+    "Repayment form contains percentage and fee preview, no floor input/pause/manual controls",
+    "99% cap and exact 500 -> 495 / 4.95 / 0.05 illustration",
+    "Pause/enable lives in Settings with confirmation",
+    "Manual repayment lives in Manage loan with gas/fee disclosure inside confirmation",
+    "Zero reserve account has no reserve management section",
+    "Existing nonzero reserve appears collapsed in Settings",
+    "Non-owner manual repayment disabled and automation control absent",
+    "V1 original terms and 100% cap retained; no floor input in main form",
+    "390px viewport page width 375px: no full-page horizontal overflow; navigation scrolls within row"
+  ],
+  "evidence": [
+    "docs/reviews/evidence/wave2-simplified-repayment.png",
+    "docs/reviews/evidence/wave2-simplified-repayment.txt",
+    "docs/reviews/evidence/wave2-simplified-settings.txt",
+    "docs/reviews/evidence/wave2-simplified-manage-loan.txt",
+    "docs/reviews/evidence/wave2-simplified-nonowner.txt"
+  ],
+  "limitations": [
+    "Local fixture only; no wallet signing or public acceptance claimed",
+    "Mobile full-page screenshot failed; narrow-layout DOM width check succeeded",
+    "Existing reserve preserved; reserve behaviour not removed from contracts"
+  ],
+  "sourceSHA256": {
+    "src/main.ts": "79e4b8cbb4bd7f6ddeaa777d2681fbbc9a415f2e4cb4d2cd09b4724a22c12217",
+    "src/style.css": "507ad8170db47e7f55584c72188010708b93cc0e5f308edf8360c3a5e0e1d482",
+    "src/repayment-settings.mjs": "e52575da0ca2bc2c59f5494a6f8ab51a2615ef8e3e79291ec5f61321c8f30df6",
+    "tests/repayment-settings.test.mjs": "c95528e327825f615357d6d7f9c509ab2688254b241b3e3ed0924195982f7aa6",
+    "tests/browser-fixture.mjs": "7386dc9bd84669f7e06d92bc894e26b1429160a2dff61902b537c3b0ca877c2c"
+  }
+}

@@ -11,7 +11,8 @@
     "contracts": "forge test --no-match-contract \"Native.*ForkTest\"",
     "fork:test": "node scripts/fork-test.mjs",
     "probe": "node scripts/probe.mjs",
-    "fork:surplus": "node scripts/fork-test.mjs --surplus"
+    "fork:surplus": "node scripts/fork-test.mjs --surplus",
+    "fork:fees": "node scripts/fork-test.mjs --fees"
   },
   "dependencies": {
     "viem": "2.57.10"

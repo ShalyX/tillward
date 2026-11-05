@@ -1,0 +1,46 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - strong: Business workspace
+  - generic: 0x2222…2222
+  - navigation "Main navigation":
+    - button "Overview":
+      - text: Overview
+    - button "Invoices 1":
+      - text: Invoices
+      - generic: "1"
+    - button "Repayment rules":
+      - text: Repayment rules
+    - button "Activity":
+      - text: Activity
+    - button "Manage loan":
+      - text: Manage loan
+    - button "Settings":
+      - text: Settings
+  - strong: Mezo testnet
+  - generic: BTC gas · MUSD payments
+  - link "Read Mezo borrowing documentation":
+    - /url: https://mezo.org/docs/users/borrow/
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Settings
+  - button "Refresh chain state":
+  - button "0x6666…6666":
+    - text: 0x6666…6666
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - paragraph: YOUR WORKSPACE
+  - heading "Repayment settings" [level=1]
+  - paragraph: Manage automatic repayments and review your service terms.
+  - heading "Automatic repayments" [level=2]
+  - paragraph: Automatic repayments are on.
+  - paragraph: Tillward charges 1% of the amount automatically repaid, taken from the retained portion of your customer payments. Repayment and fee succeed together.
+  - generic "Service terms and payment details"
+  - generic "Existing operating reserve · 5 MUSD"
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 100 · Built by ElseMade
+- status

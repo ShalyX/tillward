@@ -1,0 +1,24 @@
+{
+  "observedAt": "2026-11-01T14:15:24.812877+00:00",
+  "service": {
+    "MemoryCurrent": "23977984",
+    "CPUUsageNSec": "36874604000",
+    "ActiveState": "active",
+    "SubState": "running",
+    "ActiveEnterTimestamp": "Sat 2026-10-31 18:58:32 CST"
+  },
+  "healthState": "healthy",
+  "enrolled": 3,
+  "hasPending": false,
+  "memoryMiB": 22.8671875,
+  "cpuSecondsSinceServiceStart": 36.874604,
+  "runtimeKiB": 228328,
+  "stateKiB": 32,
+  "billingInvoiceAvailable": false,
+  "ownerReportedVpsMonthlyUSD": 5,
+  "vpsInvoiceInspected": false,
+  "vpsShared": true,
+  "vercelPlan": "hobby",
+  "vercelPlanVerifiedBy": "Authenticated team API via local CLI; billing plan hobby, status active",
+  "vercelChargesEvidence": "Billing charges API returned 404 costs_not_found; zero cost not inferred"
+}

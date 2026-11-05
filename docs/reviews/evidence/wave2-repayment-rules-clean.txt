@@ -1,0 +1,62 @@
+- complementary:
+  - link "Tillward home":
+    - /url: /
+    - text: Tillward
+  - strong: Business workspace
+  - generic: 0x2222…2222
+  - navigation "Main navigation":
+    - button "Overview":
+      - text: Overview
+    - button "Invoices 1":
+      - text: Invoices
+      - generic: "1"
+    - button "Repayment rules":
+      - text: Repayment rules
+    - button "Activity":
+      - text: Activity
+    - button "Manage loan":
+      - text: Manage loan
+  - strong: Mezo testnet
+  - generic: BTC gas · MUSD payments
+  - link "Read Mezo borrowing documentation":
+    - /url: https://mezo.org/docs/users/borrow/
+- banner:
+  - text: Workspace
+  - generic: /
+  - text: Repayment rules
+  - button "Refresh chain state":
+  - button "0x1111…1111":
+    - text: 0x1111…1111
+- main:
+  - strong: Testnet workspace
+  - generic: Test assets only.
+  - paragraph: YOU SET THE PACE
+  - heading "Choose how payments repay your loan." [level=1]
+  - paragraph: Set the share once. Each customer payment contributes toward repayment.
+  - heading "Repayment percentage" [level=2]
+  - generic: Use this share of each payment to repay my loan
+  - status: 99%
+  - generic: of each customer payment
+  - slider "Use this share of each payment to repay my loan": "99"
+  - generic: 0%
+  - generic: 99%
+  - paragraph: Tillward charges 1% of the amount automatically repaid, deducted from the retained portion of your payment.
+  - button "Save repayment percentage":
+    - text: Save repayment percentage
+  - generic: Automatic repayments on
+  - button "Pause automatic repayments"
+  - paragraph: TRY A CUSTOMER PAYMENT
+  - heading "See where the money goes." [level=2]
+  - generic: Payment amount · MUSD
+  - textbox "Payment amount · MUSD": "500"
+  - generic: Business retains after service fee
+  - strong: 0.05 MUSD
+  - generic: Tillward service fee
+  - strong: 4.95 MUSD
+  - generic: Allocated to loan repayment
+  - strong: 495 MUSD
+  - paragraph: This preview assumes the allocated amount can be repaid. Actual repayment follows the loan’s limits and any existing account restrictions. Changing the percentage does not change earlier allocations.
+- contentinfo:
+  - generic: Borrow with purpose. Repay as you earn.
+  - generic: State at block 100 · Built by ElseMade
+- status

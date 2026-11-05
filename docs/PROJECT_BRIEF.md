@@ -3,11 +3,11 @@
 Idea locked 2026-10-22 by the user's "lets get to it" after selecting Paydown. Tillward was selected as the final identity on 2026-10-22; Paydown is the historical working name.
 
 ## Product
-A BTC-holding independent business borrows MUSD for operating expenses, receives final customer payments in MUSD, and allocates its chosen percentage to native Mezo debt repayment. The owner retains control of operating cash, a minimum cash floor, and future repayment routing. The proof is lower protocol debt, not an animated balance.
+A BTC-holding independent business borrows MUSD for operating expenses, receives final customer payments in MUSD, and allocates its chosen percentage to native Mezo debt repayment. The owner retains control of operating cash and future repayment routing. The main flow asks for the repayment percentage and explains the service fee; existing onchain reserve values are preserved without an operating-reserve UI. The proof is lower protocol debt, not an animated balance.
 
 Primary user: an independent agency or seller holding BTC and already willing to collect MUSD. Demand among these users is a hypothesis. Shopify's revenue-linked repayment validates the category, not this audience.
 
-Core flow: create business account -> supply BTC and borrow MUSD -> set repayment percentage/cash floor -> create final-payment invoice -> customer pays MUSD -> repayment allocation accumulates -> bounded settlement reduces Mezo debt -> operating funds remain withdrawable -> inspect transaction evidence.
+Core flow: create business account -> supply BTC and borrow MUSD -> set repayment percentage and review the disclosed service fee -> create final-payment invoice -> customer pays MUSD -> repayment allocation accumulates -> bounded settlement reduces Mezo debt -> operating funds remain withdrawable -> inspect transaction evidence.
 
 ## Scope
 Required: R01-R09 in REQUIREMENTS.md. One chain, Mezo testnet, one borrower account per business. Onchain invoices and receipts, configurable split, cash floor, pause/resume, explicit deferred repayment and transaction reconciliation. Wallet approves all user actions. Permissionless settlement can only repay the fixed account's debt.
@@ -24,3 +24,5 @@ Mezo Buildathon: https://app.akindo.io/wave-hacks/OVOO0gdrVU8379D10 . Target pro
 - Scope budget: 4-6 focused developer-days including finishing. This is a planning estimate, not a time promise. First dependency investigation capped at one focused day.
 
 - 2026-10-22: owner requested recovery/history fixes, guided onboarding, browser signing and loan-exit QA, keeper hosting and final identity. Tillward receipt-counter / ink-cream-vermilion direction explicitly selected.
+
+November 5 interface update: automation controls remain in Repayment rules; manual repayment and exit/collateral controls move to Manage loan. The main flow no longer asks for a cash floor. Existing contract reserve protections remain unchanged and new accounts default to zero.

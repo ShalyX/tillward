@@ -6,6 +6,8 @@ import {notifyHealth} from './keeper-alerts.mjs';
 
 const directory=process.env.KEEPER_STATE_DIR||process.argv[2];
 if(!directory)throw Error('Provide KEEPER_STATE_DIR or state directory argument.');
+const service=process.env.KEEPER_SERVICE||'tillward-keeper';
+if(!/^tillward-keeper(?:-v2)?$/.test(service))throw Error('Unsupported keeper service.');
 let health={},issues=[];
 try{
  health=JSON.parse(await readFile(resolve(directory,'keeper-health.json'),'utf8'));
@@ -19,8 +21,8 @@ try{
  const backup=JSON.parse(await readFile(resolve(directory,'backup-status.json'),'utf8'));
  if(!Number.isFinite(Date.parse(backup.completedAt))||Date.now()-Date.parse(backup.completedAt)>172800000)issues.push('backup_stale');
 }catch{issues.push('backup_unavailable');}
-try{execFileSync('systemctl',['is-active','--quiet','tillward-keeper']);}catch{issues.push('keeper_service_inactive');}
-for(const unit of ['tillward-keeper-health.timer','tillward-keeper-backup.timer']){
+try{execFileSync('systemctl',['is-active','--quiet',service]);}catch{issues.push('keeper_service_inactive');}
+for(const unit of [`${service}-health.timer`,`${service}-backup.timer`]){
  try{execFileSync('systemctl',['is-enabled','--quiet',unit]);}catch{issues.push(`${unit.replaceAll('.','_')}_disabled`);}
 }
 try{await import('viem');}catch{issues.push('runtime_dependency_missing');}

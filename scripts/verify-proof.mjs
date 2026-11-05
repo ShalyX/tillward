@@ -1,8 +1,10 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {createPublicClient,webSocket,decodeEventLog,decodeFunctionData,parseAbi,zeroAddress,keccak256} from 'viem';
 import {readWithRetry} from '../src/read-retry.mjs';
-const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const manifest=JSON.parse(await readFile('public/deployment.json','utf8'));
 const proof=JSON.parse(await readFile('public/proof.json','utf8'));
+const c=[manifest,...(manifest.legacyDeployments??[])].find(x=>x.factory.toLowerCase()===proof.factory.toLowerCase());
+if(!c)throw Error('Historical proof factory is not in the pinned deployment catalog.');
 const a=JSON.parse(await readFile('out/RevenueAccount.sol/RevenueAccount.json','utf8')).abi;
 const tokenAbi=parseAbi(['event Transfer(address indexed from,address indexed to,uint256 value)']);
 const p=createPublicClient({transport:webSocket(c.ws,{timeout:20000,retryCount:2,reconnect:false})});

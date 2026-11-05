@@ -5,6 +5,7 @@ import {pathToFileURL} from 'node:url';
 import {createPublicClient,createWalletClient,defineChain,http,webSocket,fallback,keccak256,encodeFunctionData,isAddress,parseTransaction,decodeFunctionData,recoverTransactionAddress} from 'viem';
 import {privateKeyToAccount} from 'viem/accounts';
 import {readWithRetry} from '../src/read-retry.mjs';
+import {readServiceState} from '../src/service-fees.mjs';
 import {insertionHints} from '../src/native-hints.mjs';
 import {discoverAccounts,accountBatch,operationalIssues} from './keeper-registry.mjs';
 
@@ -41,7 +42,8 @@ async function main(){
  const signer=privateKeyToAccount(JSON.parse(await readFile(resolve(walletPath),'utf8')).privateKey);
  const w=createWalletClient({chain,account:signer,transport});
  const factory=JSON.parse(await readFile('out/RevenueFactory.sol/RevenueFactory.json','utf8'));
- const artifact=JSON.parse(await readFile('out/RevenueAccount.sol/RevenueAccount.json','utf8'));
+ if(c.accountVersion!==undefined&&![1,2].includes(c.accountVersion))throw Error('Unsupported account version.');
+ const artifact=JSON.parse(await readFile(c.accountVersion===2?'out/RevenueAccountV2.sol/RevenueAccountV2.json':'out/RevenueAccount.sol/RevenueAccount.json','utf8'));
  const stateDir=process.env.KEEPER_STATE_DIR||dirname(resolve(walletPath));
  const journalPath=resolve(stateDir,'paydown-keeper-journal.json'),healthPath=resolve(stateDir,'keeper-health.json');
  let journal={},missingJournal=false;try{journal=JSON.parse(await readFile(journalPath,'utf8'));}catch(e){if(e.code!=='ENOENT')throw new Error('Keeper journal is unreadable. Restore it before signing.');missingJournal=true;}
@@ -69,6 +71,8 @@ async function main(){
    const [quote,reason]=await readWithRetry(()=>p.readContract({address:target,abi:artifact.abi,functionName:'repaymentQuote',blockNumber:head}));
    const plan=settlementPlan(quote);
    if(!plan.eligible)return {state:'deferred',reason,block:Number(head),checkedAt:new Date().toISOString()};
+   const service=await readServiceState(p,c,target,head,plan.amount);
+   if(service&&!service.funded)return {state:'deferred',reason:service.enabled?'retained-fee-funding-unavailable':'hosted-service-disabled',block:Number(head),checkedAt:new Date().toISOString()};
    const today=new Date().toISOString().slice(0,10);
    const accountUsed=journal.day===today?BigInt(journal.accountGas?.[target.toLowerCase()]||'0'):0n;
    const sponsorship=sponsorshipPlan(plan.amount,accountUsed);

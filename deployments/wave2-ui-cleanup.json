@@ -1,0 +1,24 @@
+{
+  "verifiedAt": "2026-11-05T19:16:06.762861+00:00",
+  "changes": [
+    "Removed separate Settings tab and route",
+    "Removed operating-reserve editor and handler",
+    "Pause/enable remains directly in Repayment rules",
+    "Manual repayment remains in Manage loan"
+  ],
+  "browserChecks": {
+    "settingsTabCount": 0,
+    "reserveInputCount": 0,
+    "pauseButtonType": "button",
+    "pauseOpensConfirmation": true,
+    "pauseDoesNotSubmitPercentageForm": true
+  },
+  "focusedJavaScriptTestsPassed": 5,
+  "productionBuild": "passed",
+  "publicDeployment": false,
+  "onchainAccountSettingsModified": false,
+  "evidence": [
+    "docs/reviews/evidence/wave2-repayment-rules-clean.png",
+    "docs/reviews/evidence/wave2-repayment-rules-clean.txt"
+  ]
+}

@@ -23,7 +23,7 @@ contract TokenMock {
     function mint(address to,uint256 n) external {balanceOf[to]+=n;}
     function burn(address from,uint256 n) external {balanceOf[from]-=n;}
     function approve(address to,uint256 n) external returns(bool) {allowance[msg.sender][to]=n;return true;}
-    function transfer(address to,uint256 n) external returns(bool) {balanceOf[msg.sender]-=n;balanceOf[to]+=n;return true;}
+    function transfer(address to,uint256 n) external virtual returns(bool) {balanceOf[msg.sender]-=n;balanceOf[to]+=n;return true;}
     function transferFrom(address from,address to,uint256 n) external returns(bool) {allowance[from][msg.sender]-=n;balanceOf[from]-=n;balanceOf[to]+=deductFee?n-1:n;return true;}
     function setFee(bool b) external {deductFee=b;}
 }

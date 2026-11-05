@@ -1,0 +1,74 @@
+{
+  "verifiedAt": "2026-11-05T18:23:51.096968+00:00",
+  "scope": "Local V2 implementation; no public deployment or live fee activation",
+  "selectedRulesDate": "2026-11-05",
+  "nonForkSolidity": {
+    "passed": 44,
+    "failed": 0,
+    "feeTests": 23,
+    "feeFuzzRuns": 128,
+    "legacyTests": 21,
+    "legacyFuzzRuns": 128
+  },
+  "javascript": {
+    "passed": 39,
+    "failed": 0
+  },
+  "productionBuild": "passed",
+  "credentialScan": {
+    "knownCredentialsChecked": 4,
+    "findings": 0
+  },
+  "nativeFork": {
+    "test": "NativeFeeForkTest.testNativeAtomicFeePreservesRepaymentAndMayCrossFloor",
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "chainSource": "Mezo mainnet read-only RPC",
+    "pinnedBlock": 12684025,
+    "oraclePrecompile": "Recorded native oracle result replayed; lending and MUSD unmodified",
+    "repaymentMUSD": "495",
+    "feeMUSD": "4.95",
+    "finalBusinessMUSD": "0.05",
+    "cashFloorMUSD": "5",
+    "measuredInTestCallGas": 280656,
+    "gasLimitation": "Warm fork call within setup transaction; not standalone paid transaction gas or production bound. Entire test gas includes deployment/setup."
+  },
+  "browser": {
+    "source": "Local read-only fixture; no signing/funds",
+    "verified": [
+      "99% maximum slider",
+      "495 repayment / 4.95 fee / 0.05 retained preview",
+      "floor exception disclosure",
+      "owner direct route",
+      "unenrolled hosted settlement blocked"
+    ],
+    "evidence": [
+      "docs/reviews/evidence/wave2-fee-policy-desktop.txt",
+      "docs/reviews/evidence/wave2-fee-disabled.txt"
+    ],
+    "screenshot": "Capture unavailable; DOM evidence saved"
+  },
+  "publicChanges": {
+    "deployed": false,
+    "keeperServiceUpdated": false,
+    "liveFeesEnabled": false,
+    "v1SourceAndDeploymentConfigUnchanged": true
+  },
+  "sourceSHA256": {
+    "contracts/RevenueAccountV2.sol": "0ce1fa6b441b64d114669012621cdb2d89237ac9aad0cc426dda041e70b49c12",
+    "contracts/RevenueFactoryV2.sol": "769c46bd21c50c487749805d98385b12907117c63039da31f4d80716fb692ed5",
+    "test/RevenueFees.t.sol": "129b3f5260b6432a624df0fc2d63f9886b6fe1dddf518ef87882cee0dc417244",
+    "test/NativeFeeFork.t.sol": "af969d489583c1527951e58e048b26e675b91b750c239f288ee106e3d197555a",
+    "src/service-fees.mjs": "a6264319e5e404817286c1c033d0313dd8bc5d56e903ffb4e4162c3a5b05183e",
+    "src/main.ts": "88103dcec7c6288eb08d633507b77c11dbf280c915b8acc09c8c929dbd152802",
+    "scripts/keeper.mjs": "3c7d2df9d41e252614d4a666bb412f9096d81f07df3c6c154151b0d0b5151fc2",
+    "tests/service-fees.test.mjs": "1f5e32ed794bea5f58812fc29643b62f7d7cb1132ecbd018876eb5324feee3a5"
+  },
+  "remaining": [
+    "Choose and verify actual testnet treasury before a new factory deployment",
+    "Deploy/register V2 separately; explicit owner opt-in and account migration plan",
+    "Public testnet owner signing and sponsored fee settlement/recovery proof",
+    "Independent review before mainnet; no audit claimed"
+  ]
+}
