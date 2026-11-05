@@ -1,0 +1,16 @@
+{
+  "verifiedAt": "2026-11-05T22:31:45.530Z",
+  "chainId": 31611,
+  "block": "16597591",
+  "account": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622",
+  "id": "0x119e25c92c0d4a341a479f4353ac8e721ee0a3e5689c2f369f6ac983b6e0c0dd",
+  "label": "Wave 2 atomic fee QA",
+  "amount": "500000000000000000000",
+  "expiresAt": "1794004086",
+  "paid": false,
+  "canceled": false,
+  "repaymentBps": 9900,
+  "serviceEnabled": true,
+  "checkout": "https://tillward.vercel.app/?account=0xd6e4829B51dB8ED490bFaE01384757B0fD65D622&invoice=0x119e25c92c0d4a341a479f4353ac8e721ee0a3e5689c2f369f6ac983b6e0c0dd",
+  "scope": "Read-only pre-payment verification; not payment evidence"
+}

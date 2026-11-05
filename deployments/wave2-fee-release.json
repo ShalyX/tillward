@@ -32,15 +32,18 @@
     "pending": null,
     "backupAndHealthTimers": "active",
     "firstBackupCompletedUTC": "2026-11-05T19:32:41Z",
-    "v1ServicePreserved": true
+    "v1ServicePreserved": true,
+    "lastSettlement": "0xf2c1c33d606b1ebbb5d8d4c975e105caeb356fd9ae0a23e9991969150b0309a4",
+    "postSettlementBackup": "success",
+    "postSettlementBackupCompletedUTC": "2026-11-05T22:37:54Z"
   },
   "ownerAccount": {
     "address": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622",
     "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
     "creationConfirmedOnChain": true,
     "loanConfirmed": true,
-    "serviceEnabled": false,
-    "receiptAndFeeFlowVerified": false,
+    "serviceEnabled": true,
+    "receiptAndFeeFlowVerified": true,
     "loanProof": "deployments/wave2-v2-loan-proof.json",
     "borrowedFundsWithdrawn": true,
     "withdrawalProof": "deployments/wave2-v2-withdrawal-proof.json",
@@ -49,12 +52,17 @@
       "isPartiallyVerified": false,
       "verifiedAt": "2026-11-05T22:14:55.153055Z",
       "compiler": "v0.8.24+commit.e11b9ed9"
-    }
+    },
+    "repaymentBpsObserved": 9900,
+    "ruleCheckBlock": "16597504",
+    "invoiceProof": "deployments/wave2-v2-invoice.json",
+    "policyProof": "deployments/wave2-v2-policy-proof.json",
+    "feeProof": "deployments/wave2-live-fee-proof.json"
   },
   "limitations": [
-    "Chrome and native UI automation time out; user performed public account creation and handles remaining owner actions.",
-    "Mainnet fees and customer revenue are not claimed.",
-    "99% policy/service authorization and the receipt/fee settlement are still awaiting verification."
+    "Chrome and native UI automation timed out; owner completed public wallet actions, independently verified by canonical onchain receipts. Automated public wallet UI coverage is not claimed.",
+    "Public testnet only; treasury is the QA owner. Mainnet fees, customer revenue and independent audit are not claimed.",
+    "QA loan remains open with 0.045 test BTC collateral. Public cash-floor crossing was not exercised; that edge case passed local and native-fork tests."
   ],
-  "lastUpdatedUTC": "2026-11-05T22:21:01.294863+00:00"
+  "lastUpdatedUTC": "2026-11-05T22:38:42.859020+00:00"
 }

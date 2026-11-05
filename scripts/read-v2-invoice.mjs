@@ -1,0 +1,22 @@
+// Read-only invoice/terms gate before the owner pays the exact public QA checkout.
+import {readFile,writeFile} from 'node:fs/promises';
+import {createPublicClient,http,webSocket,fallback} from 'viem';
+import {readWithRetry} from '../src/read-retry.mjs';
+import {readServiceState} from '../src/service-fees.mjs';
+const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const account='0xd6e4829B51dB8ED490bFaE01384757B0fD65D622';
+const abi=JSON.parse(await readFile('out/RevenueAccountV2.sol/RevenueAccountV2.json','utf8')).abi;
+const p=createPublicClient({transport:fallback([webSocket(c.ws,{timeout:15000,retryCount:1}),http(c.rpc,{timeout:15000,retryCount:1})])});
+if(c.chainId!==31611||await p.getChainId()!==31611)throw Error('Testnet only');
+const block=await p.getBlockNumber({cacheTime:0});
+const read=(functionName,args=[])=>readWithRetry(()=>p.readContract({address:account,abi,functionName,args,blockNumber:block}));
+const [count,bps,paused]=await Promise.all([read('invoiceCount'),read('repaymentBps'),read('paused')]);
+if(bps!==9900||paused)throw Error('Exact QA policy is not active; do not pay.');
+const service=await readServiceState(p,c,account,block,0n);if(!service?.enabled)throw Error('Service is not enabled; do not pay.');
+if(count!==1n)throw Error('Expected exactly one QA invoice; review before payment.');
+const id=await read('invoiceIds',[0n]);const i=await read('invoices',[id]);
+const head=await p.getBlock({blockNumber:block});
+if(i[1]!==500n*10n**18n||i[4]||i[5]||i[2]<=head.timestamp)throw Error('Invoice is not an unpaid, uncanceled, unexpired exact 500 MUSD checkout.');
+const checkout=`https://tillward.vercel.app/?account=${account}&invoice=${id}`;
+const proof={verifiedAt:new Date().toISOString(),chainId:31611,block,account,id,label:i[0],amount:i[1],expiresAt:i[2],paid:i[4],canceled:i[5],repaymentBps:bps,serviceEnabled:true,checkout,scope:'Read-only pre-payment verification; not payment evidence'};
+await writeFile('deployments/wave2-v2-invoice.json',JSON.stringify(proof,(_,v)=>typeof v==='bigint'?v.toString():v,2)+'\n');console.log(JSON.stringify({verified:true,id,amountTestMUSD:'500',checkout}));process.exit(0);

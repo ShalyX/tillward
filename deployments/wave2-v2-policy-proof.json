@@ -1,0 +1,26 @@
+{
+  "verifiedAt": "2026-11-05T22:27:05.302Z",
+  "chainId": 31611,
+  "account": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622",
+  "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "block": "16597504",
+  "repaymentBps": 9900,
+  "floor": "0",
+  "paused": false,
+  "serviceEnabled": true,
+  "feeBps": 100,
+  "treasury": "0x1DcB045123730e606A88380BCe534332F50332d2",
+  "transactions": [
+    {
+      "action": "setPolicy",
+      "hash": "0x742dedc9c0d78588049feb6d34918cea9e24f062ea7770cc1373391667411bca",
+      "block": "16597492"
+    },
+    {
+      "action": "setServiceEnabled",
+      "hash": "0x258d585b3a7ce0d0747eb927135b806c2a092d99957d37db9db3ba00168df2e4",
+      "block": "16597435"
+    }
+  ],
+  "scope": "Owner consent/policy only; no fee collection implied"
+}

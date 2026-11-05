@@ -1,0 +1,39 @@
+{
+  "verifiedAt": "2026-11-05T22:37:29.188Z",
+  "chainId": 31611,
+  "factory": "0xaa5121f96502b9618156e8288e60ce1c699b9a43",
+  "account": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622",
+  "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "treasury": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "keeper": "0x7C93C575bE5ceD60F388D2866991d68aE23e3D42",
+  "invoiceId": "0x119e25c92c0d4a341a479f4353ac8e721ee0a3e5689c2f369f6ac983b6e0c0dd",
+  "approval": {
+    "hash": "0xbb7c8bc37b7dee4424fba3ff9a31e2b0ddd1723774ceee98b73467a3942b2aca",
+    "block": "16597648",
+    "amount": "500000000000000000000"
+  },
+  "payment": {
+    "hash": "0x6e5d50c7e2591c7f671cbb539a967966149f573be3fae208116f1d0f78808545",
+    "block": "16597658",
+    "amount": "500000000000000000000",
+    "allocated": "495000000000000000000"
+  },
+  "settlement": {
+    "hash": "0xf2c1c33d606b1ebbb5d8d4c975e105caeb356fd9ae0a23e9991969150b0309a4",
+    "block": "16597672",
+    "amount": "495000000000000000000",
+    "fee": "4950000000000000000",
+    "gasUsed": "489763",
+    "gasPrice": "146"
+  },
+  "nativeDebtBefore": "2702501381354099090431",
+  "nativeDebtAfter": "2207501381354099090431",
+  "accountBefore": "500000000000000000000",
+  "accountAfter": "50000000000000000",
+  "treasuryBefore": "2000999999999999999999",
+  "treasuryAfter": "2005949999999999999999",
+  "pending": "0",
+  "retained": "50000000000000000",
+  "floor": "0",
+  "scope": "Public testnet receipt, unattended VPS keeper, full native repayment and exact atomic fee; no mainnet or customer traction claim"
+}

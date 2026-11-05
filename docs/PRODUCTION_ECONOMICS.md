@@ -72,3 +72,7 @@ Sources checked November 1, 2026:
 - https://testnet.mezo.org/docs/users/getting-started/connect
 
 Reproduce mainnet reads and arithmetic: node scripts/model-production-costs.mjs. Evidence: deployments/wave2-production-economics.json. No financial keys are loaded.
+
+## November 5 V2 receipt measurement
+
+The deployed atomic-fee path used **489,763 gas** in one standalone public testnet settlement of 495 MUSD plus a 4.95 MUSD fee. See `deployments/wave2-live-fee-proof.json`. This exceeds the 450,000-gas proxy used in the historical calculations above by about 8.84%; those tables therefore understate gas for this observed V2 path. At the historical mainnet quote and BTC reference, that receipt size would cost about USD 0.0558 per attempt (USD 0.5584 at ten times the gas price), before the paid-attempt allowance. These are repriced testnet gas units, not measured mainnet V2 costs. The actual testnet price was 146 wei/gas. One receipt is not a production upper bound; refresh the model with representative V2 measurements before commercial pricing decisions. The selected 1% model is now implemented and enabled for the QA testnet account; no mainnet charges are enabled.

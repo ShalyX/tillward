@@ -1,4 +1,6 @@
-# Atomic service-fee implementation: local acceptance
+# Atomic service-fee implementation: verification record
+
+The implementation and local acceptance sections below record the pre-deployment stage. The public release result is recorded separately below.
 
 November 5, 2026. Implements the owner's selected 99% allocation maximum and 1% fee on actual hosted receipt-funded repayment. The repayment calculation preserves the existing cash-floor rule. The authorized fee can cross that floor but cannot consume other pending repayments. Fee funding is exclusively tracked retained receipts. No arrears or deferred collection exists.
 
@@ -45,3 +47,27 @@ A focused implementation review checked owner authority, immutable terms, retain
 ## Deployment boundary
 
 Machine-readable proof and source hashes: deployments/wave2-fee-local-verification.json. No public app/contract deployment, production keeper update or live fee activation was performed. V2 has no selected live treasury address yet. Deployment must pin that address and new factory bytecode, use a distinct registry/state directory for its keeper, explicitly enroll the owner and verify public testnet repayment/fee/recovery flows before calling the release complete. Existing V1 accounts remain fee-free and cannot be silently migrated. Interviews remain on hold.
+
+## Public testnet release verified: November 5, 2026
+
+Release `2026-11-05-wave2-atomic-fees-1` is deployed at https://tillward.vercel.app/. V2 factory `0xaa5121f96502b9618156e8288e60ce1c699b9a43` and owner account `0xd6e4829B51dB8ED490bFaE01384757B0fD65D622` have exact-match explorer source verification. The owner explicitly enabled the immutable 1% service and saved a 99% allocation. V1 accounts and their hosted service remain separate.
+
+The owner used the public checkout and Rabby to approve exactly 500 test MUSD and pay the verified invoice. `scripts/verify-live-fee.mjs` independently checked canonical approval/payment transactions, parties, invoice ID, registry and factory bytecode, native debt reduction, exact treasury transfer and block-pinned balance/ledger deltas. The unattended V2 VPS keeper then settled:
+
+| Result | MUSD |
+|---|---:|
+| Invoice received | 500 |
+| Native lender repayment | 495 |
+| Fee paid in the same transaction | 4.95 |
+| Business balance remaining | 0.05 |
+| Pending repayment remaining | 0 |
+
+Settlement: https://explorer.test.mezo.org/tx/0xf2c1c33d606b1ebbb5d8d4c975e105caeb356fd9ae0a23e9991969150b0309a4
+
+The settlement used 489,763 gas at 146 wei/gas, costing 71,505,398 wei of test BTC. This cold, standalone testnet receipt exceeds the economics study's earlier 450,000-gas planning proxy. It is not a mainnet gas-price observation or a production bound.
+
+The V2 keeper returned healthy with no pending transaction; both V1/V2 services and V2 health/backup timers were active. A post-settlement backup completed successfully. The QA loan remains open with 0.045 test BTC collateral; no closure or withdrawal was initiated as part of this receipt test.
+
+Machine-readable proof: `deployments/wave2-live-fee-proof.json`; deployment and operational record: `deployments/wave2-fee-release.json`. This supersedes the earlier deployment-boundary section. Final release validation had 44 non-fork Solidity tests and 43 JavaScript tests passing, plus the native fee fork and production build.
+
+Scope: public Mezo testnet only. Treasury is the QA owner wallet; this is not customer revenue. The public account's floor was zero; crossing a nonzero floor was verified locally and on the native fork, not in this public transaction. Chrome automation timed out, so owner wallet interactions were handed off and checked onchain; automated live UI coverage is not claimed. No independent audit or mainnet readiness is claimed. Interviews remain on hold.
