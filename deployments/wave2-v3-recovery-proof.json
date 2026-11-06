@@ -1,6 +1,6 @@
 {
   "verified": true,
-  "verifiedAt": "2026-11-06T14:08:47.697Z",
+  "verifiedAt": "2026-11-06T14:40:20.543Z",
   "chainId": 31611,
   "account": "0x3a9E23B4e91661751B1916dFe04e71D6dA65F5c7",
   "postCloseReceipt": {
@@ -11,7 +11,8 @@
   },
   "cashRecovery": {
     "hash": "0xdee25a01f28b340e694efd18e204e89d3d3aa1fd52c0caf76f368711797a8f6c",
-    "amount": "596979326184942816661"
+    "amount": "596979326184942816661",
+    "ownerMusdIncrease": "596979326184942816661"
   },
   "btcRecovery": {
     "hash": "0x82ae7ac70e34ef34d5667ddb1a0b016694717f171600d2018e90b8a1b494fb02",

@@ -15,3 +15,5 @@ Purpose: BTC-backed MUSD working capital repaid from owner-selected customer rec
 | R09 usable workspace | Actual public UI captured | Wave 2 deck and revised composition; no Settings tab |
 
 Original requirements and explicit owner amendments are in REQUIREMENTS.md. Interviews remain held. No business adoption or independent security review is implied by technical completion.
+
+V3 extension: R04/R05 reserve at most the remaining payable loan debt across receipts. R07 closure clears pending allocation/fee reservation and later no-loan receipts allocate zero. These outcomes are publicly verified in [V3 live report](reviews/WAVE2_V3_LIVE_VERIFICATION.md).

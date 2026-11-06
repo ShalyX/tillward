@@ -9,5 +9,13 @@
     "target": "production",
     "deploymentApiUrl": "https://api.vercel.com/v13/deployments/dpl_De9Jqm8gn8xqKiD27hTQKav1Q7cD"
   },
-  "scope": "Current V3 app configuration plus V1/V2 legacy catalog; owner actions were signed by the dedicated QA CLI, browser proof is read-only."
+  "scope": "Current V3 app configuration plus V1/V2 legacy catalog; owner actions were signed by the dedicated QA CLI, browser proof is read-only.",
+  "materialsDeployment": {
+    "id": "dpl_4wNiNuxLZvxCfe7hZ1QmQnEoAQkn",
+    "url": "https://tillward-pemjsy71v-shalyxs-projects.vercel.app",
+    "inspectorUrl": "https://vercel.com/shalyxs-projects/tillward/4wNiNuxLZvxCfe7hZ1QmQnEoAQkn",
+    "readyState": "READY",
+    "target": "production",
+    "deploymentApiUrl": "https://api.vercel.com/v13/deployments/dpl_4wNiNuxLZvxCfe7hZ1QmQnEoAQkn"
+  }
 }

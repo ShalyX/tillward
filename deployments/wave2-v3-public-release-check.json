@@ -1,0 +1,53 @@
+{
+  "verified": true,
+  "observedAt": "2026-11-06",
+  "files": [
+    {
+      "path": "deployment.json",
+      "status": 200,
+      "bytes": 2871,
+      "sha256": "2046849f8f15da4197c93c116fbf57109a2a5b6b5f6fc1252cffb777726ae572",
+      "matchesLocal": true
+    },
+    {
+      "path": "release.json",
+      "status": 200,
+      "bytes": 1749,
+      "sha256": "695ce434025d1bcfc3ad8c0883b9df57338d99957fe060a28b59f395f7525d3d",
+      "matchesLocal": true
+    },
+    {
+      "path": "pitch.html",
+      "status": 200,
+      "bytes": 4989,
+      "sha256": "159a4f57639e372e0375fdd6afa0becfc8ed77c13332050bf6a44d46624dd043",
+      "matchesLocal": true
+    },
+    {
+      "path": "media/tillward-wave2-deck.pdf",
+      "status": 200,
+      "bytes": 1661351,
+      "sha256": "9e32e89e9c66d71f309d9c76ab45faed4be828373034fd2373cbcd1696d6a541",
+      "matchesLocal": true
+    },
+    {
+      "path": "media/tillward-wave2-deck.pptx",
+      "status": 200,
+      "bytes": 543652,
+      "sha256": "05b0875ff6b701543313419fd8ddd6aedcbcb3d165ece93f8d1d88e318013975",
+      "matchesLocal": true
+    },
+    {
+      "path": "media/tillward-wave2.mp4",
+      "status": 200,
+      "bytes": 14549360,
+      "sha256": "34f01fdf6060cb298c8af8560f6f97045e152f1960adafd89f9dccc1a23ca17e",
+      "matchesLocal": true
+    }
+  ],
+  "browser": {
+    "latestV3Proof": true,
+    "duration": 120,
+    "deck": "https://tillward.vercel.app/media/tillward-wave2-deck.pdf"
+  }
+}
