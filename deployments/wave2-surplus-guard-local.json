@@ -1,0 +1,22 @@
+{
+  "verifiedAt": "2026-11-06T01:03:20.569769+00:00",
+  "nonForkSolidity": {
+    "passed": 57,
+    "failed": 0,
+    "skipped": 0,
+    "guardTests": 13
+  },
+  "redBeforeImplementation": {
+    "passed": 5,
+    "failed": 5,
+    "reason": "Missing redemption/recovery and constructor checks"
+  },
+  "nativeFork": {
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "contract": "NativeGuardSurplusForkTest",
+    "block": 12684025,
+    "scope": "Local fork of Mezo mainnet; oracle precompile response and guard chain ID replayed. Lending/token/surplus contracts unmodified. No mainnet broadcast."
+  }
+}

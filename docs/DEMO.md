@@ -1,3 +1,11 @@
+# Wave 2 judge-facing demonstration — November 6, 2026
+
+Purpose: BTC-backed MUSD working capital, repaid from final customer receipts. See [Wave 2 judge guide](../submission/wave2/judge-guide.md).
+
+The revised 120-second composition shows the business need, native loan conditions, 99% maximum share and disclosed 1% fee, exact checkout, an explicitly illustrative 20% split, the real 495/4.95/0.05 settlement, owner pause/manual repayment/closure, and exact public surplus recovery. Actual screenshots are labeled with recorded account/block context. The surplus product calls used the dedicated QA CLI signer; browser evidence was read-only. Fee and owner-exit flows separately used Rabby.
+
+The Wave 1 demo record below is historical and its cash-floor/settings narrative is superseded by the owner-authorized simplification. No mainnet, customer traction, or audited-security claim is made.
+
 # Judge-facing demo
 
 Approved product: receipt-linked BTC-backed working capital. The two-minute pitch combines fresh actual public UI captures with labeled historical testnet evidence. No animation claims to execute a new transaction.

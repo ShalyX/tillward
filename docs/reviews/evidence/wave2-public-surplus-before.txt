@@ -1,0 +1,99 @@
+Browser tab: 1, Title: "Tillward — Repay as receipts arrive.", URL: "https://tillward.vercel.app/?account=0x948a79e4D97A555a4B54CD345e3e679092824Aba".
+0 AXWebArea Tillward — Repay as receipts arrive., URL: tillward.vercel.app/?account=0x948a79e4D97A555a4B54CD345e3e679092824Aba
+	1 container app
+		2 container
+			3 link Description: Tillward home, Value: tillward.vercel.app/
+			4 container Main navigation
+				5 button Overview
+				6 button Invoices
+				7 button Repayment rules
+				8 button Activity
+				9 button Manage loan
+		10 container
+			11 text Workspace / Overview
+			12 button Description: Refresh chain state, ID: refresh
+			13 button Connect wallet, ID: connect
+		14 container main
+			15 text Testnet workspace
+			16 text Test assets only.
+			17 text YOUR WORKING CAPITAL
+			18 heading Keep business moving. Let receipts move debt down., Value: 1
+				19 text Keep business moving.
+				20 text Let receipts move debt down.
+			21 text Collect in MUSD. Keep your operating cash. Apply your chosen share to the loan.
+			22 button New invoice
+			23 container
+				24 text Available to withdraw  MUSD
+				25 heading 0.00, Value: 2
+					26 text 0.00
+				27 text After reserved funds
+			28 container
+				29 text Outstanding loan  MUSD
+				30 heading 0.00, Value: 2
+					31 text 0.00
+				32 text 0.0000 BTC posted as collateral
+			33 container
+				34 text Customer receipts  MUSD
+				35 heading 0.00, Value: 2
+					36 text 0.00
+				37 text 0.00 MUSD repaid through this account
+			38 container No active loan, ID: loan-risk
+				39 text YOUR BTC-BACKED LOAN
+				40 heading No active loan, Value: 2, ID: loan-risk-title
+					41 text No active loan
+				42 text Block 16,599,700
+				43 text There is no active loan at this snapshot. Any claimable surplus is separate from BTC already held by your business account.
+				44 definition list
+					45 container BTC / USD · native oracle
+						46 text BTC / USD · native oracle
+					47 text $76,197.60
+					48 container Individual collateral ratio
+						49 text Individual collateral ratio
+					50 text No active loan
+					51 container System collateral ratio
+						52 text System collateral ratio
+					53 text 273.61%
+					54 container Recovery Mode
+						55 text Recovery Mode
+					56 text Inactive
+					57 container Normal minimum ratio
+						58 text Normal minimum ratio
+					59 text 110.00%
+					60 container Claimable surplus BTC
+						61 text Claimable surplus BTC
+					62 text 0.00553221242452061
+				63 text Recovery Mode begins below a 150.00% system ratio. Figures describe block 16,599,700, 11/6/2026, 1:56:51 AM. Refresh for current conditions.
+				64 text Redemptions can reduce your BTC collateral in exchange for reducing debt, even above the liquidation minimum. A higher ratio does not guarantee protection. Your repayment settings change only when you approve an update.
+				65 button (disabled) Add BTC collateral
+				66 button Review repayment rules
+				67 button (disabled) Claim 0.00553221242452061 surplus BTC
+				68 link Description: Mezo borrowing documentation, Value: mezo.org/docs/users/borrow/
+			69 container
+				70 text Use 20% of each payment to repay your loan. Tillward charges 1% of the amount automatically repaid. Automatic repayments are paused. 
+				71 button Repayment rules
+			72 container
+				73 text YOUR RECEIPT RULE
+				74 heading One payment. Two purposes., Value: 2
+					75 text One payment. Two purposes.
+				76 text Active For every 100 MUSD in final customer payments Retained before service fee
+				77 container
+					78 text 80 %
+				79 text Allocate to repayment
+				80 container
+					81 text 20 %
+				82 button Adjust repayment rules
+			83 container
+				84 text NEXT REPAYMENT 0.00  MUSD Allocated from customer receipts Eligible to repay now 0.00 MUSD No repayment allocation is waiting. Partial repayment headroom: 0 MUSD. Final minimum principal requires owner closure.
+				85 button Manage loan
+				86 text Tillward charges 1% of the amount automatically repaid, from the retained portion of your payment.
+			87 container
+				88 text MONEY IN, PROGRESS OUT
+				89 heading Recent activity, Value: 2
+					90 text Recent activity
+				91 button View all
+				92 text Your first customer receipt starts the story.
+				93 text Create an invoice and share its checkout link.
+		94 container
+			95 text Borrow with purpose. Repay as you earn. State at block 16,599,700 · Built by ElseMade
+
+The focused UI element is 0 AXWebArea Tillward — Repay as receipts arrive., URL: tillward.vercel.app/?account=0x948a79e4D97A555a4B54CD345e3e679092824Aba

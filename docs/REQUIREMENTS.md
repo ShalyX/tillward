@@ -21,3 +21,14 @@ C04 integration 30%, viability 30%, technical 20%, UX 10%, materials 10%. Proof 
 C05 age/jurisdiction/KYB and full terms require user-specific completion; do not attest on user's behalf.
 
 Unresolved: exact deadline timezone, current-field originality and customer demand. Funded testnet account and native addresses/ABI are verified in the deployment records. Local fork tests alone do not satisfy C02.
+
+## Owner-authorized amendments — November 5–6, 2026
+
+The historical table above records the original acceptance criteria. These amendments take precedence for V2:
+
+- R03: repayment share is 0–99%; automatic service is off by default and requires explicit fee consent. Pause/Enable stays in Repayment rules. No reserve editor or separate Settings tab.
+- R05/R07: existing native repayment, cash-floor and pending-allocation protections remain. The 1% fee on actual hosted repayment is fully funded from authorized retained receipts, settles atomically and may cross the floor; other pending repayments remain protected. No deferred fees or reduction in lender repayment.
+- R09: Overview, Repayment rules, Invoices, Activity and Manage loan form the product flow. Manual repayment and exit are loan management actions.
+- Native risk monitoring, owner collateral top-up and native surplus claim extend the working-capital lifecycle. A test-only redemption guard creates controlled QA state; it is not a product feature.
+
+Current coverage and separate evidence classes: [PRODUCT-COVERAGE.md](PRODUCT-COVERAGE.md), [EVIDENCE.md](EVIDENCE.md).

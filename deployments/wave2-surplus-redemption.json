@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-11-06T11:33:19.986Z",
+  "chainId": 31611,
+  "owner": "0x25Db120d4c36977E57cb360f30E6C6028b8d3935",
+  "account": "0x948a79e4D97A555a4B54CD345e3e679092824Aba",
+  "guard": "0x2e89e9e41c0b5deb8321d5e11b778ea467edf802",
+  "factory": "0xaa5121f96502b9618156e8288e60ce1c699b9a43",
+  "manager": "0xE47c80e8c23f6B4A1aE41c34837a0599D5D16bb0",
+  "pool": "0xB4C35747c26E4aB5F1a7CdC7E875B5946eFa6fa9",
+  "guardDeployment": {
+    "hash": "0xc591dab9c34f7580d4c29a48fa40f9da86ad66d9c6a7aa742c3c2ad9af41a23a",
+    "block": "16599638",
+    "source": "contracts/qa/OwnedSurplusGuard.sol",
+    "deployedCodeHash": "0x15fd91206f66ca0a5f3f4bc58447acd347f4b59c1333bde4a75e16568af31c97"
+  },
+  "redemption": {
+    "hash": "0x5bee5fad913f59fb722edf3de5933b06275bf95e582c877834c9132ab5993c65",
+    "block": "16599673",
+    "amount": "2002000055125095731679",
+    "collateralDrawn": "26259485120875553",
+    "protocolCollateralFee": "196946138406566",
+    "redeemerBtcReceived": "26062538982468987",
+    "gasUsed": "461796"
+  },
+  "beforeSurplus": "0",
+  "afterSurplus": "5532212424520610",
+  "statusAfter": "4",
+  "borrowersUpdated": [
+    "0x948a79e4D97A555a4B54CD345e3e679092824Aba"
+  ],
+  "nativeCollateralBefore": "31791697545396163",
+  "businessBtcBefore": "0",
+  "businessBtcAfter": "0",
+  "scope": "Real public-testnet redemption touched only the dedicated owned borrower and created positive native surplus. Surplus is not yet claimed at this snapshot. Test funds are recycled QA assets, not customer activity."
+}

@@ -1,3 +1,19 @@
+## Wave 2 material checkpoint — November 6, 2026
+
+Public native surplus proof is complete; fixture recovered, no pending financial action. Eight-slide editable PPTX and PDF verified, answers/judge guide/evidence index updated. Forty-three JavaScript tests and production build pass; public redemption/recovery read-only replay passed. Final Wave 2 MP4 render approved by Shaly and running. Next: inspect encoded output, publish current pitch/deck, verify public links, update packet checksums. Wave 2 portal submission has not occurred; interviews remain held.
+
+# Current Wave 2 checkpoint — November 6, 2026
+
+Approved product remains BTC-backed MUSD working capital with owner-chosen receipt repayment. The test fixtures below support that purpose and are not a new product thesis.
+
+Public app release `2026-11-05-wave2-atomic-fees-1` is deployed. Verified public V2 evidence covers exact 500 MUSD receipt / 495 repayment / 4.95 atomic fee / 0.05 retained, owner opt-out, fee-free 9.9 MUSD manual repayment, native closure and exact 0.045 test BTC recovery. See reviews/WAVE2_V2_EXIT_VERIFICATION.md. Workstation monitoring and encrypted state backup cover both keepers; isolated same-host runtime restore and Telegram outage/recovery tests passed. Limits: workstation availability, original DPAPI user profile and no second-host restore.
+
+The public surplus gap is now closed: controlled own-borrower redemption, actual 0.005532212424520610 test BTC native entitlement, existing product claim, separate withdrawal and complete fixture cleanup verified. The guard and account are exact-match source verified. See reviews/WAVE2_PUBLIC_SURPLUS.md and deployments/wave2-surplus-*.json. The browser read actual before/after entitlement; fixture owner signed via dedicated QA script, not Rabby.
+
+Current deliverable: Wave 2 presentation package in progress. Next: updated answers/change log, judge guide, deck, pitch, provenance and final audit. Wave 1 submission remains historical and frozen. No Wave 2 submission, customer traction or mainnet readiness is claimed. Interviews remain held. No human input is currently required.
+
+---
+
 # Release coordination
 
 Milestone: public demo, public source and Wave 1 submission package.

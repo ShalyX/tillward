@@ -1,0 +1,18 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-11-06T00:59:24.763Z",
+  "chainId": 31611,
+  "readOnly": true,
+  "account": "0x948a79e4d97a555a4b54cd345e3e679092824aba",
+  "owner": "0x25Db120d4c36977E57cb360f30E6C6028b8d3935",
+  "transaction": "0xfceb4acb5e2058fe4c1cad47717e318be05ce6f1eaf2cce58e417b1839ee5343",
+  "block": "16599723",
+  "blockHash": "0x90f03491be5275798a91bb1f71001e564008ad37a2c8477c3e68087db32802e2",
+  "pool": "0xB4C35747c26E4aB5F1a7CdC7E875B5946eFa6fa9",
+  "entitlementBefore": "5532212424520610",
+  "entitlementAfter": "0",
+  "accountBtcBefore": "0",
+  "accountBtcAfter": "5532212424520610",
+  "claimedBtcWei": "5532212424520610",
+  "limitation": "Claim returns BTC to the business account; owner withdrawal is a separate action. No mainnet or customer-usage claim."
+}

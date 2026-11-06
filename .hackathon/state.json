@@ -111,10 +111,10 @@
     ],
     "wave2_work_started": true
   },
-  "revision": 19,
+  "revision": 20,
   "wave2": {
     "authorized_date": "2026-10-31",
-    "phase": "prove",
+    "phase": "presentation",
     "product_lock_preserved": true,
     "wave1_freeze_preserved": true,
     "feature_freeze": false,
@@ -128,10 +128,10 @@
     "public_app_updated": true,
     "new_live_signing_verified": true,
     "public_add_collateral_proof": true,
-    "public_claim_surplus_proof": false,
+    "public_claim_surplus_proof": true,
     "pricing_selected": true,
     "submitted": false,
-    "next_action": "V2 lifecycle and same-host isolated restore verified; both keepers have active workstation monitoring and encrypted off-host state backups. Public surplus claim, customer validation (held), pilot, always-on monitoring/second-host recovery and revised Wave 2 materials remain separate gaps.",
+    "next_action": "Public surplus proof and cleanup verified. Refresh Wave 2 answers, judge guide, deck, pitch and evidence/claim audit. Preserve Wave 1 artifacts. Do not submit AKINDO without a reviewed packet; interviews remain held.",
     "javascript_tests": 43,
     "build": "passed",
     "application_release": "2026-11-05-wave2-atomic-fees-1",
@@ -170,7 +170,7 @@
     "fee_local_proof": "deployments/wave2-fee-local-verification.json",
     "fee_report": "docs/reviews/WAVE2_FEE_VERIFICATION.md",
     "fee_solidity_tests": 23,
-    "total_nonfork_solidity_tests": 44,
+    "total_nonfork_solidity_tests": 57,
     "fee_native_fork_verified": true,
     "fee_public_testnet_verified": true,
     "keeper_local_v2_adapter_changed": true,
@@ -201,6 +201,13 @@
     "v2_restore_proof": "deployments/wave2-v2-restore-proof.json",
     "v2_offhost_encrypted_backup_verified": true,
     "v2_external_workstation_monitor_verified": true,
-    "v2_operations_proof": "deployments/wave2-v2-operations-proof.json"
+    "v2_operations_proof": "deployments/wave2-v2-operations-proof.json",
+    "public_surplus_redemption_proof": "deployments/wave2-surplus-redemption.json",
+    "public_surplus_claim_proof": "deployments/wave2-surplus-claim.json",
+    "public_surplus_recovery_proof": "deployments/wave2-surplus-recovery.json",
+    "public_surplus_report": "docs/reviews/WAVE2_PUBLIC_SURPLUS.md",
+    "surplus_fixture_account": "0x948a79e4D97A555a4B54CD345e3e679092824Aba",
+    "surplus_fixture_guard": "0x2e89e9e41c0b5deb8321d5e11b778ea467edf802",
+    "materials_status": "deck_answers_ready_final_video_render_approved"
   }
 }

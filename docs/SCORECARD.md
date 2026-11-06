@@ -1,3 +1,9 @@
+# Wave 2 evidence update — November 6, 2026
+
+This update does not assign new organizer scores. Integration now includes native loan conditions, collateral top-up, atomic fee settlement, full owner exit and public native-surplus recovery. Implementation adds fee/floor/rollback coverage, both keeper operations and isolated runtime restoration. UX removes the reserve/settings detour, keeps Pause in repayment rules and owner exit in Manage loan. Materials are rebuilt in submission/wave2/. Business viability remains limited by unvalidated borrower/payer demand; interviews are held. The proposed 1% model is implemented on opt-in V2 testnet accounts, with measured and estimated economics separated in PRODUCTION_ECONOMICS.md.
+
+The October records below are historical; they are not current Wave 2 scores.
+
 # Tillward judging evidence and review
 
 Updated October 26, 2026 after the confirmed Wave 1 submission. Official weights are recorded in HACKATHON.md. The October 26 scores below are internal simulations, not organizer results or award predictions. Official October 31 results are recorded separately in [Wave 1 results](reviews/WAVE1_RESULTS.md): integration 8, business viability 6, implementation 8, UX 7, materials 8.

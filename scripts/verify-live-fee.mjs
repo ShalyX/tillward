@@ -4,7 +4,7 @@ import {createPublicClient,http,webSocket,fallback,parseAbi,decodeEventLog,decod
 import {readWithRetry} from '../src/read-retry.mjs';
 import {readServiceState} from '../src/service-fees.mjs';
 const c=JSON.parse(await readFile('public/deployment.json','utf8'));
-const baseline=JSON.parse(await readFile('../../work/wave2-v2-owner-preflight.json','utf8'));
+const baseline=JSON.parse(await readFile('deployments/wave2-v2-loan-proof.json','utf8'));
 const invoice=JSON.parse(await readFile('deployments/wave2-v2-invoice.json','utf8'));
 const address=baseline.account;
 const abi=JSON.parse(await readFile('out/RevenueAccountV2.sol/RevenueAccountV2.json','utf8')).abi;

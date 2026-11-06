@@ -1,0 +1,21 @@
+{
+  "observedAt": "2026-11-06T01:03:20.569769+00:00",
+  "chainId": 31611,
+  "contracts": [
+    {
+      "address": "0x2e89e9e41c0b5deb8321d5e11b778ea467edf802",
+      "name": "OwnedSurplusGuard",
+      "isPartiallyVerified": false,
+      "verifiedAt": "2026-11-06T00:59:47.813494Z",
+      "compiler": "v0.8.24+commit.e11b9ed9"
+    },
+    {
+      "address": "0x948a79e4D97A555a4B54CD345e3e679092824Aba",
+      "name": "RevenueAccountV2",
+      "isPartiallyVerified": false,
+      "verifiedAt": "2026-11-06T00:59:52.667660Z",
+      "compiler": "v0.8.24+commit.e11b9ed9"
+    }
+  ],
+  "method": "Explorer API smart-contract result after standard JSON verification; exact-match, not only a queue acceptance."
+}

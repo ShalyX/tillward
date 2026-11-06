@@ -30,9 +30,9 @@ try{
  const timeout=setTimeout(()=>child.kill('SIGTERM'),90000);
  const code=await new Promise((resolve,reject)=>{child.once('error',reject);child.once('exit',resolve);});clearTimeout(timeout);
  if(code!==0)throw Error('Restored keeper startup failed.');
- const health=await load('keeper-health.json'),after=await load('paydown-keeper-journal.json');
+ const health=await load('keeper-health.json'),after=await load('paydown-keeper-journal.json'),finalRegistry=await load('keeper-registry.json');
  const nonceAfter=await rpc({jsonrpc:'2.0',id:3,method:'eth_getTransactionCount',params:[expected,'latest']});
- if(nonceBefore.error||nonceAfter.error||nonceBefore.result!==nonceAfter.result||health.state!=='healthy'||health.pending||after.pending||health.discovery?.synced!==true||health.enrolled!==1||after.last?.hash!==journal.last?.hash)throw Error('Restored runtime health/journal/nonce acceptance failed.');
+ if(nonceBefore.error||nonceAfter.error||nonceBefore.result!==nonceAfter.result||health.state!=='healthy'||health.pending||after.pending||health.discovery?.synced!==true||health.enrolled!==finalRegistry.accounts.length||after.last?.hash!==journal.last?.hash)throw Error('Restored runtime health/journal/nonce acceptance failed.');
  const proof={verified:true,verifiedAt:new Date().toISOString(),chainId:31611,signer:expected,networkNamespaceIsolated:true,writeRpcGuardVerified:true,keeperExit:code,health:{state:health.state,enrolled:health.enrolled,discovery:health.discovery,pending:null},signerNonceUnchanged:true,pendingJournalUnchanged:true,lastSettlement:after.last?.hash,scope:'Real V2 snapshot and copied runtime booted in a separate network namespace on the same VPS; only allowlisted read RPC passed through a private Unix socket. No live service restart, signature or broadcast. This is not a second-host or host-loss restore.'};
  await writeFile(state+'/restore-proof.json',JSON.stringify(proof,null,2)+'\n');
  console.log(JSON.stringify({verified:true,state:health.state,enrolled:health.enrolled,nonceUnchanged:true}));

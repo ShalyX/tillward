@@ -2,13 +2,13 @@
 
 **BTC-backed working capital. Repay as receipts arrive.**
 
-Tillward helps a BTC-holding business borrow MUSD for operating expenses and pay down its Mezo loan from customer receipts. The owner chooses a repayment percentage and a cash floor. Customers pay final-payment invoices in MUSD. Eligible allocations reduce the business account's native Mezo debt while operating cash remains available under the chosen rule.
+Tillward helps a BTC-holding business borrow MUSD for operating expenses and pay down its Mezo loan from customer receipts. The owner chooses a repayment percentage, up to 99% on V2 accounts. Customers pay final-payment invoices in MUSD. Eligible allocations reduce the business account's native Mezo debt while operating cash remains available under the chosen rule.
 
 ![Tillward receipt-counter identity](public/brand/share.png)
 
 ## Try the product
 
-**[Open Tillward](https://tillward.vercel.app)** · [Read the real testnet business](https://tillward.vercel.app/?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5) · [Watch the two-minute pitch](https://tillward.vercel.app/pitch.html) · [Submission materials](submission/README.md)
+**[Open Tillward](https://tillward.vercel.app)** · [Read the real testnet business](https://tillward.vercel.app/?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5) · [Wave 1 pitch](https://tillward.vercel.app/pitch.html) · [Wave 2 materials](submission/wave2/README.md)
 
 - Explore the clearly labeled example workspace without connecting a wallet.
 - Open the original testnet business using `?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5` to read its real loan, invoices, repayment rule and activity.
@@ -19,7 +19,7 @@ The proof account belongs to a dedicated test wallet. Connecting another wallet 
 ## The receipt-to-repayment flow
 
 1. Create a business account and supply test BTC to open a native MUSD loan.
-2. Set the percentage of receipts to allocate toward repayment and the operating cash floor.
+2. Set the repayment percentage. Explicitly enable automatic repayments after reviewing the disclosed 1% fee on the amount actually repaid.
 3. Create a final-payment invoice and share its checkout link.
 4. The customer pays in MUSD. Tillward records the receipt and its repayment allocation.
 5. The hosted keeper applies eligible allocations to that account's debt. Anyone can also trigger the same bounded settlement.
@@ -39,6 +39,17 @@ Repayment stops at native minimum debt plus reserve. Allocations remain visible;
 
 These figures are testnet integration evidence. Sample funds came from faucet BTC and native test loans. They do not represent customer adoption or business revenue. The original demo loan remains open; the browser QA loan is closed.
 
+## Wave 2 verified progress — November 6, 2026
+
+V2 factory: [`0xaa5121f96502b9618156e8288e60ce1c699b9a43`](https://explorer.test.mezo.org/address/0xaa5121f96502b9618156e8288e60ce1c699b9a43). Legacy V1 remains fee-free.
+
+- A public 500 test MUSD receipt at 99% produced **495 MUSD native repayment + 4.95 MUSD atomic service fee + 0.05 MUSD retained**. The lender receives the entire allocated repayment. [Proof](deployments/wave2-live-fee-proof.json).
+- Automation is explicit opt-in and can be paused in Repayment rules. Manual repayment and closure remain in Manage loan. The owner completed manual repayment, closure and recovery of 0.045 test BTC. [Owner exit](docs/reviews/WAVE2_V2_EXIT_VERIFICATION.md).
+- A controlled native redemption created **0.005532212424520610 test BTC** surplus. Tillward claimed it and the owner withdrew the exact surplus. Dedicated test-wallet signing, read-only browser observation; native redemption fees are separate. [Public surplus report](docs/reviews/WAVE2_PUBLIC_SURPLUS.md).
+- Public loan conditions, owner collateral top-up, both keeper monitors, encrypted backups and isolated runtime restore are evidenced in [the claim registry](docs/EVIDENCE.md).
+
+These are controlled testnet results, not commercial revenue or customer traction. Interviews remain on hold. [Judge guide](submission/wave2/judge-guide.md).
+
 ## Run locally
 
 Requires Node.js 22.12+ and npm. Node 24.14 was used for verification. Foundry is needed for Solidity tests.
@@ -55,7 +66,7 @@ Open the development URL. Reading the public proof account requires RPC access b
 
 `npm run fork:test` additionally requires the documented Mezo RPC path. It runs unchanged native lending code at block 12,684,025 and replays the captured oracle-precompile response because Foundry does not implement that precompile. It is separate from public-chain evidence.
 
-Recorded release checks: 20 Foundry tests with 128 fuzz runs, 21 JavaScript tests, TypeScript and Vite production build, and dependency audit with zero findings. See [QA report](docs/QA_REPORT.md).
+Current Wave 2 checks: 57 non-fork Solidity tests, the native guarded-surplus fork test, 43 JavaScript tests, TypeScript and Vite production build. Historical release checks remain in [QA report](docs/QA_REPORT.md).
 
 ## Contracts and architecture
 
@@ -79,7 +90,7 @@ Tillward is a working Mezo testnet product. It has no mainnet deployment or inde
 
 Fiat collection, Shopify, other chains, refunds/disputes and yield are outside this build. Mezo RPC responses have shown inconsistent heads and delayed receipts. Fixed-block snapshots, bounded retries and explicit errors mitigate this dependency. Wallet-change/rejection and provider-failover testing is not exhaustive.
 
-The workstation monitor needs that workstation online. A monitor outside both hosts and a full isolated service-restore drill remain open. The data-only encrypted restore rehearsal passed.
+The workstation monitor needs that workstation online. An isolated same-VPS runtime restore passed with two enrolled V2 accounts and unchanged signer nonce. Independent always-on monitoring and a second-host/host-loss restore remain open.
 
 ## License and attribution
 
@@ -87,7 +98,7 @@ Built by ElseMade. Original project code is [MIT licensed](LICENSE). Native prot
 
 ### Repayment limits and hosted sponsorship
 
-Receipts repay only debt above Mezo's minimum principal plus reserve. More receipts do not remove that minimum: the owner tops up the account if necessary and closes the loan to repay the remainder. The cash floor is reserved against both repayment and withdrawal; lower the rule to release reserved cash.
+Receipts repay only debt above Mezo's minimum principal plus reserve. More receipts do not remove that minimum: the owner tops up the account if necessary and closes the loan to repay the remainder. The main flow exposes no operating-reserve editor. Existing onchain floors remain enforced for repayment/withdrawal; percentage saves preserve them. The authorized V2 service fee may cross that floor, but cannot consume other pending repayment funds.
 
 The hosted keeper batches quotes below 1 MUSD and reserves at most 0.000025 BTC gas per account per UTC day, within its existing global budget. Pending transaction reservations survive restarts. Anyone may still trigger an eligible on-chain settlement with their own gas. Account creation enrolls discovery, not a guarantee of sponsored gas; multiple funded accounts can still consume the bounded global subsidy.
 
