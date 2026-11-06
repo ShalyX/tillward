@@ -42,8 +42,8 @@ async function main(){
  const signer=privateKeyToAccount(JSON.parse(await readFile(resolve(walletPath),'utf8')).privateKey);
  const w=createWalletClient({chain,account:signer,transport});
  const factory=JSON.parse(await readFile('out/RevenueFactory.sol/RevenueFactory.json','utf8'));
- if(c.accountVersion!==undefined&&![1,2].includes(c.accountVersion))throw Error('Unsupported account version.');
- const artifact=JSON.parse(await readFile(c.accountVersion===2?'out/RevenueAccountV2.sol/RevenueAccountV2.json':'out/RevenueAccount.sol/RevenueAccount.json','utf8'));
+ if(c.accountVersion!==undefined&&![1,2,3].includes(c.accountVersion))throw Error('Unsupported account version.');
+ const artifact=JSON.parse(await readFile(c.accountVersion===3?'out/RevenueAccountV3.sol/RevenueAccountV3.json':c.accountVersion===2?'out/RevenueAccountV2.sol/RevenueAccountV2.json':'out/RevenueAccount.sol/RevenueAccount.json','utf8'));
  const stateDir=process.env.KEEPER_STATE_DIR||dirname(resolve(walletPath));
  const journalPath=resolve(stateDir,'paydown-keeper-journal.json'),healthPath=resolve(stateDir,'keeper-health.json');
  let journal={},missingJournal=false;try{journal=JSON.parse(await readFile(journalPath,'utf8'));}catch(e){if(e.code!=='ENOENT')throw new Error('Keeper journal is unreadable. Restore it before signing.');missingJournal=true;}

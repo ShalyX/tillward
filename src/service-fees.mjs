@@ -16,10 +16,10 @@ export const serviceAbi=parseAbi([
 ]);
 export async function readServiceState(client,config,account,block,maximum){
  if(config.accountVersion===undefined||config.accountVersion===1)return undefined;
- if(config.accountVersion!==2||!isAddress(config.feeTreasury||''))throw Error('Unsupported or incomplete fee deployment configuration.');
+ if(![2,3].includes(config.accountVersion)||!isAddress(config.feeTreasury||''))throw Error('Unsupported or incomplete fee deployment configuration.');
  const names=['accountVersion','SERVICE_FEE_BPS','MAX_REPAYMENT_BPS','feeTreasury','serviceEnabled','retainedReceiptFunds','feeReserve','totalFeesPaid','serviceQuote'];
  const v=await Promise.all(names.map(functionName=>client.readContract({address:account,abi:serviceAbi,functionName,args:functionName==='serviceQuote'?[maximum]:[],blockNumber:block})));
- if(v[0]!==2n||Number(v[1])!==100||Number(v[2])!==9900||v[3]?.toLowerCase()!==config.feeTreasury.toLowerCase())throw Error('Onchain fee terms do not match the approved deployment.');
+ if(v[0]!==BigInt(config.accountVersion)||Number(v[1])!==100||Number(v[2])!==9900||v[3]?.toLowerCase()!==config.feeTreasury.toLowerCase())throw Error('Onchain fee terms do not match the approved deployment.');
  if(v[8][0]>maximum||v[8][1]!==v[8][0]/100n)throw Error('Invalid service repayment/fee quote.');
  return {enabled:v[4],treasury:v[3],retained:v[5],reserved:v[6],paid:v[7],repayment:v[8][0],fee:v[8][1],funded:v[8][2]};
 }

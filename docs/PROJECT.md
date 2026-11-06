@@ -1,3 +1,7 @@
+## Pending allocation fix — November 6, 2026
+
+Local V3 removes excess allocation cleanup: receipt reservations are debt-capped and loan closure clears leftovers. Ninety non-fork contract tests, 44 JavaScript tests, production build and native allocation fork pass. Existing V1/V2 sources, live configuration and published Wave 2 packet remain unchanged. V3 is not deployed; see docs/reviews/WAVE2_ALLOCATION_CLEANUP.md before any deployment or new live claim.
+
 ## Wave 2 materials published — November 6, 2026
 
 Public surplus proof is complete. The revised 120-second film, eight-slide PPTX/PDF, answers, judge guide and claim registry are published. Seven hosted files match verified local hashes. Both keepers are healthy with no pending transaction. Wave 1 film and submission receipt are preserved. Next action is live Wave 2 portal-field review and owner-authorized submission; no Wave 2 submission receipt exists. Interviews remain held.

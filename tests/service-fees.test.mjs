@@ -25,3 +25,12 @@ test('V1 remains fee-free and preview cannot accept 100% on V2',async()=>{
  assert.deepEqual(feePreview(1n,9900,true),{repayment:0n,fee:0n,operations:1n});
  assert.deepEqual(feePreview(500n,2000,false),{repayment:100n,fee:0n,operations:400n});
 });
+
+test('V3 requires the matching revision and preserves exact hosted fee terms',async()=>{
+ const values={accountVersion:3n,SERVICE_FEE_BPS:100,MAX_REPAYMENT_BPS:9900,feeTreasury:treasury,serviceEnabled:true,retainedReceiptFunds:3000n,feeReserve:20n,totalFeesPaid:0n,serviceQuote:[200n,2n,true]};
+ const client={readContract:async ({functionName})=>values[functionName]};
+ const state=await readServiceState(client,{accountVersion:3,feeTreasury:treasury},account,10n,200n);
+ assert.equal(state.repayment,200n);assert.equal(state.fee,2n);assert.equal(state.funded,true);
+ await assert.rejects(readServiceState(client,{accountVersion:2,feeTreasury:treasury},account,10n,200n));
+ await assert.rejects(readServiceState(client,{accountVersion:4,feeTreasury:treasury},account,10n,200n));
+});

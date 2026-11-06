@@ -217,7 +217,7 @@ async function send(functionName:string,args:unknown[]=[],value?:bigint,address=
   args=kind==='add'?hints:[args[0],...hints];
  }
  const currentHead=await client.getBlock({blockTag:'latest'});if(!snapshotFreshness(currentHead.timestamp).fresh||currentHead.number<BigInt(config.lastVerifiedBlock??0))throw Error('RPC state is stale. Refresh before signing.');
- if(config.accountVersion===2&&functionName==='settle'){const fee=await readServiceState(client,config,address,currentHead.number,args[0] as bigint);if(!fee?.funded)throw Error('Hosted repayment is disabled or retained receipt fee funding is unavailable.');}
+ if([2,3].includes(config.accountVersion??1)&&functionName==='settle'){const fee=await readServiceState(client,config,address,currentHead.number,args[0] as bigint);if(!fee?.funded)throw Error('Hosted repayment is disabled or retained receipt fee funding is unavailable.');}
  if(functionName==='claimSurplus'){const risk=await readLoanRisk(client,config,account!,currentHead.number);if(!snapshotFreshness(risk.timestamp).fresh||risk.surplus===0n)throw Error('No current claimable collateral surplus is recorded for this business.');}
  const simulation=await client.simulateContract({address,abi,functionName,args,account:wallet,value} as any);
  const estimate=await client.estimateContractGas(simulation.request as any);

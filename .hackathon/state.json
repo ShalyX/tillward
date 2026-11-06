@@ -212,6 +212,14 @@
     "materials_ready": true,
     "public_pitch": "https://tillward.vercel.app/pitch.html",
     "materials_proof": "deployments/wave2-materials-public-check.json",
-    "submission_ready": false
+    "submission_ready": false,
+    "pending_revision": {
+      "version": 3,
+      "status": "local_verified_not_deployed",
+      "purpose": "Debt-capped receipt allocation and automatic excess release on closure",
+      "proof": "deployments/wave2-allocation-local-verification.json",
+      "report": "docs/reviews/WAVE2_ALLOCATION_CLEANUP.md",
+      "public_materials_describe_version": 2
+    }
   }
 }

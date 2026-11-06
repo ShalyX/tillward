@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-06",
+  "status": "LOCAL_VERIFIED_NOT_DEPLOYED",
+  "baselineCommit": "8ab1618bf16ea228344f956cceb351eca5585d40",
+  "accountVersion": 3,
+  "feeBps": 100,
+  "maximumRepaymentBps": 9900,
+  "v1V2SourcesAndPublicConfigUnchanged": true,
+  "initialBehaviorTests": {
+    "passed": 0,
+    "failedForExpectedReasons": 8
+  },
+  "contractTests": 90,
+  "javascriptTests": 44,
+  "nativeAllocationFork": {
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0,
+    "block": 12684025,
+    "rpc": "https://mezo-mainnet.boar.network",
+    "oraclePrecompileReplayed": true,
+    "nativeLendingTokenUnchanged": true,
+    "broadcast": false
+  },
+  "productionBuild": "passed",
+  "review": "operator Request Code Review pass; not an independent audit or agent review",
+  "checks": [
+    "new receipts capped to outstanding loan debt excluding native gas reserve",
+    "combined receipts cannot reserve the same loan twice",
+    "no-loan and post-close receipts have no repayment reservation",
+    "closure clears all remaining allocation with no service fee",
+    "native debt changes update withdrawable and fee reservation views",
+    "old reservations cannot follow a new loan",
+    "native-close failure rolls back funds and counters",
+    "23 V3 fee/security regressions preserve actual repayment fee and cash-floor rules"
+  ],
+  "files": {
+    "contracts/RevenueAccountV3.sol": "6df3cc6b7e540bce341b67235330efb9c3ab60edabed3982cab371eaf7d6b54e",
+    "contracts/RevenueFactoryV3.sol": "baa832c59ee005520ae24ddf1c786d46cfa360953639d4b98904267945d2b071",
+    "test/RevenueAllocation.t.sol": "83848e96cd8e5f616c291e3f17d7b689e7c5b034759d5dcacfb2d0c8630e9768",
+    "test/RevenueAllocationFees.t.sol": "bfced69d47139111b8e121fda76482d3297cc3028640219a6c2e028ea452661e",
+    "test/NativeAllocationFork.t.sol": "252f48528fd080264f1b38bbe19a2954f71a56a84fb91f1c8ddb76b9fba9489e"
+  },
+  "limit": "No public V3 deployment, wallet acceptance, factory enrollment or keeper deployment yet. Existing V2 accounts are immutable and will not change automatically."
+}
