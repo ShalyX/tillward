@@ -47,4 +47,18 @@ Workstation Telegram delivery is verified through the installed Node 24 HTTPS cl
 
 The system Node executable resolved beneath root's home and was inaccessible under ProtectHome. Its verified existing binary was copied into /opt/tillward-keeper/bin/node (v22.23.1); other applications' runtimes were not changed.
 
+## V2 operations checkpoint: November 6, 2026 WAT
+
+V2 runs separately under `tillward-keeper-v2.service`, runtime `/opt/tillward-keeper-v2`, state `/var/lib/tillward-keeper-v2`, signer `0x7C93C575bE5ceD60F388D2866991d68aE23e3D42`. Its registry, signer journal, health and backup timers are distinct from V1. No owner signing key is hosted. V2 factory and fee treasury are pinned in its deployment manifest.
+
+The external Windows monitor was found disabled and scoped to V1. It now runs enabled every five minutes and calls `scripts/verify-all-operations.mjs`, which checks both V1 and V2 for fresh health, synchronized registry, expected gas-wallet identities, pending transactions, enabled/active services and timers, private-file permissions, gas/disk thresholds and recent backups. Account counts are checked against each registry rather than fixed at three. A scheduled run returned 0 with both keepers healthy. A simulated outage and subsequent recovery were accepted by Telegram; live services were never stopped. This tests alert delivery/state transitions, not an actual VPS power outage.
+
+The existing daily 09:00 WAT encrypted backup task now invokes `capture-all-tillward-vps-state.ps1` and captures separate V1/V2 state archives. The scheduled run returned 0. V2 encryption round-trip and in-memory decryption, tar validation, journal/registry parsing and expected signer derivation passed. Backup files use DPAPI CurrentUser; no decrypted wallet file was written on Windows.
+
+The V2 runtime restore drill copied a real snapshot, runtime, Node executable and dependencies into an isolated directory, then booted the actual keeper as its service user in a transient `PrivateNetwork=yes` systemd unit. It reached healthy synchronized state. Only allowlisted read RPC reached the actual testnet through a private Unix socket; a deliberate invalid `eth_sendRawTransaction` probe was rejected locally. The original signer nonce and pending journal stayed unchanged, and both live services stayed active. Temporary runtime/state copies were removed. Initial HTTP RPC access failed with 403; the successful relay used the same public WebSocket transport as the live keeper.
+
+Evidence: `deployments/wave2-v2-operations-proof.json`, `wave2-v2-restore-proof.json`, and `wave2-v2-encrypted-restore-proof.json`. Utility sources are under `deploy/` and `deploy/windows/`; Windows templates are installed in the existing private `work` directory, alongside the Telegram sender/credentials and repository checkout required by the in-memory recovery check. They do not contain credentials. Use `python3 /opt/tillward-keeper-v2/deploy/run-v2-restore-drill.py` for the same-host namespace drill only when the V2 journal has no unresolved transaction; never overwrite live state with its copies.
+
+Remaining boundaries: the workstation and its signed-in user session must be online for polling, alerts and DPAPI backup jobs. There is no always-on third-party monitor. The runtime drill used the same VPS, not a second host or host-loss restoration. DPAPI files require the original Windows user profile. A separate-host recovery exercise and independently recoverable key escrow remain commercial-readiness work.
+
 Restart verification on 2026-10-22: service enabled/active; private wallet and journal 0600 under tillward-keeper; subsequent health record retained the same confirmed settlement and returned to no-allocation deferred state.

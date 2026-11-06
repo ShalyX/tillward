@@ -111,7 +111,7 @@
     ],
     "wave2_work_started": true
   },
-  "revision": 18,
+  "revision": 19,
   "wave2": {
     "authorized_date": "2026-10-31",
     "phase": "prove",
@@ -131,7 +131,7 @@
     "public_claim_surplus_proof": false,
     "pricing_selected": true,
     "submitted": false,
-    "next_action": "V2 hosted fee, opt-out, manual repayment, native closure and exact collateral recovery verified. Validate isolated backup restore and independent outage monitoring; interviews remain held.",
+    "next_action": "V2 lifecycle and same-host isolated restore verified; both keepers have active workstation monitoring and encrypted off-host state backups. Public surplus claim, customer validation (held), pilot, always-on monitoring/second-host recovery and revised Wave 2 materials remain separate gaps.",
     "javascript_tests": 43,
     "build": "passed",
     "application_release": "2026-11-05-wave2-atomic-fees-1",
@@ -196,6 +196,11 @@
     "v2_close_preflight": "deployments/wave2-v2-close-preflight.json",
     "v2_close_proof": "deployments/wave2-v2-close-proof.json",
     "v2_loan_closed": true,
-    "v2_collateral_recovery_proof": "deployments/wave2-v2-withdraw-proof.json"
+    "v2_collateral_recovery_proof": "deployments/wave2-v2-withdraw-proof.json",
+    "v2_isolated_namespace_restore_verified": true,
+    "v2_restore_proof": "deployments/wave2-v2-restore-proof.json",
+    "v2_offhost_encrypted_backup_verified": true,
+    "v2_external_workstation_monitor_verified": true,
+    "v2_operations_proof": "deployments/wave2-v2-operations-proof.json"
   }
 }

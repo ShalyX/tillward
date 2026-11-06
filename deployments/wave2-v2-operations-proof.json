@@ -1,0 +1,174 @@
+{
+  "verifiedAt": "2026-11-06T00:32:31.471595+00:00",
+  "chainId": 31611,
+  "remote": {
+    "observedAt": "2026-11-06T00:31:00.469Z",
+    "state": "healthy",
+    "keepers": [
+      {
+        "unit": "tillward-keeper",
+        "state": "healthy",
+        "checkedAt": "2026-11-06T00:30:53.096Z",
+        "enrolled": 3,
+        "pending": null,
+        "discovery": {
+          "nextBlock": "16599316",
+          "safeHead": 16599315,
+          "synced": true
+        },
+        "units": [
+          {
+            "unit": "tillward-keeper.service",
+            "active": "active",
+            "enabled": "enabled"
+          },
+          {
+            "unit": "tillward-keeper-health.timer",
+            "active": "active",
+            "enabled": "enabled"
+          },
+          {
+            "unit": "tillward-keeper-backup.timer",
+            "active": "active",
+            "enabled": "enabled"
+          }
+        ],
+        "permissions": [
+          {
+            "path": "/var/lib/tillward-keeper/wallet.json",
+            "mode": "0600"
+          },
+          {
+            "path": "/var/lib/tillward-keeper/paydown-keeper-journal.json",
+            "mode": "0600"
+          },
+          {
+            "path": "/var/lib/tillward-keeper/telegram.json",
+            "mode": "0600"
+          },
+          {
+            "path": "/var/backups/tillward-keeper/snapshot-1.tar.gz",
+            "mode": "0600"
+          }
+        ],
+        "backupCompletedAt": "2026-11-05T20:07:32Z"
+      },
+      {
+        "unit": "tillward-keeper-v2",
+        "state": "healthy",
+        "checkedAt": "2026-11-06T00:30:24.457Z",
+        "enrolled": 1,
+        "pending": null,
+        "discovery": {
+          "nextBlock": "16599309",
+          "safeHead": 16599308,
+          "synced": true
+        },
+        "units": [
+          {
+            "unit": "tillward-keeper-v2.service",
+            "active": "active",
+            "enabled": "enabled"
+          },
+          {
+            "unit": "tillward-keeper-v2-health.timer",
+            "active": "active",
+            "enabled": "enabled"
+          },
+          {
+            "unit": "tillward-keeper-v2-backup.timer",
+            "active": "active",
+            "enabled": "enabled"
+          }
+        ],
+        "permissions": [
+          {
+            "path": "/var/lib/tillward-keeper-v2/wallet.json",
+            "mode": "0600"
+          },
+          {
+            "path": "/var/lib/tillward-keeper-v2/paydown-keeper-journal.json",
+            "mode": "0600"
+          },
+          {
+            "path": "/var/lib/tillward-keeper-v2/telegram.json",
+            "mode": "0600"
+          },
+          {
+            "path": "/var/backups/tillward-keeper-v2/snapshot-1.tar.gz",
+            "mode": "0600"
+          }
+        ],
+        "backupCompletedAt": "2026-11-06T00:21:45Z"
+      }
+    ],
+    "scope": "External polling covers both keepers; delivery and workstation availability are separate checks."
+  },
+  "monitor": {
+    "state": "healthy",
+    "checkedAt": "2026-11-06T00:30:21.7328541+00:00",
+    "task": "Tillward VPS Independent Monitor",
+    "taskEnabled": true,
+    "scheduledRunResult": 0,
+    "covers": [
+      "tillward-keeper",
+      "tillward-keeper-v2"
+    ],
+    "intervalMinutes": 5
+  },
+  "telegramTest": {
+    "simulatedOutageAccepted": true,
+    "outageObservedAt": "2026-11-06T00:28:40.9100171+00:00",
+    "recoveryAccepted": true,
+    "recoveryObservedAt": "2026-11-06T00:29:08.5755475+00:00",
+    "liveServicesStopped": false
+  },
+  "encryptedBackups": [
+    {
+      "capturedAt": "2026-11-06T00:31:04.3920332Z",
+      "source": "caraxes-vps:/var/backups/tillward-keeper/snapshot-1.tar.gz",
+      "protectedFile": "tillward-vps-state-20261106-003100Z.dpapi",
+      "protection": "Windows DPAPI CurrentUser",
+      "encryptedBytes": 1062,
+      "archiveSha256": "8AA5859ABE0739553C17BEC84E9C383ECCF49B740528AA30C89E5EFA8C56C5C3",
+      "roundTripVerified": true,
+      "contains": [
+        "wallet.json",
+        "paydown-keeper-journal.json",
+        "keeper-registry.json"
+      ],
+      "recoveryBoundary": "Decrypt with this Windows user profile before chain nonce reconciliation; never restore a journal blindly."
+    },
+    {
+      "capturedAt": "2026-11-06T00:31:08.2158239Z",
+      "source": "caraxes-vps:/var/backups/tillward-keeper-v2/snapshot-1.tar.gz",
+      "protectedFile": "tillward-vps-v2-state-20261106-003104Z.dpapi",
+      "protection": "Windows DPAPI CurrentUser",
+      "encryptedBytes": 950,
+      "archiveSha256": "97F3BF0CC32749C1A6CF750F61FA4BCA73BE5B495F860045F19C04367762C3D2",
+      "roundTripVerified": true,
+      "contains": [
+        "wallet.json",
+        "paydown-keeper-journal.json",
+        "keeper-registry.json"
+      ],
+      "recoveryBoundary": "Decrypt with this Windows user profile before chain nonce reconciliation; never restore a journal blindly."
+    }
+  ],
+  "backupTask": {
+    "name": "Tillward VPS State Backup",
+    "scheduledRunResult": 0,
+    "covers": [
+      "V1",
+      "V2"
+    ],
+    "protection": "Windows DPAPI CurrentUser"
+  },
+  "runtimeRestoreProof": "deployments/wave2-v2-restore-proof.json",
+  "encryptedDataRestoreProof": "deployments/wave2-v2-encrypted-restore-proof.json",
+  "limitations": [
+    "Workstation polling requires that workstation, its user session and internet connection; it is not an always-on third-party uptime service.",
+    "Runtime restore used an isolated network namespace on the same VPS, not a second-host or host-loss exercise.",
+    "DPAPI recovery requires this Windows user profile; a machine-independent recovery key/escrow is not configured."
+  ]
+}
