@@ -8,7 +8,7 @@ Since Wave 1:
 • Deployed the selected 1% atomic routing fee in separate V2 contracts. A 500 test MUSD receipt at 99% allocation repaid 495 MUSD, paid 4.95 MUSD to the test treasury and left 0.05 MUSD. The lender received the full repayment. No deferred fees. V1 stays fee-free.
 • Verified owner opt-out, 9.9 MUSD manual repayment without a new service fee, closure and 0.045 test BTC recovery.
 • Simplified repayment rules and loan management; removed the reserve editor and extra settings tab.
-• Extended monitoring and encrypted backups to both keepers, tested Telegram alert/recovery and restored V2 runtime in an isolated network namespace.
+• Extended monitoring and encrypted backups to three versioned keepers; verified Telegram alerts and same-host V2/V3 restores.
 
 The fee is 1% of actual hosted receipt-funded repayment, from retained funds, with explicit owner enrollment. The maximum share is 99%. Native protocol/network fees are separate.
 

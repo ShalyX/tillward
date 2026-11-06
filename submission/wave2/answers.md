@@ -41,7 +41,7 @@ V3 caps the combined receipt reservation to the active loan debt, excluding its 
 6. Implemented and deployed the 1% atomic fee model in separate V2 contracts, preserving V1 accounts. Verified a real 500 MUSD receipt, 495 MUSD native repayment, 4.95 MUSD fee and 0.05 MUSD retained.
 7. Verified V2 opt-out, exact 9.9 MUSD manual repayment without a new service fee, native closure and 0.045 test BTC return net of gas.
 8. Simplified the interface: percentage and automation consent in Repayment rules; manual repayment and exit actions in Manage loan. Removed the separate settings tab and operating-reserve editor.
-9. Extended health monitoring and encrypted off-host state backups to both keepers. Telegram outage/recovery tests and an isolated same-host runtime restore passed. Workstation availability and second-host recovery remain disclosed limits.
+9. Extended health monitoring and encrypted off-host state backups to all three versioned keepers. Telegram alert checks and isolated same-host V2 and V3 runtime restores passed. Workstation availability and second-host recovery remain disclosed limits.
 
 The surplus guard is a test-only fixture that prevents redemption of unrelated borrowers; it is not a Tillward product feature. The browser displayed real before/after entitlement, while the dedicated QA wallet signed the fixture transactions through a script. It is not a Rabby surplus-signing acceptance claim.
 

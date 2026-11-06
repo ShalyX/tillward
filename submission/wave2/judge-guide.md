@@ -6,6 +6,8 @@ Prepared November 6, 2026. Testnet only. No wallet is required for read-only ins
 
 Open https://tillward.vercel.app/. Tillward gives a BTC-holding business MUSD working capital and connects its chosen repayment share to final customer receipts. The initial example is illustrative. Open a real account to inspect chain data.
 
+V3 current QA account: https://tillward.vercel.app/?account=0x3a9E23B4e91661751B1916dFe04e71D6dA65F5c7 . Its loan is closed and funds withdrawn. [V3 live proof](../../docs/reviews/WAVE2_V3_LIVE_VERIFICATION.md) records the 80% debt cap, hosted fee, automatic zero-reservation closure, post-close receipt and owner recovery. Signing used the dedicated QA CLI; browser inspection was read-only.
+
 Original demo, with a native loan: https://tillward.vercel.app/?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5 . This is a V1 account and stays fee-free. Values describe the loaded block.
 
 V2 fee/owner QA account: https://tillward.vercel.app/?account=0xd6e4829B51dB8ED490bFaE01384757B0fD65D622 . Its completed test loan is now closed; automation was explicitly disabled. Invoices and Activity retain the recorded receipt, repayment and fee evidence. A current zero debt balance is not an unresolved loading value or a still-open loan.
@@ -13,8 +15,6 @@ V2 fee/owner QA account: https://tillward.vercel.app/?account=0xd6e4829B51dB8ED4
 Surplus fixture: https://tillward.vercel.app/?account=0x948a79e4D97A555a4B54CD345e3e679092824Aba . It is now redeemed, claimed and withdrawn. The current entitlement is zero; the proof records the positive entitlement before claiming.
 
 Watch the [current two-minute pitch](https://tillward.vercel.app/pitch.html) or download the [Wave 2 deck](https://tillward.vercel.app/media/tillward-wave2-deck.pdf).
-
-V3 current QA account: https://tillward.vercel.app/?account=0x3a9E23B4e91661751B1916dFe04e71D6dA65F5c7 . Its loan is closed and funds withdrawn. [V3 live proof](../../docs/reviews/WAVE2_V3_LIVE_VERIFICATION.md) records the 80% debt cap, hosted fee, automatic zero-reservation closure, post-close receipt and owner recovery. Signing used the dedicated QA CLI; browser inspection was read-only.
 
 ## Four evidence stops
 

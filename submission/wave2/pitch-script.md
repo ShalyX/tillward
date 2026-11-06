@@ -1,6 +1,6 @@
 # Tillward two-minute pitch
 
-Narrator: previously approved Emma neural voice. Wave 2 script prepared November 6, 2026; final composition review pending.
+Narrator: previously approved Emma neural voice. Finalized Wave 2 film script, November 6, 2026. The published 120-second film passed encoded visual/audio QA. Its labeled V2 recordings are preserved; the latest V3 results appear in the deck and judge guide.
 
 ## 000–010s · purpose
 

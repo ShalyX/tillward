@@ -231,6 +231,22 @@
       "report": "docs/reviews/WAVE2_ALLOCATION_CLEANUP.md",
       "public_materials_describe_version": 3
     },
-    "v3_materials_release_proof": "deployments/wave2-v3-materials-release.json"
+    "v3_materials_release_proof": "deployments/wave2-v3-materials-release.json",
+    "final_materials_review": {
+      "date": "2026-11-06",
+      "report": "docs/reviews/WAVE2_FINAL_MATERIALS_REVIEW.md",
+      "status": "copy_corrected_publication_and_authenticated_portal_review_pending",
+      "authorship": "operator_review_not_independent_agent",
+      "submitted": false
+    },
+    "portal_review": {
+      "status": "blocked_browser_disabled",
+      "reason": "Connected browser reports Local browser use is disabled in Work settings",
+      "qualification": "unverified",
+      "field_limits": "unverified",
+      "attachment_requirements": "unverified",
+      "milestone_timelines": "unverified",
+      "submitted": false
+    }
   }
 }

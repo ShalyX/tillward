@@ -1,14 +1,18 @@
+## Final Wave 2 materials review — November 6, 2026
+
+Operator review completed across final packet, eight PDF renders, ten encoded film samples, judge feedback and six fresh public link checks. Small operations-count, guide-navigation and historical-status consistency corrections remain; authenticated portal fields/qualification are unverified. Interviews stay held. No new signing, publishing or submission in this review. See reviews/WAVE2_FINAL_MATERIALS_REVIEW.md. Next: correct the listed copy/link inconsistencies, then inspect the Wave 2 entry form with the owner.
+
 ## V3 deployed and live verification complete — November 6, 2026
 
 Factory 0xca5c522850a366769e3f3b07e45f6c7a8980e692 is current for new accounts. Public receipt, hosted repayment/fee, zero-reservation closure, post-close receipt, full MUSD/BTC recovery and buffer restoration passed. V3 explorer source is exact-match verified. Separate V3 keeper, monitoring, encrypted backup/data restore and isolated same-host runtime restore passed. Current deck/answers/guide are being refreshed with this proof; the labeled V2 film recording is preserved. No Wave 2 submission has occurred. See docs/reviews/WAVE2_V3_LIVE_VERIFICATION.md.
 
-## Pending allocation fix — November 6, 2026
+## Historical local allocation checkpoint — superseded November 6, 2026
 
-Local V3 removes excess allocation cleanup: receipt reservations are debt-capped and loan closure clears leftovers. Ninety non-fork contract tests, 44 JavaScript tests, production build and native allocation fork pass. Existing V1/V2 sources, live configuration and published Wave 2 packet remain unchanged. V3 is not deployed; see docs/reviews/WAVE2_ALLOCATION_CLEANUP.md before any deployment or new live claim.
+This was the pre-deployment checkpoint: local V3 capped receipt reservations to debt and cleared leftovers on closure. Its local tests preceded deployment. It is superseded by the deployed V3 factory, live repayment/fee and closure proof, and recovered funds recorded above and in reviews/WAVE2_V3_LIVE_VERIFICATION.md. Existing V1/V2 contracts remain unchanged.
 
 ## Wave 2 materials published — November 6, 2026
 
-Public surplus proof is complete. The revised 120-second film, eight-slide PPTX/PDF, answers, judge guide and claim registry are published. Seven hosted files match verified local hashes. Both keepers are healthy with no pending transaction. Wave 1 film and submission receipt are preserved. Next action is live Wave 2 portal-field review and owner-authorized submission; no Wave 2 submission receipt exists. Interviews remain held.
+Public surplus proof is complete. The revised 120-second film, eight-slide PPTX/PDF, answers, judge guide and claim registry are published. Seven hosted files match verified local hashes. All three versioned keepers were healthy with no pending transaction at the recorded operational check. Wave 1 film and submission receipt are preserved. Next action is live Wave 2 portal-field review and owner-authorized submission; no Wave 2 submission receipt exists. Interviews remain held.
 
 ## Wave 2 material checkpoint — November 6, 2026
 
