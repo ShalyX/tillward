@@ -1,6 +1,6 @@
 # Wave 2 submission form review
 
-Latest status: the Wave 2 film is published at https://youtu.be/34Ns0QQ6rNk and the AKINDO product description/video/deck/milestones were saved and observed. The live wave-entry update and required 3rd/4th milestone fields remain unfilled because the browser connection is timing out. The draft update is 2544 characters and includes the public YouTube URL. No Wave 2 submission. Earlier findings below record the before-state, not unresolved video/product gaps.
+Latest status, November 7: the live Tillward 2nd Wave entry is filled and verified. Update: 2,524 / 3,000 after newline normalization. Both milestone fields match portal-copy.json. Existing BTC working capital category retained. Screenshot: ../../docs/reviews/evidence/wave2-filled-form.png . Proof: ../../deployments/wave2-filled-form-proof.json . The unsaved live draft is retained for owner review; Submit the product has not been clicked. The published video is https://youtu.be/34Ns0QQ6rNk and shared product copy is saved. Earlier findings below are historical.
 
 Prepared November 6, 2026. Draft for owner review. No fields have been entered or submitted.
 

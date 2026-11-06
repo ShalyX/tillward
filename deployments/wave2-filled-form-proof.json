@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-07",
+  "checkedAt": "2026-11-06T23:43:18.387Z",
+  "event": "https://app.akindo.io/wave-hacks/OVOO0gdrVU8379D10",
+  "account": "shaly",
+  "product": "Tillward",
+  "wave": "2nd Wave",
+  "category": "BTC working capital",
+  "updateCharacters": 2524,
+  "updateLimit": 3000,
+  "matches": {
+    "update": true,
+    "milestone3": true,
+    "milestone4": true
+  },
+  "milestone3": "Interviews remain on hold. Within two weeks after validation resumes, test business and payer MUSD acceptance and pricing. Within four weeks after willing participants are identified, run a small testnet pilot, measure repayment volume, gas sponsorship and support time, and exercise recovery on a second host. These are conditional planning windows, not scheduled outreach or a delivery guarantee.",
+  "milestone4": "Target four to six weeks after a completed pilot, subject to results and review budget: obtain independent contract/integration review, pin the target protocol version and make a separate mainnet-readiness decision. No mainnet launch date is promised; continuation depends on demand and review findings.",
+  "filled": true,
+  "submitted": false,
+  "storage": "Unsaved live entry draft; tab retained for owner review",
+  "youtube": "https://youtu.be/34Ns0QQ6rNk"
+}

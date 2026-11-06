@@ -33,11 +33,11 @@
     "conditionalMilestonesSavedInProduct": true
   },
   "waveEntry": {
-    "filled": false,
+    "filled": true,
     "submitted": false,
     "updateDraft": "submission/wave2/form-update-draft.txt",
     "milestoneDraft": "submission/wave2/portal-copy.json",
-    "remaining": "Fill update and both required milestones; inspect final form; leave unsubmitted",
-    "blocker": "Chrome and native UI reads time out, including after RAM recovered to about 1 GB; user asked to foreground Tillward entry dialog"
+    "remaining": "Owner review of filled live draft, then separately authorized submission",
+    "proof": "deployments/wave2-filled-form-proof.json"
   }
 }

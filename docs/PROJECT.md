@@ -1,3 +1,9 @@
+## Wave 2 live entry filled and verified — November 7, 2026
+
+Chrome connection recovered after the owner freed resources and opened the form. Tillward selected for 2nd Wave, existing BTC working capital category retained. Update and both required 3rd/4th Wave milestone fields filled; exact readback matches approved copy after CRLF normalization. Portal count: 2,524 / 3,000. Public video, deck and V3 proof URLs included. Interviews held; later milestones conditional. Screenshot and proof saved in docs/reviews/evidence/wave2-filled-form.png and deployments/wave2-filled-form-proof.json.
+
+The live draft is open for owner review and has not been submitted. Submit the product was not clicked. No guaranteed persistent draft storage is claimed; retain the tab until review/submission. Next: owner reviews the filled entry, then gives a separate final submission instruction. Previous blocked checkpoints below are historical.
+
 ## Wave 2 video and product update verified
 
 Approved film published publicly at https://youtu.be/34Ns0QQ6rNk on Shaly's channel. Studio confirmed publication and no copyright issues. Source is exactly 120 seconds; YouTube displays 2:01, explicitly disclosed. AKINDO product was saved and observed with that embed, current deck, atomic fee/V3 copy and conditional milestones. Interviews stay held.

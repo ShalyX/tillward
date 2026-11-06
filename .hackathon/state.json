@@ -235,19 +235,19 @@
     "final_materials_review": {
       "date": "2026-11-06",
       "report": "docs/reviews/WAVE2_FINAL_MATERIALS_REVIEW.md",
-      "status": "authenticated_review_complete_portal_copy_and_youtube_upload_pending",
+      "status": "live_form_filled_verified_awaiting_owner_review",
       "authorship": "operator_review_not_independent_agent",
       "submitted": false
     },
     "portal_review": {
-      "status": "video_and_product_saved_live_wave_entry_pending",
+      "status": "filled_verified_awaiting_owner_review",
       "account": "shaly",
       "product": "Tillward",
       "wave": "2nd Wave",
       "entry_route_available": true,
       "qualification": "Selectable product and available Wave 2 route; not organizer acceptance",
       "update_limit": 3000,
-      "prepared_update_characters": 2544,
+      "prepared_update_characters": 2524,
       "category_max_tags": 3,
       "milestone_fields": [
         "3rd Wave required with old saved text",
@@ -261,9 +261,11 @@
       "submitted": false,
       "youtube_channel": "Shaly / UCr1uOOdDcdiP1ERwUEJWfGg",
       "product_about_status": "Saved and observed: new video embed, current deck, atomic fee, V3 and conditional milestones",
-      "milestone_status": "Saved in shared product About; wave-entry milestone fields still need filling",
+      "milestone_status": "Both required wave-entry fields filled and read back exactly against approved copy",
       "youtube_upload_status": "Published publicly: https://youtu.be/34Ns0QQ6rNk; Studio confirmation and copyright check observed",
-      "browser_blocker": "Repeated Chrome and native read timeouts; RAM rose from 0.12 GB to 1 GB but reads still fail; owner asked to foreground the Tillward entry dialog"
+      "filled_form_proof": "deployments/wave2-filled-form-proof.json",
+      "filled_form_screenshot": "docs/reviews/evidence/wave2-filled-form.png",
+      "draft_storage": "Unsaved live entry draft retained in Chrome for owner review; no Submit the product action"
     },
     "copy_release_proof": "deployments/wave2-copy-live-proof.json",
     "youtube": "https://youtu.be/34Ns0QQ6rNk",
