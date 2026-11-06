@@ -59,5 +59,27 @@
       "matchesLocal": true,
       "contentType": "text/html; charset=utf-8"
     }
-  ]
+  ],
+  "browserPlayback": {
+    "durationSeconds": 120,
+    "advancedSeconds": 10.836198,
+    "decodedFrames": 263,
+    "mediaError": null,
+    "scope": "Headless Chrome public page, muted playback, read-only; no wallet connected."
+  },
+  "browserSeek": {
+    "timeSeconds": 78,
+    "seeking": false,
+    "readyState": 4,
+    "mediaError": null,
+    "bufferedSeconds": [
+      67.025,
+      83.327
+    ]
+  },
+  "httpRange": {
+    "status": 206,
+    "range": "bytes 10000000-10001023/14549360",
+    "bytes": 1024
+  }
 }

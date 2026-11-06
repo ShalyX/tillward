@@ -7,5 +7,47 @@
   },
   "alias": "https://tillward.vercel.app",
   "applicationRelease": "2026-11-05-wave2-atomic-fees-1",
-  "scope": "Presentation media only; existing app transaction logic and keeper settlement code unchanged."
+  "scope": "Presentation media only; existing app transaction logic and keeper settlement code unchanged.",
+  "githubRelease": {
+    "url": "https://github.com/ShalyX/tillward/releases/tag/v0.2.0-wave2",
+    "prerelease": true,
+    "targetCommit": "8384457bca0e0446dea276f8944bb97684916ebb",
+    "assets": [
+      {
+        "name": "checksums.sha256",
+        "bytes": 332,
+        "sha256": "dd7a8e025c0ed8c4764e37db129fe87ffa6a9f01443905d4f898cbe389b254c0",
+        "url": "https://github.com/ShalyX/tillward/releases/download/v0.2.0-wave2/checksums.sha256",
+        "matchesLocal": true
+      },
+      {
+        "name": "deck.pdf",
+        "bytes": 1665490,
+        "sha256": "68f2968dcb8eb53d41c4da4a55ba6909db1eec0e01980801a6fbd9bad3ef302e",
+        "url": "https://github.com/ShalyX/tillward/releases/download/v0.2.0-wave2/deck.pdf",
+        "matchesLocal": true
+      },
+      {
+        "name": "deck.pptx",
+        "bytes": 543277,
+        "sha256": "49232bdb16e6e0f7b573e14a89d1f6bb60bac3c5ccbf60edab4c0aa6ca1b7963",
+        "url": "https://github.com/ShalyX/tillward/releases/download/v0.2.0-wave2/deck.pptx",
+        "matchesLocal": true
+      },
+      {
+        "name": "tillward-wave2-source.zip",
+        "bytes": 12898652,
+        "sha256": "0b54ac2bc2bcb36f01b6b31f87da466f48f544451e4915fda90527d525bce5e0",
+        "url": "https://github.com/ShalyX/tillward/releases/download/v0.2.0-wave2/tillward-wave2-source.zip",
+        "matchesLocal": true
+      },
+      {
+        "name": "tillward-wave2.mp4",
+        "bytes": 14549360,
+        "sha256": "34f01fdf6060cb298c8af8560f6f97045e152f1960adafd89f9dccc1a23ca17e",
+        "url": "https://github.com/ShalyX/tillward/releases/download/v0.2.0-wave2/tillward-wave2.mp4",
+        "matchesLocal": true
+      }
+    ]
+  }
 }
