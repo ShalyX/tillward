@@ -114,7 +114,7 @@
   "revision": 20,
   "wave2": {
     "authorized_date": "2026-10-31",
-    "phase": "materials_ready",
+    "phase": "submitted",
     "product_lock_preserved": true,
     "wave1_freeze_preserved": true,
     "feature_freeze": false,
@@ -130,7 +130,7 @@
     "public_add_collateral_proof": true,
     "public_claim_surplus_proof": true,
     "pricing_selected": true,
-    "submitted": false,
+    "submitted": true,
     "next_action": "Review current Wave 2 portal fields with owner, then submit only when authorized.",
     "javascript_tests": 43,
     "build": "passed",
@@ -208,11 +208,11 @@
     "public_surplus_report": "docs/reviews/WAVE2_PUBLIC_SURPLUS.md",
     "surplus_fixture_account": "0x948a79e4D97A555a4B54CD345e3e679092824Aba",
     "surplus_fixture_guard": "0x2e89e9e41c0b5deb8321d5e11b778ea467edf802",
-    "materials_status": "published_verified_not_submitted",
+    "materials_status": "submitted_and_confirmation_verified",
     "materials_ready": true,
     "public_pitch": "https://tillward.vercel.app/pitch.html",
     "materials_proof": "deployments/wave2-materials-public-check.json",
-    "submission_ready": false,
+    "submission_ready": true,
     "current_factory": "0xca5c522850a366769e3f3b07e45f6c7a8980e692",
     "current_account_version": 3,
     "v3_publicly_verified": true,
@@ -235,12 +235,12 @@
     "final_materials_review": {
       "date": "2026-11-06",
       "report": "docs/reviews/WAVE2_FINAL_MATERIALS_REVIEW.md",
-      "status": "live_form_filled_verified_awaiting_owner_review",
+      "status": "submitted",
       "authorship": "operator_review_not_independent_agent",
-      "submitted": false
+      "submitted": true
     },
     "portal_review": {
-      "status": "filled_verified_awaiting_owner_review",
+      "status": "submitted_and_product_listing_verified",
       "account": "shaly",
       "product": "Tillward",
       "wave": "2nd Wave",
@@ -258,18 +258,21 @@
       "product_description_gap": "Resolved: current deck, atomic fee, V3, conditional milestones and held interviews saved and observed",
       "deadline_conflict": "Live platform 11/13 06:30 vs written November 15; timezone unlabelled; use November 13 conservatively",
       "draft": "submission/wave2/form-review.md",
-      "submitted": false,
+      "submitted": true,
       "youtube_channel": "Shaly / UCr1uOOdDcdiP1ERwUEJWfGg",
       "product_about_status": "Saved and observed: new video embed, current deck, atomic fee, V3 and conditional milestones",
       "milestone_status": "Both required wave-entry fields filled and read back exactly against approved copy",
       "youtube_upload_status": "Published publicly: https://youtu.be/34Ns0QQ6rNk; Studio confirmation and copyright check observed",
       "filled_form_proof": "deployments/wave2-filled-form-proof.json",
       "filled_form_screenshot": "docs/reviews/evidence/wave2-filled-form.png",
-      "draft_storage": "Unsaved live entry draft retained in Chrome for owner review; no Submit the product action",
+      "draft_storage": "Submitted to AKINDO; receipt and independent product listing verified",
       "presentation_revision": "Owner requested removing interview-status wording; removed from editable entry, shared product and active packet copy; future validation milestone retained"
     },
     "copy_release_proof": "deployments/wave2-copy-live-proof.json",
     "youtube": "https://youtu.be/34Ns0QQ6rNk",
-    "portal_preparation_proof": "deployments/wave2-portal-preparation.json"
+    "portal_preparation_proof": "deployments/wave2-portal-preparation.json",
+    "submission_receipt": "submission/wave2/receipt.json",
+    "submission_confirmation": "Great! Your submission completed!",
+    "submission_observed_at_utc": "2026-11-06T23:55:57.1991109Z"
   }
 }

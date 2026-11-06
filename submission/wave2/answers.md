@@ -1,6 +1,6 @@
 # Tillward — Wave 2 project answers
 
-Prepared November 6, 2026. Draft submission package; not submitted to Wave 2. Wave 1 receipt and original materials remain unchanged.
+Prepared November 6, 2026; Wave 2 submitted and confirmed November 7. Receipt: receipt.json. Wave 1 receipt and original materials remain unchanged.
 
 ## Project name
 Tillward

@@ -1,6 +1,6 @@
 # Tillward — Wave 2 packet
 
-Prepared November 6, 2026. **Not yet submitted to AKINDO.** Wave 1 materials/receipt remain separate in the parent folder.
+**Submitted to AKINDO Wave 2 on November 7, 2026.** Success confirmation and independent product listing verified. [Receipt](receipt.json) · [Listing screenshot](akindo-receipt.png). Wave 1 materials/receipt remain separate in the parent folder.
 
 - [Submission answers](answers.md)
 - [Concise wave update](akindo-wave-update.txt)
@@ -20,8 +20,8 @@ Revised 120-second pitch: [public pitch page](https://tillward.vercel.app/pitch.
 - [x] Testnet-only scope, native risks and operations limits disclosed.
 - [x] Final MP4 encoding/audio/visual QA and public media publication.
 - [x] Public pitch/media/deck checks: seven hosted files match local SHA-256 hashes.
-- [ ] Final live portal field review before submission.
-- [ ] Owner-authorized Wave 2 submission and confirmation receipt.
+- [x] Final live portal field review before submission.
+- [x] Owner-authorized Wave 2 submission and confirmation receipt.
 
 Downloadable release: https://github.com/ShalyX/tillward/releases/tag/v0.2.1-wave2 (MP4, editable source ZIP, PDF/PPTX, public proof bundle, SHA-256 checksums).
 

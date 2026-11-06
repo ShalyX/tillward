@@ -1,6 +1,6 @@
 {
   "date": "2026-11-06",
-  "scope": "Preparation only; no Wave 2 submission",
+  "scope": "Wave 2 submitted and confirmation verified",
   "youtube": {
     "url": "https://youtu.be/34Ns0QQ6rNk",
     "channel": "Shaly",
@@ -34,10 +34,11 @@
   },
   "waveEntry": {
     "filled": true,
-    "submitted": false,
+    "submitted": true,
     "updateDraft": "submission/wave2/form-update-draft.txt",
     "milestoneDraft": "submission/wave2/portal-copy.json",
-    "remaining": "Owner review of filled live draft, then separately authorized submission",
-    "proof": "deployments/wave2-filled-form-proof.json"
+    "remaining": "No submission work outstanding",
+    "proof": "deployments/wave2-filled-form-proof.json",
+    "receipt": "submission/wave2/receipt.json"
   }
 }

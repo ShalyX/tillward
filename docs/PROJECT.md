@@ -1,3 +1,7 @@
+## Wave 2 submitted and verified — November 7, 2026
+
+Owner explicitly authorized submit Wave 2. Reviewed live entry matched the final 2,274-character update and both milestone texts before the single submit action. AKINDO displayed Great! Your submission completed! The product page independently lists Mezo [2nd Wave] and preserves [1st Wave]. Receipt and product-listing screenshot: submission/wave2/receipt.json and submission/wave2/akindo-receipt.png. The original confirmation tab closed before its screenshot could be saved; the screenshot records the independent Wave 2 listing. No grant award, judging outcome or payout is inferred. Submission work is complete.
+
 ## Owner-requested submission copy revision — November 7, 2026
 
 Removed interview-status wording from the editable wave entry, shared AKINDO product and active submission copy. Milestones describe future validation, pilot measurement and independent review. No claim of completed research was introduced. Live form readback matches prepared copy: 2,274 / 3,000, both milestone fields verified, product saved and checked, updated screenshot captured. No submission. Historical observations below retain their original context.
