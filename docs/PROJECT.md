@@ -1,6 +1,8 @@
-## Final Wave 2 materials review — November 6, 2026
+## Wave 2 copy corrections published — November 6, 2026
 
-Operator review completed across final packet, eight PDF renders, ten encoded film samples, judge feedback and six fresh public link checks. Small operations-count, guide-navigation and historical-status consistency corrections remain; authenticated portal fields/qualification are unverified. Interviews stay held. No new signing, publishing or submission in this review. See reviews/WAVE2_FINAL_MATERIALS_REVIEW.md. Next: correct the listed copy/link inconsistencies, then inspect the Wave 2 entry form with the owner.
+Three-keeper wording, direct pitch-to-guide navigation, V3-first evidence ordering and finalized script status are corrected. Pre-deployment V3 notes are explicitly historical. Source commit 9c2ad7a and production dpl_3GCNF1KGH4GwSw2HEoRuLYkL72XK are published. The public pitch matches local SHA-256 and both guide endpoints return 200. Video/deck/contracts/keepers are unchanged. An isolated release checkout excluded concurrent landing-page work.
+
+Public AKINDO overview confirms required materials, category length and milestone timelines. Actual signed-in route, qualification, per-field limits and attachment controls remain unverified because local browser use is disabled in Work settings. Owner was asked to enable it. Form draft and proposed conditional milestone windows are in submission/wave2/form-review.md; interviews remain held. No form fields entered and no Wave 2 submission. Next: inspect the authenticated form with the owner once browser access is enabled.
 
 ## V3 deployed and live verification complete — November 6, 2026
 

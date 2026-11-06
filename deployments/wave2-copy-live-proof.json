@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-11-06T17:09:15.8875431Z",
+  "url": "https://tillward.vercel.app/pitch.html",
+  "status": 200,
+  "sha256": "6574ca619e0cff474878ef1edcca0c3a5ad35818f94d59103202ccde482c9e7e",
+  "matchesLocal": true,
+  "directGuide": true,
+  "guideStatus": 200,
+  "v3ListedFirst": true,
+  "sourceCommit": "9c2ad7a",
+  "scope": "Copy and navigation only; video/deck/contracts/keepers unchanged",
+  "deployment": {
+    "id": "dpl_3GCNF1KGH4GwSw2HEoRuLYkL72XK",
+    "url": "https://tillward-4cg2a6xav-shalyxs-projects.vercel.app",
+    "inspectorUrl": "https://vercel.com/shalyxs-projects/tillward/3GCNF1KGH4GwSw2HEoRuLYkL72XK",
+    "readyState": "READY",
+    "target": "production",
+    "deploymentApiUrl": "https://api.vercel.com/v13/deployments/dpl_3GCNF1KGH4GwSw2HEoRuLYkL72XK"
+  }
+}
