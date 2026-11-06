@@ -235,21 +235,38 @@
     "final_materials_review": {
       "date": "2026-11-06",
       "report": "docs/reviews/WAVE2_FINAL_MATERIALS_REVIEW.md",
-      "status": "copy_published_verified_authenticated_portal_review_pending",
+      "status": "authenticated_review_complete_portal_copy_and_youtube_upload_pending",
       "authorship": "operator_review_not_independent_agent",
       "submitted": false
     },
     "portal_review": {
-      "status": "blocked_browser_disabled",
-      "reason": "Connected browser reports Local browser use is disabled in Work settings",
-      "qualification": "unverified",
-      "field_limits": "unverified",
-      "attachment_requirements": "unverified",
-      "milestone_timelines": "unverified",
+      "status": "video_and_product_saved_live_wave_entry_pending",
+      "account": "shaly",
+      "product": "Tillward",
+      "wave": "2nd Wave",
+      "entry_route_available": true,
+      "qualification": "Selectable product and available Wave 2 route; not organizer acceptance",
+      "update_limit": 3000,
+      "prepared_update_characters": 2544,
+      "category_max_tags": 3,
+      "milestone_fields": [
+        "3rd Wave required with old saved text",
+        "4th Wave required and blank"
+      ],
+      "video_requirement": "Public YouTube URL on shared product editor",
+      "video_gap": "Resolved: https://youtu.be/34Ns0QQ6rNk published and embedded in product",
+      "product_description_gap": "Resolved: current deck, atomic fee, V3, conditional milestones and held interviews saved and observed",
+      "deadline_conflict": "Live platform 11/13 06:30 vs written November 15; timezone unlabelled; use November 13 conservatively",
+      "draft": "submission/wave2/form-review.md",
       "submitted": false,
-      "public_overview_reviewed": true,
-      "draft": "submission/wave2/form-review.md"
+      "youtube_channel": "Shaly / UCr1uOOdDcdiP1ERwUEJWfGg",
+      "product_about_status": "Saved and observed: new video embed, current deck, atomic fee, V3 and conditional milestones",
+      "milestone_status": "Saved in shared product About; wave-entry milestone fields still need filling",
+      "youtube_upload_status": "Published publicly: https://youtu.be/34Ns0QQ6rNk; Studio confirmation and copyright check observed",
+      "browser_blocker": "Repeated Chrome and native read timeouts; RAM rose from 0.12 GB to 1 GB but reads still fail; owner asked to foreground the Tillward entry dialog"
     },
-    "copy_release_proof": "deployments/wave2-copy-live-proof.json"
+    "copy_release_proof": "deployments/wave2-copy-live-proof.json",
+    "youtube": "https://youtu.be/34Ns0QQ6rNk",
+    "portal_preparation_proof": "deployments/wave2-portal-preparation.json"
   }
 }

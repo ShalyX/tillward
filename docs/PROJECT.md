@@ -1,3 +1,19 @@
+## Wave 2 video and product update verified
+
+Approved film published publicly at https://youtu.be/34Ns0QQ6rNk on Shaly's channel. Studio confirmed publication and no copyright issues. Source is exactly 120 seconds; YouTube displays 2:01, explicitly disclosed. AKINDO product was saved and observed with that embed, current deck, atomic fee/V3 copy and conditional milestones. Interviews stay held.
+
+The wave entry itself is not yet filled or submitted. Chrome and desktop reads keep timing out; the current workstation measurement found 0.12 GB free RAM. Owner asked to free memory. Next: fill the prepared update and required 3rd/4th milestone fields, verify and capture the final form, leave unsubmitted. Proof: deployments/wave2-portal-preparation.json.
+
+## Wave 2 portal update in progress
+
+Owner authorized uploading the existing Wave 2 film to YouTube, updating AKINDO product copy/milestones and reviewing the filled entry before submission. File SHA-256 matches the published approved MP4. YouTube Studio is the Shaly channel but requires Google identity verification, handed to the owner. No upload or YouTube publication yet. Corrected About Markdown was entered and observed in the product editor, but not saved while awaiting the new video URL. Milestones and video metadata are prepared in submission/wave2/portal-copy.json. Wave update draft is submission/wave2/form-update-draft.txt. Chrome started timing out during the wave-form preparation. Tabs retained for handoff. No Wave 2 submission. Next: after user verification, upload existing film, set public YouTube URL, save and verify corrected product, fill update and both required milestones, then show final form without submitting.
+
+## Authenticated Wave 2 form inspected — November 6, 2026
+
+Signed-in shaly can select Tillward for 2nd Wave. Actual update limit is 3,000 characters and category accepts up to three tags. Required 3rd/4th milestone fields exist; the fourth is blank. The shared product requires a public YouTube URL and still points to the Wave 1 film. Its About text also has historical deck/fee/cash-floor/interview content. No form text edited, product saved or Wave 2 submission performed. The existing Wave 2 film needs YouTube publication, not a remake. Detailed review and proposed entry are in submission/wave2/form-review.md and form-update-draft.txt.
+
+Deadline warning: live timeline says November 13 06:30 with unlabelled timezone, conflicting with the overview's November 15. Use November 13 conservatively. Next: owner review of YouTube publication and milestone wording, update shared product metadata, then review the populated wave entry before final submission. Interviews remain held.
+
 ## Wave 2 copy corrections published — November 6, 2026
 
 Three-keeper wording, direct pitch-to-guide navigation, V3-first evidence ordering and finalized script status are corrected. Pre-deployment V3 notes are explicitly historical. Source commit 9c2ad7a and production dpl_3GCNF1KGH4GwSw2HEoRuLYkL72XK are published. The public pitch matches local SHA-256 and both guide endpoints return 200. Video/deck/contracts/keepers are unchanged. An isolated release checkout excluded concurrent landing-page work.
@@ -73,3 +89,5 @@ Owner selected a 99% maximum allocation and 1% fee on actual hosted repayment, p
 App release 2026-11-05-wave2-atomic-fees-1 is READY on tillward.vercel.app (dpl_Gv4wpc9Q4CgZmQtXFDLrHrA65rdC), commit d42985c; CI 42093945518 succeeded. V2 factory 0xaa5121f96502b9618156e8288e60ce1c699b9a43 deployed at block 16594808 and exact-match source verified. QA owner selected as testnet treasury. Separate V2 keeper/signer/state, health and backups deployed; owner V2 account 0xd6e4829B51dB8ED490bFaE01384757B0fD65D622 auto-discovered. Chrome/native control time out; owner created account via public app and remaining wallet flow is awaiting loan confirmation. No live fee flow yet claimed. See deployments/wave2-fee-release.json.
 
 V2 owner loan and borrowed-fund withdrawal now verified: 2500 test MUSD / 0.045 test BTC, loan tx 0xbd7d97582fc6922ed3f1f8726758051b9891284b63334da636383abbdd30b1ee; exact 2500 test MUSD withdrawal tx 0xd88ff5472a37e00f264113f58f326c03af488bea1b1501ce38a6c6029f4c0d87. V2 account source verification is exact-match. Last rule read remains 20% / service disabled; 99% and service approvals are pending. No receipt or fee proof claimed yet.
+
+Owner confirmed Google verification complete. Subsequent browser controls time out; native control reports Chrome window 591118 minimized. Asked owner to restore and leave it visible. No video upload, product save or entry submission yet. Corrected product About remains an unsaved observed draft.

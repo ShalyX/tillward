@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-06",
+  "scope": "Preparation only; no Wave 2 submission",
+  "youtube": {
+    "url": "https://youtu.be/34Ns0QQ6rNk",
+    "channel": "Shaly",
+    "channelId": "UCr1uOOdDcdiP1ERwUEJWfGg",
+    "published": true,
+    "evidence": "Studio displayed Video published and Published Nov 6, 2026 after Public was selected",
+    "copyrightCheck": "No issues found",
+    "sourceSHA256": "34f01fdf6060cb298c8af8560f6f97045e152f1960adafd89f9dccc1a23ca17e",
+    "sourceSeconds": 120,
+    "displayDuration": "2:01",
+    "durationDiscrepancyDisclosed": true,
+    "independentPlayback": "not yet verified",
+    "independentPublicMetadata": {
+      "status": 200,
+      "title": "Tillward | Wave 2: BTC-backed working capital, repaid from receipts",
+      "author": "Shaly",
+      "provider": "YouTube"
+    }
+  },
+  "akindo": {
+    "product": "https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO",
+    "saved": true,
+    "observedVideoEmbed": "https://www.youtube.com/embed/34Ns0QQ6rNk",
+    "currentDeckVerified": true,
+    "atomicFeeCopyVerified": true,
+    "v3CopyVerified": true,
+    "oldDeckRemoved": true,
+    "oldCashFloorSetupRemoved": true,
+    "interviewsHeld": true,
+    "conditionalMilestonesSavedInProduct": true
+  },
+  "waveEntry": {
+    "filled": false,
+    "submitted": false,
+    "updateDraft": "submission/wave2/form-update-draft.txt",
+    "milestoneDraft": "submission/wave2/portal-copy.json",
+    "remaining": "Fill update and both required milestones; inspect final form; leave unsubmitted",
+    "blocker": "Chrome and native UI reads time out, including after RAM recovered to about 1 GB; user asked to foreground Tillward entry dialog"
+  }
+}

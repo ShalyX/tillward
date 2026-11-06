@@ -1,5 +1,7 @@
 # Wave 2 submission form review
 
+Latest status: the Wave 2 film is published at https://youtu.be/34Ns0QQ6rNk and the AKINDO product description/video/deck/milestones were saved and observed. The live wave-entry update and required 3rd/4th milestone fields remain unfilled because the browser connection is timing out. The draft update is 2544 characters and includes the public YouTube URL. No Wave 2 submission. Earlier findings below record the before-state, not unresolved video/product gaps.
+
 Prepared November 6, 2026. Draft for owner review. No fields have been entered or submitted.
 
 ## What is verified
@@ -57,6 +59,38 @@ These are planning windows, not scheduled outreach, procurement or launch commit
 - Owner handles missing private contact fields, eligibility and legal declarations. No answers are inferred.
 - Stop at the completed entry review. Submission and its observed confirmation are a separate step.
 
-## Current access blocker
+## Authenticated review completed November 6
 
-The installed browser-use runtime reports **“Local browser use is disabled in Work settings.”** Computer Use also reports that its native pipe is unavailable. No authentication data was copied into the separate signed-out browser. Enable local browser use and keep AKINDO signed in in Chrome to continue the actual form review.
+Browser access was restored. Read the signed-in shaly account's Wave 2 entry modal and Tillward product editor. Selected Tillward in the modal without entering update text or submitting. The modal explicitly displays **Entered: 2nd Wave**. Tillward is selectable; this establishes an available entry route, not organizer acceptance or a new legal eligibility determination.
+
+### Actual wave-entry fields
+
+- Product: Tillward, selected from this account's products.
+- Product Category: required, maximum three tags. Existing tag: BTC working capital.
+- Updates in this Wave: visible counter **0 / 3,000**. The prepared 2,234-character update fits. The DOM has no native maxlength attribute, so the displayed counter is the evidence for the limit; no submission validation was triggered.
+- Declared build goals: displays the old Wave 1 proposal to interview 5–10 businesses. It is displayed as previous goals, not an editable interview requirement. The update must explain that interviews remain held and avoid claiming those goals were completed.
+- Milestone: required fields labeled **3rd Wave** and **4th Wave**. The 3rd Wave field contains the previous conditional 4–8-week follow-on proposal. The 4th Wave field is empty. These are generic form labels, not proof that Mezo offers or funds a fourth wave.
+- Final action: **Submit the product**. The modal warns that submissions cannot be canceled, but updates can be made. It was not clicked.
+- No deck/video upload controls or separate track selector appeared in this modal. Put the current direct deck, pitch and evidence URLs in the update; track fit belongs in the text unless later controls require otherwise.
+
+### Product editor and attachment requirements
+
+The separate Edit Product page requires an icon, name, tagline, product type, accessible public GitHub repository, image gallery, Markdown About text, video URL, live demo, infrastructure, category and technology tags. It shows Functional selected, ShalyX/tillward connected, three of five gallery slots used and public visibility selected. No values were edited or saved.
+
+**Video explicitly requires a public YouTube URL.** The existing value is https://youtu.be/9Qu7pAAb2js, the historical Wave 1 film. The current Wave 2 MP4 must be uploaded to YouTube and verified for public viewing before replacing that value. A pitch-page URL or raw MP4 must not be assumed valid for this field. The approved film does not need a remake.
+
+The About text still links the v0.1.1 deck/release, describes choosing an operating cash floor, gives the old fee-free 500/100/400 example and repeats the old interview schedule. Those product-page values need updating from the approved Wave 2 answers. The separate Wave 1 submission receipt remains historical; updating the shared product description may change what is shown when viewing that older entry.
+
+The current deck belongs in the Markdown About section and wave update as a direct public PDF link. There is no dedicated deck attachment control in the inspected editor. Gallery upload size/type limits were not exposed by the text read and were not tested; no gallery change is needed for these corrections.
+
+### Deadline conflict
+
+The signed-in live timeline explicitly shows **11/13 06:30 Deadline** for the building phase, whereas the written overview says November 15. The timezone is not labelled. Use **November 13 as the conservative submission date** and do not present November 15 or a UTC conversion as settled. Resolve the organizer/platform discrepancy before relying on a final-hour deadline.
+
+### Before final entry review
+
+1. Upload the existing Wave 2 MP4 to YouTube with owner-authorized visibility and verify playback without the owner session.
+2. Update the shared product's video, About text and deck/release URLs, preserving the historical Wave 1 receipt and evidence files.
+3. Add direct current pitch/deck/proof URLs to the wave update while keeping it below 3,000 characters.
+4. Review wording for the required 3rd/4th milestone fields with the owner. Interviews remain held and conditional plans are not guaranteed deliveries.
+5. Recheck the populated form with the owner, then obtain the separate final submission instruction. No submission has occurred.

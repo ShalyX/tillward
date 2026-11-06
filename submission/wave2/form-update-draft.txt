@@ -1,0 +1,26 @@
+Tillward connects BTC-backed working capital to customer receipts. A business borrows MUSD, chooses its repayment share and collects final-payment invoices. Eligible receipts repay that same native Mezo loan.
+
+Since Wave 1:
+• Added native BTC price, ICR/TCR, Recovery Mode and owner collateral actions, including stale/unavailable states.
+• Verified factory and account source on the explorer.
+• Proved a public 0.001 test BTC collateral top-up and full owner exit.
+• Completed a real native surplus claim: controlled redemption of only our borrower created 0.005532212424520610 test BTC. Tillward claimed it and the owner separately withdrew it.
+• Deployed the selected 1% atomic routing fee in separate V2 contracts. A 500 test MUSD receipt at 99% allocation repaid 495 MUSD, paid 4.95 MUSD to the test treasury and left 0.05 MUSD. The lender received the full repayment. No deferred fees. V1 stays fee-free.
+• Verified owner opt-out, 9.9 MUSD manual repayment without a new service fee, closure and 0.045 test BTC recovery.
+• Simplified repayment rules and loan management; removed the reserve editor and extra settings tab.
+• Extended monitoring and encrypted backups to three versioned keepers; verified Telegram alerts and same-host V2/V3 restores.
+
+The fee is 1% of actual hosted receipt-funded repayment, from retained funds, with explicit owner enrollment. The maximum share is 99%. Native protocol/network fees are separate.
+
+All figures are testnet QA with recycled test assets. Seller/payer acceptance and willingness to pay remain unvalidated; interviews are held. Monitoring needs the workstation online; a second-host restore remains open.
+
+Product: https://tillward.vercel.app/
+Proof and judge guide: https://github.com/ShalyX/tillward/tree/main/submission/wave2
+Shaly · https://x.com/shalyx_04
+
+Latest V3 update: an actual 2,600 MUSD receipt at 80% was capped to the remaining loan debt. Hosted repayment and its 1% fee settled, owner closure cleared every allocation/fee reservation, and a later receipt allocated zero. MUSD and 0.045 test BTC were recovered without an allocation-release step. Live proof: https://github.com/ShalyX/tillward/blob/main/docs/reviews/WAVE2_V3_LIVE_VERIFICATION.md
+
+YouTube: https://youtu.be/34Ns0QQ6rNk
+Pitch: https://tillward.vercel.app/pitch.html
+Deck: https://tillward.vercel.app/media/tillward-wave2-deck.pdf
+Plan revision: interviews remain on hold; no interviews or customer pilot are claimed. The completed work above supersedes the earlier validation-first proposal.
