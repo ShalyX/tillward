@@ -1,3 +1,7 @@
+## Owner-requested submission copy revision — November 7, 2026
+
+Removed interview-status wording from the editable wave entry, shared AKINDO product and active submission copy. Milestones describe future validation, pilot measurement and independent review. No claim of completed research was introduced. Live form readback matches prepared copy: 2,274 / 3,000, both milestone fields verified, product saved and checked, updated screenshot captured. No submission. Historical observations below retain their original context.
+
 ## Wave 2 live entry filled and verified — November 7, 2026
 
 Chrome connection recovered after the owner freed resources and opened the form. Tillward selected for 2nd Wave, existing BTC working capital category retained. Update and both required 3rd/4th Wave milestone fields filled; exact readback matches approved copy after CRLF normalization. Portal count: 2,524 / 3,000. Public video, deck and V3 proof URLs included. Interviews held; later milestones conditional. Screenshot and proof saved in docs/reviews/evidence/wave2-filled-form.png and deployments/wave2-filled-form-proof.json.

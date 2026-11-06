@@ -12,7 +12,7 @@ Since Wave 1:
 
 The fee is 1% of actual hosted receipt-funded repayment, from retained funds, with explicit owner enrollment. The maximum share is 99%. Native protocol/network fees are separate.
 
-All figures are testnet QA with recycled test assets. Seller/payer acceptance and willingness to pay remain unvalidated; interviews are held. Monitoring needs the workstation online; a second-host restore remains open.
+All figures are testnet QA with recycled test assets. Monitoring needs the workstation online; a second-host restore remains open.
 
 Product: https://tillward.vercel.app/
 Proof and judge guide: https://github.com/ShalyX/tillward/tree/main/submission/wave2

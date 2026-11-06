@@ -1,6 +1,6 @@
 # Wave 2 submission form review
 
-Latest status, November 7: the live Tillward 2nd Wave entry is filled and verified. Update: 2,524 / 3,000 after newline normalization. Both milestone fields match portal-copy.json. Existing BTC working capital category retained. Screenshot: ../../docs/reviews/evidence/wave2-filled-form.png . Proof: ../../deployments/wave2-filled-form-proof.json . The unsaved live draft is retained for owner review; Submit the product has not been clicked. The published video is https://youtu.be/34Ns0QQ6rNk and shared product copy is saved. Earlier findings below are historical.
+Latest status, November 7: the live Tillward 2nd Wave entry is filled and verified. Update: 2,274 / 3,000 after the owner-requested copy revision. Both milestone fields match portal-copy.json. Existing BTC working capital category retained. Screenshot: ../../docs/reviews/evidence/wave2-filled-form.png . Proof: ../../deployments/wave2-filled-form-proof.json . The unsaved live draft is retained for owner review; Submit the product has not been clicked. The published video is https://youtu.be/34Ns0QQ6rNk and shared product copy is saved. Earlier findings below are historical.
 
 Prepared November 6, 2026. Draft for owner review. No fields have been entered or submitted.
 

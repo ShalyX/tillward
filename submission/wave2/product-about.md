@@ -44,7 +44,7 @@ Public proofs: https://github.com/ShalyX/tillward/blob/main/docs/EVIDENCE.md
 
 V3 report: https://github.com/ShalyX/tillward/blob/main/docs/reviews/WAVE2_V3_LIVE_VERIFICATION.md
 
-All figures are controlled Mezo testnet QA, not customer revenue or adoption. Seller/payer acceptance and willingness to pay remain unvalidated. Interviews are on hold. V3 and surplus proof used a dedicated QA CLI signer with read-only browser observation; earlier V2 owner flows used Rabby. The film retains labeled V2 recordings, while the deck and guide include V3. No independent audit or mainnet deployment. Collateral remains exposed to liquidation and redemption. Off-host monitoring depends on the owner's workstation; runtime restore proof used the same VPS, not a second host.
+All figures are controlled Mezo testnet QA, not customer revenue or adoption. Seller/payer acceptance and willingness to pay remain unvalidated. V3 and surplus proof used a dedicated QA CLI signer with read-only browser observation; earlier V2 owner flows used Rabby. The film retains labeled V2 recordings, while the deck and guide include V3. No independent audit or mainnet deployment. Collateral remains exposed to liquidation and redemption. Off-host monitoring depends on the owner's workstation; runtime restore proof used the same VPS, not a second host.
 
 ## Stack and status
 
@@ -52,9 +52,9 @@ New project built for this Buildathon, initially named Paydown. Working Mezo pub
 
 ## Next three milestones
 
-These are conditional planning windows. Interviews remain held, and no mainnet launch date is promised.
+These are conditional planning windows. no mainnet launch date is promised.
 
-1. Within two weeks after validation resumes: test business and payer willingness to use MUSD invoices, receipt-linked repayment and the proposed pricing.
+1. Over a two-week validation cycle: test business and payer willingness to use MUSD invoices, receipt-linked repayment and the proposed pricing.
 2. Within four weeks after willing participants are identified: run a small testnet pilot, measure repayment volume, gas sponsorship and support time, and exercise recovery on a second host.
 3. Target four to six weeks after the pilot, subject to results and review budget: obtain independent contract/integration review and make a separate mainnet-readiness decision.
 
@@ -62,6 +62,5 @@ These are conditional planning windows. Interviews remain held, and no mainnet l
 
 Shaly: solo builder, product and engineering. https://x.com/shalyx_04
 
-Built by ElseMade.
 
 Wave 2 deck, film, captions, editable sources and proof bundle: https://github.com/ShalyX/tillward/releases/tag/v0.2.1-wave2

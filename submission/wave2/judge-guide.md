@@ -39,6 +39,6 @@ All have exact-match explorer source verification. Run `forge test --offline --n
 
 ## Limits that matter
 
-The intended seller/payer audience has not been validated; interviews remain on hold. No customer adoption, commercial revenue, audit or mainnet readiness is claimed. The new public fee test used a zero floor; the nonzero-floor fee exception was verified locally and on the native fork. Public surplus signing used the dedicated QA script; the app observation was read-only. External monitoring and DPAPI backup depend on the owner's workstation; runtime restoration used the same VPS in an isolated namespace, not a second host.
+The intended seller/payer audience has not been validated. No customer adoption, commercial revenue, audit or mainnet readiness is claimed. The new public fee test used a zero floor; the nonzero-floor fee exception was verified locally and on the native fork. Public surplus signing used the dedicated QA script; the app observation was read-only. External monitoring and DPAPI backup depend on the owner's workstation; runtime restoration used the same VPS in an isolated namespace, not a second host.
 
 This is a Wave 2 preparation packet, not a new AKINDO submission receipt.

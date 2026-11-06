@@ -14,6 +14,6 @@ The packet also records the opt-in 1% atomic receipt-routing fee, actual native 
 
 The video retains its explicitly labeled earlier V2 captures; the V3 proof is in the updated deck, guide and linked receipts. V3 signing used the dedicated QA CLI; browser evidence was read-only.
 
-All transactions use Mezo testnet assets. The fee test payer and treasury were the QA owner. Surplus product calls used a dedicated QA CLI wallet; browser observation was read-only. Native redemption fees are separate. No customer traction, commercial revenue, independent audit or mainnet readiness is claimed. Interviews remain held. Wave 2 AKINDO submission is a separate action; this release is the material packet, not a submission receipt.
+All transactions use Mezo testnet assets. The fee test payer and treasury were the QA owner. Surplus product calls used a dedicated QA CLI wallet; browser observation was read-only. Native redemption fees are separate. No customer traction, commercial revenue, independent audit or mainnet readiness is claimed. Wave 2 AKINDO submission is a separate action; this release is the material packet, not a submission receipt.
 
 Built by Shaly / ElseMade. https://x.com/shalyx_04

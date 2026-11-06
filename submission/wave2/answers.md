@@ -16,7 +16,7 @@ A business can hold BTC while needing stable money for contractors, supplies or 
 
 The owner creates a business account, borrows against BTC and chooses a repayment percentage. Each final-payment MUSD invoice records its receipt and allocation. With the owner's consent, hosted settlement applies eligible funds to that same account's native Mezo loan. The rest remains with the business, after the disclosed service fee. The owner can pause automation, manage the loan and recover available collateral.
 
-The intended user is an independent agency, studio or seller that holds BTC and is willing to collect MUSD. Customer and payer acceptance remains unvalidated. Interviews are on hold at the owner's request. The software and transactions described here use public testnet assets.
+The intended user is an independent agency, studio or seller that holds BTC and is willing to collect MUSD. Customer and payer acceptance remains unvalidated. The software and transactions described here use public testnet assets.
 
 ## MUSD and Mezo integration
 MUSD is the actual borrowing, invoicing, payment and repayment asset. The business account calls native Mezo BorrowerOperations and reads native debt, collateral, BTC price, individual/system collateral ratios, Recovery Mode and surplus entitlement. The integration is part of the working-capital workflow. Tillward does not integrate the MEZO token in this release.
@@ -58,7 +58,7 @@ New project built for the Mezo Buildathon, initially named Paydown. Wave 2 exten
 Solidity 0.8.24, Foundry, TypeScript, Vite, viem, native Mezo lending/MUSD/HintHelpers, Node.js keepers with isolated state and systemd supervision, Vercel frontend and GitHub Actions.
 
 ## Next three milestones
-1. When the owner resumes validation: speak with BTC-holding businesses and their payers about acquiring/spending MUSD, invoice wording, repayment shares and pricing. The previous 5–10 interview count was our research target, not a Mezo entry requirement. No outreach or interviews are claimed.
+1. Run a two-week validation cycle with BTC-holding businesses and their payers to test MUSD acceptance, invoice wording, repayment shares and pricing.
 2. After willing participants are identified: run a small testnet pilot, measure repayment volume/support time and actual sponsorship costs, and add always-on monitoring plus a second-host recovery exercise. Timing depends on participation.
 3. If demand supports continuing: commission independent contract/integration review and prepare a separate mainnet-readiness decision. A commercial launch depends on those gates.
 

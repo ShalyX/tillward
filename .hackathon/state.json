@@ -247,7 +247,7 @@
       "entry_route_available": true,
       "qualification": "Selectable product and available Wave 2 route; not organizer acceptance",
       "update_limit": 3000,
-      "prepared_update_characters": 2524,
+      "prepared_update_characters": 2274,
       "category_max_tags": 3,
       "milestone_fields": [
         "3rd Wave required with old saved text",
@@ -265,7 +265,8 @@
       "youtube_upload_status": "Published publicly: https://youtu.be/34Ns0QQ6rNk; Studio confirmation and copyright check observed",
       "filled_form_proof": "deployments/wave2-filled-form-proof.json",
       "filled_form_screenshot": "docs/reviews/evidence/wave2-filled-form.png",
-      "draft_storage": "Unsaved live entry draft retained in Chrome for owner review; no Submit the product action"
+      "draft_storage": "Unsaved live entry draft retained in Chrome for owner review; no Submit the product action",
+      "presentation_revision": "Owner requested removing interview-status wording; removed from editable entry, shared product and active packet copy; future validation milestone retained"
     },
     "copy_release_proof": "deployments/wave2-copy-live-proof.json",
     "youtube": "https://youtu.be/34Ns0QQ6rNk",
