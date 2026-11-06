@@ -1,0 +1,45 @@
+{
+  "verified": true,
+  "observedAt": "2026-11-06T00:16:33.628Z",
+  "chainId": 31611,
+  "block": "16599112",
+  "account": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622",
+  "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "topups": [
+    {
+      "hash": "0xe634d68dec2bf1b26c50f3bcfd1fa2ca93540c77d7751c600bca8f1681a77d5e",
+      "block": "16599001",
+      "amount": "2000000000000000000",
+      "before": "150000000000000000",
+      "after": "2150000000000000000",
+      "ownerBefore": "2000949999999999999999",
+      "ownerAfter": "1998949999999999999999"
+    },
+    {
+      "hash": "0x6bb5b6390dc3f765b9c2eb309f79c8a9b378c14849645ff0a3da320c6ae941d8",
+      "block": "16599096",
+      "amount": "1998000000000000000000",
+      "before": "2150000000000000000",
+      "after": "2000150000000000000000",
+      "ownerBefore": "1998949999999999999999",
+      "ownerAfter": "949999999999999999"
+    }
+  ],
+  "totalTopup": "2000000000000000000000",
+  "balance": "2000150000000000000000",
+  "debt": [
+    "2197605528946004082501",
+    "45000000000000000",
+    "1800000000000000000000",
+    "200000000000000000000",
+    true
+  ],
+  "repayment": "1997605528946004082501",
+  "expectedRemaining": "2544471053995917499",
+  "pending": "0",
+  "serviceEnabled": false,
+  "totalFeesPaid": "4950000000000000000",
+  "retained": "150000000000000000",
+  "simulation": "closeLoan succeeded at fixed block; no transaction signed",
+  "scope": "Top-up and read-only closure preflight only; closure/collateral return not yet proven."
+}

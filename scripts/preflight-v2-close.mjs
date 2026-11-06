@@ -18,20 +18,27 @@ const read=(functionName,b=head)=>p.readContract({address:base.account,abi,funct
 if(!registered||!eq(await read('owner'),base.owner))throw Error('Registry/owner mismatch.');
 const transfers=[];
 for(let from=BigInt(funded.block)+1n;from<=head;from+=1000n){const to=from+999n<head?from+999n:head;transfers.push(...await p.getContractEvents({address:c.musd,abi:tokenAbi,eventName:'Transfer',args:{from:base.owner,to:base.account},fromBlock:from,toBlock:to,strict:true}));}
-const matching=transfers.filter(t=>t.args.value===2000n*10n**18n);
-if(matching.length!==1)throw Error('Waiting for one exact 2000 MUSD owner top-up.');
-const hash=matching[0].transactionHash;
-const [tx,r]=await Promise.all([p.getTransaction({hash}),p.getTransactionReceipt({hash})]);
-const call=decodeFunctionData({abi:tokenAbi,data:tx.input});
-if(r.status!=='success'||(await p.getBlock({blockNumber:r.blockNumber})).hash!==r.blockHash||!eq(tx.from,base.owner)||!eq(tx.to,c.musd)||tx.value!==0n||call.functionName!=='transfer'||!eq(call.args[0],base.account)||call.args[1]!==2000n*10n**18n)throw Error('Canonical exact owner top-up not proven.');
 const balanceAt=(address,blockNumber)=>p.readContract({address:c.musd,abi:tokenAbi,functionName:'balanceOf',args:[address],blockNumber});
-const [before,after,ownerBefore,ownerAfter]=await Promise.all([balanceAt(base.account,r.blockNumber-1n),balanceAt(base.account,r.blockNumber),balanceAt(base.owner,r.blockNumber-1n),balanceAt(base.owner,r.blockNumber)]);
-if(after-before!==2000n*10n**18n||ownerBefore-ownerAfter!==2000n*10n**18n)throw Error('Exact top-up balance deltas not proven.');
+// The first owner top-up was 2 MUSD. The exact corrective request is 1998,
+// bringing aggregate funding to 2000 without asking for a duplicate full top-up.
+const expected=[2n*10n**18n,1998n*10n**18n];
+const positive=transfers.filter(t=>t.args.value>0n);
+if(positive.length!==2||expected.some(amount=>positive.filter(t=>t.args.value===amount).length!==1))throw Error('Waiting for exact 2 + 1998 MUSD owner top-ups.');
+const topups=[];
+for(const amount of expected){
+ const match=positive.find(t=>t.args.value===amount),hash=match.transactionHash;
+ const [tx,r]=await Promise.all([p.getTransaction({hash}),p.getTransactionReceipt({hash})]);
+ const call=decodeFunctionData({abi:tokenAbi,data:tx.input});
+ if(r.status!=='success'||(await p.getBlock({blockNumber:r.blockNumber})).hash!==r.blockHash||!eq(tx.from,base.owner)||!eq(tx.to,c.musd)||tx.value!==0n||call.functionName!=='transfer'||!eq(call.args[0],base.account)||call.args[1]!==amount)throw Error('Canonical exact owner top-up not proven.');
+ const [before,after,ownerBefore,ownerAfter]=await Promise.all([balanceAt(base.account,r.blockNumber-1n),balanceAt(base.account,r.blockNumber),balanceAt(base.owner,r.blockNumber-1n),balanceAt(base.owner,r.blockNumber)]);
+ if(after-before!==amount||ownerBefore-ownerAfter!==amount)throw Error('Exact top-up balance deltas not proven.');
+ topups.push({hash,block:r.blockNumber,amount,before,after,ownerBefore,ownerAfter});
+}
 const [balance,debt,pending,floor,enabled,fees,repaid,retained]=await Promise.all([balanceAt(base.account,head),read('debtState'),read('pendingRepayment'),read('cashFloor'),read('serviceEnabled'),read('totalFeesPaid'),read('totalServiceRepaid'),read('retainedReceiptFunds')]);
 if(!debt[4]||pending!==0n||floor!==0n||enabled||fees!==BigInt(base.settlement.fee)||repaid!==BigInt(base.settlement.amount)||retained!==150000000000000000n||balance!==2000150000000000000000n)throw Error('Unexpected V2 closure state.');
 const repayment=debt[0]-debt[3];
 if(balance<repayment)throw Error('Insufficient MUSD for native closure.');
 await p.simulateContract({address:base.account,abi,functionName:'closeLoan',account:base.owner,blockNumber:head});
-const proof={verified:true,observedAt:new Date().toISOString(),chainId:31611,block:head,account:base.account,owner:base.owner,topup:{hash,block:r.blockNumber,amount:2000n*10n**18n,before,after,ownerBefore,ownerAfter},balance,debt,repayment,expectedRemaining:balance-repayment,pending,serviceEnabled:enabled,totalFeesPaid:fees,retained,simulation:'closeLoan succeeded at fixed block; no transaction signed',scope:'Top-up and read-only closure preflight only; closure/collateral return not yet proven.'};
+const proof={verified:true,observedAt:new Date().toISOString(),chainId:31611,block:head,account:base.account,owner:base.owner,topups,totalTopup:2000n*10n**18n,balance,debt,repayment,expectedRemaining:balance-repayment,pending,serviceEnabled:enabled,totalFeesPaid:fees,retained,simulation:'closeLoan succeeded at fixed block; no transaction signed',scope:'Top-up and read-only closure preflight only; closure/collateral return not yet proven.'};
 await writeFile('deployments/wave2-v2-close-preflight.json',JSON.stringify(proof,(_,v)=>typeof v==='bigint'?String(v):v,2)+'\n');
-console.log(JSON.stringify({verified:true,topup:hash,closeRepaymentMUSD:formatUnits(repayment,18),expectedRemainingMUSD:formatUnits(balance-repayment,18),collateralBTC:formatUnits(debt[1],18),simulation:'success'}));process.exit(0);
+console.log(JSON.stringify({verified:true,topups:topups.map(t=>t.hash),closeRepaymentMUSD:formatUnits(repayment,18),expectedRemainingMUSD:formatUnits(balance-repayment,18),collateralBTC:formatUnits(debt[1],18),simulation:'success'}));process.exit(0);

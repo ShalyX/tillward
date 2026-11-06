@@ -1,0 +1,32 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-11-06T00:18:52.853Z",
+  "chainId": 31611,
+  "account": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622",
+  "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "kind": "close",
+  "transaction": {
+    "hash": "0xe837d7c9b6ec1ec29db55413772db32615b7ed83369c921ea867e3a1aec6d5bf",
+    "block": "16599137",
+    "amount": "1997605602763628993249",
+    "gasUsed": "352894"
+  },
+  "feesBefore": "4950000000000000000",
+  "feesAfter": "4950000000000000000",
+  "serviceRepaid": "495000000000000000000",
+  "serviceEnabled": false,
+  "debt": [
+    "0",
+    "0",
+    "1800000000000000000000",
+    "200000000000000000000",
+    false
+  ],
+  "pending": "0",
+  "musdBefore": "2000150000000000000000",
+  "musdAfter": "2544397236371006751",
+  "btcBefore": "0",
+  "btcAfter": "45000000000000000",
+  "persistedIntentRecovery": "Real canonical action reconciled from serialized intent; no browser reload/replacement fault induced.",
+  "scope": "Owner-signed public testnet action; fee counters unchanged. No surplus claim or mainnet proof implied."
+}
