@@ -2,7 +2,7 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {createPublicClient,http,webSocket,fallback,parseAbi,decodeFunctionData,keccak256,formatUnits} from 'viem';
 import {snapshotFreshness} from '../src/transaction-recovery.mjs';
-const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const c=JSON.parse(await readFile('public/deployment-v2.json','utf8'));
 const base=JSON.parse(await readFile('deployments/wave2-live-fee-proof.json','utf8'));
 const manual=JSON.parse(await readFile('deployments/wave2-v2-manual-proof.json','utf8'));
 const funded=JSON.parse(await readFile('../../work/wave2-v2-funded-exit-preflight.json','utf8'));

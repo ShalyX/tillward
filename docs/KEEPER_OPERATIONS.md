@@ -62,3 +62,7 @@ Evidence: `deployments/wave2-v2-operations-proof.json`, `wave2-v2-restore-proof.
 Remaining boundaries: the workstation and its signed-in user session must be online for polling, alerts and DPAPI backup jobs. There is no always-on third-party monitor. The runtime drill used the same VPS, not a second host or host-loss restoration. DPAPI files require the original Windows user profile. A separate-host recovery exercise and independently recoverable key escrow remain commercial-readiness work.
 
 Restart verification on 2026-10-22: service enabled/active; private wallet and journal 0600 under tillward-keeper; subsequent health record retained the same confirmed settlement and returned to no-allocation deferred state.
+
+## V3 operations — November 6, 2026
+
+V3 uses /opt/tillward-keeper-v3 and /var/lib/tillward-keeper-v3 under its own service user and gas-only signer 0x94fD519f7bcc3a11776B101B1CcC284560B7979B. Its factory is 0xca5c522850a366769e3f3b07e45f6c7a8980e692. V1/V2 stay separate. Health/backup timers and the external monitor cover all three; encrypted captures include V3. A Telegram test was accepted. V3 in-memory encrypted recovery and isolated same-VPS runtime recovery passed without changing its nonce/journal or live services. This is not second-host/host-loss recovery; workstation availability remains required. See wave2-v3-*-proof.json and the live report.

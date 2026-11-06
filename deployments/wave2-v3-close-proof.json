@@ -1,0 +1,22 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-11-06T13:59:31.264Z",
+  "chainId": 31611,
+  "account": "0x3a9E23B4e91661751B1916dFe04e71D6dA65F5c7",
+  "close": {
+    "hash": "0xaca62eb8902df9e1f741222b93f9a1216823f9bb829e6472cd807763aae41fcc",
+    "block": "16611056",
+    "repaid": "1800000217832825439285",
+    "collateralReturned": "45000000000000000"
+  },
+  "after": {
+    "debt": "0",
+    "pending": "0",
+    "feeReserve": "0",
+    "availableMUSD": "595979326184942816661",
+    "retained": "595979326184942816661",
+    "totalFeesPaid": "2020004514675561822"
+  },
+  "releaseAllocationTransactions": 0,
+  "scope": "Owner closure after hosted repayment, no allocation-release transaction and no closure service fee. Dedicated QA CLI wallet signed; browser reads separately."
+}

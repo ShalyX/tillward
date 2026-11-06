@@ -1,0 +1,37 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-11-06T14:08:47.697Z",
+  "chainId": 31611,
+  "account": "0x3a9E23B4e91661751B1916dFe04e71D6dA65F5c7",
+  "postCloseReceipt": {
+    "hash": "0x72e05a14c1069df6a8b8fe9e99b73737c90a7459f89ccca97ea4d22c803c43ce",
+    "block": "16611119",
+    "amount": "1000000000000000000",
+    "allocated": "0"
+  },
+  "cashRecovery": {
+    "hash": "0xdee25a01f28b340e694efd18e204e89d3d3aa1fd52c0caf76f368711797a8f6c",
+    "amount": "596979326184942816661"
+  },
+  "btcRecovery": {
+    "hash": "0x82ae7ac70e34ef34d5667ddb1a0b016694717f171600d2018e90b8a1b494fb02",
+    "amount": "45000000000000000",
+    "ownerIncreaseNetGas": "44999999963500000"
+  },
+  "buffer": {
+    "hash": "0xd240a86d758a5de4181d778b4fe921ac98ece6a8e609f51a1beef1e321741746",
+    "amount": "600000000000000000000",
+    "originalBalance": "1874600000000000000000",
+    "restored": true
+  },
+  "after": {
+    "debt": "0",
+    "postedCollateral": "0",
+    "pending": "0",
+    "feeReserve": "0",
+    "businessMUSD": "0",
+    "businessBTC": "0",
+    "totalFeesPaid": "2020004514675561822"
+  },
+  "scope": "Controlled public-testnet QA completed, all business funds recovered, 600 test MUSD buffer restored, no excess-allocation cleanup transaction."
+}

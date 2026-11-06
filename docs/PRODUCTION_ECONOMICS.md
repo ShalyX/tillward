@@ -76,3 +76,7 @@ Reproduce mainnet reads and arithmetic: node scripts/model-production-costs.mjs.
 ## November 5 V2 receipt measurement
 
 The deployed atomic-fee path used **489,763 gas** in one standalone public testnet settlement of 495 MUSD plus a 4.95 MUSD fee. See `deployments/wave2-live-fee-proof.json`. This exceeds the 450,000-gas proxy used in the historical calculations above by about 8.84%; those tables therefore understate gas for this observed V2 path. At the historical mainnet quote and BTC reference, that receipt size would cost about USD 0.0558 per attempt (USD 0.5584 at ten times the gas price), before the paid-attempt allowance. These are repriced testnet gas units, not measured mainnet V2 costs. The actual testnet price was 146 wei/gas. One receipt is not a production upper bound; refresh the model with representative V2 measurements before commercial pricing decisions. The selected 1% model is now implemented and enabled for the QA testnet account; no mainnet charges are enabled.
+
+## V3 dated measurement — November 6, 2026
+
+The public V3 hosted settlement used 530,075 gas. It is measured testnet execution, not measured mainnet spend. Its borrower state and insertion conditions differ from the prior V2 receipt; do not attribute the whole difference to one code change. Source: deployments/wave2-v3-repayment-proof.json. The approved 1% model and distinction between measured costs and mainnet/support scenarios remain unchanged.

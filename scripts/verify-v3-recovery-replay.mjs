@@ -1,0 +1,13 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {createPublicClient,webSocket} from 'viem';
+import {execFileSync} from 'node:child_process';
+const c=JSON.parse(await readFile('deployments/testnet-factory-v3.json','utf8')),f=JSON.parse(await readFile('deployments/wave2-v3-flow.json','utf8'));
+const p=createPublicClient({transport:webSocket(c.ws,{timeout:15000,retryCount:1})});
+const journal=JSON.parse(await readFile('../../work/allocation-v3-private/journal.json','utf8'));
+for(const name of ['cashRecover','bufferRestore','btcRecover'])if(!journal.steps?.[name]?.raw||!journal.steps[name].block||journal.steps[name].hash!==f.transactions[name]?.hash)throw Error('Complete saved canonical intents required; no fresh recovery signing allowed.');
+const before=await p.getTransactionCount({address:f.owner,blockTag:'latest'});
+execFileSync(process.execPath,['scripts/public-allocation-flow.mjs','recover'],{stdio:'ignore',timeout:180000});
+const after=await p.getTransactionCount({address:f.owner,blockTag:'latest'});
+if(before!==after)throw Error('Recovery replay unexpectedly changed signer nonce.');
+const o={verified:true,observedAt:new Date().toISOString(),owner:f.owner,nonceBefore:before,nonceAfter:after,scope:'Replayed saved recovery intents; only original canonical hashes were reused, no new signature/broadcast or transfer.'};
+await writeFile('deployments/wave2-v3-recovery-replay-proof.json',JSON.stringify(o,null,2)+'\n');console.log(JSON.stringify(o));process.exit(0);

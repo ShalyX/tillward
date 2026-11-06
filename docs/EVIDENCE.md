@@ -4,6 +4,8 @@ Updated November 6, 2026. Public Mezo testnet, chain 31611. Mechanism verificati
 
 | Claim | Class | Evidence | Limit |
 | --- | --- | --- | --- |
+| Debt-capped 80% receipt, hosted fee, zero-reservation closure and post-close receipt | VERIFIED V3 public chain and read-only browser | [V3 live report](reviews/WAVE2_V3_LIVE_VERIFICATION.md) | Dedicated QA CLI signer; not Rabby V3 acceptance |
+| V3 isolated runtime and encrypted recovery | VERIFIED operations | [V3 restore](../deployments/wave2-v3-restore-proof.json) | Same VPS, not second-host/host-loss |
 | 500 receipt → 495 repayment + 4.95 fee + 0.05 retained | VERIFIED public chain | [Fee proof](../deployments/wave2-live-fee-proof.json) | Same-owner test payer/treasury; not revenue |
 | Pause, 9.9 manual repayment, closure, 0.045 BTC return | VERIFIED public chain and Rabby owner flow | [Exit report](reviews/WAVE2_V2_EXIT_VERIFICATION.md) | Test assets |
 | Native loan conditions and 0.001 BTC collateral top-up | VERIFIED public chain / recorded UI | [Top-up proof](../deployments/wave2-collateral-topup.json) | Recorded conditions change; liquidation/redemption remain possible |

@@ -1,7 +1,7 @@
 // Independent canonical proof that one controlled borrower produced real surplus.
 import {readFile,writeFile} from 'node:fs/promises';
 import {createPublicClient,http,webSocket,fallback,parseAbi,decodeFunctionData,decodeEventLog,encodeDeployData,keccak256} from 'viem';
-const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const c=JSON.parse(await readFile('public/deployment-v2.json','utf8'));
 const flow=JSON.parse(await readFile('deployments/wave2-surplus-flow.json','utf8'));
 const guardArtifact=JSON.parse(await readFile('out/OwnedSurplusGuard.sol/OwnedSurplusGuard.json','utf8'));
 const accountAbi=JSON.parse(await readFile('out/RevenueAccountV2.sol/RevenueAccountV2.json','utf8')).abi;

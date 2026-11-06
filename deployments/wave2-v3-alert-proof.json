@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-11-06T14:03:47.859Z",
+  "service": "healthy",
+  "enrolled": 1,
+  "issues": [],
+  "notification": {
+    "configured": true,
+    "sent": true,
+    "messageId": 44
+  }
+}

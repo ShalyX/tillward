@@ -24,21 +24,24 @@ MUSD is the actual borrowing, invoicing, payment and repayment asset. The busine
 A customer approves the exact invoice amount and pays the onchain invoice. The chosen share becomes pending repayment. Native debt limits still apply: partial repayments stop at the protocol minimum debt plus reserve; the owner tops up if needed and explicitly closes the final portion. Receipt repayment does not protect BTC against liquidation or redemption.
 
 ## Revenue model
-V2 implements a 1% service fee on the amount actually repaid through hosted receipt routing. The maximum repayment allocation is 99%. The lender receives the full valid repayment; the fee comes from the business's retained receipt funds. Repayment and fee settle atomically. There are no unpaid fees or deferred collection. Existing legacy repayment limits constrain the repayment calculation; the authorized fee may take the remaining cash below that limit, while other pending repayment funds stay protected.
+V2 and V3 implement a 1% service fee on the amount actually repaid through hosted receipt routing. The maximum repayment allocation is 99%. The lender receives the full valid repayment; the fee comes from the business's retained receipt funds. Repayment and fee settle atomically. There are no unpaid fees or deferred collection. Existing legacy repayment limits constrain the repayment calculation; the authorized fee may take the remaining cash below that limit, while other pending repayment funds stay protected.
 
-For an illustrative 500 MUSD receipt at 20%: 100 MUSD repays the loan, the service fee is 1 MUSD, and 399 MUSD remains. The public maximum-allocation QA used 99%: 495 repaid, 4.95 fee, 0.05 retained. V2 enrollment is explicit and off by default; V1 accounts remain fee-free. Owner manual repayment, closure, collateral top-up and surplus recovery do not incur Tillward's routing fee. Wallet/network and native protocol fees remain separate.
+For an illustrative 500 MUSD receipt at 20%: 100 MUSD repays the loan, the service fee is 1 MUSD, and 399 MUSD remains. The public maximum-allocation QA used 99%: 495 repaid, 4.95 fee, 0.05 retained. V2/V3 enrollment is explicit and off by default; V1 accounts remain fee-free. Owner manual repayment, closure, collateral top-up and surplus recovery do not incur Tillward's routing fee. Wallet/network and native protocol fees remain separate.
 
-Costs are documented in docs/PRODUCTION_ECONOMICS.md. The shared VPS bill is USD 5/month. Frontend, RPC, support and gas scenarios are estimates or explicitly dated measurements. A standalone V2 testnet settlement used 489,763 gas; repricing that receipt size at a historical mainnet quote is not measured mainnet operating cost. The fee model is implemented and tested, but commercial willingness to pay and unit economics are not validated.
+Costs are documented in docs/PRODUCTION_ECONOMICS.md. The shared VPS bill is USD 5/month. Frontend, RPC, support and gas scenarios are estimates or explicitly dated measurements. A standalone V2 testnet settlement used 489,763 gas; the V3 oversized-receipt settlement used 530,075 gas. Different chain states make this an unsuitable isolated performance comparison; repricing that receipt size at a historical mainnet quote is not measured mainnet operating cost. The fee model is implemented and tested, but commercial willingness to pay and unit economics are not validated.
+
+V3 caps the combined receipt reservation to the active loan debt, excluding its native gas reserve. A loan cannot reserve the same debt twice. Closing clears leftover allocations and fee reservations automatically; receipts arriving without an active loan remain available. Native minimum debt still requires explicit owner closure.
 
 ## Changes since Wave 1
-1. Added native loan conditions to the actual workspace: BTC oracle price, ICR/TCR, Recovery Mode and actionable owner collateral controls, with stale/unavailable states.
-2. Verified factory and representative account sources on the explorer, including the separate V2 factory, fee QA account and surplus fixture.
-3. Proved owner collateral top-up on public testnet: 0.045 -> 0.046 test BTC, then full owner exit.
-4. Closed the public surplus gap: controlled redemption of only our own borrower created 0.005532212424520610 test BTC of native surplus. The existing Tillward account claimed it, then the owner withdrew it; canonical entitlement and BTC deltas were independently verified.
-5. Implemented and deployed the 1% atomic fee model in separate V2 contracts, preserving V1 accounts. Verified a real 500 MUSD receipt, 495 MUSD native repayment, 4.95 MUSD fee and 0.05 MUSD retained.
-6. Verified V2 opt-out, exact 9.9 MUSD manual repayment without a new service fee, native closure and 0.045 test BTC return net of gas.
-7. Simplified the interface: percentage and automation consent in Repayment rules; manual repayment and exit actions in Manage loan. Removed the separate settings tab and operating-reserve editor.
-8. Extended health monitoring and encrypted off-host state backups to both keepers. Telegram outage/recovery tests and an isolated same-host runtime restore passed. Workstation availability and second-host recovery remain disclosed limits.
+1. Deployed and verified V3: a 2,600 MUSD receipt at 80% requested 2,080 MUSD but reserved only 2,002.000438 MUSD. The VPS keeper repaid 202.000451 MUSD with a 2.020004 MUSD fee. Owner closure left zero allocations/fee reserve and 595.979326 MUSD available. A later 1 MUSD receipt allocated zero; all remaining MUSD and 0.045 test BTC were recovered without Release allocation. The dedicated QA CLI signed; browser evidence was read-only.
+2. Added native loan conditions to the actual workspace: BTC oracle price, ICR/TCR, Recovery Mode and actionable owner collateral controls, with stale/unavailable states.
+3. Verified factory and representative account sources on the explorer, including the separate V2 factory, fee QA account and surplus fixture.
+4. Proved owner collateral top-up on public testnet: 0.045 -> 0.046 test BTC, then full owner exit.
+5. Closed the public surplus gap: controlled redemption of only our own borrower created 0.005532212424520610 test BTC of native surplus. The existing Tillward account claimed it, then the owner withdrew it; canonical entitlement and BTC deltas were independently verified.
+6. Implemented and deployed the 1% atomic fee model in separate V2 contracts, preserving V1 accounts. Verified a real 500 MUSD receipt, 495 MUSD native repayment, 4.95 MUSD fee and 0.05 MUSD retained.
+7. Verified V2 opt-out, exact 9.9 MUSD manual repayment without a new service fee, native closure and 0.045 test BTC return net of gas.
+8. Simplified the interface: percentage and automation consent in Repayment rules; manual repayment and exit actions in Manage loan. Removed the separate settings tab and operating-reserve editor.
+9. Extended health monitoring and encrypted off-host state backups to both keepers. Telegram outage/recovery tests and an isolated same-host runtime restore passed. Workstation availability and second-host recovery remain disclosed limits.
 
 The surplus guard is a test-only fixture that prevents redemption of unrelated borrowers; it is not a Tillward product feature. The browser displayed real before/after entitlement, while the dedicated QA wallet signed the fixture transactions through a script. It is not a Rabby surplus-signing acceptance claim.
 
@@ -64,7 +67,8 @@ Solidity 0.8.24, Foundry, TypeScript, Vite, viem, native Mezo lending/MUSD/HintH
 - Source: https://github.com/ShalyX/tillward
 - Wave 2 judge guide: https://github.com/ShalyX/tillward/blob/main/submission/wave2/judge-guide.md
 - Wave 2 proof index: https://github.com/ShalyX/tillward/blob/main/docs/EVIDENCE.md
-- Atomic fee proof: https://github.com/ShalyX/tillward/blob/main/deployments/wave2-live-fee-proof.json
+- Current V3 proof: https://github.com/ShalyX/tillward/blob/main/docs/reviews/WAVE2_V3_LIVE_VERIFICATION.md
+- Atomic V2 fee proof: https://github.com/ShalyX/tillward/blob/main/deployments/wave2-live-fee-proof.json
 - Public surplus claim: https://explorer.test.mezo.org/tx/0xfceb4acb5e2058fe4c1cad47717e318be05ce6f1eaf2cce58e417b1839ee5343
 - Historical Wave 1 entry: https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO
 

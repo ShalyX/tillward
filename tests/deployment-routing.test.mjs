@@ -17,3 +17,11 @@ test('unknown accounts, code/protocol mismatch and unavailable registries fail c
  await assert.rejects(accountDeployment({...p,getCode:async()=> '0x00'},[v2],'account',100n));
  await assert.rejects(accountDeployment({...p,readContract:async()=>{throw Error('RPC unavailable');}},[v2,v1],'account',100n));
 });
+
+test('V3 catalog preserves both historical V2 fees and V1 fee-free accounts',async()=>{
+ const v3={...base,factory:'latest',accountVersion:3};
+ for(const selected of [v3,v2,v1]){
+  const client={getCode:async()=> '0x6000',readContract:async r=>r.address===selected.factory};
+  assert.equal(await accountDeployment(client,[v3,v2,v1],'account',200n),selected);
+ }
+});

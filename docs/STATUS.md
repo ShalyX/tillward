@@ -1,3 +1,7 @@
+# Current V3 status — November 6, 2026
+
+V3 is deployed. Oversized 80% receipt, debt cap, keeper repayment/fee, automatic closure cleanup, later receipt and full owner recovery are verified. V1/V2 historical links remain pinned. Current evidence: [V3 live report](reviews/WAVE2_V3_LIVE_VERIFICATION.md). Materials are updated after this proof; Wave 2 has not been submitted. Interviews remain held.
+
 # Current Wave 2 checkpoint — November 6, 2026
 
 Public atomic fee, owner exit and native-surplus recovery are verified. [Current evidence](EVIDENCE.md) and [Wave 2 packet](../submission/wave2/README.md) supersede the historical status below. The revised 120-second pitch and deck are deployed; seven hosted files match their verified local hashes. Wave 2 has not been submitted. Interviews remain on hold; mainnet readiness remains NO-GO.

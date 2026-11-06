@@ -6,7 +6,7 @@ const [kind,requestedHash]=process.argv.slice(2);
 let hash=requestedHash;
 const methods={manual:'settleDirect',close:'closeLoan',withdraw:'withdrawBTC'};
 if(!methods[kind]||(hash!==undefined&&!/^0x[\da-fA-F]{64}$/.test(hash)))throw Error('Usage: verify-v2-owner-action.mjs <manual|close|withdraw> [confirmed-hash]');
-const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const c=JSON.parse(await readFile('public/deployment-v2.json','utf8'));
 const base=JSON.parse(await readFile('deployments/wave2-live-fee-proof.json','utf8'));
 const pause=JSON.parse(await readFile('deployments/wave2-v2-pause-proof.json','utf8'));
 const abi=JSON.parse(await readFile('out/RevenueAccountV2.sol/RevenueAccountV2.json','utf8')).abi;

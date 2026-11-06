@@ -4,7 +4,8 @@ import {execFileSync} from 'node:child_process';
 const keepers=[];
 for(const [unit,expectedFactory,expectedWallet] of [
  ['tillward-keeper','0xaf90fe019f7303bb4720437dcfbafe1549474f36','0x625E52F5AB7b6563f83a3b7FB7EB7cC3a148A956'],
- ['tillward-keeper-v2','0xaa5121f96502b9618156e8288e60ce1c699b9a43','0x7C93C575bE5ceD60F388D2866991d68aE23e3D42']]){
+ ['tillward-keeper-v2','0xaa5121f96502b9618156e8288e60ce1c699b9a43','0x7C93C575bE5ceD60F388D2866991d68aE23e3D42'],
+ ['tillward-keeper-v3','0xca5c522850a366769e3f3b07e45f6c7a8980e692','0x94fD519f7bcc3a11776B101B1CcC284560B7979B']]){
  const directory='/var/lib/'+unit;
  const load=name=>readFile(directory+'/'+name,'utf8').then(JSON.parse);
  const [health,registry,backup]=await Promise.all([load('keeper-health.json'),load('keeper-registry.json'),load('backup-status.json')]);
@@ -22,4 +23,4 @@ for(const [unit,expectedFactory,expectedWallet] of [
  if(disk.bavail*disk.bsize<268435456n||BigInt(health.balance)<20000000000000n)throw Error(unit+': low disk/gas');
  keepers.push({unit,state:health.state,checkedAt:health.checkedAt,enrolled:health.enrolled,pending:null,discovery:health.discovery,units,permissions,backupCompletedAt:backup.completedAt});
 }
-console.log(JSON.stringify({observedAt:new Date().toISOString(),state:'healthy',keepers,scope:'External polling covers both keepers; delivery and workstation availability are separate checks.'}));
+console.log(JSON.stringify({observedAt:new Date().toISOString(),state:'healthy',keepers,scope:'External polling covers all configured keepers; delivery and workstation availability are separate checks.'}));

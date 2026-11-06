@@ -3,7 +3,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {createPublicClient,http,webSocket,fallback,decodeFunctionData} from 'viem';
 import {readServiceState} from '../src/service-fees.mjs';
 import {readWithRetry} from '../src/read-retry.mjs';
-const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const c=JSON.parse(await readFile('public/deployment-v2.json','utf8'));
 const snapshot=JSON.parse(await readFile('../../work/wave2-v2-99-preflight.json','utf8'));
 const loan=JSON.parse(await readFile('deployments/wave2-v2-loan-proof.json','utf8'));
 const abi=JSON.parse(await readFile('out/RevenueAccountV2.sol/RevenueAccountV2.json','utf8')).abi;

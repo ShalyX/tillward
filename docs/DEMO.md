@@ -1,3 +1,7 @@
+## V3 proof added — November 6, 2026
+
+The deck/guide now show actual V3 debt-capped receipt allocation and zero-reservation closure. The 120-second film retains its explicitly labeled V2 transaction captures, plus V1 loan conditions and V2 surplus recovery; it was not re-rendered or presented as a V3 signing recording. The current app defaults new accounts to V3 and continues routing historical account URLs to their pinned factories. [V3 live evidence](reviews/WAVE2_V3_LIVE_VERIFICATION.md).
+
 # Wave 2 judge-facing demonstration — November 6, 2026
 
 Purpose: BTC-backed MUSD working capital, repaid from final customer receipts. See [Wave 2 judge guide](../submission/wave2/judge-guide.md).

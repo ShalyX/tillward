@@ -2,7 +2,7 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {createPublicClient,http,webSocket,fallback,parseAbi,decodeFunctionData,keccak256} from 'viem';
 import {readWithRetry} from '../src/read-retry.mjs';
-const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const c=JSON.parse(await readFile('public/deployment-v2.json','utf8'));
 const invoice=JSON.parse(await readFile('deployments/wave2-v2-manual-invoice.json','utf8'));
 const base=JSON.parse(await readFile('deployments/wave2-live-fee-proof.json','utf8'));
 const abi=JSON.parse(await readFile('out/RevenueAccountV2.sol/RevenueAccountV2.json','utf8')).abi;

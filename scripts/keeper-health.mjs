@@ -7,7 +7,7 @@ import {notifyHealth} from './keeper-alerts.mjs';
 const directory=process.env.KEEPER_STATE_DIR||process.argv[2];
 if(!directory)throw Error('Provide KEEPER_STATE_DIR or state directory argument.');
 const service=process.env.KEEPER_SERVICE||'tillward-keeper';
-if(!/^tillward-keeper(?:-v2)?$/.test(service))throw Error('Unsupported keeper service.');
+if(!/^tillward-keeper(?:-v[23])?$/.test(service))throw Error('Unsupported keeper service.');
 let health={},issues=[];
 try{
  health=JSON.parse(await readFile(resolve(directory,'keeper-health.json'),'utf8'));

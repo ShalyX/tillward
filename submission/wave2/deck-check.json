@@ -1,7 +1,7 @@
 {
   "verified": true,
   "slides": 8,
-  "pptxSha256": "49232bdb16e6e0f7b573e14a89d1f6bb60bac3c5ccbf60edab4c0aa6ca1b7963",
+  "pptxSha256": "05b0875ff6b701543313419fd8ddd6aedcbcb3d165ece93f8d1d88e318013975",
   "packageFindings": 0,
   "layoutFindings": 0,
   "fonts": [
@@ -11,5 +11,6 @@
   "pptxEditable": true,
   "pdfImageBased": true,
   "nativePowerPointRenderingVerified": false,
-  "limits": "PDF rendered from the validated editable PPTX, visually inspected using Poppler. Source template fonts retained; no native PowerPoint execution claimed."
+  "limits": "PDF rendered from the validated editable PPTX, visually inspected using Poppler. Source template fonts retained; no native PowerPoint execution claimed.",
+  "revision": "V3 public debt cap and closure proof"
 }

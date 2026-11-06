@@ -7,6 +7,7 @@ import {readWithRetry} from '../src/read-retry.mjs';
 const walletPath=resolve(process.argv[2]||''),treasury=process.argv[3];
 if(!isAddress(treasury||'')||walletPath.startsWith(resolve('.')+'\\'))throw Error('Provide an external dedicated test wallet and explicit treasury.');
 const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+if(![1,2].includes(c.accountVersion??1))throw Error('Legacy deployment tool cannot replace a newer factory.');
 if(c.chainId!==31611)throw Error('Mezo testnet only.');
 const chain=defineChain({id:31611,name:'Mezo Testnet',nativeCurrency:{name:'Bitcoin',symbol:'BTC',decimals:18},rpcUrls:{default:{http:[c.rpc]}}});
 const transport=fallback([webSocket(c.ws,{timeout:20000,retryCount:1}),http(c.rpc,{timeout:20000,retryCount:1})]);

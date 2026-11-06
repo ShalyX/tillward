@@ -1,0 +1,8 @@
+{
+  "verified": true,
+  "observedAt": "2026-11-06T14:31:40.715Z",
+  "owner": "0x25Db120d4c36977E57cb360f30E6C6028b8d3935",
+  "nonceBefore": 51,
+  "nonceAfter": 51,
+  "scope": "Replayed saved recovery intents; only original canonical hashes were reused, no new signature/broadcast or transfer."
+}

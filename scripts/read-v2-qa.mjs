@@ -3,7 +3,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {createPublicClient,http,webSocket,fallback,parseAbi,zeroAddress,formatUnits} from 'viem';
 import {readServiceState} from '../src/service-fees.mjs';
 import {readWithRetry} from '../src/read-retry.mjs';
-const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const c=JSON.parse(await readFile('public/deployment-v2.json','utf8'));
 const owner='0x1dcb045123730e606a88380bce534332f50332d2';
 const p=createPublicClient({transport:fallback([webSocket(c.ws,{timeout:15000,retryCount:1}),http(c.rpc,{timeout:15000,retryCount:1})])});
 if(c.chainId!==31611||c.accountVersion!==2||await p.getChainId()!==31611)throw Error('Expected V2 Mezo testnet deployment.');

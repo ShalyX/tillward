@@ -1,0 +1,41 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-11-06T14:17:40.019Z",
+  "chainId": 31611,
+  "signer": "0x94fD519f7bcc3a11776B101B1CcC284560B7979B",
+  "networkNamespaceIsolated": true,
+  "writeRpcGuardVerified": true,
+  "keeperExit": 0,
+  "health": {
+    "state": "healthy",
+    "enrolled": 1,
+    "discovery": {
+      "nextBlock": "16611357",
+      "safeHead": 16611356,
+      "synced": true
+    },
+    "pending": null
+  },
+  "signerNonceUnchanged": true,
+  "pendingJournalUnchanged": true,
+  "lastSettlement": "0xd8a959a3033e0919bc05301e290bdc15695c0cb08f8fa6634d39b6213c059577",
+  "scope": "Real V3 snapshot and copied runtime booted in a separate network namespace on the same VPS; only allowlisted read RPC passed through a private Unix socket. No live service restart, signature or broadcast. This is not a second-host or host-loss restore.",
+  "rpcMethods": {
+    "eth_sendRawTransaction": 1,
+    "eth_getTransactionCount": 2,
+    "eth_chainId": 1,
+    "eth_blockNumber": 2,
+    "eth_getBlockByNumber": 4,
+    "eth_getCode": 1,
+    "eth_getBalance": 1,
+    "eth_getLogs": 1,
+    "eth_call": 3
+  },
+  "backupMembers": [
+    "keeper-registry.json",
+    "paydown-keeper-journal.json",
+    "wallet.json"
+  ],
+  "snapshotCapturedAt": "2026-11-06T14:12:04Z",
+  "liveServicesRemainedActive": true
+}

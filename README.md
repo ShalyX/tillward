@@ -2,7 +2,7 @@
 
 **BTC-backed working capital. Repay as receipts arrive.**
 
-Tillward helps a BTC-holding business borrow MUSD for operating expenses and pay down its Mezo loan from customer receipts. The owner chooses a repayment percentage, up to 99% on V2 accounts. Customers pay final-payment invoices in MUSD. Eligible allocations reduce the business account's native Mezo debt while operating cash remains available under the chosen rule.
+Tillward helps a BTC-holding business borrow MUSD for operating expenses and pay down its Mezo loan from customer receipts. The owner chooses a repayment percentage, up to 99% on V2/V3 accounts. Customers pay final-payment invoices in MUSD. Eligible allocations reduce the business account's native Mezo debt while operating cash remains available under the chosen rule.
 
 ![Tillward receipt-counter identity](public/brand/share.png)
 
@@ -41,7 +41,9 @@ These figures are testnet integration evidence. Sample funds came from faucet BT
 
 ## Wave 2 verified progress — November 6, 2026
 
-V2 factory: [`0xaa5121f96502b9618156e8288e60ce1c699b9a43`](https://explorer.test.mezo.org/address/0xaa5121f96502b9618156e8288e60ce1c699b9a43). Legacy V1 remains fee-free.
+V3 is current for new accounts: [`0xca5c522850a366769e3f3b07e45f6c7a8980e692`](https://explorer.test.mezo.org/address/0xca5c522850a366769e3f3b07e45f6c7a8980e692). An actual 2,600 MUSD receipt at 80% was capped to the remaining loan; hosted repayment and fee settled, then closure cleared all reservations automatically. A later receipt allocated zero. [V3 live proof](docs/reviews/WAVE2_V3_LIVE_VERIFICATION.md). Existing accounts retain their version.
+
+Previous V2 factory: [`0xaa5121f96502b9618156e8288e60ce1c699b9a43`](https://explorer.test.mezo.org/address/0xaa5121f96502b9618156e8288e60ce1c699b9a43). Legacy V1 remains fee-free.
 
 - A public 500 test MUSD receipt at 99% produced **495 MUSD native repayment + 4.95 MUSD atomic service fee + 0.05 MUSD retained**. The lender receives the entire allocated repayment. [Proof](deployments/wave2-live-fee-proof.json).
 - Automation is explicit opt-in and can be paused in Repayment rules. Manual repayment and closure remain in Manage loan. The owner completed manual repayment, closure and recovery of 0.045 test BTC. [Owner exit](docs/reviews/WAVE2_V2_EXIT_VERIFICATION.md).
@@ -66,7 +68,7 @@ Open the development URL. Reading the public proof account requires RPC access b
 
 `npm run fork:test` additionally requires the documented Mezo RPC path. It runs unchanged native lending code at block 12,684,025 and replays the captured oracle-precompile response because Foundry does not implement that precompile. It is separate from public-chain evidence.
 
-Current Wave 2 checks: 57 non-fork Solidity tests, the native guarded-surplus fork test, 43 JavaScript tests, TypeScript and Vite production build. Historical release checks remain in [QA report](docs/QA_REPORT.md).
+Current Wave 2 checks: 90 non-fork Solidity tests, the native guarded-surplus and allocation fork checks, 45 JavaScript tests, TypeScript and Vite production build. Historical release checks remain in [QA report](docs/QA_REPORT.md).
 
 ## Contracts and architecture
 

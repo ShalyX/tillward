@@ -1,3 +1,7 @@
+## V3 deployed and live verification complete — November 6, 2026
+
+Factory 0xca5c522850a366769e3f3b07e45f6c7a8980e692 is current for new accounts. Public receipt, hosted repayment/fee, zero-reservation closure, post-close receipt, full MUSD/BTC recovery and buffer restoration passed. V3 explorer source is exact-match verified. Separate V3 keeper, monitoring, encrypted backup/data restore and isolated same-host runtime restore passed. Current deck/answers/guide are being refreshed with this proof; the labeled V2 film recording is preserved. No Wave 2 submission has occurred. See docs/reviews/WAVE2_V3_LIVE_VERIFICATION.md.
+
 ## Pending allocation fix — November 6, 2026
 
 Local V3 removes excess allocation cleanup: receipt reservations are debt-capped and loan closure clears leftovers. Ninety non-fork contract tests, 44 JavaScript tests, production build and native allocation fork pass. Existing V1/V2 sources, live configuration and published Wave 2 packet remain unchanged. V3 is not deployed; see docs/reviews/WAVE2_ALLOCATION_CLEANUP.md before any deployment or new live claim.

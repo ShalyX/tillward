@@ -17,3 +17,5 @@ All figures are testnet QA with recycled test assets. Seller/payer acceptance an
 Product: https://tillward.vercel.app/
 Proof and judge guide: https://github.com/ShalyX/tillward/tree/main/submission/wave2
 Shaly · https://x.com/shalyx_04
+
+Latest V3 update: an actual 2,600 MUSD receipt at 80% was capped to the remaining loan debt. Hosted repayment and its 1% fee settled, owner closure cleared every allocation/fee reservation, and a later receipt allocated zero. MUSD and 0.045 test BTC were recovered without an allocation-release step. Live proof: https://github.com/ShalyX/tillward/blob/main/docs/reviews/WAVE2_V3_LIVE_VERIFICATION.md

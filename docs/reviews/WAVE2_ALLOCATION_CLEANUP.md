@@ -1,6 +1,6 @@
 # Excess repayment allocation cleanup
 
-November 6, 2026. **Locally implemented and verified; not deployed.** Public app/contracts and Wave 2 submission media still describe V2.
+November 6, 2026. **Deployed and publicly verified.** See [live V3 report](WAVE2_V3_LIVE_VERIFICATION.md). The original local development record follows.
 
 ## Product behavior
 
@@ -20,6 +20,6 @@ The operator used the Request Code Review checklist to trace owner authority, bo
 
 RevenueAccountV3 and RevenueFactoryV3 preserve the deployed V1/V2 sources. Frontend fee validation and keeper artifact selection now support an explicit, matching V3 configuration while rejecting unknown or mismatched revisions. Public deployment.json remains V2.
 
-A new deployment and account enrollment are required. Existing immutable V2 accounts do not acquire this behavior. Before presenting it as live: deploy/verify the new factory/accounts, verify public oversized receipt/closure, enroll and host the keeper for that registry, then update the public configuration and materials. No live wallet migration is performed in this change.
+The V3 deployment and account enrollment have now been completed; see the live report. Existing immutable V2 accounts do not acquire this behavior. Before presenting it as live: deploy/verify the new factory/accounts, verify public oversized receipt/closure, enroll and host the keeper for that registry, then update the public configuration and materials. No live wallet migration is performed in this change.
 
 Machine-readable local proof: deployments/wave2-allocation-local-verification.json.

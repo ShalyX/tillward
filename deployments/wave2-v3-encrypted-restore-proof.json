@@ -1,0 +1,22 @@
+{
+  "verifiedAt": "2026-11-06T14:05:33.0481726+00:00",
+  "status": "restored_data_validated_in_memory",
+  "sourceFile": "tillward-vps-v3-state-20261106-140322Z.dpapi",
+  "archiveSha256": "EDE3BE811CAC9FBF275118CA3D1F5E3AD04B7887C96C6DC1C7AB11EE22852EAF",
+  "chainId": 31611,
+  "requiredMembersRestored": [
+    "wallet.json",
+    "paydown-keeper-journal.json",
+    "keeper-registry.json"
+  ],
+  "walletIdentityMatchesExpectedKeeper": true,
+  "keeperAddress": "0x94fD519f7bcc3a11776B101B1CcC284560B7979B",
+  "registryAccountCount": 1,
+  "journalParsed": true,
+  "journalHadPendingTransaction": false,
+  "plaintextFilesWritten": false,
+  "signingOrBroadcastAttempted": false,
+  "liveStateChanged": false,
+  "runtimeServiceRestored": false,
+  "limitation": "This validates encrypted data recovery and identity consistency only; it does not restore systemd/runtime on an isolated host."
+}

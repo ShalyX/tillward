@@ -1,3 +1,7 @@
+## V3 verified extension — November 6, 2026
+
+Native integration/implementation now includes an oversized 80% receipt, debt-capped reservation, real VPS repayment and atomic fee, automatic reservation cleanup on owner closure, and a later receipt with no active loan. Owner cash/BTC recovery completed. Current deck/guide include the proof. No new organizer score is assigned; customer acceptance remains unvalidated and interviews held. [Live report](reviews/WAVE2_V3_LIVE_VERIFICATION.md).
+
 # Wave 2 evidence update — November 6, 2026
 
 This update does not assign new organizer scores. Integration now includes native loan conditions, collateral top-up, atomic fee settlement, full owner exit and public native-surplus recovery. Implementation adds fee/floor/rollback coverage, both keeper operations and isolated runtime restoration. UX removes the reserve/settings detour, keeps Pause in repayment rules and owner exit in Manage loan. Materials are rebuilt in submission/wave2/. Business viability remains limited by unvalidated borrower/payer demand; interviews are held. The proposed 1% model is implemented on opt-in V2 testnet accounts, with measured and estimated economics separated in PRODUCTION_ECONOMICS.md.

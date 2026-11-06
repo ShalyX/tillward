@@ -3,7 +3,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {createPublicClient,http,webSocket,fallback} from 'viem';
 import {readWithRetry} from '../src/read-retry.mjs';
 import {readServiceState} from '../src/service-fees.mjs';
-const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const c=JSON.parse(await readFile('public/deployment-v2.json','utf8'));
 const account='0xd6e4829B51dB8ED490bFaE01384757B0fD65D622';
 const abi=JSON.parse(await readFile('out/RevenueAccountV2.sol/RevenueAccountV2.json','utf8')).abi;
 const p=createPublicClient({transport:fallback([webSocket(c.ws,{timeout:15000,retryCount:1}),http(c.rpc,{timeout:15000,retryCount:1})])});

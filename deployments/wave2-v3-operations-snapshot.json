@@ -1,0 +1,151 @@
+{
+  "observedAt": "2026-11-06T14:32:56.390Z",
+  "state": "healthy",
+  "keepers": [
+    {
+      "unit": "tillward-keeper",
+      "state": "healthy",
+      "checkedAt": "2026-11-06T14:32:06.409Z",
+      "enrolled": 3,
+      "pending": null,
+      "discovery": {
+        "nextBlock": "16611567",
+        "safeHead": 16611566,
+        "synced": true
+      },
+      "units": [
+        {
+          "unit": "tillward-keeper.service",
+          "active": "active",
+          "enabled": "enabled"
+        },
+        {
+          "unit": "tillward-keeper-health.timer",
+          "active": "active",
+          "enabled": "enabled"
+        },
+        {
+          "unit": "tillward-keeper-backup.timer",
+          "active": "active",
+          "enabled": "enabled"
+        }
+      ],
+      "permissions": [
+        {
+          "path": "/var/lib/tillward-keeper/wallet.json",
+          "mode": "0600"
+        },
+        {
+          "path": "/var/lib/tillward-keeper/paydown-keeper-journal.json",
+          "mode": "0600"
+        },
+        {
+          "path": "/var/lib/tillward-keeper/telegram.json",
+          "mode": "0600"
+        },
+        {
+          "path": "/var/backups/tillward-keeper/snapshot-1.tar.gz",
+          "mode": "0600"
+        }
+      ],
+      "backupCompletedAt": "2026-11-05T20:07:32Z"
+    },
+    {
+      "unit": "tillward-keeper-v2",
+      "state": "healthy",
+      "checkedAt": "2026-11-06T14:32:00.328Z",
+      "enrolled": 2,
+      "pending": null,
+      "discovery": {
+        "nextBlock": "16611566",
+        "safeHead": 16611565,
+        "synced": true
+      },
+      "units": [
+        {
+          "unit": "tillward-keeper-v2.service",
+          "active": "active",
+          "enabled": "enabled"
+        },
+        {
+          "unit": "tillward-keeper-v2-health.timer",
+          "active": "active",
+          "enabled": "enabled"
+        },
+        {
+          "unit": "tillward-keeper-v2-backup.timer",
+          "active": "active",
+          "enabled": "enabled"
+        }
+      ],
+      "permissions": [
+        {
+          "path": "/var/lib/tillward-keeper-v2/wallet.json",
+          "mode": "0600"
+        },
+        {
+          "path": "/var/lib/tillward-keeper-v2/paydown-keeper-journal.json",
+          "mode": "0600"
+        },
+        {
+          "path": "/var/lib/tillward-keeper-v2/telegram.json",
+          "mode": "0600"
+        },
+        {
+          "path": "/var/backups/tillward-keeper-v2/snapshot-1.tar.gz",
+          "mode": "0600"
+        }
+      ],
+      "backupCompletedAt": "2026-11-06T01:28:35Z"
+    },
+    {
+      "unit": "tillward-keeper-v3",
+      "state": "healthy",
+      "checkedAt": "2026-11-06T14:32:26.345Z",
+      "enrolled": 1,
+      "pending": null,
+      "discovery": {
+        "nextBlock": "16611572",
+        "safeHead": 16611571,
+        "synced": true
+      },
+      "units": [
+        {
+          "unit": "tillward-keeper-v3.service",
+          "active": "active",
+          "enabled": "enabled"
+        },
+        {
+          "unit": "tillward-keeper-v3-health.timer",
+          "active": "active",
+          "enabled": "enabled"
+        },
+        {
+          "unit": "tillward-keeper-v3-backup.timer",
+          "active": "active",
+          "enabled": "enabled"
+        }
+      ],
+      "permissions": [
+        {
+          "path": "/var/lib/tillward-keeper-v3/wallet.json",
+          "mode": "0600"
+        },
+        {
+          "path": "/var/lib/tillward-keeper-v3/paydown-keeper-journal.json",
+          "mode": "0600"
+        },
+        {
+          "path": "/var/lib/tillward-keeper-v3/telegram.json",
+          "mode": "0600"
+        },
+        {
+          "path": "/var/backups/tillward-keeper-v3/snapshot-1.tar.gz",
+          "mode": "0600"
+        }
+      ],
+      "backupCompletedAt": "2026-11-06T14:12:04Z"
+    }
+  ],
+  "scope": "External polling covers all configured keepers; delivery and workstation availability are separate checks."
+}

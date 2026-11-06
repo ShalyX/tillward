@@ -3,7 +3,7 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {createPublicClient,http,webSocket,fallback,decodeFunctionData,parseAbi,keccak256} from 'viem';
 const hash=process.argv[2];if(!/^0x[0-9a-fA-F]{64}$/.test(hash??''))throw Error('Pass the confirmed claimSurplus transaction hash.');
-const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const c=JSON.parse(await readFile('public/deployment-v2.json','utf8'));
 if(c.chainId!==31611)throw Error('Mezo testnet only.');
 const abi=JSON.parse(await readFile('out/RevenueAccount.sol/RevenueAccount.json','utf8')).abi;
 const native=parseAbi(['function troveManager() view returns(address)','function collSurplusPool() view returns(address)','function getCollateral(address) view returns(uint256)','function isAccount(address) view returns(bool)']);

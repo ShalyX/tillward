@@ -16,3 +16,7 @@ Canonical identity: Tillward; BTC-backed working capital repaid from receipts. P
 Known limits: interviews held; product demand and MUSD acceptance unvalidated. Workstation monitor requires online signed-in host. Restore proof is isolated same-VPS, not second-host/host-loss. Browser surplus capture was read-only; dedicated QA CLI signed those calls. One historical fee receipt re-read hit an inconsistent RPC response; a second canonical re-read passed with the exact 495/4.95/0.05 result. This does not remove the RPC dependency.
 
 Portal entry is not submitted for Wave 2. Final portal validation and owner-authorized submission are separate from material readiness.
+
+## V3 update
+
+Current V3 deployment/source, owned oversized receipt, hosted repayment/fee, closure cleanup, post-close receipt and full cash/collateral return are independently recorded. The new keeper has its own service user/key/state. All three versions remain routable. Historical V2 readers use deployment-v2.json. An archived deployment tool is fenced against replacing a newer version. The deck was edited in place through artifact-tool, retaining all eight slides, fonts/layouts and source captures; the PDF is image-based. Film content is unchanged and labeled as its earlier V2 record. Final staged credential scan, hosted artifact hash checks and release readback follow publication. No Wave 2 portal submission or new customer validation is claimed.

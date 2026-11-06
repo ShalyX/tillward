@@ -13,3 +13,5 @@ Compiler: v0.8.24+commit.e11b9ed9. EVM: london. Optimizer enabled, 200 runs. MIT
 The explorer frontend advertises https://api.explorer.test.mezo.org as its API host. Public source verification was submitted to `/api/v2/smart-contracts/{address}/verification/via/standard-input`, with the JSON upload explicitly typed `application/json`, compiler version, contract name, MIT license and automatic constructor detection. An accepted queue response alone was not treated as success; the exact-match result was independently read on each rendered contract page.
 
 Raw browser observations and factory/QA screenshots are in reviews/evidence/wave2-*-verified.*. This verifies correspondence between published source and deployed code. It is not an independent security audit or a mainnet-readiness approval.
+
+V3 factory 0xca5c522850a366769e3f3b07e45f6c7a8980e692 and QA account 0x3a9E23B4e91661751B1916dFe04e71D6dA65F5c7 were exact-match verified November 6. The API multipart field must be a map, for example files[0], with application/json. Proof: deployments/wave2-v3-source-verification.json.

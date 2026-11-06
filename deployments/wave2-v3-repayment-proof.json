@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-11-06T13:54:15.854Z",
+  "chainId": 31611,
+  "account": "0x3a9E23B4e91661751B1916dFe04e71D6dA65F5c7",
+  "factory": "0xca5c522850a366769e3f3b07e45f6c7a8980e692",
+  "owner": "0x25Db120d4c36977E57cb360f30E6C6028b8d3935",
+  "keeper": "0x94fD519f7bcc3a11776B101B1CcC284560B7979B",
+  "treasury": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "payment": {
+    "hash": "0xf176642610a37ef1f8bd65085138310ccdcd9043cfe797b2b1d189fe42df2f52",
+    "block": "16610969",
+    "amount": "2600000000000000000000",
+    "desiredAllocation": "2080000000000000000000",
+    "actualAllocation": "2002000438209621765752",
+    "retained": "597999561790378234248"
+  },
+  "settlement": {
+    "hash": "0xd8a959a3033e0919bc05301e290bdc15695c0cb08f8fa6634d39b6213c059577",
+    "block": "16610975",
+    "amount": "202000451467556182232",
+    "fee": "2020004514675561822",
+    "debtBefore": "2202000456352058335671",
+    "debtAfter": "2000000004884502153439",
+    "pendingAfter": "1799999986742065583520",
+    "balanceAfter": "2395979544017768255946",
+    "availableAfter": "577979557408282016591",
+    "gasUsed": "530075"
+  },
+  "scope": "Real public testnet receipt and VPS keeper settlement. Dedicated QA owner is payer; approved separate QA treasury receives test fees. Not customer traction or Rabby signing acceptance."
+}

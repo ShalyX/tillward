@@ -1,6 +1,6 @@
 import {readFile,writeFile} from 'node:fs/promises';
 import {createPublicClient,http,webSocket,fallback,parseAbi,decodeFunctionData} from 'viem';
-const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const c=JSON.parse(await readFile('public/deployment-v2.json','utf8'));
 const flow=JSON.parse(await readFile('deployments/wave2-surplus-flow.json','utf8'));
 const claim=JSON.parse(await readFile('deployments/wave2-surplus-claim.json','utf8'));
 const redemption=JSON.parse(await readFile('deployments/wave2-surplus-redemption.json','utf8'));

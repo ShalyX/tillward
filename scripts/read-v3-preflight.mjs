@@ -1,0 +1,10 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {createPublicClient,http,webSocket,fallback,parseAbi,formatUnits} from 'viem';
+const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const signer={address:'0x25Db120d4c36977E57cb360f30E6C6028b8d3935'};
+if(signer.address.toLowerCase()!=='0x25db120d4c36977e57cb360f30e6c6028b8d3935')throw Error('Unexpected dedicated signer.');
+const p=createPublicClient({transport:fallback([webSocket(c.ws,{timeout:15000,retryCount:1}),http(c.rpc,{timeout:15000,retryCount:1})])});
+if(await p.getChainId()!==31611)throw Error('Testnet only');
+const b=await p.getBlock({blockTag:'latest'}),abi=parseAbi(['function balanceOf(address) view returns(uint256)']);
+const wallets=await Promise.all([signer.address,c.feeTreasury].map(async address=>({address,btc:formatUnits(await p.getBalance({address,blockNumber:b.number}),18),musd:formatUnits(await p.readContract({address:c.musd,abi,functionName:'balanceOf',args:[address],blockNumber:b.number}),18),nonce:await p.getTransactionCount({address,blockTag:'latest'}),pendingNonce:await p.getTransactionCount({address,blockTag:'pending'})})));
+const o={observedAt:new Date().toISOString(),block:String(b.number),chainId:31611,wallets};await writeFile('../../work/v3-preflight.json',JSON.stringify(o,null,2)+'\n');console.log(JSON.stringify(o));process.exit(0);

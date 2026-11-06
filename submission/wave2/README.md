@@ -25,6 +25,8 @@ Revised 120-second pitch: [public pitch page](https://tillward.vercel.app/pitch.
 
 Interviews are on hold. No organizer requirement for a specific interview count is claimed.
 
-Downloadable release: https://github.com/ShalyX/tillward/releases/tag/v0.2.0-wave2 (MP4, editable source ZIP, PDF/PPTX, SHA-256 checksums).
+Downloadable release: https://github.com/ShalyX/tillward/releases/tag/v0.2.1-wave2 (MP4, editable source ZIP, PDF/PPTX, SHA-256 checksums).
 
 For a future video in this style, the optional HyperFrames recipe command is `node "$MEDIA_USE_SKILL/scripts/recipe.mjs" freeze --name tillward-wave2`. No new recipe has been frozen in this task.
+
+Current contracts are V3. The deck and guide now include the live debt cap and automatic closure cleanup. The film retains explicitly labeled V2 recordings and remains a faithful demonstration of the core workflow. V3 transaction signing was through the dedicated QA CLI; the browser read the actual resulting state.

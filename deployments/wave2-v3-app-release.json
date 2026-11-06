@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "release": "2026-11-06-wave2-debt-capped-allocation-1",
+  "deployment": {
+    "id": "dpl_De9Jqm8gn8xqKiD27hTQKav1Q7cD",
+    "url": "https://tillward-io5wgf99g-shalyxs-projects.vercel.app",
+    "inspectorUrl": "https://vercel.com/shalyxs-projects/tillward/De9Jqm8gn8xqKiD27hTQKav1Q7cD",
+    "readyState": "READY",
+    "target": "production",
+    "deploymentApiUrl": "https://api.vercel.com/v13/deployments/dpl_De9Jqm8gn8xqKiD27hTQKav1Q7cD"
+  },
+  "scope": "Current V3 app configuration plus V1/V2 legacy catalog; owner actions were signed by the dedicated QA CLI, browser proof is read-only."
+}
