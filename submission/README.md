@@ -1,3 +1,7 @@
+# Submission versions
+
+[Wave 2 packet](wave2/README.md) contains the current answers, deck and judge guide. Wave 2 is prepared separately and has not been submitted. The files and receipt below describe the confirmed Wave 1 entry.
+
 # Tillward submission package
 
 Submitted to Mezo Buildathon Wave 1 on October 26, 2026. See [confirmed entry](https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO) and [recorded receipt](receipt.json).

@@ -10,7 +10,7 @@ Prepared November 6, 2026. **Not yet submitted to AKINDO.** Wave 1 materials/rec
 - [Claim registry](../../docs/EVIDENCE.md)
 - [Public surplus report](../../docs/reviews/WAVE2_PUBLIC_SURPLUS.md)
 
-Revised 120-second pitch: composition checked; final MP4 render approved by Shaly and in preparation. The public /pitch.html still identifies the Wave 1 film until the revised export is verified and published. Do not submit a localhost preview as the demo URL.
+Revised 120-second pitch: [public pitch page](https://tillward.vercel.app/pitch.html), [MP4](https://tillward.vercel.app/media/tillward-wave2.mp4). Composition and encoded samples checked; H.264/AAC, 1080p24, exactly 120 seconds. The historical Wave 1 pitch remains at /pitch-wave1.html.
 
 ## Final checks
 
@@ -18,8 +18,9 @@ Revised 120-second pitch: composition checked; final MP4 render approved by Shal
 - [x] Evidence-bound fee, owner exit and surplus claims; no customer traction claims.
 - [x] Team Shaly; https://x.com/shalyx_04; ElseMade builder credit.
 - [x] Testnet-only scope, native risks and operations limits disclosed.
-- [ ] Final MP4 encoding/audio/visual QA and public media publication.
-- [ ] Final public link check and portal field review.
+- [x] Final MP4 encoding/audio/visual QA and public media publication.
+- [x] Public pitch/media/deck checks: seven hosted files match local SHA-256 hashes.
+- [ ] Final live portal field review before submission.
 - [ ] Owner-authorized Wave 2 submission and confirmation receipt.
 
 Interviews are on hold. No organizer requirement for a specific interview count is claimed.

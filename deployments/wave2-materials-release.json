@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-11-06",
+  "deployment": {
+    "id": "dpl_HCd6dpdoYx3nthVDmxyxkuYfmPXd",
+    "url": "https://tillward-oqgocp4py-shalyxs-projects.vercel.app",
+    "readyState": "READY"
+  },
+  "alias": "https://tillward.vercel.app",
+  "applicationRelease": "2026-11-05-wave2-atomic-fees-1",
+  "scope": "Presentation media only; existing app transaction logic and keeper settlement code unchanged."
+}

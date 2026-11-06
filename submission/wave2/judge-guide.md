@@ -12,6 +12,8 @@ V2 fee/owner QA account: https://tillward.vercel.app/?account=0xd6e4829B51dB8ED4
 
 Surplus fixture: https://tillward.vercel.app/?account=0x948a79e4D97A555a4B54CD345e3e679092824Aba . It is now redeemed, claimed and withdrawn. The current entitlement is zero; the proof records the positive entitlement before claiming.
 
+Watch the [current two-minute pitch](https://tillward.vercel.app/pitch.html) or download the [Wave 2 deck](https://tillward.vercel.app/media/tillward-wave2-deck.pdf).
+
 ## Three evidence stops
 
 1. **Actual receipt-funded debt reduction and fee.** A 500 test MUSD invoice at the 99% allocation cap produced 495 MUSD native repayment and a 4.95 MUSD fee in one keeper transaction, leaving 0.05 MUSD. [Settlement](https://explorer.test.mezo.org/tx/0xf2c1c33d606b1ebbb5d8d4c975e105caeb356fd9ae0a23e9991969150b0309a4). The treasury is the QA owner; this is not customer revenue. See deployments/wave2-live-fee-proof.json.

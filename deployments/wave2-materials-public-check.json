@@ -1,0 +1,63 @@
+{
+  "verified": true,
+  "observedAt": "2026-11-06",
+  "productionUrl": "https://tillward.vercel.app",
+  "files": [
+    {
+      "path": "pitch.html",
+      "status": 200,
+      "bytes": 4491,
+      "sha256": "8d9d29a28077268e79c0b64a5fc158a48b32f9f480316f97bcef8bc0f992a3bc",
+      "matchesLocal": true,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "path": "media/tillward-wave2.mp4",
+      "status": 200,
+      "bytes": 14549360,
+      "sha256": "34f01fdf6060cb298c8af8560f6f97045e152f1960adafd89f9dccc1a23ca17e",
+      "matchesLocal": true,
+      "contentType": "video/mp4"
+    },
+    {
+      "path": "media/tillward-wave2-deck.pdf",
+      "status": 200,
+      "bytes": 1665490,
+      "sha256": "68f2968dcb8eb53d41c4da4a55ba6909db1eec0e01980801a6fbd9bad3ef302e",
+      "matchesLocal": true,
+      "contentType": "application/pdf"
+    },
+    {
+      "path": "media/tillward-wave2-deck.pptx",
+      "status": 200,
+      "bytes": 543277,
+      "sha256": "49232bdb16e6e0f7b573e14a89d1f6bb60bac3c5ccbf60edab4c0aa6ca1b7963",
+      "matchesLocal": true,
+      "contentType": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+    },
+    {
+      "path": "media/wave2-pitch.vtt",
+      "status": 200,
+      "bytes": 2062,
+      "sha256": "d3e53c010b97aa8e966237ed166a158b5b091b8952be131bb6200dc9447f8e97",
+      "matchesLocal": true,
+      "contentType": "text/vtt; charset=utf-8"
+    },
+    {
+      "path": "media/wave2-poster.png",
+      "status": 200,
+      "bytes": 260956,
+      "sha256": "09866afac100a1bbb5169dd28c7966925716953e137a712fae0151e91bbb6263",
+      "matchesLocal": true,
+      "contentType": "image/png"
+    },
+    {
+      "path": "pitch-wave1.html",
+      "status": 200,
+      "bytes": 4211,
+      "sha256": "a556852df4cf3f34432e3d1777b5819e1052159c3a2288b91645f0ae2bd3f3bc",
+      "matchesLocal": true,
+      "contentType": "text/html; charset=utf-8"
+    }
+  ]
+}

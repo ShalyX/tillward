@@ -1,3 +1,7 @@
+## Wave 2 materials published — November 6, 2026
+
+Public surplus proof is complete. The revised 120-second film, eight-slide PPTX/PDF, answers, judge guide and claim registry are published. Seven hosted files match verified local hashes. Both keepers are healthy with no pending transaction. Wave 1 film and submission receipt are preserved. Next action is live Wave 2 portal-field review and owner-authorized submission; no Wave 2 submission receipt exists. Interviews remain held.
+
 ## Wave 2 material checkpoint — November 6, 2026
 
 Public native surplus proof is complete; fixture recovered, no pending financial action. Eight-slide editable PPTX and PDF verified, answers/judge guide/evidence index updated. Forty-three JavaScript tests and production build pass; public redemption/recovery read-only replay passed. Final Wave 2 MP4 render approved by Shaly and running. Next: inspect encoded output, publish current pitch/deck, verify public links, update packet checksums. Wave 2 portal submission has not occurred; interviews remain held.

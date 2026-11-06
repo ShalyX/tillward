@@ -1,3 +1,7 @@
+# Current Wave 2 checkpoint — November 6, 2026
+
+Public atomic fee, owner exit and native-surplus recovery are verified. [Current evidence](EVIDENCE.md) and [Wave 2 packet](../submission/wave2/README.md) supersede the historical status below. The revised 120-second pitch and deck are deployed; seven hosted files match their verified local hashes. Wave 2 has not been submitted. Interviews remain on hold; mainnet readiness remains NO-GO.
+
 # Tillward status
 
 Updated 2026-10-26. Working Mezo testnet product. Public demo: https://tillward.vercel.app . Public source: https://github.com/ShalyX/tillward (main). Final name and receipt-counter identity selected by the owner. Not submitted to the hackathon. The old private Sites preview is historical.

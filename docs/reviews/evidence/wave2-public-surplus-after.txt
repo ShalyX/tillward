@@ -68,7 +68,7 @@ Browser tab: 1, Title: "Tillward — Repay as receipts arrive.", URL: "https://t
 				66 button Review repayment rules
 				67 link Description: Mezo borrowing documentation, Value: mezo.org/docs/users/borrow/
 			68 container
-				69 text Use 20% of each payment to repay your loan. Tillward charges 1% of the amount automatically repaid. Automatic repayments are paused. 
+				69 text Use 20% of each payment to repay your loan. Tillward charges 1% of the amount automatically repaid. Automatic repayments are paused.
 				70 button Repayment rules
 			71 container
 				72 text YOUR RECEIPT RULE

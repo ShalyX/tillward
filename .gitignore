@@ -17,3 +17,6 @@ work/
 
 submission/*.mp4
 public/media/*.mp4
+
+# Intentional published Wave 2 film; retain it across clean Git deployments.
+!public/media/tillward-wave2.mp4

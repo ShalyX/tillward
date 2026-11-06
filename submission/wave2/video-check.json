@@ -1,0 +1,21 @@
+{
+  "verified": true,
+  "hyperframesVersion": "0.9.17",
+  "renderApprovedByOwner": true,
+  "durationSeconds": 120,
+  "width": 1920,
+  "height": 1080,
+  "fps": 24,
+  "videoCodec": "h264",
+  "audioCodec": "aac",
+  "bytes": 14549360,
+  "sha256": "34f01fdf6060cb298c8af8560f6f97045e152f1960adafd89f9dccc1a23ca17e",
+  "checks": [
+    "automated composition check passed",
+    "10 encoded frame samples inspected",
+    "AAC audio non-silent with no sample clipping",
+    "captions and scene narration times preserved"
+  ],
+  "source": "Separate Tillward Wave 2 HyperFrames composition; Wave 1 source preserved",
+  "scope": "Recorded public testnet captures and labeled illustration; no new transaction is executed by the film."
+}

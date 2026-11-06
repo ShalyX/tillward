@@ -68,7 +68,12 @@ Solidity 0.8.24, Foundry, TypeScript, Vite, viem, native Mezo lending/MUSD/HintH
 - Public surplus claim: https://explorer.test.mezo.org/tx/0xfceb4acb5e2058fe4c1cad47717e318be05ce6f1eaf2cce58e417b1839ee5343
 - Historical Wave 1 entry: https://app.akindo.io/communities/o6Xgma29Vun4VWEE/products/A8Ng3lnKNUMpaqxvO
 
-Updated deck/video links are populated only after artifact verification and publication. Existing Wave 1 release/video remain historical references.
+- Wave 2 pitch: https://tillward.vercel.app/pitch.html
+- Wave 2 MP4: https://tillward.vercel.app/media/tillward-wave2.mp4
+- Wave 2 PDF: https://tillward.vercel.app/media/tillward-wave2-deck.pdf
+- Wave 2 editable deck: https://tillward.vercel.app/media/tillward-wave2-deck.pptx
+
+Existing Wave 1 release/video remain historical references.
 
 ## Team
 Team: Shaly. Member: Shaly — product and engineering. X: https://x.com/shalyx_04. Product builder credit: ElseMade. No private contact fields or eligibility declarations are inferred.
