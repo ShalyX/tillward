@@ -1,0 +1,29 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-11-05T23:07:23.517Z",
+  "chainId": 31611,
+  "account": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622",
+  "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "pause": {
+    "hash": "0xf7a9fff02628e3cb6c32aa313e20bdcee86ef586df51243e71d5bbc7783ddcb0",
+    "block": "16598087"
+  },
+  "state": {
+    "serviceEnabled": false,
+    "paused": false,
+    "repaymentBps": 9900,
+    "cashFloor": "0",
+    "pendingRepayment": "0",
+    "totalFeesPaid": "4950000000000000000",
+    "totalServiceRepaid": "495000000000000000000",
+    "debtState": [
+      "2207502579647858975597",
+      "45000000000000000",
+      "1800000000000000000000",
+      "200000000000000000000",
+      true
+    ]
+  },
+  "persistedIntentRecovery": "Real canonical pause transaction reconciled through product recovery module after JSON serialization; no browser reload or replacement fault was induced.",
+  "scope": "Owner disabled hosted service without pausing receipt allocation or charging another fee. Manual repayment and exit not yet verified."
+}

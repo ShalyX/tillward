@@ -1,0 +1,23 @@
+// Read-only gate for the small receipt used to verify owner repayment after opt-out.
+import {readFile,writeFile} from 'node:fs/promises';
+import {createPublicClient,http,webSocket,fallback,parseAbi,keccak256} from 'viem';
+import {readWithRetry} from '../src/read-retry.mjs';
+import {readServiceState} from '../src/service-fees.mjs';
+const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const pause=JSON.parse(await readFile('deployments/wave2-v2-pause-proof.json','utf8'));
+const abi=JSON.parse(await readFile('out/RevenueAccountV2.sol/RevenueAccountV2.json','utf8')).abi;
+const p=createPublicClient({transport:fallback([webSocket(c.ws,{timeout:15000,retryCount:1}),http(c.rpc,{timeout:15000,retryCount:1})])});
+if(c.chainId!==31611||c.accountVersion!==2||!pause.verified||await p.getChainId()!==31611)throw Error('Pinned V2 testnet pause required.');
+const block=await p.getBlockNumber({cacheTime:0}),account=pause.account;
+const read=(functionName,args=[])=>readWithRetry(()=>p.readContract({address:account,abi,functionName,args,blockNumber:block}));
+if(keccak256(await p.getCode({address:c.factory,blockNumber:block}))!==c.factoryCodeHash)throw Error('Factory mismatch.');
+const registered=await p.readContract({address:c.factory,abi:parseAbi(['function isAccount(address) view returns(bool)']),functionName:'isAccount',args:[account],blockNumber:block});
+if(!registered||(await read('owner')).toLowerCase()!==pause.owner.toLowerCase())throw Error('Account owner/registry mismatch.');
+const [count,bps,paused,pending,fees]=await Promise.all([read('invoiceCount'),read('repaymentBps'),read('paused'),read('pendingRepayment'),readServiceState(p,c,account,block,0n)]);
+if(count!==2n||bps!==9900||paused||pending!==0n||!fees||fees.enabled)throw Error('Expected exactly two invoices, 99% allocations, no pending repayment and hosted service disabled.');
+const id=await read('invoiceIds',[1n]),i=await read('invoices',[id]),head=await p.getBlock({blockNumber:block});
+if(i[0]!=='Wave 2 manual repayment QA'||i[1]!==10n*10n**18n||i[4]||i[5]||i[2]<=head.timestamp)throw Error('Expected unpaid exact 10 MUSD manual QA invoice.');
+const checkout=`https://tillward.vercel.app/?account=${account}&invoice=${id}`;
+const proof={verifiedAt:new Date().toISOString(),chainId:31611,block,account,owner:pause.owner,id,label:i[0],amount:i[1],expiresAt:i[2],paid:false,canceled:false,repaymentBps:bps,serviceEnabled:false,checkout,scope:'Pre-payment gate only; manual repayment not yet proven.'};
+await writeFile('deployments/wave2-v2-manual-invoice.json',JSON.stringify(proof,(_,v)=>typeof v==='bigint'?String(v):v,2)+'\n');
+console.log(JSON.stringify({verified:true,amountTestMUSD:'10',id,checkout}));process.exit(0);

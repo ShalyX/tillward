@@ -1,0 +1,22 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-11-05T23:22:49.001Z",
+  "chainId": 31611,
+  "source": "0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5",
+  "signer": "0x25Db120d4c36977E57cb360f30E6C6028b8d3935",
+  "recipient": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "amount": "5000000000000000000",
+  "transactions": {
+    "withdraw": {
+      "hash": "0xac06212719339ad60dc30af509864dd188cb9bb95cb94d93531b8b80bd9175fe",
+      "block": "16598301"
+    },
+    "fundBrowser": {
+      "hash": "0x5229be45b8f52df2c3f6739626e4709e5e7360a8f2f7e4786261a845d0eb27e5",
+      "block": "16598303"
+    }
+  },
+  "recipientBefore": "1995949999999999999999",
+  "recipientAfter": "2000949999999999999999",
+  "scope": "Test-only fee/interest exit buffer recycled from dedicated demo funds; not revenue or customer demand."
+}

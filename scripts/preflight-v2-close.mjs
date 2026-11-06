@@ -1,0 +1,37 @@
+// Verify the owner's exact top-up and simulate closure; never signs.
+import {readFile,writeFile} from 'node:fs/promises';
+import {createPublicClient,http,webSocket,fallback,parseAbi,decodeFunctionData,keccak256,formatUnits} from 'viem';
+import {snapshotFreshness} from '../src/transaction-recovery.mjs';
+const c=JSON.parse(await readFile('public/deployment.json','utf8'));
+const base=JSON.parse(await readFile('deployments/wave2-live-fee-proof.json','utf8'));
+const manual=JSON.parse(await readFile('deployments/wave2-v2-manual-proof.json','utf8'));
+const funded=JSON.parse(await readFile('../../work/wave2-v2-funded-exit-preflight.json','utf8'));
+const abi=JSON.parse(await readFile('out/RevenueAccountV2.sol/RevenueAccountV2.json','utf8')).abi;
+const tokenAbi=parseAbi(['function balanceOf(address) view returns(uint256)','function transfer(address,uint256) returns(bool)','event Transfer(address indexed from,address indexed to,uint256 value)']);
+const p=createPublicClient({transport:fallback([webSocket(c.ws,{timeout:15000,retryCount:1}),http(c.rpc,{timeout:15000,retryCount:1})])});
+const eq=(a,b)=>a?.toLowerCase()===b?.toLowerCase();
+if(c.chainId!==31611||c.accountVersion!==2||await p.getChainId()!==31611||!manual.verified||!eq(manual.account,base.account)||!eq(funded.account,base.account))throw Error('Verified manual test and pinned V2 testnet required.');
+const block=await p.getBlock({blockTag:'latest'}),head=block.number;
+if(!snapshotFreshness(block.timestamp).fresh||keccak256(await p.getCode({address:c.factory,blockNumber:head}))!==c.factoryCodeHash)throw Error('Stale chain or factory mismatch.');
+const registered=await p.readContract({address:c.factory,abi:parseAbi(['function isAccount(address) view returns(bool)']),functionName:'isAccount',args:[base.account],blockNumber:head});
+const read=(functionName,b=head)=>p.readContract({address:base.account,abi,functionName,blockNumber:b});
+if(!registered||!eq(await read('owner'),base.owner))throw Error('Registry/owner mismatch.');
+const transfers=[];
+for(let from=BigInt(funded.block)+1n;from<=head;from+=1000n){const to=from+999n<head?from+999n:head;transfers.push(...await p.getContractEvents({address:c.musd,abi:tokenAbi,eventName:'Transfer',args:{from:base.owner,to:base.account},fromBlock:from,toBlock:to,strict:true}));}
+const matching=transfers.filter(t=>t.args.value===2000n*10n**18n);
+if(matching.length!==1)throw Error('Waiting for one exact 2000 MUSD owner top-up.');
+const hash=matching[0].transactionHash;
+const [tx,r]=await Promise.all([p.getTransaction({hash}),p.getTransactionReceipt({hash})]);
+const call=decodeFunctionData({abi:tokenAbi,data:tx.input});
+if(r.status!=='success'||(await p.getBlock({blockNumber:r.blockNumber})).hash!==r.blockHash||!eq(tx.from,base.owner)||!eq(tx.to,c.musd)||tx.value!==0n||call.functionName!=='transfer'||!eq(call.args[0],base.account)||call.args[1]!==2000n*10n**18n)throw Error('Canonical exact owner top-up not proven.');
+const balanceAt=(address,blockNumber)=>p.readContract({address:c.musd,abi:tokenAbi,functionName:'balanceOf',args:[address],blockNumber});
+const [before,after,ownerBefore,ownerAfter]=await Promise.all([balanceAt(base.account,r.blockNumber-1n),balanceAt(base.account,r.blockNumber),balanceAt(base.owner,r.blockNumber-1n),balanceAt(base.owner,r.blockNumber)]);
+if(after-before!==2000n*10n**18n||ownerBefore-ownerAfter!==2000n*10n**18n)throw Error('Exact top-up balance deltas not proven.');
+const [balance,debt,pending,floor,enabled,fees,repaid,retained]=await Promise.all([balanceAt(base.account,head),read('debtState'),read('pendingRepayment'),read('cashFloor'),read('serviceEnabled'),read('totalFeesPaid'),read('totalServiceRepaid'),read('retainedReceiptFunds')]);
+if(!debt[4]||pending!==0n||floor!==0n||enabled||fees!==BigInt(base.settlement.fee)||repaid!==BigInt(base.settlement.amount)||retained!==150000000000000000n||balance!==2000150000000000000000n)throw Error('Unexpected V2 closure state.');
+const repayment=debt[0]-debt[3];
+if(balance<repayment)throw Error('Insufficient MUSD for native closure.');
+await p.simulateContract({address:base.account,abi,functionName:'closeLoan',account:base.owner,blockNumber:head});
+const proof={verified:true,observedAt:new Date().toISOString(),chainId:31611,block:head,account:base.account,owner:base.owner,topup:{hash,block:r.blockNumber,amount:2000n*10n**18n,before,after,ownerBefore,ownerAfter},balance,debt,repayment,expectedRemaining:balance-repayment,pending,serviceEnabled:enabled,totalFeesPaid:fees,retained,simulation:'closeLoan succeeded at fixed block; no transaction signed',scope:'Top-up and read-only closure preflight only; closure/collateral return not yet proven.'};
+await writeFile('deployments/wave2-v2-close-preflight.json',JSON.stringify(proof,(_,v)=>typeof v==='bigint'?String(v):v,2)+'\n');
+console.log(JSON.stringify({verified:true,topup:hash,closeRepaymentMUSD:formatUnits(repayment,18),expectedRemainingMUSD:formatUnits(balance-repayment,18),collateralBTC:formatUnits(debt[1],18),simulation:'success'}));process.exit(0);

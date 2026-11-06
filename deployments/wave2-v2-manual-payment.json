@@ -1,0 +1,39 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-11-05T23:15:04.825Z",
+  "chainId": 31611,
+  "block": "16598220",
+  "account": "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622",
+  "owner": "0x1dcb045123730e606a88380bce534332f50332d2",
+  "invoiceId": "0x14d2898c84cc0e4b15c4049c4d18fc8c87776831b138fdead0e9db551daddb84",
+  "approval": {
+    "hash": "0x3ef56f1b514888be283d6801f3830deb1225b1a211e04e229cd57fd7cc3d54c9",
+    "block": "16598191",
+    "args": [
+      "0xd6e4829B51dB8ED490bFaE01384757B0fD65D622",
+      "10000000000000000000"
+    ]
+  },
+  "payment": {
+    "hash": "0x2f556f634961eab345b6654e66be548c1ce4265af365ebfcdc7ca78c63b0b323",
+    "block": "16598196",
+    "args": [
+      "0x14d2898c84cc0e4b15c4049c4d18fc8c87776831b138fdead0e9db551daddb84"
+    ]
+  },
+  "amount": "10000000000000000000",
+  "allocated": "9900000000000000000",
+  "serviceEnabled": false,
+  "allocationPaused": false,
+  "pending": "9900000000000000000",
+  "totalFeesPaid": "4950000000000000000",
+  "totalServiceRepaid": "495000000000000000000",
+  "retained": "150000000000000000",
+  "balance": "10050000000000000000",
+  "allowance": "0",
+  "quote": [
+    "9900000000000000000",
+    0
+  ],
+  "scope": "Canonical exact payment, exhausted allowance and pending manual repayment while hosted routing disabled; not yet repayment proof."
+}
