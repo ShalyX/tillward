@@ -1,0 +1,44 @@
+[
+  {
+    "test": "Legacy V2 account",
+    "alerts": [],
+    "example": 0,
+    "stats": "Available to withdraw MUSD\n\n2.54\nAfter reserved funds\n\nOutstanding loan MUSD\n\n0.00\n0.0000 BTC posted as collateral\n\nCustomer receipts MUSD\n\n510.00\n2,502.50 MUSD repaid through this account",
+    "footer": "Borrow with purpose. Repay as you earn.\nState at block 16,620,892 · Built by ElseMade"
+  },
+  {
+    "test": "Read-only action guard",
+    "pass": true
+  },
+  {
+    "test": "Workspace returns to landing",
+    "pass": true,
+    "css": [
+      "https://tillward.vercel.app/loading.css",
+      "https://tillward.vercel.app/assets/landing-xnjmAsCj.css"
+    ]
+  },
+  {
+    "test": "Live entrance motion",
+    "pass": true
+  },
+  {
+    "test": "Live reduced motion",
+    "pass": true
+  },
+  {
+    "test": "Landing calculator keyboard input",
+    "share": "80",
+    "repayment": "400.00",
+    "fee": "4.00",
+    "cash": "96.00"
+  },
+  {
+    "test": "Live FAQ opens",
+    "pass": true
+  },
+  {
+    "test": "Live dialog keyboard dismissal and focus return",
+    "pass": true
+  }
+]

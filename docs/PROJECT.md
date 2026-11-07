@@ -1,3 +1,7 @@
+## Landing and workspace deployed and verified — November 7, 2026
+
+Source commit 09795b6 deployed to Tillward production as dpl_E61qzuv2NVkDjD6h4ukHMbjBZHrm. Public root landing, correct workspace CSS, all five workspace tabs, 320–1440 px layouts, read-only V1/V2/V3 accounts, paid checkout, media assets, keyboard focus and reduced motion verified. 36 live layout combinations passed, four live accessibility scans reported zero violations. No new wallet signing, transactions, contract changes or keeper changes. Receipt: deployments/landing-workspace-release.json. Detailed report: docs/reviews/LIVE_RELEASE_2026-11-07.md.
+
 ## Wave 2 submitted and verified — November 7, 2026
 
 Owner explicitly authorized submit Wave 2. Reviewed live entry matched the final 2,274-character update and both milestone texts before the single submit action. AKINDO displayed Great! Your submission completed! The product page independently lists Mezo [2nd Wave] and preserves [1st Wave]. Receipt and product-listing screenshot: submission/wave2/receipt.json and submission/wave2/akindo-receipt.png. The original confirmation tab closed before its screenshot could be saved; the screenshot records the independent Wave 2 listing. No grant award, judging outcome or payout is inferred. Submission work is complete.

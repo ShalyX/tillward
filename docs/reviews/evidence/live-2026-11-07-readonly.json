@@ -1,0 +1,122 @@
+[
+  {
+    "test": "Public asset /loading.css",
+    "status": 200,
+    "type": "text/css; charset=utf-8",
+    "bytes": 3022
+  },
+  {
+    "test": "Public asset /favicon.svg",
+    "status": 200,
+    "type": "image/svg+xml",
+    "bytes": 295
+  },
+  {
+    "test": "Public asset /brand/mark.svg",
+    "status": 200,
+    "type": "image/svg+xml",
+    "bytes": 257
+  },
+  {
+    "test": "Public asset /fonts/dm-sans.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "bytes": 36932
+  },
+  {
+    "test": "Public asset /fonts/newsreader.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "bytes": 58084
+  },
+  {
+    "test": "Public asset /fonts/newsreader-italic.woff2",
+    "status": 200,
+    "type": "font/woff2",
+    "bytes": 64520
+  },
+  {
+    "test": "Public asset /fonts/DM-Sans-OFL.txt",
+    "status": 200,
+    "type": "text/plain; charset=utf-8",
+    "bytes": 4388
+  },
+  {
+    "test": "Public asset /fonts/Newsreader-OFL.txt",
+    "status": 200,
+    "type": "text/plain; charset=utf-8",
+    "bytes": 4393
+  },
+  {
+    "test": "Public asset /media/tillward-wave2-deck.pdf",
+    "status": 200,
+    "type": "application/pdf",
+    "bytes": 1661351
+  },
+  {
+    "test": "Deployment configuration",
+    "pass": true,
+    "chainId": 31611,
+    "accountVersion": 3,
+    "factory": "0xca5c522850a366769e3f3b07e45f6c7a8980e692",
+    "legacyFactories": [
+      "0xaa5121f96502b9618156e8288e60ce1c699b9a43",
+      "0xaf90fe019f7303bb4720437dcfbafe1549474f36"
+    ]
+  },
+  {
+    "test": "Existing Wave 2 video asset",
+    "status": 200,
+    "type": "video/mp4",
+    "bytes": "14549360"
+  },
+  {
+    "test": "Pitch page",
+    "title": "Tillward · Buildathon pitch",
+    "headings": [
+      "BTC-backed working capital.Repay as receipts arrive."
+    ],
+    "links": [
+      {
+        "label": "Wave 2 judge guide",
+        "href": "https://github.com/ShalyX/tillward/blob/main/submission/wave2/judge-guide.md"
+      }
+    ]
+  },
+  {
+    "test": "Read-only account 0x3a9E23B4e91661751B1916dFe04e71D6dA65F5c7",
+    "heading": [
+      "Keep business moving.Let receipts move debt down."
+    ],
+    "alerts": [],
+    "example": 0,
+    "onboarding": null,
+    "stats": "Available to withdraw\nMUSD\n\n0.00\nAfter reserved funds\n\nOutstanding loan\nMUSD\n\n0.00\n0.0000 BTC posted as collateral\n\nCustomer receipts\nMUSD\n\n2,601.00\n2,002.00 MUSD repaid through this account",
+    "footer": "Borrow with purpose. Repay as you earn.\nState at block 16,620,854 · Built by ElseMade",
+    "enabledActionTriggers": 1
+  },
+  {
+    "test": "Read-only account 0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5",
+    "heading": [
+      "Keep business moving.Let receipts move debt down."
+    ],
+    "alerts": [],
+    "example": 0,
+    "onboarding": null,
+    "stats": "Available to withdraw\nMUSD\n\n1,374.60\nAfter reserved funds\n\nOutstanding loan\nMUSD\n\n2,102.49\n0.0449 BTC posted as collateral\n\nCustomer receipts\nMUSD\n\n502.00\n100.40 MUSD repaid through this account",
+    "footer": "Borrow with purpose. Repay as you earn.\nState at block 16,620,863 · Built by ElseMade",
+    "enabledActionTriggers": 1
+  },
+  {
+    "test": "Existing paid V3 checkout",
+    "heading": "Wave 2 V3 oversized 80% QA",
+    "amount": "2600\nMUSD",
+    "button": "Already paid",
+    "disabled": true,
+    "alerts": [],
+    "viewport": {
+      "width": 390,
+      "document": 390
+    }
+  }
+]

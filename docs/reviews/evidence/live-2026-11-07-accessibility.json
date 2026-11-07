@@ -1,0 +1,32 @@
+[
+  {
+    "label": "production-landing-mobile",
+    "violations": [],
+    "incomplete": [
+      "color-contrast"
+    ]
+  },
+  {
+    "label": "production-overview-mobile",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "label": "production exact fee calculation",
+    "pass": true
+  },
+  {
+    "label": "production-policy-mobile",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "label": "Mobile bottom navigation does not cover focused control",
+    "pass": true
+  },
+  {
+    "label": "production-overview-desktop",
+    "violations": [],
+    "incomplete": []
+  }
+]

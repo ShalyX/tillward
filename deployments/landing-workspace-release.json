@@ -1,0 +1,55 @@
+{
+  "verified": true,
+  "verifiedAtUTC": "2026-11-07T01:14:42.429Z",
+  "dateLagos": "2026-11-07",
+  "scope": "Landing page, workspace visual fixes, correct production CSS preloads, illustrative fee model and accessibility. No contract, keeper or deployment-configuration changes.",
+  "sourceCommit": "09795b6ab0dd33e93ac449050ca9cbf6ca1875d1",
+  "repository": "https://github.com/ShalyX/tillward",
+  "productionURL": "https://tillward.vercel.app",
+  "deployment": {
+    "id": "dpl_E61qzuv2NVkDjD6h4ukHMbjBZHrm",
+    "immutableURL": "https://tillward-kwmd6tvbe-shalyxs-projects.vercel.app",
+    "state": "READY",
+    "target": "production",
+    "aliasError": null,
+    "readyAtUTC": "2026-11-07T01:04:03.029Z"
+  },
+  "previousDeployment": "dpl_3GCNF1KGH4GwSw2HEoRuLYkL72XK",
+  "verification": {
+    "liveLayoutCombinations": 36,
+    "viewports": [
+      320,
+      390,
+      650,
+      768,
+      1024,
+      1440
+    ],
+    "pageExceptions": 0,
+    "layoutIssues": 0,
+    "accessibilityScans": 4,
+    "accessibilityViolations": 0,
+    "allInteractionAssertionsPassed": true,
+    "liveAccountVersions": [
+      1,
+      2,
+      3
+    ],
+    "paidCheckoutPaymentDisabled": true,
+    "staticAssetChecksPassed": true,
+    "freshWalletSigningPerformed": false,
+    "transactionsRequested": 0
+  },
+  "report": "docs/reviews/LIVE_RELEASE_2026-11-07.md",
+  "evidence": [
+    "docs/reviews/evidence/live-2026-11-07-workspace-desktop.png",
+    "docs/reviews/evidence/live-2026-11-07-rules-mobile.png",
+    "docs/reviews/evidence/live-2026-11-07-landing-mobile.png",
+    "docs/reviews/evidence/live-2026-11-07-v3-account.png",
+    "docs/reviews/evidence/live-2026-11-07-checkout-mobile.png",
+    "docs/reviews/evidence/live-2026-11-07-layout.json",
+    "docs/reviews/evidence/live-2026-11-07-accessibility.json",
+    "docs/reviews/evidence/live-2026-11-07-readonly.json",
+    "docs/reviews/evidence/live-2026-11-07-interactions.json"
+  ]
+}
