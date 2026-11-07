@@ -8,9 +8,9 @@ Tillward helps a BTC-holding business borrow MUSD for operating expenses and pay
 
 ## Try the product
 
-**[Open Tillward](https://tillward.vercel.app)** · [Read the real testnet business](https://tillward.vercel.app/?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5) · [Wave 2 pitch](https://tillward.vercel.app/pitch.html) · [Wave 2 materials](submission/wave2/README.md)
+**[Open Tillward](https://tillward.vercel.app)** · [Explore the workspace](https://tillward.vercel.app/?workspace=1) · [Read the real testnet business](https://tillward.vercel.app/?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5) · [Wave 2 pitch](https://tillward.vercel.app/pitch.html) · [Wave 2 materials](submission/wave2/README.md)
 
-- Explore the clearly labeled example workspace without connecting a wallet.
+- Start at the landing page, then choose **Open app** to explore the clearly labeled example workspace without connecting a wallet.
 - Open the original testnet business using `?account=0x5B4b9C9AD2E5c6Ef55A4186ad82580B61A67c6C5` to read its real loan, invoices, repayment rule and activity.
 - Select **Use testnet**, connect an EVM wallet, and follow onboarding to create your own account. Use Mezo testnet assets only.
 
@@ -48,9 +48,9 @@ Previous V2 factory: [`0xaa5121f96502b9618156e8288e60ce1c699b9a43`](https://expl
 - A public 500 test MUSD receipt at 99% produced **495 MUSD native repayment + 4.95 MUSD atomic service fee + 0.05 MUSD retained**. The lender receives the entire allocated repayment. [Proof](deployments/wave2-live-fee-proof.json).
 - Automation is explicit opt-in and can be paused in Repayment rules. Manual repayment and closure remain in Manage loan. The owner completed manual repayment, closure and recovery of 0.045 test BTC. [Owner exit](docs/reviews/WAVE2_V2_EXIT_VERIFICATION.md).
 - A controlled native redemption created **0.005532212424520610 test BTC** surplus. Tillward claimed it and the owner withdrew the exact surplus. Dedicated test-wallet signing, read-only browser observation; native redemption fees are separate. [Public surplus report](docs/reviews/WAVE2_PUBLIC_SURPLUS.md).
-- Public loan conditions, owner collateral top-up, both keeper monitors, encrypted backups and isolated runtime restore are evidenced in [the claim registry](docs/EVIDENCE.md).
+- Public loan conditions, owner collateral top-up, three keeper monitors, encrypted backups and isolated runtime restore are evidenced in [the claim registry](docs/EVIDENCE.md).
 
-These are controlled testnet results, not commercial revenue or customer traction. Interviews remain on hold. [Judge guide](submission/wave2/judge-guide.md).
+These are controlled testnet results, not commercial revenue or customer traction. [Judge guide](submission/wave2/judge-guide.md).
 
 ## Run locally
 
@@ -64,7 +64,7 @@ npm run build
 npm run contracts
 ```
 
-Open the development URL. Reading the public proof account requires RPC access but no wallet key. The default page uses labeled illustrative data. Failed live reads show an error rather than substituting that example.
+Open the development URL for the landing page, or append `?workspace=1` for the labeled illustrative workspace. Reading the public proof account requires RPC access but no wallet key. Failed live reads show an error rather than substituting that example.
 
 `npm run fork:test` additionally requires the documented Mezo RPC path. It runs unchanged native lending code at block 12,684,025 and replays the captured oracle-precompile response because Foundry does not implement that precompile. It is separate from public-chain evidence.
 

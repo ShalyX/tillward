@@ -1,0 +1,181 @@
+[
+  {
+    "test": "Receipt entrance enabled",
+    "pass": true
+  },
+  {
+    "test": "Reduced motion removes receipt animation",
+    "pass": true
+  },
+  {
+    "test": "Reduced motion reveals content",
+    "pass": true
+  },
+  {
+    "test": "Automated checks requiring manual inspection",
+    "nodes": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": [
+          {
+            "target": [
+              ".receipt-stage"
+            ],
+            "summary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+          }
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "nodes": [
+          {
+            "target": [
+              ".text-link[href$=\"#receipt\"] > span[aria-hidden=\"true\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "target": [
+              ".stage-label"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-top > span"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-stamp"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-client"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-amount"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-amount > span"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-row:nth-child(6) > span"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-row:nth-child(6) > strong"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".repayment > span"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".repayment > strong"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-row:nth-child(8) > span"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-row:nth-child(8) > strong"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-total > span"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-total > strong"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-total > strong > small"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-foot"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".stage-caption"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".receipt-tag"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "target": [
+              ".principle-strip > span:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "target": [
+              ".principle-strip > span:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          },
+          {
+            "target": [
+              ".collateral > i"
+            ],
+            "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "target": [
+              ".closing-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "test": "Config failure has a recovery action",
+    "pass": true
+  },
+  {
+    "test": "Loading state contains named status",
+    "pass": true
+  }
+]

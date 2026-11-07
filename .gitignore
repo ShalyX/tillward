@@ -9,6 +9,8 @@ broadcast/
 *.log
 .openai/state/
 .vercel/
+.playwright-cli/
+output/playwright/
 work/
 *.dpapi
 *wallet*.json

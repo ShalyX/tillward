@@ -1,0 +1,189 @@
+{
+  "results": [
+    {
+      "test": "FAQ opens",
+      "pass": true
+    },
+    {
+      "test": "99% fee illustration",
+      "pass": true
+    },
+    {
+      "test": "0% illustration",
+      "pass": true
+    },
+    {
+      "test": "Invalid illustration input",
+      "pass": true
+    },
+    {
+      "test": "Escape dismisses modal",
+      "pass": true
+    },
+    {
+      "test": "Modal restores trigger focus",
+      "pass": true
+    },
+    {
+      "test": "Workspace skip link",
+      "pass": true
+    },
+    {
+      "test": "Fixture fees",
+      "heading": [
+        "Keep business moving.Let receipts move debt down."
+      ],
+      "alerts": [],
+      "width": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    {
+      "test": "Fixture risk",
+      "heading": [
+        "Keep business moving.Let receipts move debt down."
+      ],
+      "alerts": [],
+      "width": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    {
+      "test": "Fixture riskfail",
+      "heading": [
+        "Keep business moving.Let receipts move debt down."
+      ],
+      "alerts": [],
+      "width": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    {
+      "test": "Fixture pending",
+      "heading": [
+        "Keep business moving.Let receipts move debt down."
+      ],
+      "alerts": [],
+      "width": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    {
+      "test": "Fixture stale",
+      "heading": [
+        "Keep business moving.Let receipts move debt down."
+      ],
+      "alerts": [],
+      "width": {
+        "viewport": 390,
+        "document": 390
+      }
+    },
+    {
+      "test": "Fixture checkout",
+      "heading": [
+        "Exact fixture payment"
+      ],
+      "alerts": [],
+      "width": {
+        "viewport": 390,
+        "document": 390
+      }
+    }
+  ],
+  "accessibility": [
+    {
+      "label": "landing-mobile",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "overview-mobile",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "policy-mobile",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "invoice-dialog-mobile",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "Overview-390",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "Invoices-390",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "Repayment rules-390",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "Activity-390",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "Manage loan-390",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "Overview-1440",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "Invoices-1440",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "Repayment rules-1440",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "Activity-1440",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "Manage loan-1440",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "fixture-fees",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "label": "fixture-checkout",
+      "violations": [],
+      "incomplete": []
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 .git
 .openai
+.playwright-cli
+output
 .github
 .hackathon
 node_modules
